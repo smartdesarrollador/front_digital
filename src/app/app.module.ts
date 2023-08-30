@@ -7,6 +7,7 @@ import { BotonesComponent } from './test/tailwind/botones/botones.component';
 import { AlertasComponent } from './test/tailwind/alertas/alertas.component';
 import { CardsComponent } from './test/tailwind/cards/cards.component';
 import { LoginFormComponent } from './test/tailwind/login-form/login-form.component';
+import { MaquetaComponent } from './test/maqueta/maqueta.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { LoginFormComponent } from './test/tailwind/login-form/login-form.compon
     BotonesComponent,
     AlertasComponent,
     CardsComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    MaquetaComponent
   ],
   imports: [
     BrowserModule,

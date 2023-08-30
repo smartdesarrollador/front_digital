@@ -3,10 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BotonesComponent } from './test/tailwind/botones/botones.component';
+import { AlertasComponent } from './test/tailwind/alertas/alertas.component';
+import { CardsComponent } from './test/tailwind/cards/cards.component';
+import { LoginFormComponent } from './test/tailwind/login-form/login-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BotonesComponent,
+    AlertasComponent,
+    CardsComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,

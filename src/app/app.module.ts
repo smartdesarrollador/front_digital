@@ -8,6 +8,9 @@ import { AlertasComponent } from './test/tailwind/alertas/alertas.component';
 import { CardsComponent } from './test/tailwind/cards/cards.component';
 import { LoginFormComponent } from './test/tailwind/login-form/login-form.component';
 import { MaquetaComponent } from './test/maqueta/maqueta.component';
+import { InterpolacionComponent } from './test/angular/interpolacion/interpolacion.component';
+import { EventBindingComponent } from './test/angular/event-binding/event-binding.component';
+import { ClassBindingComponent } from './test/angular/class-binding/class-binding.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { MaquetaComponent } from './test/maqueta/maqueta.component';
     AlertasComponent,
     CardsComponent,
     LoginFormComponent,
-    MaquetaComponent
+    MaquetaComponent,
+    InterpolacionComponent,
+    EventBindingComponent,
+    ClassBindingComponent
   ],
   imports: [
     BrowserModule,

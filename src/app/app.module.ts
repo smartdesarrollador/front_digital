@@ -11,6 +11,7 @@ import { MaquetaComponent } from './test/maqueta/maqueta.component';
 import { InterpolacionComponent } from './test/angular/interpolacion/interpolacion.component';
 import { EventBindingComponent } from './test/angular/event-binding/event-binding.component';
 import { ClassBindingComponent } from './test/angular/class-binding/class-binding.component';
+import { FormularioComponent } from './test/angular/formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ClassBindingComponent } from './test/angular/class-binding/class-bindin
     MaquetaComponent,
     InterpolacionComponent,
     EventBindingComponent,
-    ClassBindingComponent
+    ClassBindingComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

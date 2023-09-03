@@ -1,5 +1,30 @@
-<h1 class="text-3xl font-bold underline bg-red-300">Hello world!</h1>
+<!-- <app-interpolacion></app-interpolacion> -->
 
-<br />
+<hr />
 
-<app-formulario></app-formulario>
+<!-- <app-event-binding></app-event-binding> -->
+
+<hr />
+
+<!-- <app-class-binding></app-class-binding> -->
+
+<hr />
+
+<!-- <app-property-binding></app-property-binding> -->
+
+<hr />
+
+<!-- <app-formulario></app-formulario> -->
+
+<hr />
+
+<!-- <app-ngif></app-ngif> -->
+
+<hr />
+
+<div>
+  <h1 class="text-red-300">{{ title }}</h1>
+  <input type="text" class="" [(ngModel)]="title" />
+
+  <app-children [title]="title"></app-children>
+</div>

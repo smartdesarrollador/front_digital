@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { InterpolacionComponent } from './test/angular/interpolacion/interpolaci
 import { EventBindingComponent } from './test/angular/event-binding/event-binding.component';
 import { ClassBindingComponent } from './test/angular/class-binding/class-binding.component';
 import { FormularioComponent } from './test/angular/formulario/formulario.component';
+import { PropertyBindingComponent } from './test/angular/property-binding/property-binding.component';
+import { NgifComponent } from './test/angular/ngif/ngif.component';
+import { ChildrenComponent } from './test/angular/children/children.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +28,13 @@ import { FormularioComponent } from './test/angular/formulario/formulario.compon
     InterpolacionComponent,
     EventBindingComponent,
     ClassBindingComponent,
-    FormularioComponent
+    FormularioComponent,
+    PropertyBindingComponent,
+    NgifComponent,
+    ChildrenComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

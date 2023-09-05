@@ -16,6 +16,7 @@ import { FormularioComponent } from './test/angular/formulario/formulario.compon
 import { PropertyBindingComponent } from './test/angular/property-binding/property-binding.component';
 import { NgifComponent } from './test/angular/ngif/ngif.component';
 import { ChildrenComponent } from './test/angular/children/children.component';
+import { GridComponent } from './test/tailwind/grid/grid.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { ChildrenComponent } from './test/angular/children/children.component';
     PropertyBindingComponent,
     NgifComponent,
     ChildrenComponent,
+    GridComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

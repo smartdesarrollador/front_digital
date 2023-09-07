@@ -8,9 +8,14 @@ module.exports = {
     extend: {
       colors: {
         azul: "#5394cf",
-        celeste: "#75B0E0",
+        celeste: "#34bceb",
         amarillo: "#ECCD50",
         celeste_claro: "#D8EAF4",
+        gris_claro: "#ecf1f4",
+        naranja: "#ff793f",
+        naranja_claro: "#ffbea4",
+        verde: "#4ac07b",
+        verde_claro: "#e4f5ec",
       },
     },
   },

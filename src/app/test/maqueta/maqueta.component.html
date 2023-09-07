@@ -1,51 +1,207 @@
 <section class="bg-azul w-full h-28 rounded-b-[35px]">
-  <div class="flex flex-row pt-10">
-    <div class="basis-1/4"></div>
-    <div class="basis-1/2">
-      <div class="mb-3 mr-24">
-        <div class="relative mb-4 flex w-full flex-wrap items-stretch">
-          <input
-            type="search"
-            class="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-l border border-solid border-neutral-300 bg-clip-padding px-3 py-[0.25rem] text-base font-normal leading-[1.6] text-neutral-700 outline-none transition duration-200 ease-in-out focus:z-[3] focus:border-primary focus:text-neutral-700 focus:shadow-[inset_0_0_0_1px_rgb(59,113,202)] focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:placeholder:text-neutral-200 dark:focus:border-primary"
-            placeholder="Search"
-            aria-label="Search"
-            aria-describedby="button-addon1"
-          />
-
-          <button
-            class="relative z-[2] flex items-center rounded-r bg-primary px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white shadow-md transition duration-150 ease-in-out hover:bg-primary-700 hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg"
-            type="button"
-            id="button-addon1"
-            data-te-ripple-init
-            data-te-ripple-color="light"
+  <div class="container">
+    <div class="grid grid-cols-12">
+      <div class="col-span-2"></div>
+      <div class="col-span-4">
+        <form>
+          <label
+            for="default-search"
+            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            >Search</label
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              class="h-5 w-5"
+          <div class="relative">
+            <input
+              type="search"
+              id="default-search"
+              class="block w-full p-4 pl-10 text-sm text-gray-900 border bg-white rounded-full mt-10"
+              placeholder="Buscar ..."
+              required
+            />
+            <button
+              type="submit"
+              class="text-white absolute right-0 bottom-0 bg-celeste hover:bg-azul rounded-full pt-7 pb-7 pl-10 pr-10"
             >
-              <path
-                fill-rule="evenodd"
-                d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </button>
-        </div>
+              <div
+                class="absolute inset-y-0 left-0 flex items-center pl-7 pointer-events-none"
+              >
+                <svg
+                  class="w-4 h-4 text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </form>
       </div>
+      <div class="col-span-2"></div>
+      <div class="col-span-4"></div>
     </div>
-    <div class="basis-1/4">
-      <div class="flex items-center space-x-4">
-        <img
-          class="w-10 h-10 rounded-full"
-          src="/docs/images/people/profile-picture-5.jpg"
-          alt=""
-        />
-        <div class="font-medium dark:text-white">
-          <div>Jese Leos</div>
-          <div class="text-sm text-gray-500 dark:text-gray-400">
-            Joined in August 2014
+  </div>
+</section>
+<section>
+  <div
+    class="container fixed top-100 left-0 right-0 bg-gris_claro h-[700px] rounded-r-[40px] -z-10 mt-10"
+  >
+    <div class="grid"></div>
+  </div>
+</section>
+<aside></aside>
+<section>
+  <div class="container">
+    <div class="grid grid-cols-12">
+      <div class="col-span-2">
+        <div
+          class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px] h-full"
+        ></div>
+      </div>
+      <div class="col-span-10">
+        <div class="grid grid-cols-1">
+          <div class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px]">
+            <h2 class="text-xl font-bold">Vencimiento</h2>
+            <hr class="bg-celeste h-1" />
+            <div class="grid grid-cols-12 mt-4">
+              <div class="col-span-2 gap-y-40 font-bold text-lg">
+                <h2 class="">15</h2>
+              </div>
+              <div class="col-span-7 font-bold text-lg">
+                <h2>Pago de gratificaciones personal Administrativo</h2>
+              </div>
+              <div class="col-span-3">
+                <button
+                  type="button"
+                  class="text-naranja bg-naranja_claro hover:bg-naranja hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none"
+                >
+                  Pendiente
+                </button>
+              </div>
+            </div>
+            <hr />
+            <div class="grid grid-cols-12 mt-4">
+              <div class="col-span-2 gap-y-40 font-bold text-lg">
+                <h2 class="">18</h2>
+              </div>
+              <div class="col-span-7 font-bold text-lg">
+                <h2>
+                  Firma de Contrato indeterminado - Trabajador Rafael Pérez
+                </h2>
+              </div>
+              <div class="col-span-3">
+                <button
+                  type="button"
+                  class="text-verde bg-verde_claro hover:bg-verde hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none"
+                >
+                  Pendiente
+                </button>
+              </div>
+            </div>
+            <hr />
+            <div class="grid grid-cols-12 mt-4">
+              <div class="col-span-2 gap-y-40 font-bold text-lg">
+                <h2 class="">25</h2>
+              </div>
+              <div class="col-span-7 font-bold text-lg">
+                <h2>
+                  Procedimiento de Denuncia N 15023 - Trabajador José Perez
+                </h2>
+              </div>
+              <div class="col-span-3">
+                <button
+                  type="button"
+                  class="text-naranja bg-naranja_claro hover:bg-naranja hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none"
+                >
+                  Pendiente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1">
+          <div class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px]">
+            <h2 class="text-xl font-bold">Tareas</h2>
+            <hr class="bg-celeste h-1" />
+            <div class="grid grid-cols-12 mt-4">
+              <div class="col-span-2 gap-y-40 font-bold text-lg">
+                <h2 class="">15</h2>
+              </div>
+              <div class="col-span-7 font-bold text-lg">
+                <h2>Pago de gratificaciones personal Administrativo</h2>
+              </div>
+              <div class="col-span-3">
+                <button
+                  type="button"
+                  class="text-naranja bg-naranja_claro hover:bg-naranja hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none"
+                >
+                  Pendiente
+                </button>
+              </div>
+            </div>
+            <hr />
+            <div class="grid grid-cols-12 mt-4">
+              <div class="col-span-2 gap-y-40 font-bold text-lg">
+                <h2 class="">18</h2>
+              </div>
+              <div class="col-span-7 font-bold text-lg">
+                <h2>
+                  Firma de Contrato indeterminado - Trabajador Rafael Pérez
+                </h2>
+              </div>
+              <div class="col-span-3">
+                <button
+                  type="button"
+                  class="text-verde bg-verde_claro hover:bg-verde hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none"
+                >
+                  Pendiente
+                </button>
+              </div>
+            </div>
+            <hr />
+            <div class="grid grid-cols-12 mt-4">
+              <div class="col-span-2 gap-y-40 font-bold text-lg">
+                <h2 class="">25</h2>
+              </div>
+              <div class="col-span-7 font-bold text-lg">
+                <h2>
+                  Procedimiento de Denuncia N 15023 - Trabajador José Perez
+                </h2>
+              </div>
+              <div class="col-span-3">
+                <button
+                  type="button"
+                  class="text-naranja bg-naranja_claro hover:bg-naranja hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none"
+                >
+                  Pendiente
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-12">
+          <div class="col-span-5">
+            <div class="grid grid-cols-1">
+              <div class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px]">
+                <h2 class="text-xl font-bold">Cumpleaños</h2>
+                <hr class="bg-celeste h-1" />
+              </div>
+            </div>
+          </div>
+          <div class="col-span-7">
+            <div class="grid grid-cols-1">
+              <div class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px]">
+                <h2 class="text-xl font-bold">Ultimas Noticias</h2>
+                <hr class="bg-celeste h-1" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

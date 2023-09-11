@@ -17,6 +17,9 @@ import { PropertyBindingComponent } from './test/angular/property-binding/proper
 import { NgifComponent } from './test/angular/ngif/ngif.component';
 import { ChildrenComponent } from './test/angular/children/children.component';
 import { GridComponent } from './test/tailwind/grid/grid.component';
+import { HomeComponent } from './test/angular/rutas/home/home.component';
+import { PageNotFoundComponent } from './test/angular/rutas/page-not-found/page-not-found.component';
+import { UserDetailsComponent } from './test/angular/rutas/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +37,9 @@ import { GridComponent } from './test/tailwind/grid/grid.component';
     NgifComponent,
     ChildrenComponent,
     GridComponent,
+    HomeComponent,
+    PageNotFoundComponent,
+    UserDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

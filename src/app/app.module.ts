@@ -20,6 +20,10 @@ import { GridComponent } from './test/tailwind/grid/grid.component';
 import { HomeComponent } from './test/angular/rutas/home/home.component';
 import { PageNotFoundComponent } from './test/angular/rutas/page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './test/angular/rutas/user-details/user-details.component';
+import { ContainerComponent } from './test/tailwind/layout/container/container.component';
+import { PositionComponent } from './test/tailwind/layout/position/position.component';
+import { LayoutComponent } from './test/tailwind/layout/layout/layout.component';
+import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +44,10 @@ import { UserDetailsComponent } from './test/angular/rutas/user-details/user-det
     HomeComponent,
     PageNotFoundComponent,
     UserDetailsComponent,
+    ContainerComponent,
+    PositionComponent,
+    LayoutComponent,
+    StickyComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

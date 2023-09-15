@@ -24,6 +24,7 @@ import { ContainerComponent } from './test/tailwind/layout/container/container.c
 import { PositionComponent } from './test/tailwind/layout/position/position.component';
 import { LayoutComponent } from './test/tailwind/layout/layout/layout.component';
 import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
+import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component'
     PositionComponent,
     LayoutComponent,
     StickyComponent,
+    FlexboxBasicoComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

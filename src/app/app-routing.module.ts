@@ -11,6 +11,13 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
+    path: 'carga-perezosa',
+    loadChildren: () =>
+      import('./test/carga-perezosa/carga-perezosa.module').then(
+        (m) => m.CargaPerezosaModule
+      ),
+  },
+  {
     path: 'home',
     component: HomeComponent,
   },

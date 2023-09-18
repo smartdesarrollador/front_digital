@@ -17,6 +17,9 @@ module.exports = {
         verde: "#4ac07b",
         verde_claro: "#e4f5ec",
       },
+      fontFamily: {
+        test_fuente: ["Gloria Hallelujah", "cursive"],
+      },
     },
   },
   plugins: [],

@@ -34,21 +34,21 @@ const routes: Routes = [
     component: GridComponent,
   },
   {
-    path: 'container',
+    path: 'layout/container',
     component: ContainerComponent,
   },
   {
-    path: 'position',
+    path: 'layout/position',
 
     component: PositionComponent,
   },
 
   {
-    path: 'layout',
+    path: 'layout/layout',
     component: LayoutComponent,
   },
   {
-    path: 'sticky',
+    path: 'layout/sticky',
     component: StickyComponent,
   },
   {

@@ -11,6 +11,7 @@ import { ChildrenComponent } from './children/children.component';
 import { HomeComponent } from './rutas/home/home.component';
 import { PageNotFoundComponent } from './rutas/page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './rutas/user-details/user-details.component';
+import { Formulario2Component } from './formulario2/formulario2.component';
 
 const routes: Routes = [
   {
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'rutas/page-not-found',
     component: PageNotFoundComponent,
+  },
+  {
+    path: 'formulario2',
+    component: Formulario2Component,
   },
 ];
 

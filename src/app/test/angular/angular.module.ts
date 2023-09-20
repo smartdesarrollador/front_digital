@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AngularRoutingModule } from './angular-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { InterpolacionComponent } from './interpolacion/interpolacion.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
@@ -14,6 +15,7 @@ import { ChildrenComponent } from './children/children.component';
 import { HomeComponent } from './rutas/home/home.component';
 import { PageNotFoundComponent } from './rutas/page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './rutas/user-details/user-details.component';
+import { Formulario2Component } from './formulario2/formulario2.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { UserDetailsComponent } from './rutas/user-details/user-details.componen
     HomeComponent,
     PageNotFoundComponent,
     UserDetailsComponent,
+    Formulario2Component,
   ],
-  imports: [CommonModule, AngularRoutingModule],
+  imports: [CommonModule, AngularRoutingModule, FormsModule],
 })
 export class AngularModule {}

@@ -9,8 +9,8 @@ export class AppComponent implements OnInit {
   title: string = 'hola mundo';
 
   ngOnInit(): void {
-    console.log('Inicio del Proyecto');
-    this.getPost();
+    /*  console.log('Inicio del Proyecto');
+    this.getPost(); */
   }
 
   /*   getPost() {

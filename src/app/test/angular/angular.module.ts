@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AngularRoutingModule } from './angular-routing.module';
 import { FormsModule } from '@angular/forms';
@@ -31,6 +32,6 @@ import { Formulario2Component } from './formulario2/formulario2.component';
     UserDetailsComponent,
     Formulario2Component,
   ],
-  imports: [CommonModule, AngularRoutingModule, FormsModule],
+  imports: [CommonModule, AngularRoutingModule, FormsModule, HttpClientModule],
 })
 export class AngularModule {}

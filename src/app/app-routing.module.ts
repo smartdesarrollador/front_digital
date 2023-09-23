@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './test/angular/rutas/home/home.component';
+import { PageNotFoundComponent } from './test/angular/rutas/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full',
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'test/carga-perezosa',
@@ -28,6 +34,10 @@ const routes: Routes = [
     path: 'test/maqueta',
     loadChildren: () =>
       import('./test/maqueta/maqueta.module').then((m) => m.MaquetaModule),
+  },
+  {
+    path: 'page-not-found',
+    component: PageNotFoundComponent,
   },
   {
     path: '**',

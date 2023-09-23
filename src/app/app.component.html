@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="font-test_fuente">
-    <app-navigation></app-navigation>
+<!-- <app-navigation></app-navigation>
 
-    <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 
-    <app-footer></app-footer>
-  </body>
-</html>
+<app-footer></app-footer> -->
+
+<app-navbar></app-navbar>
+
+<section>
+    <div class="container fixed top-100 left-0 right-0 bg-gris_claro h-[900px] rounded-r-[40px] -z-10 mt-10">
+        <div class="grid"></div>
+    </div>
+</section>
+<aside></aside>
+<section>
+    <div class="container">
+        <div class="grid grid-cols-12">
+            <div class="col-span-2">
+                <div class="bg-white mr-14 mt-20 gap-y-14 py-10 px-5 rounded-[35px] h-full">
+                    <app-sidebar></app-sidebar>
+                </div>
+            </div>
+            <div class="col-span-10">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+
+    </div>
+</section>

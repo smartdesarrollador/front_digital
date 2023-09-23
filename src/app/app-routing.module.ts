@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './test/angular/rutas/home/home.component';
 import { PageNotFoundComponent } from './test/angular/rutas/page-not-found/page-not-found.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '',
     pathMatch: 'full',
   },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
+  /*   {
+      path: 'home',
+      component: HomeComponent,
+    }, */
+  /*   {
+      path: '',
+      component: AppComponent,
+    }, */
   {
     path: 'test/carga-perezosa',
     loadChildren: () =>
@@ -50,4 +55,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

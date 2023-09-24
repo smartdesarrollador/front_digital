@@ -41,6 +41,20 @@ const routes: Routes = [
       import('./test/maqueta/maqueta.module').then((m) => m.MaquetaModule),
   },
   {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./paginas/dashboard/dashboard.module').then(
+        (m) => m.DashboardModule
+      ),
+  },
+  {
+    path: 'contratacion',
+    loadChildren: () =>
+      import('./paginas/contratacion/contratacion.module').then(
+        (m) => m.ContratacionModule
+      ),
+  },
+  {
     path: 'page-not-found',
     component: PageNotFoundComponent,
   },
@@ -55,4 +69,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -19,6 +19,7 @@ module.exports = {
       },
       fontFamily: {
         test_fuente: ["Gloria Hallelujah", "cursive"],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },

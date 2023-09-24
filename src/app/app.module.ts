@@ -11,9 +11,10 @@ import { NavigationComponent } from './test/shared/components/navigation/navigat
 import { NavbarComponent } from './test/shared/components/navbar/navbar.component';
 import { MaquetaComponent } from './test/maqueta/maqueta.component';
 import { SidebarComponent } from './test/shared/components/sidebar/sidebar.component';
+import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, FooterComponent, MaquetaComponent, NavbarComponent, SidebarComponent],
+  declarations: [AppComponent, NavigationComponent, FooterComponent, MaquetaComponent, NavbarComponent, SidebarComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

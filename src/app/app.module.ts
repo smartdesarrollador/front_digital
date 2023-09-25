@@ -16,7 +16,6 @@ import { TestSidebarComponent } from './test/shared/components/test-sidebar/test
 /* Oficiales */
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
-import { DashboardComponent } from './paginas/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,6 @@ import { DashboardComponent } from './paginas/dashboard/dashboard.component';
     MaquetaComponent,
     NavbarComponent,
     SidebarComponent,
-    DashboardComponent,
     TestNavbarComponent,
     TestSidebarComponent,
   ],

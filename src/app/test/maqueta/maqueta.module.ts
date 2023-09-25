@@ -8,6 +8,7 @@ import { ContratoComponent } from './contratacion/contrato/contrato.component';
 import { AdendasComponent } from './contratacion/adendas/adendas.component';
 import { SelectComponent } from './componentes/form/select/select.component';
 import { IndicatorsComponent } from './componentes/indicators/indicators.component';
+import { ProcesoUnoComponent } from './contratacion/contrato/proceso-uno/proceso-uno.component';
 /* import { MaquetaComponent } from './maqueta.component'; */
 
 @NgModule({
@@ -18,6 +19,7 @@ import { IndicatorsComponent } from './componentes/indicators/indicators.compone
     AdendasComponent,
     SelectComponent,
     IndicatorsComponent,
+    ProcesoUnoComponent,
   ],
   imports: [CommonModule, MaquetaRoutingModule],
 })

@@ -8,6 +8,8 @@ import { AdendasComponent } from './adendas/adendas.component';
 import { PrimerProcesoComponent } from './contrato/primer-proceso/primer-proceso.component';
 import { SegundoProcesoComponent } from './contrato/segundo-proceso/segundo-proceso.component';
 import { TercerProcesoComponent } from './contrato/tercer-proceso/tercer-proceso.component';
+import { CuartoProcesoComponent } from './contrato/cuarto-proceso/cuarto-proceso.component';
+import { QuintoProcesoComponent } from './contrato/quinto-proceso/quinto-proceso.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { TercerProcesoComponent } from './contrato/tercer-proceso/tercer-proceso
     AdendasComponent,
     PrimerProcesoComponent,
     SegundoProcesoComponent,
-    TercerProcesoComponent
+    TercerProcesoComponent,
+    CuartoProcesoComponent,
+    QuintoProcesoComponent
   ],
   imports: [
     CommonModule,

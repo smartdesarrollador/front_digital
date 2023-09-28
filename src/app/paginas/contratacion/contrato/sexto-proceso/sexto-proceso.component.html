@@ -3,6 +3,57 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
+      <h2 class="font-bold text-lg mt-5">Duración y Remuneración</h2>
+      <div class="flex flex-row mt-10">
+        <div class="basis-[35%]">
+          <div class="flex flex-col mx-5">
+            <div>
+              <label for="">Fecha de Inicio</label>
+              <input
+                type="text"
+                class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
+                value="{{ fechaActualFormato }}"
+              />
+            </div>
+            <div class="mt-5">
+              <label for="">Fecha de Renovación</label>
+              <input
+                type="text"
+                class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
+                value="{{ fechaRenovacion }}"
+              />
+            </div>
+            <div class="mt-5">
+              <label for="">Remuneración</label>
+              <input
+                type="text"
+                class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
+                placeholder="2,000"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="basis-[65%]">
+          <div class="flex flex-row gap-5">
+            <div>
+              <label for="">Duración del Contrato</label>
+              <input
+                type="number"
+                class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
+                placeholder="1"
+              />
+            </div>
+            <div>
+              <label for="" class="text-white">Fecha de Inicio</label>
+              <input
+                type="date"
+                class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="flex justify-end mt-20">
         <a routerLink="/contratacion/contrato/proceso_5"
           ><button class="boton-azul">Atras</button></a

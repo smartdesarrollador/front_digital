@@ -34,7 +34,7 @@
           </div>
         </div>
         <div class="basis-[65%]">
-          <div class="flex flex-row gap-5">
+          <div class="grid grid-cols-2 gap-4">
             <div>
               <label for="">Duración del Contrato</label>
               <input
@@ -45,10 +45,18 @@
             </div>
             <div>
               <label for="" class="text-white">Fecha de Inicio</label>
-              <input
+              <!-- <input
                 type="date"
                 class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-              />
+              /> -->
+              <select
+                id="countries"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 mt-3"
+              >
+                <option selected>Año</option>
+                <option value="Abogado">Mes</option>
+                <option value="Médico">dia</option>
+              </select>
             </div>
           </div>
         </div>

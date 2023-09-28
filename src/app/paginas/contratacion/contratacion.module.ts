@@ -10,6 +10,10 @@ import { SegundoProcesoComponent } from './contrato/segundo-proceso/segundo-proc
 import { TercerProcesoComponent } from './contrato/tercer-proceso/tercer-proceso.component';
 import { CuartoProcesoComponent } from './contrato/cuarto-proceso/cuarto-proceso.component';
 import { QuintoProcesoComponent } from './contrato/quinto-proceso/quinto-proceso.component';
+import { SextoProcesoComponent } from './contrato/sexto-proceso/sexto-proceso.component';
+import { SeptimoProcesoComponent } from './contrato/septimo-proceso/septimo-proceso.component';
+import { OctavoProcesoComponent } from './contrato/octavo-proceso/octavo-proceso.component';
+import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import { QuintoProcesoComponent } from './contrato/quinto-proceso/quinto-proceso
     SegundoProcesoComponent,
     TercerProcesoComponent,
     CuartoProcesoComponent,
-    QuintoProcesoComponent
+    QuintoProcesoComponent,
+    SextoProcesoComponent,
+    SeptimoProcesoComponent,
+    OctavoProcesoComponent,
+    NovenoProcesoComponent
   ],
   imports: [
     CommonModule,

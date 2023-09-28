@@ -9,6 +9,10 @@ import { SegundoProcesoComponent } from './contrato/segundo-proceso/segundo-proc
 import { TercerProcesoComponent } from './contrato/tercer-proceso/tercer-proceso.component';
 import { CuartoProcesoComponent } from './contrato/cuarto-proceso/cuarto-proceso.component';
 import { QuintoProcesoComponent } from './contrato/quinto-proceso/quinto-proceso.component';
+import { SextoProcesoComponent } from './contrato/sexto-proceso/sexto-proceso.component';
+import { SeptimoProcesoComponent } from './contrato/septimo-proceso/septimo-proceso.component';
+import { OctavoProcesoComponent } from './contrato/octavo-proceso/octavo-proceso.component';
+import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso.component';
 
 const routes: Routes = [
   {
@@ -38,6 +42,22 @@ const routes: Routes = [
   {
     path: 'contrato/proceso_5',
     component: QuintoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_6',
+    component: SextoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_7',
+    component: SeptimoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_8',
+    component: OctavoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_9',
+    component: NovenoProcesoComponent,
   },
   {
     path: 'adendas',

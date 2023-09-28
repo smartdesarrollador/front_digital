@@ -8,6 +8,7 @@ module.exports = {
     extend: {
       colors: {
         azul: "#5394cf",
+        azul_claro: "#c6d8e7",
         celeste: "#34bceb",
         amarillo: "#ECCD50",
         celeste_claro: "#D8EAF4",

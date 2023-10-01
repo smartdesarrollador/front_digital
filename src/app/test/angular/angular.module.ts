@@ -17,6 +17,9 @@ import { HomeComponent } from './rutas/home/home.component';
 import { PageNotFoundComponent } from './rutas/page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './rutas/user-details/user-details.component';
 import { Formulario2Component } from './formulario2/formulario2.component';
+import { AddCategoryComponent } from './crud/add-category/add-category.component';
+import { ListCategoryComponent } from './crud/list-category/list-category.component';
+import { CrudComponent } from './crud/crud.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +34,9 @@ import { Formulario2Component } from './formulario2/formulario2.component';
     PageNotFoundComponent,
     UserDetailsComponent,
     Formulario2Component,
+    AddCategoryComponent,
+    ListCategoryComponent,
+    CrudComponent,
   ],
   imports: [CommonModule, AngularRoutingModule, FormsModule, HttpClientModule],
 })

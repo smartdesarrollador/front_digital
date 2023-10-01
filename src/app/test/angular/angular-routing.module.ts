@@ -12,6 +12,8 @@ import { HomeComponent } from './rutas/home/home.component';
 import { PageNotFoundComponent } from './rutas/page-not-found/page-not-found.component';
 import { UserDetailsComponent } from './rutas/user-details/user-details.component';
 import { Formulario2Component } from './formulario2/formulario2.component';
+import { AddCategoryComponent } from './crud/add-category/add-category.component';
+import { ListCategoryComponent } from './crud/list-category/list-category.component';
 
 const routes: Routes = [
   {
@@ -58,6 +60,14 @@ const routes: Routes = [
   {
     path: 'formulario2',
     component: Formulario2Component,
+  },
+  {
+    path: 'crud/add-category',
+    component: AddCategoryComponent,
+  },
+  {
+    path: 'crud/list-category',
+    component: ListCategoryComponent,
   },
 ];
 

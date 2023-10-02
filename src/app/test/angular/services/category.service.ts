@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Category } from '../interfaces/category';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoryService {
-  url = 'http://127.0.0.1:8000/api/test_api_crud';
+  url = environment.apiUrl;
 
   selectCategory: Category = new Category();
 

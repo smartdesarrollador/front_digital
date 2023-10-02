@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.development';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +13,6 @@ export class RequestService {
   } */
 
   getPosts() {
-    return this.http.get('https://iatecdigital.com/public/api/test_api');
+    return this.http.get(environment.apiUrl2);
   }
 }

@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://iatecdigital.com/public/api/test_api_crud',
-  apiUrl2: 'https://iatecdigital.com/public/api/test_api',
+  apiUrl: 'https://back.iatecdigital.com/api/test_api_crud',
+  apiUrl2: 'https://back.iatecdigital.com/api/test_api',
 };

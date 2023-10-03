@@ -14,10 +14,10 @@ export class CategoryService {
 
   reqHeader = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer tu_token',
+    Authorization: 'Bearer tu_token',
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCategories(): Observable<Category> {
     return this.http.get(this.url);
@@ -28,12 +28,12 @@ export class CategoryService {
   }
 
   updateCategory(id: number, category: Category) {
-    return this.http.put(this.url + '/' + id + '/', category, {
+    return this.http.put(this.url + '/' + id, category, {
       headers: this.reqHeader,
     });
   }
 
   deleteCategory(id: number) {
-    return this.http.delete(this.url + '/' + id + '/');
+    return this.http.delete(this.url + '/' + id);
   }
 }

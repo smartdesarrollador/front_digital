@@ -13,10 +13,11 @@ export class CategoryService {
   selectCategory: Category = new Category();
 
   reqHeader = new HttpHeaders({
-    'Content-Type': 'aplication/json',
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer tu_token',
   });
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCategories(): Observable<Category> {
     return this.http.get(this.url);

@@ -13,9 +13,9 @@ export class AddCategoryComponent {
   constructor(
     public categoryService: CategoryService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   submitForm(categoryForm: NgForm) {
     if (categoryForm.value.id == null) {
@@ -31,7 +31,7 @@ export class AddCategoryComponent {
           this.router.navigate(['/test/angular/crud/list-category']);
         });
     }
-    this.resetForm;
+    this.resetForm(categoryForm);
   }
 
   resetForm(categoryForm: NgForm) {

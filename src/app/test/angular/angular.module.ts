@@ -20,6 +20,7 @@ import { Formulario2Component } from './formulario2/formulario2.component';
 import { AddCategoryComponent } from './crud/add-category/add-category.component';
 import { ListCategoryComponent } from './crud/list-category/list-category.component';
 import { CrudComponent } from './crud/crud.component';
+import { PdfComponent } from './pdf/pdf.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CrudComponent } from './crud/crud.component';
     AddCategoryComponent,
     ListCategoryComponent,
     CrudComponent,
+    PdfComponent,
   ],
   imports: [CommonModule, AngularRoutingModule, FormsModule, HttpClientModule],
 })

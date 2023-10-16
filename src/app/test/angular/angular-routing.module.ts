@@ -14,6 +14,7 @@ import { UserDetailsComponent } from './rutas/user-details/user-details.componen
 import { Formulario2Component } from './formulario2/formulario2.component';
 import { AddCategoryComponent } from './crud/add-category/add-category.component';
 import { ListCategoryComponent } from './crud/list-category/list-category.component';
+import { PdfComponent } from './pdf/pdf.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,10 @@ const routes: Routes = [
   {
     path: 'crud/list-category',
     component: ListCategoryComponent,
+  },
+  {
+    path: 'pdf',
+    component: PdfComponent,
   },
 ];
 

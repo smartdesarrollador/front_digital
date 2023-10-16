@@ -12,6 +12,7 @@ import { NavigationComponent } from './test/shared/components/navigation/navigat
 import { MaquetaComponent } from './test/maqueta/maqueta.component';
 import { TestNavbarComponent } from './test/shared/components/test-navbar/test-navbar.component';
 import { TestSidebarComponent } from './test/shared/components/test-sidebar/test-sidebar.component';
+import { TestMenuLateralComponent } from './test/shared/components/test-menu-lateral/test-menu-lateral.component';
 
 /* Oficiales */
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -27,6 +28,7 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     SidebarComponent,
     TestNavbarComponent,
     TestSidebarComponent,
+    TestMenuLateralComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

@@ -21,6 +21,8 @@ import { AddCategoryComponent } from './crud/add-category/add-category.component
 import { ListCategoryComponent } from './crud/list-category/list-category.component';
 import { CrudComponent } from './crud/crud.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
+import { FormularioValidacionesComponent } from './formulario-validaciones/formulario-validaciones.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { PdfComponent } from './pdf/pdf.component';
     ListCategoryComponent,
     CrudComponent,
     PdfComponent,
+    FormularioReactivoComponent,
+    FormularioValidacionesComponent,
   ],
   imports: [CommonModule, AngularRoutingModule, FormsModule, HttpClientModule],
 })

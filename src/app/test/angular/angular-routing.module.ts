@@ -15,6 +15,7 @@ import { Formulario2Component } from './formulario2/formulario2.component';
 import { AddCategoryComponent } from './crud/add-category/add-category.component';
 import { ListCategoryComponent } from './crud/list-category/list-category.component';
 import { PdfComponent } from './pdf/pdf.component';
+import { FormularioValidacionesComponent } from './formulario-validaciones/formulario-validaciones.component';
 
 const routes: Routes = [
   {
@@ -73,6 +74,10 @@ const routes: Routes = [
   {
     path: 'pdf',
     component: PdfComponent,
+  },
+  {
+    path: 'formulario-validaciones',
+    component: FormularioValidacionesComponent,
   },
 ];
 

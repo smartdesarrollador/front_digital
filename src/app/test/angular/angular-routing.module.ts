@@ -16,6 +16,7 @@ import { AddCategoryComponent } from './crud/add-category/add-category.component
 import { ListCategoryComponent } from './crud/list-category/list-category.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { FormularioValidacionesComponent } from './formulario-validaciones/formulario-validaciones.component';
+import { UploadComponent } from './upload/upload.component';
 
 const routes: Routes = [
   {
@@ -79,10 +80,14 @@ const routes: Routes = [
     path: 'formulario-validaciones',
     component: FormularioValidacionesComponent,
   },
+  {
+    path: 'upload',
+    component: UploadComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AngularRoutingModule {}
+export class AngularRoutingModule { }

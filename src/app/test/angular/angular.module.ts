@@ -23,6 +23,7 @@ import { CrudComponent } from './crud/crud.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
 import { FormularioValidacionesComponent } from './formulario-validaciones/formulario-validaciones.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FormularioValidacionesComponent } from './formulario-validaciones/formu
     PdfComponent,
     FormularioReactivoComponent,
     FormularioValidacionesComponent,
+    UploadComponent,
   ],
   imports: [CommonModule, AngularRoutingModule, FormsModule, HttpClientModule],
 })

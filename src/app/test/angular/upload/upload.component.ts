@@ -1,18 +1,23 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Post } from '../post.model';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
-  styleUrls: ['./upload.component.css']
+  styleUrls: ['./upload.component.css'],
 })
 export class UploadComponent {
   files: any;
   submitted = false;
+  data: any;
   form: FormGroup = new FormGroup({});
-  constructor(private formBuilder: FormBuilder) { }
-
+  post = new Post();
+  constructor(
+    private formBuilder: FormBuilder,
+    private dataService: DataService
+  ) {}
 
   createForm() {
     this.form = this.formBuilder.group({
@@ -20,16 +25,13 @@ export class UploadComponent {
     });
   }
 
-
   ngOnInit(): void {
     this.createForm();
   }
 
-
   get f() {
     return this.form.controls;
   }
-
 
   uploadImage(event: Event) {
     if (event.target instanceof HTMLInputElement) {
@@ -42,13 +44,18 @@ export class UploadComponent {
     }
   }
 
-
   onSubmit() {
     this.submitted = true;
     if (this.form.invalid) {
       return;
     }
+
+    const formData = new FormData();
+    formData.append('image', this.files, this.files.name);
+
+    this.dataService.uploadData(formData).subscribe((res) => {
+      this.data = res;
+      console.log(this.data);
+    });
   }
-
-
 }

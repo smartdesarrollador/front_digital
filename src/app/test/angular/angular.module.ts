@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AngularRoutingModule } from './angular-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { InterpolacionComponent } from './interpolacion/interpolacion.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
@@ -46,6 +46,6 @@ import { UploadComponent } from './upload/upload.component';
     FormularioValidacionesComponent,
     UploadComponent,
   ],
-  imports: [CommonModule, AngularRoutingModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, AngularRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 })
-export class AngularModule {}
+export class AngularModule { }

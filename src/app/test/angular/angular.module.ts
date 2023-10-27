@@ -24,6 +24,8 @@ import { PdfComponent } from './pdf/pdf.component';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
 import { FormularioValidacionesComponent } from './formulario-validaciones/formulario-validaciones.component';
 import { UploadComponent } from './upload/upload.component';
+import { Pagina1Component } from './localstorage/pagina1/pagina1.component';
+import { Pagina2Component } from './localstorage/pagina2/pagina2.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,8 @@ import { UploadComponent } from './upload/upload.component';
     FormularioReactivoComponent,
     FormularioValidacionesComponent,
     UploadComponent,
+    Pagina1Component,
+    Pagina2Component,
   ],
   imports: [CommonModule, AngularRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 })

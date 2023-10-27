@@ -17,6 +17,8 @@ import { ListCategoryComponent } from './crud/list-category/list-category.compon
 import { PdfComponent } from './pdf/pdf.component';
 import { FormularioValidacionesComponent } from './formulario-validaciones/formulario-validaciones.component';
 import { UploadComponent } from './upload/upload.component';
+import { Pagina1Component } from './localstorage/pagina1/pagina1.component';
+import { Pagina2Component } from './localstorage/pagina2/pagina2.component';
 
 const routes: Routes = [
   {
@@ -84,6 +86,14 @@ const routes: Routes = [
     path: 'upload',
     component: UploadComponent,
   },
+  {
+    path: 'localstorage/pagina1',
+    component: Pagina1Component,
+  },
+  {
+    path: 'localstorage/pagina2',
+    component: Pagina2Component,
+  }
 ];
 
 @NgModule({

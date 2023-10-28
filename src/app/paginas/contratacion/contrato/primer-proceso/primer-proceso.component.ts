@@ -6,12 +6,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-primer-proceso',
   templateUrl: './primer-proceso.component.html',
-  styleUrls: ['./primer-proceso.component.css']
+  styleUrls: ['./primer-proceso.component.css'],
 })
 export class PrimerProcesoComponent {
   listTrabajadores: any = [];
+  selectedValue: string = '';
 
-  constructor(public ts: TrabajadorService, private router: Router) { };
+  constructor(public ts: TrabajadorService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadTrabajadores();
@@ -21,7 +22,10 @@ export class PrimerProcesoComponent {
     return this.ts.getTrabajadores().subscribe((data: {}) => {
       console.log(data);
       this.listTrabajadores = data;
-    })
+    });
   }
 
+  saveToLocalStorage() {
+    localStorage.setItem('selectedValue', this.selectedValue);
+  }
 }

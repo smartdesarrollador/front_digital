@@ -10,13 +10,28 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
   styleUrls: ['./pdf.component.css'],
 })
 export class PdfComponent {
+  datosRecuperados: any;
+
+  constructor() {
+    // Recuperar datos del localStorage al inicializar el componente
+    const datosGuardados = localStorage.getItem('selectedValue');
+    if (datosGuardados) {
+      this.datosRecuperados = datosGuardados;
+    }
+  }
+
   generatePDF() {
     let docDefinition = {
       content: [
         'Bulleted list example:',
         {
           // to treat a paragraph as a bulleted list, set an array of items under the ul key
-          ul: ['Item 1', 'Item 2', 'Item 3', { text: 'Item 4', bold: true }],
+          ul: [
+            this.datosRecuperados,
+            'Item 2',
+            'Item 3',
+            { text: 'Item 4', bold: true },
+          ],
         },
 
         'Numbered list example:',

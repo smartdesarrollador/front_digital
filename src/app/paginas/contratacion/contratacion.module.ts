@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ContratacionRoutingModule } from './contratacion-routing.module';
 import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
@@ -15,7 +16,6 @@ import { SeptimoProcesoComponent } from './contrato/septimo-proceso/septimo-proc
 import { OctavoProcesoComponent } from './contrato/octavo-proceso/octavo-proceso.component';
 import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso.component';
 
-
 @NgModule({
   declarations: [
     OfertaLaboralComponent,
@@ -29,11 +29,8 @@ import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso
     SextoProcesoComponent,
     SeptimoProcesoComponent,
     OctavoProcesoComponent,
-    NovenoProcesoComponent
+    NovenoProcesoComponent,
   ],
-  imports: [
-    CommonModule,
-    ContratacionRoutingModule
-  ]
+  imports: [CommonModule, ContratacionRoutingModule, FormsModule],
 })
-export class ContratacionModule { }
+export class ContratacionModule {}

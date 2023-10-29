@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TrabajadorService {
   url = environment.apiUrlTrabajador;
@@ -17,9 +17,14 @@ export class TrabajadorService {
     Authorization: 'Bearer tu_token',
   });
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getTrabajadores(): Observable<Trabajador> {
     return this.http.get(this.url);
+  }
+
+  createTrabajador(trabajador: Trabajador): Observable<Trabajador> {
+    console.log(trabajador);
+    return this.http.post(this.url, trabajador, { headers: this.reqHeader });
   }
 }

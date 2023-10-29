@@ -3,7 +3,11 @@
     <h2 class="titulo-naranja">Registro</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <form class="mt-10">
+      <form
+        #trabajadorForm="ngForm"
+        (ngSubmit)="submitForm(trabajadorForm)"
+        class="mt-10"
+      >
         <div class="grid gap-6 mb-6 md:grid-cols-2">
           <div>
             <label
@@ -13,10 +17,11 @@
             >
             <input
               type="text"
+              name="primer_nombre"
               id="first_name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="John"
-              required
+              [(ngModel)]="primer_nombre"
             />
           </div>
           <div>
@@ -27,10 +32,11 @@
             >
             <input
               type="text"
+              name="segundo_nombre"
               id="last_name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="Doe"
-              required
+              [(ngModel)]="segundo_nombre"
             />
           </div>
           <div>
@@ -41,10 +47,11 @@
             >
             <input
               type="text"
+              name="apellido_paterno"
               id="first_name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="Romero"
-              required
+              [(ngModel)]="apellido_paterno"
             />
           </div>
           <div>
@@ -55,10 +62,11 @@
             >
             <input
               type="text"
+              name="apellido_materno"
               id="last_name"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="Diaz"
-              required
+              [(ngModel)]="apellido_materno"
             />
           </div>
           <div>
@@ -69,11 +77,11 @@
             >
             <input
               type="text"
+              name="telefono"
               id="company"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="123-45-678"
               pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-              required
             />
           </div>
           <div>
@@ -84,10 +92,10 @@
             >
             <input
               type="tel"
+              name="celular"
               id="phone"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="947893215"
-              required
             />
           </div>
 
@@ -98,6 +106,7 @@
               >Tipo de Documento</label
             >
             <select
+              name="id_tipo_documento"
               id="countries"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             >
@@ -115,10 +124,10 @@
             >
             <input
               type="text"
+              name="numero_documento"
               id="visitors"
               class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
               placeholder="Ingresar documento"
-              required
             />
           </div>
         </div>
@@ -130,10 +139,10 @@
           >
           <input
             type="email"
+            name="correo"
             id="email"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
             placeholder="john.doe@company.com"
-            required
           />
         </div>
         <div class="mb-6">
@@ -144,10 +153,10 @@
           >
           <input
             type="text"
+            name="direccion"
             id="password"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
             placeholder="Dirección"
-            required
           />
         </div>
         <div class="mt-5">
@@ -158,6 +167,7 @@
           >
           <select
             id="countries"
+            name="distrito"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
             <option selected>Seleccionar</option>
@@ -185,6 +195,7 @@
           >
           <select
             id="countries"
+            name="regimen_laboral"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
             <option selected>Seleccionar</option>
@@ -205,6 +216,7 @@
           >
           <select
             id="countries"
+            name="profesion"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
           >
             <option selected>Seleccionar</option>
@@ -226,7 +238,7 @@
               type="checkbox"
               value=""
               class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-              required
+              
             />
           </div>
           <label for="remember" class="ml-2 text-sm font-medium text-gray-900"
@@ -236,7 +248,7 @@
             >.</label
           >
         </div> -->
-        <button type="submit" class="boton-verde">Guardar</button>
+        <button class="boton-verde">Guardar</button>
       </form>
 
       <div class="flex justify-end mt-20">

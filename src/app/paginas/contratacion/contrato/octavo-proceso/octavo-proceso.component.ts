@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { Trabajador } from 'src/app/interface/trabajador';
 import { Router } from '@angular/router';
@@ -13,16 +13,32 @@ export class OctavoProcesoComponent {
   trabajador_confianza: boolean = false;
   trabajador_direccion: boolean = false;
 
+
   constructor(
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
   ) { }
 
+  ngOnInit() {
+
+  }
+
+  onCheckboxChange(checkboxName: string) {
+    if (checkboxName === 'trabajador_confianza') {
+      this.trabajador_direccion = false; // Deseleccionar "¿El trabajador es de Dirección?"
+    } else if (checkboxName === 'trabajador_direccion') {
+      this.trabajador_confianza = false; // Deseleccionar "¿El trabajador es de Confianza?"
+    }
+  }
+
+
+
   saveToLocalStorage() {
     const contratoLocaldatos = this.cl.getItem('contratoLocal');
     contratoLocaldatos.trabajador_confianza = this.trabajador_confianza;
     contratoLocaldatos.trabajador_direccion = this.trabajador_direccion;
+
 
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);

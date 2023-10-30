@@ -15,6 +15,8 @@ import { SextoProcesoComponent } from './contrato/sexto-proceso/sexto-proceso.co
 import { SeptimoProcesoComponent } from './contrato/septimo-proceso/septimo-proceso.component';
 import { OctavoProcesoComponent } from './contrato/octavo-proceso/octavo-proceso.component';
 import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso.component';
+import { OctavoProcesoAComponent } from './contrato/octavo-proceso-a/octavo-proceso-a.component';
+import { OctavoProcesoBComponent } from './contrato/octavo-proceso-b/octavo-proceso-b.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso
     SeptimoProcesoComponent,
     OctavoProcesoComponent,
     NovenoProcesoComponent,
+    OctavoProcesoAComponent,
+    OctavoProcesoBComponent,
   ],
   imports: [CommonModule, ContratacionRoutingModule, FormsModule],
 })

@@ -52,12 +52,7 @@ export class TercerProcesoComponent {
     contratoLocaldatos.jornada = this.selectedValue;
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);
+    this.router.navigate(['/contratacion/contrato/proceso_4']);
 
-    /* localStorage.setItem('selectedValue', this.selectedValue); */
-    if (this.selectedValue == 'Jornada Tiempo completo') {
-      this.router.navigate(['/contratacion/contrato/proceso_4']);
-    } else {
-      console.log('Seleccionado: Jornada Tiempo Parcial');
-    }
   }
 }

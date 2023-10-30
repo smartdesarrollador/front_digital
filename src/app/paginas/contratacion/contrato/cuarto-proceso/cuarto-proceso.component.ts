@@ -15,20 +15,30 @@ export class CuartoProcesoComponent {
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
-  ) {}
+  ) { }
 
   saveToLocalStorage() {
     const contratoLocaldatos = this.cl.getItem('contratoLocal');
     contratoLocaldatos.tipo_contrato = this.selectedValue;
+    /* console.log(contratoLocaldatos.jornada); */
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);
 
-    /* localStorage.setItem('selectedValue', this.selectedValue); */
-    if (this.selectedValue == 'Contrato modal') {
-      this.router.navigate(['/contratacion/contrato/proceso_5']);
-      console.log('elejiste: Contrato Modal');
-    } else {
-      console.log('elejiste: Contrato a plazo indeterminado');
+
+    if (contratoLocaldatos.jornada == "Jornada Tiempo completo" && this.selectedValue == 'Contrato modal') {
+      this.router.navigate(['/contratacion/contrato/proceso_5_a']);
+    }
+
+    if (contratoLocaldatos.jornada == "Jornada Tiempo completo" && this.selectedValue == 'Contrato a plazo indeterminado') {
+      this.router.navigate(['/contratacion/contrato/proceso_5_b']);
+    }
+
+    if (contratoLocaldatos.jornada == "Jornada Tiempo Parcial" && this.selectedValue == 'Contrato modal') {
+      this.router.navigate(['/contratacion/contrato/proceso_5_c']);
+    }
+
+    if (contratoLocaldatos.jornada == "Jornada Tiempo Parcial" && this.selectedValue == 'Contrato a plazo indeterminado') {
+      this.router.navigate(['/contratacion/contrato/proceso_5_d']);
     }
   }
 }

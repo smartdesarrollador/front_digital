@@ -13,6 +13,11 @@ import { SextoProcesoComponent } from './contrato/sexto-proceso/sexto-proceso.co
 import { SeptimoProcesoComponent } from './contrato/septimo-proceso/septimo-proceso.component';
 import { OctavoProcesoComponent } from './contrato/octavo-proceso/octavo-proceso.component';
 import { NovenoProcesoComponent } from './contrato/noveno-proceso/noveno-proceso.component';
+import { OctavoProcesoAComponent } from './contrato/octavo-proceso-a/octavo-proceso-a.component';
+import { OctavoProcesoBComponent } from './contrato/octavo-proceso-b/octavo-proceso-b.component';
+import { QuintoProcesoBComponent } from './contrato/quinto-proceso-b/quinto-proceso-b.component';
+import { QuintoProcesoCComponent } from './contrato/quinto-proceso-c/quinto-proceso-c.component';
+import { QuintoProcesoDComponent } from './contrato/quinto-proceso-d/quinto-proceso-d.component';
 
 const routes: Routes = [
   {
@@ -40,8 +45,20 @@ const routes: Routes = [
     component: CuartoProcesoComponent,
   },
   {
-    path: 'contrato/proceso_5',
+    path: 'contrato/proceso_5_a',
     component: QuintoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_5_b',
+    component: QuintoProcesoBComponent,
+  },
+  {
+    path: 'contrato/proceso_5_c',
+    component: QuintoProcesoCComponent,
+  },
+  {
+    path: 'contrato/proceso_5_d',
+    component: QuintoProcesoDComponent,
   },
   {
     path: 'contrato/proceso_6',
@@ -54,6 +71,14 @@ const routes: Routes = [
   {
     path: 'contrato/proceso_8',
     component: OctavoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_8_a',
+    component: OctavoProcesoAComponent,
+  },
+  {
+    path: 'contrato/proceso_8_b',
+    component: OctavoProcesoBComponent,
   },
   {
     path: 'contrato/proceso_9',
@@ -69,4 +94,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ContratacionRoutingModule {}
+export class ContratacionRoutingModule { }

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { TrabajadorService } from 'src/app/services/trabajador.service';
+import { Trabajador } from 'src/app/interface/trabajador';
+import { Router } from '@angular/router';
+import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 
 @Component({
   selector: 'app-sexto-proceso',
@@ -7,15 +10,21 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./sexto-proceso.component.css'],
 })
 export class SextoProcesoComponent {
-  //declarar variable el cual se le da el valor de la fecha actual
-  fechaActual = new Date();
+  selectedValue: string = '';
+  constructor(
+    public ts: TrabajadorService,
+    private router: Router,
+    private cl: ContratoLocalStorageService
+  ) {}
 
-  //declarar dia mes y año de fechaActual
-  dia = this.fechaActual.getDate();
-  mes = this.fechaActual.getMonth() + 1;
-  anio = this.fechaActual.getFullYear();
+  saveToLocalStorage() {
+    const contratoLocaldatos = this.cl.getItem('contratoLocal');
+    contratoLocaldatos.oferta_laboral = this.selectedValue;
 
-  //declarar variable para almacenar la fecha actual con el formato dd/MM/yyyy
-  fechaActualFormato: string = this.dia + '/' + this.mes + '/' + this.anio;
-  fechaRenovacion: string = this.dia + '/' + this.mes + '/' + (this.anio + 1);
+    this.cl.setItem('contratoLocal', contratoLocaldatos);
+
+    /* localStorage.setItem('selectedValue', this.selectedValue); */
+
+    this.router.navigate(['/contratacion/contrato/proceso_7']);
+  }
 }

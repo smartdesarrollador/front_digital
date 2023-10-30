@@ -23,6 +23,11 @@ export class TrabajadorService {
     return this.http.get(this.url);
   }
 
+  getTrabajadorById(id: number): Observable<Trabajador> {
+    const urlTrabajador = this.url + '/' + id;
+    return this.http.get<Trabajador>(urlTrabajador);
+  }
+
   createTrabajador(trabajador: Trabajador): Observable<Trabajador> {
     console.log(trabajador);
     return this.http.post(this.url, trabajador, { headers: this.reqHeader });

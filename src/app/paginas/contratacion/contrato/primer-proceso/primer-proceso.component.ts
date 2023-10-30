@@ -13,7 +13,11 @@ export class PrimerProcesoComponent {
   listTrabajadores: any = [];
   selectedValue: string = '';
 
-  constructor(public ts: TrabajadorService, private router: Router, private cl: ContratoLocalStorageService) { }
+  constructor(
+    public ts: TrabajadorService,
+    private router: Router,
+    private cl: ContratoLocalStorageService
+  ) {}
 
   ngOnInit(): void {
     this.loadTrabajadores();
@@ -28,7 +32,7 @@ export class PrimerProcesoComponent {
 
   saveToLocalStorage() {
     this.cl.setItem('contratoLocal', { trabajador: this.selectedValue });
-    localStorage.setItem('selectedValue', this.selectedValue);
+    /* localStorage.setItem('selectedValue', this.selectedValue); */
     this.router.navigate(['/contratacion/contrato/proceso_3']);
   }
 }

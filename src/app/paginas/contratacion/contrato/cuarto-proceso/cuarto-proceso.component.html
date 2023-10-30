@@ -3,29 +3,31 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <p class="mt-5 font-bold">
-        Contrato <span class="subtitulo-naranja">indeterminado</span>
-      </p>
-      <p class="subtitulo mt-5">
-        ¿Cual es la oferta laboral de este
-        <span class="subtitulo-naranja">contrato</span>?
-      </p>
+      <form (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+        <label for="" class="subtitulo"
+          >¿Qué tipo de Contrato vamos a elaborar?</label
+        >
+        <select
+          id="trab"
+          name="trab"
+          class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
+          [(ngModel)]="selectedValue"
+          #trab="ngModel"
+        >
+          <option value="" selected>Seleccionar</option>
+          <option value="Contrato modal">Contrato modal</option>
+          <option value="Contrato a plazo indeterminado">
+            Contrato a plazo indeterminado
+          </option>
+        </select>
 
-      <select
-        id="countries"
-        class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
-      >
-        <option selected>Seleccionar oferta laboral</option>
-        <option value="US">Analista de sistemas</option>
-        <option value="CA">Gerente de operaciones</option>
-        <option value="FR">Jefe de recursos humanos</option>
-      </select>
+        <div class="flex justify-start mt-20">
+          <button class="boton-naranja">Siguiente</button>
+        </div>
+      </form>
       <div class="flex justify-end mt-20">
         <a routerLink="/contratacion/contrato/proceso_3"
           ><button class="boton-azul">Atras</button></a
-        >
-        <a routerLink="/contratacion/contrato/proceso_5">
-          <button class="boton-naranja">Siguiente</button></a
         >
       </div>
       <span class="flex justify-center mt-10 gap-3">

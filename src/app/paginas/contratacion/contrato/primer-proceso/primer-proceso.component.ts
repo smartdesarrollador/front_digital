@@ -12,6 +12,8 @@ import { ContratoLocalStorageService } from 'src/app/services/localstorage/contr
 export class PrimerProcesoComponent {
   listTrabajadores: any = [];
   selectedValue: string = '';
+  valorSeleccionado: any;
+  /*  mostrar: boolean = false; */
 
   constructor(
     public ts: TrabajadorService,

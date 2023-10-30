@@ -57,7 +57,7 @@ export class TercerProcesoComponent {
     if (this.selectedValue == 'Jornada Tiempo completo') {
       this.router.navigate(['/contratacion/contrato/proceso_4']);
     } else {
-      this.router.navigate(['/contratacion/contrato/proceso_5']);
+      console.log('Seleccionado: Jornada Tiempo Parcial');
     }
   }
 }

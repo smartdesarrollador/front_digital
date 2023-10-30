@@ -3,44 +3,50 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <!--  <p class="mt-5 font-bold">
-        Contrato <span class="subtitulo-naranja">indeterminado</span>
-      </p> -->
-      <p class="subtitulo mt-5">Jornada y horario de trabajo</p>
+      <form (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+        <label for="" class="subtitulo">Modelo de Contrato</label>
+        <select
+          id="trab"
+          name="trab"
+          class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
+          [(ngModel)]="selectedValue"
+          #trab="ngModel"
+        >
+          <option value="" selected>Seleccionar</option>
+          <option value="Contrato por inicio de actividad">
+            Contrato por inicio de actividad
+          </option>
+          <option value="Contrato por incremento de actividad">
+            Contrato por incremento de actividad
+          </option>
+          <option value="Contrato por necesidad de mercado">
+            Contrato por necesidad de mercado
+          </option>
+          <option value="Contrato por reconversión empresarial">
+            Contrato por reconversión empresarial
+          </option>
+          <option value="Contrato ocasional">Contrato ocasional</option>
+          <option value="Contrato por suplencia">Contrato por suplencia</option>
+          <option value="Contrato de emergencia">Contrato de emergencia</option>
+          <option value="Contrato por obra determinada">
+            Contrato por obra determinada
+          </option>
+          <option value="Contrato por servicio específico">
+            Contrato por servicio específico
+          </option>
+          <option value="Contrato intermitente">Contrato intermitente</option>
+          <option value="Contrato por temporada">Contrato por temporada</option>
+          <option value="Contrato innominado">Contrato innominado</option>
+        </select>
 
-      <div class="flex flex-row justify-normal">
-        <div class="basis-[50%]">
-          ¿El trabajador tiene Fiscalizaciòn inmediata en la jornada?
+        <div class="flex justify-start mt-20">
+          <button class="boton-naranja">Siguiente</button>
         </div>
-        <div class="basis-[50%]">
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" checked />
-            <div
-              class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-            ></div>
-          </label>
-        </div>
-      </div>
-      <p class="subtitulo mt-5">Tipo de Trabajador</p>
-      <div class="flex flex-row justify-normal">
-        <div class="basis-[50%]">¿El trabajador es de Confianza?</div>
-        <div class="basis-[50%]">
-          <label class="relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" checked />
-            <div
-              class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"
-            ></div>
-          </label>
-        </div>
-      </div>
-
+      </form>
       <div class="flex justify-end mt-20">
         <a routerLink="/contratacion/contrato/proceso_4"
           ><button class="boton-azul">Atras</button></a
         >
-        <a routerLink="/contratacion/contrato/proceso_6">
-          <button class="boton-naranja">Siguiente</button>
-        </a>
       </div>
       <span class="flex justify-center mt-10 gap-3">
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>

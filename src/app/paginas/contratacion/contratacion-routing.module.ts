@@ -18,6 +18,9 @@ import { OctavoProcesoBComponent } from './contrato/octavo-proceso-b/octavo-proc
 import { QuintoProcesoBComponent } from './contrato/quinto-proceso-b/quinto-proceso-b.component';
 import { QuintoProcesoCComponent } from './contrato/quinto-proceso-c/quinto-proceso-c.component';
 import { QuintoProcesoDComponent } from './contrato/quinto-proceso-d/quinto-proceso-d.component';
+import { DecimoProcesoComponent } from './contrato/decimo-proceso/decimo-proceso.component';
+import { UndecimoProcesoComponent } from './contrato/undecimo-proceso/undecimo-proceso.component';
+import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecimo-proceso.component';
 
 const routes: Routes = [
   {
@@ -85,6 +88,18 @@ const routes: Routes = [
     component: NovenoProcesoComponent,
   },
   {
+    path: 'contrato/proceso_10',
+    component: DecimoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_11',
+    component: UndecimoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_12',
+    component: DuodecimoProcesoComponent,
+  },
+  {
     path: 'adendas',
     component: AdendasComponent,
   },
@@ -94,4 +109,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class ContratacionRoutingModule { }
+export class ContratacionRoutingModule {}

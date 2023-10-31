@@ -10,22 +10,31 @@
             <div class="flex flex-col mx-5">
               <div>
                 <label for="">Fecha de Inicio</label>
-                <input type="text" name="fecha_inicio"
+                <input
+                  type="text"
+                  name="fecha_inicio"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-                  value="{{ fechaActualFormato }}" />
+                  value="{{ fechaActualFormato }}"
+                />
               </div>
               <div class="mt-5">
                 <label for="">Fecha de Renovación</label>
-                <input type="text" name="fecha_renovacion"
+                <input
+                  type="text"
+                  name="fecha_renovacion"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-                  value="{{ fechaRenovacion }}" />
+                  value="{{ fechaRenovacion }}"
+                />
               </div>
               <div class="mt-5">
                 <label for="">Remuneración</label>
-                <input type="text" name="remuneracion"
+                <input
+                  type="text"
+                  name="remuneracion"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-                  placeholder="2,000" [(ngModel)]="remuneracion" />
-
+                  placeholder="2,000"
+                  [(ngModel)]="remuneracion"
+                />
               </div>
             </div>
           </div>
@@ -33,9 +42,13 @@
             <div class="grid grid-cols-2 gap-4">
               <div>
                 <label for="">Duración del Contrato</label>
-                <input type="number" name="duracion_contrato"
+                <input
+                  type="number"
+                  name="duracion_contrato"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-                  placeholder="1" value="{{ duracion_contrato }}" />
+                  placeholder="1"
+                  value="{{ duracion_contrato }}"
+                />
               </div>
               <div>
                 <label for="" class="text-white">Fecha de Inicio</label>
@@ -43,9 +56,12 @@
                   type="date"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
                 /> -->
-                <select id="countries" name="fecha_periodo"
+                <select
+                  id="countries"
+                  name="fecha_periodo"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 mt-3"
-                  [(ngModel)]="fecha_periodo">
+                  [(ngModel)]="fecha_periodo"
+                >
                   <option value="" selected>Seleccionar</option>
                   <option value="Año">Año</option>
                   <option value="Mes">Mes</option>
@@ -60,9 +76,10 @@
         </div>
       </form>
 
-
       <div class="flex justify-end mt-20">
-        <a routerLink="/contratacion/contrato/proceso_6"><button class="boton-azul">Atras</button></a>
+        <a routerLink="/contratacion/contrato/proceso_6"
+          ><button class="boton-azul">Atras</button></a
+        >
       </div>
       <span class="flex justify-center mt-10 gap-3">
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
@@ -70,8 +87,8 @@
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
-        <span class="w-3 h-3 bg-gray-900 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
+        <span class="w-3 h-3 bg-gray-900 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
       </span>

@@ -20,6 +20,9 @@ import { OctavoProcesoBComponent } from './contrato/octavo-proceso-b/octavo-proc
 import { QuintoProcesoBComponent } from './contrato/quinto-proceso-b/quinto-proceso-b.component';
 import { QuintoProcesoCComponent } from './contrato/quinto-proceso-c/quinto-proceso-c.component';
 import { QuintoProcesoDComponent } from './contrato/quinto-proceso-d/quinto-proceso-d.component';
+import { DecimoProcesoComponent } from './contrato/decimo-proceso/decimo-proceso.component';
+import { UndecimoProcesoComponent } from './contrato/undecimo-proceso/undecimo-proceso.component';
+import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecimo-proceso.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,9 @@ import { QuintoProcesoDComponent } from './contrato/quinto-proceso-d/quinto-proc
     QuintoProcesoBComponent,
     QuintoProcesoCComponent,
     QuintoProcesoDComponent,
+    DecimoProcesoComponent,
+    UndecimoProcesoComponent,
+    DuodecimoProcesoComponent,
   ],
   imports: [CommonModule, ContratacionRoutingModule, FormsModule],
 })

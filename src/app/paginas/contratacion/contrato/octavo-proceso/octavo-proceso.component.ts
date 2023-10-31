@@ -43,9 +43,19 @@ export class OctavoProcesoComponent {
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);
 
-    /* localStorage.setItem('selectedValue', this.selectedValue); */
+    if (this.trabajador_confianza == true) {
+      this.router.navigate(['/contratacion/contrato/proceso_8_a']);
+    }
 
-    this.router.navigate(['/contratacion/contrato/proceso_9']);
+    if (this.trabajador_direccion == true) {
+      this.router.navigate(['/contratacion/contrato/proceso_8_b']);
+    }
+
+    if (this.trabajador_confianza == false && this.trabajador_direccion == false) {
+      this.router.navigate(['/contratacion/contrato/proceso_9']);
+    }
+
+
   }
 
 

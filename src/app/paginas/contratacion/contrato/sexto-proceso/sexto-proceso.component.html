@@ -3,27 +3,15 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <form
-        class="mt-5"
-        (ngSubmit)="saveToLocalStorage()"
-        #formProceso1="ngForm"
-      >
-        <label for="" class="subtitulo"
-          >Cual es la oferta laboral de este contrato?</label
-        >
-        <select
-          id="trab"
-          name="trab"
+      <form class="mt-5" (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+        <label for="" class="subtitulo">Cual es la oferta laboral de este contrato?</label>
+        <select id="trab" name="trab"
           class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
-          [(ngModel)]="selectedValue"
-          #trab="ngModel"
-        >
+          [(ngModel)]="selectedValue" #trab="ngModel">
           <option value="" selected>Seleccionar</option>
           <option value="Analista de sistemas">Analista de sistemas</option>
-          <option
-            value="Gerente de operaciones
-"
-          >
+          <option value="Gerente de operaciones
+">
             Gerente de operaciones
           </option>
           <option value="Jefe de recursos humanos">
@@ -36,9 +24,7 @@
         </div>
       </form>
       <div class="flex justify-end mt-20">
-        <a routerLink="/contratacion/contrato/proceso_5"
-          ><button class="boton-azul">Atras</button></a
-        >
+        <a routerLink="/contratacion/contrato/proceso_5_a"><button class="boton-azul">Atras</button></a>
       </div>
       <span class="flex justify-center mt-10 gap-3">
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>

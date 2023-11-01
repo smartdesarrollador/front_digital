@@ -45,19 +45,27 @@ export class DuodecimoProcesoComponent {
           this.generarPdfMake(modeloContrato1);
           break;
         case 'Contrato por incremento de actividad':
-          const modeloContrato2 = this.contratoIncrementoActividad();
+          const modeloContrato2 = this.contratoIncrementoActividad(
+            this.registroTrabajador
+          );
           this.generarPdfMake(modeloContrato2);
           break;
         case 'Contrato por necesidad de mercado':
-          const modeloContrato3 = this.contratoNecesidadMercado();
+          const modeloContrato3 = this.contratoNecesidadMercado(
+            this.registroTrabajador
+          );
           this.generarPdfMake(modeloContrato3);
           break;
         case 'Contrato por reconversión empresarial':
-          const modeloContrato4 = this.contratoReconversionEmpresarial();
+          const modeloContrato4 = this.contratoReconversionEmpresarial(
+            this.registroTrabajador
+          );
           this.generarPdfMake(modeloContrato4);
           break;
         case 'Contrato ocasional':
-          const modeloContrato5 = this.contratoOcacional();
+          const modeloContrato5 = this.contratoOcacional(
+            this.registroTrabajador
+          );
           this.generarPdfMake(modeloContrato5);
           break;
         default:
@@ -81,25 +89,47 @@ export class DuodecimoProcesoComponent {
   contratoInicioActividad(datosTrabajador: any) {
     var docDefinition = {
       content: [
-        { text: datosTrabajador.trabajador + 'hola' },
         {
           text: [
-            { text: '---------------', color: 'white' },
             'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD\n\n',
           ],
           style: 'header',
         },
         {
           text: [
-            'Conste mediante el' +
-              datosTrabajador.trabajador +
-              ' presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
           ],
           style: 'parrafo',
         },
         {
-          text: ['identificada con RUC Nº \n\n'],
-          style: 'parrafo',
+          text: [
+            'Pedro Sanchez Mendoza, identificado con RUC Nº 123456789, con domicilio en Av. Benavides - Miraflores 123, Lima, debidamente representada por Juan Pérez identificado con DNI Nº 12345678 en calidad de Representante Legal, según poder inscrito en la Partida Electrónica Nº 456 Asiento 7890 del Registro de Personas Jurídicas de la Oficina Registral de Lima, a quien en adelante se le denominará EL EMPLEADOR y de la otra parte, \n\n',
+          ],
+          style: 'alinear',
+        },
+        {
+          text: [
+            {
+              text:
+                datosTrabajador.primer_nombre +
+                ' ' +
+                datosTrabajador.segundo_nombre +
+                ' ' +
+                datosTrabajador.apellido_paterno +
+                ' ' +
+                datosTrabajador.apellido_materno,
+              bold: true,
+            },
+            ' identificada con DNI Nº',
+            {
+              text: datosTrabajador.numero_documento,
+              bold: true,
+            },
+            ', con domicilio en ',
+            { text: datosTrabajador.direccion, bold: true },
+            ', debidamente representada por ',
+          ],
+          style: 'alinear',
         },
       ],
       styles: {
@@ -107,6 +137,7 @@ export class DuodecimoProcesoComponent {
           fontSize: 11,
           bold: true,
           decoration: 'underline',
+          alignment: 'center',
         },
         bigger: {
           fontSize: 15,
@@ -115,6 +146,11 @@ export class DuodecimoProcesoComponent {
         parrafo: {
           fontSize: 11,
           bold: false,
+          alignment: 'justify',
+        },
+        alinear: {
+          /* alignment: 'right', */
+          margin: [50, 0, -15, 0],
         },
       },
     };
@@ -122,25 +158,71 @@ export class DuodecimoProcesoComponent {
     return docDefinition;
   }
 
-  contratoIncrementoActividad() {
+  contratoIncrementoActividad(datosTrabajador: any) {
     var docDefinition = {
       content: [
         {
-          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD\n\n',
+          text: [
+            'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD\n\n',
+          ],
           style: 'header',
+        },
+        {
+          text: [
+            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            'Pedro Sanchez Mendoza, identificado con RUC Nº 123456789, con domicilio en Av. Benavides - Miraflores 123, Lima, debidamente representada por Juan Pérez identificado con DNI Nº 12345678 en calidad de Representante Legal, según poder inscrito en la Partida Electrónica Nº 456 Asiento 7890 del Registro de Personas Jurídicas de la Oficina Registral de Lima, a quien en adelante se le denominará EL EMPLEADOR y de la otra parte, \n\n',
+          ],
+          style: 'alinear',
+        },
+        {
+          text: [
+            {
+              text:
+                datosTrabajador.primer_nombre +
+                ' ' +
+                datosTrabajador.segundo_nombre +
+                ' ' +
+                datosTrabajador.apellido_paterno +
+                ' ' +
+                datosTrabajador.apellido_materno,
+              bold: true,
+            },
+            ' identificada con DNI Nº',
+            {
+              text: datosTrabajador.numero_documento,
+              bold: true,
+            },
+            ', con domicilio en ',
+            { text: datosTrabajador.direccion, bold: true },
+            ', debidamente representada por ',
+          ],
+          style: 'alinear',
         },
       ],
       styles: {
         header: {
-          fontSize: 18,
+          fontSize: 11,
           bold: true,
+          decoration: 'underline',
+          alignment: 'center',
         },
         bigger: {
           fontSize: 15,
           italics: true,
         },
-        color_ocultar: {
-          color: 'blue',
+        parrafo: {
+          fontSize: 11,
+          bold: false,
+          alignment: 'justify',
+        },
+        alinear: {
+          /* alignment: 'right', */
+          margin: [50, 0, -15, 0],
         },
       },
     };
@@ -148,22 +230,71 @@ export class DuodecimoProcesoComponent {
     return docDefinition;
   }
 
-  contratoNecesidadMercado() {
+  contratoNecesidadMercado(datosTrabajador: any) {
     var docDefinition = {
       content: [
         {
-          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO\n\n',
+          text: [
+            'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO\n\n',
+          ],
           style: 'header',
+        },
+        {
+          text: [
+            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            'Pedro Sanchez Mendoza, identificado con RUC Nº 123456789, con domicilio en Av. Benavides - Miraflores 123, Lima, debidamente representada por Juan Pérez identificado con DNI Nº 12345678 en calidad de Representante Legal, según poder inscrito en la Partida Electrónica Nº 456 Asiento 7890 del Registro de Personas Jurídicas de la Oficina Registral de Lima, a quien en adelante se le denominará EL EMPLEADOR y de la otra parte, \n\n',
+          ],
+          style: 'alinear',
+        },
+        {
+          text: [
+            {
+              text:
+                datosTrabajador.primer_nombre +
+                ' ' +
+                datosTrabajador.segundo_nombre +
+                ' ' +
+                datosTrabajador.apellido_paterno +
+                ' ' +
+                datosTrabajador.apellido_materno,
+              bold: true,
+            },
+            ' identificada con DNI Nº',
+            {
+              text: datosTrabajador.numero_documento,
+              bold: true,
+            },
+            ', con domicilio en ',
+            { text: datosTrabajador.direccion, bold: true },
+            ', debidamente representada por ',
+          ],
+          style: 'alinear',
         },
       ],
       styles: {
         header: {
-          fontSize: 18,
+          fontSize: 11,
           bold: true,
+          decoration: 'underline',
+          alignment: 'center',
         },
         bigger: {
           fontSize: 15,
           italics: true,
+        },
+        parrafo: {
+          fontSize: 11,
+          bold: false,
+          alignment: 'justify',
+        },
+        alinear: {
+          /* alignment: 'right', */
+          margin: [50, 0, -15, 0],
         },
       },
     };
@@ -171,22 +302,71 @@ export class DuodecimoProcesoComponent {
     return docDefinition;
   }
 
-  contratoReconversionEmpresarial() {
+  contratoReconversionEmpresarial(datosTrabajador: any) {
     var docDefinition = {
       content: [
         {
-          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL\n\n',
+          text: [
+            'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL\n\n',
+          ],
           style: 'header',
+        },
+        {
+          text: [
+            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            'Pedro Sanchez Mendoza, identificado con RUC Nº 123456789, con domicilio en Av. Benavides - Miraflores 123, Lima, debidamente representada por Juan Pérez identificado con DNI Nº 12345678 en calidad de Representante Legal, según poder inscrito en la Partida Electrónica Nº 456 Asiento 7890 del Registro de Personas Jurídicas de la Oficina Registral de Lima, a quien en adelante se le denominará EL EMPLEADOR y de la otra parte, \n\n',
+          ],
+          style: 'alinear',
+        },
+        {
+          text: [
+            {
+              text:
+                datosTrabajador.primer_nombre +
+                ' ' +
+                datosTrabajador.segundo_nombre +
+                ' ' +
+                datosTrabajador.apellido_paterno +
+                ' ' +
+                datosTrabajador.apellido_materno,
+              bold: true,
+            },
+            ' identificada con DNI Nº',
+            {
+              text: datosTrabajador.numero_documento,
+              bold: true,
+            },
+            ', con domicilio en ',
+            { text: datosTrabajador.direccion, bold: true },
+            ', debidamente representada por ',
+          ],
+          style: 'alinear',
         },
       ],
       styles: {
         header: {
-          fontSize: 18,
+          fontSize: 11,
           bold: true,
+          decoration: 'underline',
+          alignment: 'center',
         },
         bigger: {
           fontSize: 15,
           italics: true,
+        },
+        parrafo: {
+          fontSize: 11,
+          bold: false,
+          alignment: 'justify',
+        },
+        alinear: {
+          /* alignment: 'right', */
+          margin: [50, 0, -15, 0],
         },
       },
     };
@@ -194,22 +374,71 @@ export class DuodecimoProcesoComponent {
     return docDefinition;
   }
 
-  contratoOcacional() {
+  contratoOcacional(datosTrabajador: any) {
     var docDefinition = {
       content: [
         {
-          text: 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL\n\n',
+          text: [
+            'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL\n\n',
+          ],
           style: 'header',
+        },
+        {
+          text: [
+            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            'Pedro Sanchez Mendoza, identificado con RUC Nº 123456789, con domicilio en Av. Benavides - Miraflores 123, Lima, debidamente representada por Juan Pérez identificado con DNI Nº 12345678 en calidad de Representante Legal, según poder inscrito en la Partida Electrónica Nº 456 Asiento 7890 del Registro de Personas Jurídicas de la Oficina Registral de Lima, a quien en adelante se le denominará EL EMPLEADOR y de la otra parte, \n\n',
+          ],
+          style: 'alinear',
+        },
+        {
+          text: [
+            {
+              text:
+                datosTrabajador.primer_nombre +
+                ' ' +
+                datosTrabajador.segundo_nombre +
+                ' ' +
+                datosTrabajador.apellido_paterno +
+                ' ' +
+                datosTrabajador.apellido_materno,
+              bold: true,
+            },
+            ' identificada con DNI Nº',
+            {
+              text: datosTrabajador.numero_documento,
+              bold: true,
+            },
+            ', con domicilio en ',
+            { text: datosTrabajador.direccion, bold: true },
+            ', debidamente representada por ',
+          ],
+          style: 'alinear',
         },
       ],
       styles: {
         header: {
-          fontSize: 18,
+          fontSize: 11,
           bold: true,
+          decoration: 'underline',
+          alignment: 'center',
         },
         bigger: {
           fontSize: 15,
           italics: true,
+        },
+        parrafo: {
+          fontSize: 11,
+          bold: false,
+          alignment: 'justify',
+        },
+        alinear: {
+          /* alignment: 'right', */
+          margin: [50, 0, -15, 0],
         },
       },
     };

@@ -36,18 +36,33 @@ export class DuodecimoProcesoComponent {
 
     this.getTrabajador(this.datosLocales.trabajador);
 
-    var docDefinition = {
-      content: [
-        {
-          text:
-            'Esto es la remuneracion: ' +
-            this.datosLocales.remuneracion +
-            '\n\n',
-          style: 'header',
-        },
-      ],
-    };
+    switch (this.datosLocales.modelo_contrato) {
+      case 'Contrato por inicio de actividad':
+        const modeloContrato1 = this.contratoInicioActividad();
+        this.generarPdfMake(modeloContrato1);
+        break;
+      case 'Contrato por incremento de actividad':
+        const modeloContrato2 = this.contratoIncrementoActividad();
+        this.generarPdfMake(modeloContrato2);
+        break;
+      case 'Contrato por necesidad de mercado':
+        const modeloContrato3 = this.contratoNecesidadMercado();
+        this.generarPdfMake(modeloContrato3);
+        break;
+      case 'Contrato por reconversión empresarial':
+        const modeloContrato4 = this.contratoReconversionEmpresarial();
+        this.generarPdfMake(modeloContrato4);
+        break;
+      case 'Contrato ocasional':
+        const modeloContrato5 = this.contratoOcacional();
+        this.generarPdfMake(modeloContrato5);
+        break;
+      default:
+        console.log('No se reconoce el día de la semana.');
+    }
+  }
 
+  generarPdfMake(docDefinition: any) {
     const pdfGenerado = pdfMake.createPdf(docDefinition);
     pdfGenerado.getDataUrl((dataUrl) => {
       this.urlpdf = dataUrl;
@@ -57,13 +72,121 @@ export class DuodecimoProcesoComponent {
         this.urlpdf
       );
     });
+  }
 
-    /* const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-    pdfDocGenerator.getDataUrl((dataUrl) => {
-      this.urlpdf = dataUrl;
-    });
+  contratoInicioActividad() {
+    var docDefinition = {
+      content: [
+        {
+          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD\n\n',
+          style: 'header',
+        },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+        },
+        bigger: {
+          fontSize: 15,
+          italics: true,
+        },
+      },
+    };
 
-    console.log(this.urlpdf); */
+    return docDefinition;
+  }
+
+  contratoIncrementoActividad() {
+    var docDefinition = {
+      content: [
+        {
+          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD\n\n',
+          style: 'header',
+        },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+        },
+        bigger: {
+          fontSize: 15,
+          italics: true,
+        },
+      },
+    };
+
+    return docDefinition;
+  }
+
+  contratoNecesidadMercado() {
+    var docDefinition = {
+      content: [
+        {
+          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO\n\n',
+          style: 'header',
+        },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+        },
+        bigger: {
+          fontSize: 15,
+          italics: true,
+        },
+      },
+    };
+
+    return docDefinition;
+  }
+
+  contratoReconversionEmpresarial() {
+    var docDefinition = {
+      content: [
+        {
+          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL\n\n',
+          style: 'header',
+        },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+        },
+        bigger: {
+          fontSize: 15,
+          italics: true,
+        },
+      },
+    };
+
+    return docDefinition;
+  }
+
+  contratoOcacional() {
+    var docDefinition = {
+      content: [
+        {
+          text: 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL\n\n',
+          style: 'header',
+        },
+      ],
+      styles: {
+        header: {
+          fontSize: 18,
+          bold: true,
+        },
+        bigger: {
+          fontSize: 15,
+          italics: true,
+        },
+      },
+    };
+
+    return docDefinition;
   }
 
   getTrabajador(id: any) {

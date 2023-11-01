@@ -78,18 +78,36 @@ export class DuodecimoProcesoComponent {
     var docDefinition = {
       content: [
         {
-          text: 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD\n\n',
+          text: [
+            { text: '---------------', color: 'white' },
+            'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD\n\n',
+          ],
           style: 'header',
+        },
+        {
+          text: [
+            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: ['identificada con RUC Nº \n\n'],
+          style: 'parrafo',
         },
       ],
       styles: {
         header: {
-          fontSize: 18,
+          fontSize: 11,
           bold: true,
+          decoration: 'underline',
         },
         bigger: {
           fontSize: 15,
           italics: true,
+        },
+        parrafo: {
+          fontSize: 11,
+          bold: false,
         },
       },
     };
@@ -113,6 +131,9 @@ export class DuodecimoProcesoComponent {
         bigger: {
           fontSize: 15,
           italics: true,
+        },
+        color_ocultar: {
+          color: 'blue',
         },
       },
     };

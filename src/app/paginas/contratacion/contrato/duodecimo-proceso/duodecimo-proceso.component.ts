@@ -34,32 +34,36 @@ export class DuodecimoProcesoComponent {
     const contratoLocal = this.cl.getItem('contratoLocal');
     this.datosLocales = contratoLocal;
 
-    this.getTrabajador(this.datosLocales.trabajador);
-
-    switch (this.datosLocales.modelo_contrato) {
-      case 'Contrato por inicio de actividad':
-        const modeloContrato1 = this.contratoInicioActividad();
-        this.generarPdfMake(modeloContrato1);
-        break;
-      case 'Contrato por incremento de actividad':
-        const modeloContrato2 = this.contratoIncrementoActividad();
-        this.generarPdfMake(modeloContrato2);
-        break;
-      case 'Contrato por necesidad de mercado':
-        const modeloContrato3 = this.contratoNecesidadMercado();
-        this.generarPdfMake(modeloContrato3);
-        break;
-      case 'Contrato por reconversión empresarial':
-        const modeloContrato4 = this.contratoReconversionEmpresarial();
-        this.generarPdfMake(modeloContrato4);
-        break;
-      case 'Contrato ocasional':
-        const modeloContrato5 = this.contratoOcacional();
-        this.generarPdfMake(modeloContrato5);
-        break;
-      default:
-        console.log('No se reconoce el día de la semana.');
-    }
+    this.getTrabajador(this.datosLocales.trabajador).subscribe((data) => {
+      this.registroTrabajador = data;
+      console.log(this.registroTrabajador.trabajador);
+      switch (this.datosLocales.modelo_contrato) {
+        case 'Contrato por inicio de actividad':
+          const modeloContrato1 = this.contratoInicioActividad(
+            this.registroTrabajador
+          );
+          this.generarPdfMake(modeloContrato1);
+          break;
+        case 'Contrato por incremento de actividad':
+          const modeloContrato2 = this.contratoIncrementoActividad();
+          this.generarPdfMake(modeloContrato2);
+          break;
+        case 'Contrato por necesidad de mercado':
+          const modeloContrato3 = this.contratoNecesidadMercado();
+          this.generarPdfMake(modeloContrato3);
+          break;
+        case 'Contrato por reconversión empresarial':
+          const modeloContrato4 = this.contratoReconversionEmpresarial();
+          this.generarPdfMake(modeloContrato4);
+          break;
+        case 'Contrato ocasional':
+          const modeloContrato5 = this.contratoOcacional();
+          this.generarPdfMake(modeloContrato5);
+          break;
+        default:
+          console.log('No se reconoce el día de la semana.');
+      }
+    });
   }
 
   generarPdfMake(docDefinition: any) {
@@ -74,9 +78,10 @@ export class DuodecimoProcesoComponent {
     });
   }
 
-  contratoInicioActividad() {
+  contratoInicioActividad(datosTrabajador: any) {
     var docDefinition = {
       content: [
+        { text: datosTrabajador.trabajador + 'hola' },
         {
           text: [
             { text: '---------------', color: 'white' },
@@ -86,7 +91,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+            'Conste mediante el' +
+              datosTrabajador.trabajador +
+              ' presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
           ],
           style: 'parrafo',
         },
@@ -211,9 +218,6 @@ export class DuodecimoProcesoComponent {
   }
 
   getTrabajador(id: any) {
-    this.ts.getTrabajadorById(id).subscribe((data) => {
-      console.log(data);
-      this.registroTrabajador = data;
-    });
+    return this.ts.getTrabajadorById(id); // Devuelve el observable para su suscripción
   }
 }

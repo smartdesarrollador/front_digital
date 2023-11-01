@@ -9,6 +9,8 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-duodecimo-proceso',
   templateUrl: './duodecimo-proceso.component.html',
@@ -17,26 +19,23 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 export class DuodecimoProcesoComponent {
   datosLocales: any = {};
   registroTrabajador: any;
+  urlpdf: any;
+  safePdfUrl: SafeResourceUrl;
+
   constructor(
     public ts: TrabajadorService,
     private router: Router,
-    private cl: ContratoLocalStorageService
-  ) {}
+    private cl: ContratoLocalStorageService,
+    private sanitizer: DomSanitizer
+  ) {
+    this.safePdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl('');
+  }
   ngOnInit(): void {
     const contratoLocal = this.cl.getItem('contratoLocal');
     this.datosLocales = contratoLocal;
 
     this.getTrabajador(this.datosLocales.trabajador);
-  }
 
-  getTrabajador(id: any) {
-    this.ts.getTrabajadorById(id).subscribe((data) => {
-      console.log(data);
-      this.registroTrabajador = data;
-    });
-  }
-
-  generatePDF() {
     var docDefinition = {
       content: [
         {
@@ -46,52 +45,31 @@ export class DuodecimoProcesoComponent {
             '\n\n',
           style: 'header',
         },
-        {
-          text: [
-            'Este es el nombre del trabajador: ' +
-              this.registroTrabajador.segundo_nombre +
-              ' ',
-            'to the paragraph (instead of a single string) and have ',
-            { text: 'a better ', fontSize: 15, bold: true },
-            'control over it. \nEach inline can be ',
-            { text: 'styled ', fontSize: 20, color: 'white' },
-            { text: 'independently ', italics: true, fontSize: 40 },
-            'then.\n\n',
-          ],
-        },
-        { text: 'Mixing named styles and style-overrides', style: 'header' },
-        {
-          style: 'bigger',
-          italics: false,
-          text: [
-            'We can also mix named-styles and style-overrides at both paragraph and inline level. ',
-            'For example, this paragraph uses the "bigger" style, which changes fontSize to 15 and sets italics to true. ',
-            "Texts are not italics though. It's because we've overriden italics back to false at ",
-            'the paragraph level. \n\n',
-            "We can also change the style of a single inline. Let's use a named style called header: ",
-            { text: 'like here.\n', style: 'header' },
-            'It got bigger and bold.\n\n',
-            "OK, now we're going to mix named styles and style-overrides at the inline level. ",
-            "We'll use header style (it makes texts bigger and bold), but we'll override ",
-            'bold back to false: ',
-            { text: 'wow! it works!', style: 'header', bold: false },
-            "\n\nMake sure to take a look into the sources to understand what's going on here.",
-          ],
-        },
       ],
-      styles: {
-        header: {
-          fontSize: 18,
-          bold: true,
-          align: 'center',
-        },
-        bigger: {
-          fontSize: 15,
-          italics: true,
-        },
-      },
     };
 
-    pdfMake.createPdf(docDefinition).open();
+    const pdfGenerado = pdfMake.createPdf(docDefinition);
+    pdfGenerado.getDataUrl((dataUrl) => {
+      this.urlpdf = dataUrl;
+      console.log(this.urlpdf);
+      // Aquí obtienes la URL del PDF
+      this.safePdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
+        this.urlpdf
+      );
+    });
+
+    /* const pdfDocGenerator = pdfMake.createPdf(docDefinition);
+    pdfDocGenerator.getDataUrl((dataUrl) => {
+      this.urlpdf = dataUrl;
+    });
+
+    console.log(this.urlpdf); */
+  }
+
+  getTrabajador(id: any) {
+    this.ts.getTrabajadorById(id).subscribe((data) => {
+      console.log(data);
+      this.registroTrabajador = data;
+    });
   }
 }

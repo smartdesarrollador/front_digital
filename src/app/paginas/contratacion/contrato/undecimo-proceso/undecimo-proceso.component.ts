@@ -23,7 +23,9 @@ export class UndecimoProcesoComponent {
     private cl: ContratoLocalStorageService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   saveToLocalStorage() {
     const contratoLocaldatos = this.cl.getItem('contratoLocal');

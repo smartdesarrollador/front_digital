@@ -23,6 +23,7 @@ export class PrimerProcesoComponent {
 
   ngOnInit(): void {
     this.loadTrabajadores();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   loadTrabajadores() {

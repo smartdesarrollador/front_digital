@@ -66,6 +66,14 @@ export class SegundoProcesoComponent {
     console.log(this.datosTrabajador);
   }
 
+  ngOnInit() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /*   private scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } */
+
   submitForm(trabajadorForm: NgForm) {
     this.datosTrabajador.trabajador = this.primer_nombre;
     this.datosTrabajador.apellido_paterno = this.apellido_paterno;

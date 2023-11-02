@@ -11,6 +11,8 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     /*  console.log('Inicio del Proyecto');
     this.getPost(); */
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   /*   getPost() {
@@ -19,9 +21,9 @@ export class AppComponent implements OnInit {
     );
   } */
 
-  getPost() {
+  /* getPost() {
     fetch('http://localhost/back_legajo/public/api/test_api')
       .then((response) => response.json())
       .then((json) => console.log(json));
-  }
+  } */
 }

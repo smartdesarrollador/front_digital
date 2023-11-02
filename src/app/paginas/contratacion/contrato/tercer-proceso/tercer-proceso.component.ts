@@ -37,6 +37,8 @@ export class TercerProcesoComponent {
     this.getTrabajador(this.datosLocales.trabajador);
 
     /* console.log(this.datosLocales); */
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   getTrabajador(id: any) {
@@ -53,6 +55,5 @@ export class TercerProcesoComponent {
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);
     this.router.navigate(['/contratacion/contrato/proceso_4']);
-
   }
 }

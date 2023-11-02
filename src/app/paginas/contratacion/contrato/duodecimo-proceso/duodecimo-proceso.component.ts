@@ -880,7 +880,7 @@ export class DuodecimoProcesoComponent {
         datos_locales: {
           bold: true,
           fontSize: 12,
-          color: 'blue',
+          /* color: 'blue', */
         },
       },
     };

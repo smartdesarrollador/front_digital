@@ -20,6 +20,10 @@ body {
     @apply text-azul bg-azul_claro hover:bg-azul hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none;
   }
 
+  .boton-rojo {
+    @apply text-rojo bg-rojo_claro hover:bg-rojo hover:text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 mr-2 mb-2 focus:outline-none;
+  }
+
   .titulo {
     @apply text-2xl font-bold;
   }
@@ -66,5 +70,21 @@ body {
 
   .texto-gris {
     @apply text-base font-normal text-gray-400;
+  }
+
+  .titulo-rojo {
+    @apply text-2xl font-bold text-rojo;
+  }
+
+  .subtitulo-rojo {
+    @apply text-xl font-bold text-rojo;
+  }
+
+  .texto-rojo {
+    @apply text-base font-normal text-rojo;
+  }
+
+  .alerta-rojo {
+    @apply p-4 mb-4 text-sm text-rojo rounded-lg bg-red-50;
   }
 }

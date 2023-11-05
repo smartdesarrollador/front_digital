@@ -17,6 +17,8 @@ module.exports = {
         naranja_claro: "#ffbea4",
         verde: "#4ac07b",
         verde_claro: "#e4f5ec",
+        rojo: "#842315",
+        rojo_claro: "#dea69e",
       },
       fontFamily: {
         test_fuente: ["Gloria Hallelujah", "cursive"],

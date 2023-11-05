@@ -13,6 +13,8 @@ export class PrimerProcesoComponent {
   listTrabajadores: any = [];
   selectedValue: string = '';
   valorSeleccionado: any;
+  datosLocales: any = {};
+
   /*  mostrar: boolean = false; */
 
   constructor(
@@ -22,6 +24,15 @@ export class PrimerProcesoComponent {
   ) {}
 
   ngOnInit(): void {
+    const contratoLocal = this.cl.getItem('contratoLocal');
+    /* contratoLocal.nuevoValor = 'hola'; */
+
+    if (contratoLocal) {
+      this.datosLocales = contratoLocal;
+
+      this.selectedValue = this.datosLocales.trabajador;
+    }
+
     this.loadTrabajadores();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -34,7 +45,15 @@ export class PrimerProcesoComponent {
   }
 
   saveToLocalStorage() {
-    this.cl.setItem('contratoLocal', { trabajador: this.selectedValue });
+    if (this.cl.getItem('contratoLocal')) {
+      const contratoLocaldatos = this.cl.getItem('contratoLocal');
+      contratoLocaldatos.trabajador = this.selectedValue;
+
+      this.cl.setItem('contratoLocal', contratoLocaldatos);
+    } else {
+      this.cl.setItem('contratoLocal', { trabajador: this.selectedValue });
+    }
+
     /* localStorage.setItem('selectedValue', this.selectedValue); */
     this.router.navigate(['/contratacion/contrato/proceso_3']);
   }

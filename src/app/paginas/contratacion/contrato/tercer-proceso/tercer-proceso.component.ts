@@ -11,9 +11,10 @@ import { ContratoLocalStorageService } from 'src/app/services/localstorage/contr
 })
 export class TercerProcesoComponent {
   datosRecuperados: any;
-  datosLocales: any = {};
   registroTrabajador: any;
   selectedValue: string = '';
+
+  datosLocales: any = {};
 
   constructor(
     public ts: TrabajadorService,
@@ -30,7 +31,14 @@ export class TercerProcesoComponent {
   ngOnInit() {
     const contratoLocal = this.cl.getItem('contratoLocal');
     /* contratoLocal.nuevoValor = 'hola'; */
-    this.datosLocales = contratoLocal;
+
+    console.log(contratoLocal);
+
+    if (contratoLocal) {
+      this.datosLocales = contratoLocal;
+
+      this.selectedValue = this.datosLocales.jornada;
+    }
 
     /* console.log(this.datosLocales); */
 
@@ -39,6 +47,8 @@ export class TercerProcesoComponent {
     /* console.log(this.datosLocales); */
 
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    console.log(this.datosLocales.trabajador + 'hola');
   }
 
   getTrabajador(id: any) {

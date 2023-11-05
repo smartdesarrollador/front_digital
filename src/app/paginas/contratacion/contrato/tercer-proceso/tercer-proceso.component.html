@@ -15,7 +15,7 @@
         }}</span>
       </p>
       <br />
-      <form (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+      <form (ngSubmit)="saveToLocalStorage()" #form1="ngForm">
         <label for="" class="subtitulo"
           >¿La jornada de trabajo será a tiempo completo o a tiempo
           parcial?</label
@@ -25,6 +25,7 @@
           name="trab"
           class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
           [(ngModel)]="selectedValue"
+          required
           #trab="ngModel"
         >
           <option value="" selected>Seleccionar</option>
@@ -33,9 +34,18 @@
           </option>
           <option value="Jornada Tiempo Parcial">Jornada Tiempo Parcial</option>
         </select>
+        <div
+          class="alerta-rojo mt-5"
+          role="alert"
+          [hidden]="trab.valid || trab.pristine"
+        >
+          <span class="font-medium">Requiere seleccionar Trabajador</span>
+        </div>
 
         <div class="flex justify-start mt-20">
-          <button class="boton-naranja">Siguiente</button>
+          <button class="boton-naranja" [disabled]="form1.invalid">
+            Siguiente
+          </button>
         </div>
       </form>
 

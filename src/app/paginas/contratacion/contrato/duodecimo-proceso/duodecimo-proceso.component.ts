@@ -423,30 +423,36 @@ export class DuodecimoProcesoComponent {
           ],
           style: 'parrafo',
         },
-        {
-          text: [
-            'CLÁUSULA DÉCIMA. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
-          ],
-          style: 'subtitulo',
-        },
-        {
-          text: ['EL TRABAJADOR se compromete a: \n\n'],
-          style: 'parrafo',
-        },
-        {
-          ol: [
-            'Cumplir con lealtad y eficiencia las labores principales, conexas y complementarias, inherentes a su puesto de trabajo, aplicando para tal fin toda su experiencia y capacidad, velando por los intereses de EL EMPLEADOR.',
-            'Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad.',
-            'Cumplir con las funciones, órdenes e instrucciones de EL EMPLEADOR o sus representantes, así como las demás normas que se impartan por necesidad del servicio.',
-            'A guardar reserva de la información a la que acceda en virtud del presente contrato. Esta obligación subsistirá aún después de terminada la relación laboral y su incumplimiento genera la correspondiente responsabilidad por daños y perjuicios, así como la responsabilidad penal por el delito previsto en el artículo 165° del Código Penal.',
-            'No podrá ofrecer o brindar declaraciones a los medios de comunicación sobre asuntos institucionales, sin la autorización expresa de EL EMPLEADOR.',
-            'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
-            'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
-            'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
-            'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR.',
-          ],
-          style: 'parrafo',
-        },
+        this.datosLocales.obligaciones_compromisos
+          ? {
+              text: [
+                'CLÁUSULA DÉCIMA. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
+              ],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.obligaciones_compromisos
+          ? {
+              text: ['EL TRABAJADOR se compromete a: \n\n'],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.obligaciones_compromisos
+          ? {
+              ol: [
+                'Cumplir con lealtad y eficiencia las labores principales, conexas y complementarias, inherentes a su puesto de trabajo, aplicando para tal fin toda su experiencia y capacidad, velando por los intereses de EL EMPLEADOR.',
+                'Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad.',
+                'Cumplir con las funciones, órdenes e instrucciones de EL EMPLEADOR o sus representantes, así como las demás normas que se impartan por necesidad del servicio.',
+                'A guardar reserva de la información a la que acceda en virtud del presente contrato. Esta obligación subsistirá aún después de terminada la relación laboral y su incumplimiento genera la correspondiente responsabilidad por daños y perjuicios, así como la responsabilidad penal por el delito previsto en el artículo 165° del Código Penal.',
+                'No podrá ofrecer o brindar declaraciones a los medios de comunicación sobre asuntos institucionales, sin la autorización expresa de EL EMPLEADOR.',
+                'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
+                'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
+                'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
+                'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR.',
+              ],
+              style: 'parrafo',
+            }
+          : null,
         {
           text: ['CLÁUSULA DECIMOPRIMERA. - DURACIÓN DEL CONTRATO \n\n'],
           style: 'subtitulo',
@@ -484,16 +490,20 @@ export class DuodecimoProcesoComponent {
           ],
           style: 'parrafo',
         },
-        {
-          text: ['CLÁUSULA DECIMOSEGUNDA. - EXCLUSIVIDAD\n\n'],
-          style: 'subtitulo',
-        },
-        {
-          text: [
-            'EL TRABAJADOR se obliga por su parte en forma expresa a prestar servicios a EL EMPLEADOR bajo condición de exclusividad, dependencia y lealtad de acuerdo con los reglamentos, prácticas y políticas establecidas por EL EMPLEADOR. En ese sentido, EL TRABAJADOR no podrá prestar servicios paralelos a empresas que se dediquen al mismo rubro que EL EMPLEADOR o brindar servicios similares al de EL EMPLEADOR por su cuenta. \n\n',
-          ],
-          style: 'parrafo',
-        },
+        this.datosLocales.exclusividad
+          ? {
+              text: ['CLÁUSULA DECIMOSEGUNDA. - EXCLUSIVIDAD\n\n'],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.exclusividad
+          ? {
+              text: [
+                'EL TRABAJADOR se obliga por su parte en forma expresa a prestar servicios a EL EMPLEADOR bajo condición de exclusividad, dependencia y lealtad de acuerdo con los reglamentos, prácticas y políticas establecidas por EL EMPLEADOR. En ese sentido, EL TRABAJADOR no podrá prestar servicios paralelos a empresas que se dediquen al mismo rubro que EL EMPLEADOR o brindar servicios similares al de EL EMPLEADOR por su cuenta. \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
         {
           text: ['CLÁUSULA DECIMOTERCERA. - EXTINCIÓN DEL CONTRATO\n\n'],
           style: 'subtitulo',
@@ -568,92 +578,122 @@ export class DuodecimoProcesoComponent {
           ],
           style: 'parrafo',
         },
-        {
-          text: ['CLÁUSULA DECIMOSÉPTIMA. - PROPIEDAD INTELECTUAL\n\n'],
-          style: 'subtitulo',
-        },
-        {
-          text: [
-            'EL TRABAJADOR declara conocer que EL EMPLEADOR es el propietario intelectual y económico de los diseños que se elaboren en la ejecución del presente contrato y de los existentes sean o no inscritos ante el INDECOPI u otro ente Estatal o privado, por lo que reconoce no irrogarse autoría alguna por la elaboración de los diseños que en ejecución del presente contrato elabore.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Todos los derechos patrimoniales y morales legalmente transferibles, que se refieran al trabajo que podría estar protegido por derechos de autor, diseño, patrón, patente o software, y los cuáles sean creados en la ejecución de este Contrato o en relación con este Contrato serán de EL EMPLEADOR.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'La compensación con relación a la transferencia de los derechos patrimoniales, relacionados arriba, está incluida en el salario mensual acordado entre la Partes. La transferencia es exclusiva e irrevocable y no se extingue con la finalización de este Contrato.   \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Se mantendrá en vigencia por todo el periodo durante el cual la propiedad intelectual esté protegida por ley. \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Por lo cual, por medio de la presente cláusula EL TRABAJADOR se compromete a transferir y transfiere a EL EMPLEADOR de una manera exclusiva, todos los derechos, sin ninguna limitación territorial, temporal, de cantidad o de transferencia, para usar y transferir el uso, en todo o en parte, en todos los campos de aprovechamiento o aplicación, para cualquier propósito, todos los resultados de la actividad de EL TRABAJADOR, incluyendo pero no limitado a inventos, modelos de utilidad, diseños industriales, topografías de circuitos integrados, conocimientos técnicos, soluciones, ideas, realizaciones, creaciones, descubrimientos, proyectos, modelos, procesos, mejoras de cualquier naturaleza, que hayan sido creados como resultado del cumplimiento de las funciones de trabajo de EL TRABAJADOR. \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: ['CLÁUSULA DECIMOCTAVA. - CONFIDENCIALIDAD\n\n'],
-          style: 'subtitulo',
-        },
-        {
-          text: [
-            'La información sobre EL EMPLEADOR, sus clientes, casos y documentos, incluyendo direcciones y datos bancarios, nombres y apellidos de los clientes y sus representantes, así como otros datos, y también la información relativa a la gestión, finanzas, propiedad intelectual y otras actividades de EL EMPLEADOR (o empresas relacionadas) que EL TRABAJADOR reciba durante el cumplimiento de sus obligaciones bajo este Contrato se considerará confidencial y no sujeta a divulgación (en adelante la "Información"). \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'EL TRABAJADOR procurará evitar cualquier divulgación no autorizada de dicha información a terceros salvo que la divulgación sea necesaria directamente bajo la legislación vigente de Perú o a petición motivada de las autoridades competentes con previo aviso a EL EMPLEADOR (en la persona de su delegado). \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal del EMPLEADOR.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Queda igualmente establecido que toda la información y documentación relacionada con los servicios prestados en el desarrollo de la relación de trabajo se encuentran amparados por las previsiones de confidencialidad establecidas en esta cláusula.    \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente contrato relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'En caso EL TRABAJADOR incumpla con este deber de lealtad y no concurrencia, EL EMPLEADOR se reserva el derecho de accionar en contra de EL TRABAJADOR la demanda civil por daños y perjuicios y la denuncia penal por el delito contra la violación del secreto profesional tipificado en el artículo 165° de nuestro Código Penal así como los delitos contra la propiedad industrial tipificados en los artículos 222° y siguientes del Código Penal, además en caso se infrinja la presente obligación durante la relación laboral, se considera como falta grave, causal de despido inmediato.   \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'De la misma manera, EL TRABAJADOR no deberá retirar o guardar cualquier bien, documento, archivo, registro e información de EL EMPLEADOR, en ninguna forma o ninguna copia de los mismos o sus partes (incluso por medios electrónicos) sin el permiso expreso de EL EMPLEADOR. Asimismo, deberá devolver todos los bienes o información ni bien se le solicite, dejando constancia a través de un documento escrito, en el cual EL TRABAJADOR detallará todo el material devuelto.  \n\n',
-          ],
-          style: 'parrafo',
-        },
+        this.datosLocales.propiedad_intelectual
+          ? {
+              text: ['CLÁUSULA DECIMOSÉPTIMA. - PROPIEDAD INTELECTUAL\n\n'],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.propiedad_intelectual
+          ? {
+              text: [
+                'EL TRABAJADOR declara conocer que EL EMPLEADOR es el propietario intelectual y económico de los diseños que se elaboren en la ejecución del presente contrato y de los existentes sean o no inscritos ante el INDECOPI u otro ente Estatal o privado, por lo que reconoce no irrogarse autoría alguna por la elaboración de los diseños que en ejecución del presente contrato elabore.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.propiedad_intelectual
+          ? {
+              text: [
+                'Todos los derechos patrimoniales y morales legalmente transferibles, que se refieran al trabajo que podría estar protegido por derechos de autor, diseño, patrón, patente o software, y los cuáles sean creados en la ejecución de este Contrato o en relación con este Contrato serán de EL EMPLEADOR.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.propiedad_intelectual
+          ? {
+              text: [
+                'La compensación con relación a la transferencia de los derechos patrimoniales, relacionados arriba, está incluida en el salario mensual acordado entre la Partes. La transferencia es exclusiva e irrevocable y no se extingue con la finalización de este Contrato.   \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.propiedad_intelectual
+          ? {
+              text: [
+                'Se mantendrá en vigencia por todo el periodo durante el cual la propiedad intelectual esté protegida por ley. \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.propiedad_intelectual
+          ? {
+              text: [
+                'Por lo cual, por medio de la presente cláusula EL TRABAJADOR se compromete a transferir y transfiere a EL EMPLEADOR de una manera exclusiva, todos los derechos, sin ninguna limitación territorial, temporal, de cantidad o de transferencia, para usar y transferir el uso, en todo o en parte, en todos los campos de aprovechamiento o aplicación, para cualquier propósito, todos los resultados de la actividad de EL TRABAJADOR, incluyendo pero no limitado a inventos, modelos de utilidad, diseños industriales, topografías de circuitos integrados, conocimientos técnicos, soluciones, ideas, realizaciones, creaciones, descubrimientos, proyectos, modelos, procesos, mejoras de cualquier naturaleza, que hayan sido creados como resultado del cumplimiento de las funciones de trabajo de EL TRABAJADOR. \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: ['CLÁUSULA DECIMOCTAVA. - CONFIDENCIALIDAD\n\n'],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'La información sobre EL EMPLEADOR, sus clientes, casos y documentos, incluyendo direcciones y datos bancarios, nombres y apellidos de los clientes y sus representantes, así como otros datos, y también la información relativa a la gestión, finanzas, propiedad intelectual y otras actividades de EL EMPLEADOR (o empresas relacionadas) que EL TRABAJADOR reciba durante el cumplimiento de sus obligaciones bajo este Contrato se considerará confidencial y no sujeta a divulgación (en adelante la "Información"). \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'EL TRABAJADOR procurará evitar cualquier divulgación no autorizada de dicha información a terceros salvo que la divulgación sea necesaria directamente bajo la legislación vigente de Perú o a petición motivada de las autoridades competentes con previo aviso a EL EMPLEADOR (en la persona de su delegado). \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal del EMPLEADOR.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'Queda igualmente establecido que toda la información y documentación relacionada con los servicios prestados en el desarrollo de la relación de trabajo se encuentran amparados por las previsiones de confidencialidad establecidas en esta cláusula.    \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente contrato relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'En caso EL TRABAJADOR incumpla con este deber de lealtad y no concurrencia, EL EMPLEADOR se reserva el derecho de accionar en contra de EL TRABAJADOR la demanda civil por daños y perjuicios y la denuncia penal por el delito contra la violación del secreto profesional tipificado en el artículo 165° de nuestro Código Penal así como los delitos contra la propiedad industrial tipificados en los artículos 222° y siguientes del Código Penal, además en caso se infrinja la presente obligación durante la relación laboral, se considera como falta grave, causal de despido inmediato.   \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.confidencialidad
+          ? {
+              text: [
+                'De la misma manera, EL TRABAJADOR no deberá retirar o guardar cualquier bien, documento, archivo, registro e información de EL EMPLEADOR, en ninguna forma o ninguna copia de los mismos o sus partes (incluso por medios electrónicos) sin el permiso expreso de EL EMPLEADOR. Asimismo, deberá devolver todos los bienes o información ni bien se le solicite, dejando constancia a través de un documento escrito, en el cual EL TRABAJADOR detallará todo el material devuelto.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
         {
           text: ['CLÁUSULA DECIMONOVENA. - VALIDEZ DEL CONTRATO\n\n'],
           style: 'subtitulo',
@@ -676,58 +716,76 @@ export class DuodecimoProcesoComponent {
           ],
           style: 'parrafo',
         },
-        {
-          text: ['CLÁUSULA VIGÉSIMA. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n'],
-          style: 'subtitulo',
-        },
-        {
-          text: [
-            'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Además, EL TRABAJADOR se compromete a no instalar, temporal o permanentemente, en una computadora central, una computadora portátil, una computadora de mesa o cualquier otra máquina computadora de EL EMPLEADOR, un programa de computadora o una copia de dicho programa, para la cual EL TRABAJADOR no posea una licencia de uso aceptada por EL EMPLEADOR. \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'También está prohibido hacer una copia ilegal de un programa de computadora del cual EL TRABAJADOR tenga una licencia de uso.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Por lo tanto, EL TRABAJADOR se compromete a: a) hacer uso exclusivo y adecuado de los instrumentos otorgados para el cumplimiento de sus funciones, b) reportar cualquier falla o pérdida en forma inmediata, c) darle o requerir al área correspondiente el mantenimiento preventivo o correctivo necesario y d) asumir daños o pérdidas por negligencia o dolo.   \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'En caso de incumplimiento de lo señalado en la presente cláusula se procederá a sancionar conforme a ley.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'CLÁUSULA VIGESIMOPRIMERA. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
-          ],
-          style: 'subtitulo',
-        },
-        {
-          text: [
-            'EL EMPLEADOR manifiesta conocer y se obliga a cumplir con todas las obligaciones contenidas en la   Ley N° 29733 – Ley de   Protección de Datos Personales – y   su reglamento aprobado mediante Decreto Supremo N° 003-2013-JUS, en especial aquellas normas referidas al tratamiento de datos personales, solo previo consentimiento informado,   expreso e inequívoco de EL TRABAJADOR; a no recopilar datos personales por medios fraudulentos, desleales o ilícitos; a recopilar datos personales que sean actualizados, necesarios, pertinentes y adecuados, con relación a finalidades determinadas, explícitas y lícitas para las que se hayan obtenido; a no utilizar los datos personales objeto de   tratamiento para finalidades distintas de aquellas que motivaron su recopilación; a almacenar los datos personales de manera que se posibilite el ejercicio  de los derechos de EL TRABAJADOR; a suprimir y sustituir o, en su caso, completar los datos personales objeto de tratamiento cuando tenga conocimiento de su carácter inexacto o incompleto; a suprimir los datos personales objeto de tratamiento cuando hayan dejado de ser necesarios o pertinentes a la finalidad para la cual hubiesen sido recopilados o hubiese vencido el plazo para su tratamiento, salvo que medie procedimiento de anonimización o disociación, así como cualquier otra obligación prevista por la referida ley o su reglamento.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'Por su parte, EL TRABAJADOR autoriza a EL EMPLEADOR a utilizar sus datos personales con la finalidad de cumplir estrictamente con las funciones detalladas en el párrafo precedente.  \n\n',
-          ],
-          style: 'parrafo',
-        },
+        this.datosLocales.tecnologia_informacion
+          ? {
+              text: ['CLÁUSULA VIGÉSIMA. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n'],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.tecnologia_informacion
+          ? {
+              text: [
+                'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.tecnologia_informacion
+          ? {
+              text: [
+                'Además, EL TRABAJADOR se compromete a no instalar, temporal o permanentemente, en una computadora central, una computadora portátil, una computadora de mesa o cualquier otra máquina computadora de EL EMPLEADOR, un programa de computadora o una copia de dicho programa, para la cual EL TRABAJADOR no posea una licencia de uso aceptada por EL EMPLEADOR. \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.tecnologia_informacion
+          ? {
+              text: [
+                'También está prohibido hacer una copia ilegal de un programa de computadora del cual EL TRABAJADOR tenga una licencia de uso.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.tecnologia_informacion
+          ? {
+              text: [
+                'Por lo tanto, EL TRABAJADOR se compromete a: a) hacer uso exclusivo y adecuado de los instrumentos otorgados para el cumplimiento de sus funciones, b) reportar cualquier falla o pérdida en forma inmediata, c) darle o requerir al área correspondiente el mantenimiento preventivo o correctivo necesario y d) asumir daños o pérdidas por negligencia o dolo.   \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.tecnologia_informacion
+          ? {
+              text: [
+                'En caso de incumplimiento de lo señalado en la presente cláusula se procederá a sancionar conforme a ley.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.proteccion_datos
+          ? {
+              text: [
+                'CLÁUSULA VIGESIMOPRIMERA. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
+              ],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.proteccion_datos
+          ? {
+              text: [
+                'EL EMPLEADOR manifiesta conocer y se obliga a cumplir con todas las obligaciones contenidas en la   Ley N° 29733 – Ley de   Protección de Datos Personales – y   su reglamento aprobado mediante Decreto Supremo N° 003-2013-JUS, en especial aquellas normas referidas al tratamiento de datos personales, solo previo consentimiento informado,   expreso e inequívoco de EL TRABAJADOR; a no recopilar datos personales por medios fraudulentos, desleales o ilícitos; a recopilar datos personales que sean actualizados, necesarios, pertinentes y adecuados, con relación a finalidades determinadas, explícitas y lícitas para las que se hayan obtenido; a no utilizar los datos personales objeto de   tratamiento para finalidades distintas de aquellas que motivaron su recopilación; a almacenar los datos personales de manera que se posibilite el ejercicio  de los derechos de EL TRABAJADOR; a suprimir y sustituir o, en su caso, completar los datos personales objeto de tratamiento cuando tenga conocimiento de su carácter inexacto o incompleto; a suprimir los datos personales objeto de tratamiento cuando hayan dejado de ser necesarios o pertinentes a la finalidad para la cual hubiesen sido recopilados o hubiese vencido el plazo para su tratamiento, salvo que medie procedimiento de anonimización o disociación, así como cualquier otra obligación prevista por la referida ley o su reglamento.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.proteccion_datos
+          ? {
+              text: [
+                'Por su parte, EL TRABAJADOR autoriza a EL EMPLEADOR a utilizar sus datos personales con la finalidad de cumplir estrictamente con las funciones detalladas en el párrafo precedente.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
         {
           text: [
             'CLÁUSULA VIGESIMOSEGUNDA. - DECLARACIONES DEL TRABAJADOR   \n\n',
@@ -847,6 +905,175 @@ export class DuodecimoProcesoComponent {
           // optional space between columns
           columnGap: 10,
         },
+        {
+          text: ['\n\n\n\n\n ANEXO 1-A   \n\n'],
+          style: 'anexo',
+        },
+        {
+          text: ['FUNCIONES   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'],
+          style: 'anexo',
+        },
+        {
+          text: [
+            '-	Hecho y firmado en Lima, ___ de ____ del 202_, en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          columns: [
+            [
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: '______________________________',
+              },
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: 'EL EMPLEADOR',
+              },
+            ],
+
+            [
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: '______________________________',
+              },
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: 'EL TRABAJADOR',
+              },
+            ],
+          ],
+          // optional space between columns
+          columnGap: 10,
+        },
+        {
+          text: ['\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n ANEXO 1-B   \n\n'],
+          style: 'anexo',
+        },
+        {
+          text: [
+            'RECOMENDACIONES EN MATERIA DE SEGURIDAD Y SALUD EN EL TRABAJO',
+          ],
+          style: 'subtitulo_anexo_b',
+        },
+        {
+          text: ['Cargo: _______   \n\n'],
+          style: 'anexo',
+        },
+        {
+          text: ['1.	Recomendaciones de carácter general:  \n\n'],
+          style: 'subtitulo_num',
+        },
+        {
+          text: [
+            '-	El trabajador debe acatar las normas internas y políticas en materia de seguridad y salud en el trabajo. \n',
+            '-	Reportar de modo inmediato accidentes de trabajo, incidentes peligrosos o cualquier otro tipo de situación que altere o ponga en riesgo la vida, integridad física y psicológica de los trabajadores suscitados en el ámbito laboral, según los mecanismos previstos en EL EMPLEADOR. \n',
+            '-	Comunicar de modo inmediato la pérdida o deterioro de los Equipos de Protección Personal correspondientes o de cualquier equipo o herramienta de trabajo que genere un riesgo a la integridad y salud de los trabajadores de EL EMPLEADOR. \n',
+            '-	Conocer las medidas de emergencia en caso de sismo, incendio, aviso de bomba, accidente, incidente y/o enfermedad de necesaria aplicación en cada caso.  \n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: ['2.	Riesgos laborales del puesto de trabajo:   \n\n'],
+          style: 'subtitulo_num',
+        },
+        {
+          text: [
+            '-	Riesgos causados por una postura de trabajo incorrecta. \n',
+            '-	Tropiezos, resbalones y caídas al nivel del suelo (lugares de paso y superficies de trabajo) en desplazamiento a pie.  \n',
+            '-	Caída, desplome o derrumbamiento de objetos almacenados en armarios, estanterías y demás instalaciones de archivo y almacenamiento de cualesquiera objeto y materiales. Caída de objetos desprendidos.  \n',
+            '-	Riesgos originados por la energía eléctrica.   \n',
+            '-	Fatiga emocional. Disminución de la eficiencia funcional mental y física. Monotonía, saturación mental y disminución de la capacidad de respuesta o de acción de la persona.    \n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            '3.	Recomendaciones en prevención de accidentes de trabajo, incidentes de trabajo y enfermedades ocupacionales:  \n\n',
+          ],
+          style: 'subtitulo_num',
+        },
+        {
+          text: [
+            '-  Prestar atención a los desniveles e irregularidades del suelo, extremando la precaución en los desplazamientos por suelos o superficies mojadas o recién enceradas. Estas situaciones deberán ser comunicadas para su corrección a la brevedad posible.  \n',
+            '-  Mantener las zonas de circulación y las salidas libres de obstáculos. No apilar objetos de modo inadecuado en los estantes o repisas.  \n',
+            '-	No tender cables, conducciones, mangueras, enchufes al nivel del suelo de la zona de trabajo.  \n',
+            '-	Mantener en todo momento el orden y la limpieza en la instalación, colocando los objetos almacenados de forma estable y evitando sobrecargas que puedan deformar la estructura de la estantería.  \n',
+            '-	Emplear con racionalidad los equipos alimentados con electricidad, sin manipular las instalaciones eléctricas, ni alterar ni retirar las puestas a tierra ni los aislamientos de las partes activas de diferentes equipos, instalaciones y sistemas.   \n',
+            '-	No manipular ni desarmar equipos de cómputo.   \n',
+            '-	No colocar bebidas sobre escritorios o mesas donde existan equipos electrónicos.  \n',
+            '-	Prestar especial atención a los calentamientos anormales de los equipos e instalaciones eléctricas (Cables, motores, armarios, etc.), así como los cosquilleos o chispazos provocados por los mismos. En este caso será necesaria su inmediata desconexión y posterior notificación, colocando el equipo en lugar seguro y señalizando su estado hasta ser revisado.   \n',
+            '-	Organizar el tiempo de trabajo de manera que permita la realización de pausas espontáneamente a lo largo de la jornada laboral para descansar y cambiar el foco de atención.   \n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            '4.	Medidas de protección aplicables en el puesto o función específica: \n\n',
+          ],
+          style: 'subtitulo_num',
+        },
+        {
+          text: [
+            '-	Interrumpir la actividad en caso de riesgo grave e inminente para su salud o integridad física y, si es necesario, abandonar el lugar de trabajo, comunicando inmediatamente al superior jerárquico correspondiente las circunstancias que justifican dicha acción.  \n',
+            '-	Respetar las señalizaciones instaladas en las zonas de trabajo y no obstaculizar las vías de evacuación, áreas de circulación, puertas de salida, así como el acceso a los medios de protección contra incendios existentes.  \n',
+            '-	Observar un comportamiento adecuado que evite la generación de riesgos para el propio trabajador, sus compañeros o terceras personas, así como en relación con los bienes y equipos propiedad de EL EMPLEADOR.  \n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            '5.	Medidas de protección aplicables en el marco del COVID-19:  \n\n',
+          ],
+          style: 'subtitulo_num',
+        },
+        {
+          text: [
+            '-	EL EMPLEADOR ha adecuado su funcionamiento a las medidas necesarias que garanticen la salud los trabajadores. En dicho sentido, se debe cumplir con las medidas preventivas establecidas por EL EMPLEADOR para evitar el contagio del COVID-19 en el/los centros de trabajo de la compañía, tal como cumplir el Plan de Vigilancia, Prevención y Control del COVID-19 en el trabajo durante la vigencia del mismo. \n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            '-	Hecho y firmado en Lima, ___ de ____ del 202_, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          columns: [
+            [
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: '______________________________',
+              },
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: 'EL EMPLEADOR',
+              },
+            ],
+
+            [
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: '______________________________',
+              },
+              {
+                // auto-sized columns have their widths based on their content
+                style: 'columna_firma',
+                text: 'EL TRABAJADOR',
+              },
+            ],
+          ],
+          // optional space between columns
+          columnGap: 10,
+        },
       ],
       styles: {
         header: {
@@ -881,6 +1108,19 @@ export class DuodecimoProcesoComponent {
           bold: true,
           fontSize: 12,
           /* color: 'blue', */
+        },
+        anexo: {
+          alignment: 'center',
+          bold: true,
+          fontSize: 12,
+        },
+        subtitulo_anexo_b: {
+          alignment: 'center',
+          bold: true,
+        },
+        subtitulo_num: {
+          alignment: 'left',
+          bold: true,
         },
       },
     };

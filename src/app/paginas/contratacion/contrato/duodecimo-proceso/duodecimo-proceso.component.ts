@@ -869,7 +869,7 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'Hecho y firmado en Lima, 03 de Noviembre de 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
+            'Hecho y firmado en Lima, 06 de Noviembre de 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },
@@ -910,12 +910,26 @@ export class DuodecimoProcesoComponent {
           style: 'anexo',
         },
         {
-          text: ['FUNCIONES   \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'],
+          text: ['FUNCIONES   \n\n\n'],
           style: 'anexo',
         },
         {
           text: [
-            '-	Hecho y firmado en Lima, ___ de ____ del 202_, en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
+            '- Gestión de Proyectos: Participar en la gestión de proyectos, incluyendo la planificación, el seguimiento y el control de proyectos de desarrollo de software.\n',
+            '- Desarrollo de Especificaciones: Crear especificaciones técnicas detalladas que guíen a los desarrolladores en la implementación del sistema.\n',
+            '- Recolección de Requisitos: Analizar y documentar los requisitos del sistema en colaboración con los usuarios y las partes interesadas.\n',
+            '- Diseño de Sistemas: Diseñar la arquitectura y la estructura del sistema, incluyendo bases de datos, interfaces de usuario y componentes de software.\n',
+            '- Evaluación de Tecnología: Investigar y evaluar nuevas tecnologías y herramientas que puedan beneficiar al proyecto.\n',
+            '- Pruebas de Software: Planificar, diseñar y ejecutar pruebas para garantizar que el software cumple con los requisitos y está libre de errores.\n',
+            '- Resolución de Problemas: Identificar y resolver problemas técnicos y de diseño a medida que surgen durante el desarrollo.\n',
+            '- Optimización del Rendimiento: Identificar y abordar problemas de rendimiento en el sistema para garantizar su eficiencia.\n',
+            '- Seguridad de la Información: Asegurarse de que el sistema cumple con las prácticas de seguridad de la información y aplicar medidas de seguridad adecuadas.\n\n',
+          ],
+          style: 'parrafo',
+        },
+        {
+          text: [
+            '-	Hecho y firmado en Lima, 06 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },
@@ -1033,13 +1047,16 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            '-	EL EMPLEADOR ha adecuado su funcionamiento a las medidas necesarias que garanticen la salud los trabajadores. En dicho sentido, se debe cumplir con las medidas preventivas establecidas por EL EMPLEADOR para evitar el contagio del COVID-19 en el/los centros de trabajo de la compañía, tal como cumplir el Plan de Vigilancia, Prevención y Control del COVID-19 en el trabajo durante la vigencia del mismo. \n\n',
+            '-	EL EMPLEADOR ha adecuado su funcionamiento a las medidas necesarias que garanticen la salud los trabajadores. En dicho sentido, se debe cumplir con las medidas preventivas establecidas por EL EMPLEADOR para evitar el contagio del COVID-19 en el/los centros de trabajo de la compañía',
+            this.datosLocales.prevencion_covid
+              ? ', tal como cumplir el Plan de Vigilancia, Prevención y Control del COVID-19 en el trabajo durante la vigencia del mismo. \n\n'
+              : '. \n\n',
           ],
           style: 'parrafo',
         },
         {
           text: [
-            '-	Hecho y firmado en Lima, ___ de ____ del 202_, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
+            '-	Hecho y firmado en Lima, 06 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },

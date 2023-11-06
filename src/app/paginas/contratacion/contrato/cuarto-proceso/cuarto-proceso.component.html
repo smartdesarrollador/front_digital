@@ -3,7 +3,7 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <form (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+      <form (ngSubmit)="saveToLocalStorage()" #form1="ngForm">
         <label for="" class="subtitulo"
           >¿Qué tipo de Contrato vamos a elaborar?</label
         >
@@ -12,7 +12,8 @@
           name="trab"
           class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
           [(ngModel)]="selectedValue"
-          #trab="ngModel"
+          required
+          #TipoContrato="ngModel"
         >
           <option value="" selected>Seleccionar</option>
           <option value="Contrato modal">Contrato modal</option>
@@ -20,6 +21,13 @@
             Contrato a plazo indeterminado
           </option>
         </select>
+        <div
+          class="alerta-rojo mt-5"
+          role="alert"
+          [hidden]="TipoContrato.valid || TipoContrato.pristine"
+        >
+          <span class="font-medium">Requiere seleccionar Trabajador</span>
+        </div>
 
         <div class="flex justify-start mt-20">
           <button class="boton-naranja">Siguiente</button>

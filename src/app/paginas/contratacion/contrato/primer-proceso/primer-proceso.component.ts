@@ -4,6 +4,7 @@ import { Trabajador } from 'src/app/interface/trabajador';
 import { Router } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
+import { myFunctions } from 'src/app/utils/myFunctions';
 
 @Component({
   selector: 'app-primer-proceso',
@@ -18,26 +19,27 @@ export class PrimerProcesoComponent {
   Swal = require('sweetalert2');
   @ViewChild('form1', { static: true }) form1: any;
 
-  /*  mostrar: boolean = false; */
-
   constructor(
     public ts: TrabajadorService,
     private router: Router,
-    private cl: ContratoLocalStorageService
+    private cl: ContratoLocalStorageService,
+    private myFunctions: myFunctions
   ) {}
 
   ngOnInit(): void {
+    this.asignarValorTrabajador();
+    console.log(this.asignarValorTrabajador());
+    this.loadTrabajadores();
+    this.myFunctions.scrollToTop();
+  }
+
+  asignarValorTrabajador(): void {
     const contratoLocal = this.cl.getItem('contratoLocal');
-    /* contratoLocal.nuevoValor = 'hola'; */
 
     if (contratoLocal) {
       this.datosLocales = contratoLocal;
-
       this.selectedValue = this.datosLocales.trabajador;
     }
-
-    this.loadTrabajadores();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   loadTrabajadores() {
@@ -58,13 +60,10 @@ export class PrimerProcesoComponent {
         this.cl.setItem('contratoLocal', { trabajador: this.selectedValue });
       }
 
-      /* localStorage.setItem('selectedValue', this.selectedValue); */
       this.router.navigate(['/contratacion/contrato/proceso_3']);
-      // El formulario es válido, realiza la acción deseada.
       const formValue = this.form1.form.value;
       console.log('Valores del formulario:', formValue);
     } else {
-      // El formulario no es válido, puedes mostrar una alerta o realizar otra acción de validación.
       this.alerta();
     }
   }
@@ -72,9 +71,7 @@ export class PrimerProcesoComponent {
   alerta() {
     Swal.fire({
       icon: 'error',
-      title: 'Oops...',
-      text: 'Something went wrong!',
-      footer: '<a href="">Why do I have this issue?</a>',
+      title: 'Requiere seleccionar por favor',
     });
   }
 }

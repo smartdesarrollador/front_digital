@@ -4,7 +4,7 @@
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
       <h2 class="font-bold text-lg mt-5">Duración y Remuneración</h2>
-      <form (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+      <form (ngSubmit)="saveToLocalStorage()" #form1="ngForm">
         <div class="flex flex-row mt-10">
           <div class="basis-[35%]">
             <div class="flex flex-col mx-5">
@@ -14,7 +14,8 @@
                   type="text"
                   name="fecha_inicio"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-                  value="{{ fechaActualFormato }}"
+                  [(ngModel)]="fechaActualFormato"
+                  required
                 />
               </div>
               <div class="mt-5">
@@ -23,7 +24,8 @@
                   type="text"
                   name="fecha_renovacion"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
-                  value="{{ fechaRenovacion }}"
+                  [(ngModel)]="fechaRenovacion"
+                  required
                 />
               </div>
               <div class="mt-5">
@@ -34,6 +36,7 @@
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
                   placeholder="2,000"
                   [(ngModel)]="remuneracion"
+                  required
                 />
               </div>
             </div>
@@ -47,7 +50,8 @@
                   name="duracion_contrato"
                   class="border border-gray-200 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-3"
                   placeholder="1"
-                  value="{{ duracion_contrato }}"
+                  [(ngModel)]="duracion_contrato"
+                  required
                 />
               </div>
               <div>
@@ -61,6 +65,7 @@
                   name="fecha_periodo"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3 mt-3"
                   [(ngModel)]="fecha_periodo"
+                  required
                 >
                   <option value="" selected>Seleccionar</option>
                   <option value="Año">Año</option>

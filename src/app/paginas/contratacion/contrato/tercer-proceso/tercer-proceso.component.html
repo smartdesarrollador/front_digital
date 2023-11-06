@@ -4,11 +4,6 @@
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
       <p class="mt-5 font-bold">
-        <!--  Hola
-        <span class="subtitulo-naranja">{{ datosRecuperados }}</span
-        ><br /> -->
-        <!-- Hola
-        <span class="subtitulo-naranja">{{ datosLocales?.trabajador }}</span> -->
         Hola
         <span class="subtitulo-naranja" *ngIf="registroTrabajador">{{
           registroTrabajador.trabajador
@@ -43,9 +38,7 @@
         </div>
 
         <div class="flex justify-start mt-20">
-          <button class="boton-naranja" [disabled]="form1.invalid">
-            Siguiente
-          </button>
+          <button class="boton-naranja">Siguiente</button>
         </div>
       </form>
 

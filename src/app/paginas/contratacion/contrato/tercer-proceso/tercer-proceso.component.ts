@@ -1,69 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { Trabajador } from 'src/app/interface/trabajador';
 import { Router } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
+import { myFunctions } from 'src/app/utils/myFunctions';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tercer-proceso',
   templateUrl: './tercer-proceso.component.html',
   styleUrls: ['./tercer-proceso.component.css'],
 })
-export class TercerProcesoComponent {
+export class TercerProcesoComponent implements OnInit {
   datosRecuperados: any;
   registroTrabajador: any;
   selectedValue: string = '';
-
   datosLocales: any = {};
+  @ViewChild('form1', { static: true }) form1: any;
 
   constructor(
     public ts: TrabajadorService,
     private router: Router,
-    private cl: ContratoLocalStorageService
-  ) {
-    // Recuperar datos del localStorage al inicializar el componente
-    const datosGuardados = localStorage.getItem('selectedValue');
-    if (datosGuardados) {
-      this.datosRecuperados = datosGuardados;
-    }
-  }
+    private cl: ContratoLocalStorageService,
+    private myFunctions: myFunctions
+  ) {}
 
   ngOnInit() {
-    const contratoLocal = this.cl.getItem('contratoLocal');
-    /* contratoLocal.nuevoValor = 'hola'; */
+    this.asignarJornada();
+    this.getTrabajador(this.datosLocales.trabajador);
+    this.myFunctions.scrollToTop();
+  }
 
-    console.log(contratoLocal);
+  asignarJornada(): void {
+    const contratoLocal = this.cl.getItem('contratoLocal');
 
     if (contratoLocal) {
       this.datosLocales = contratoLocal;
-
-      this.selectedValue = this.datosLocales.jornada;
+      if (this.datosLocales.jornada) {
+        this.selectedValue = this.datosLocales.jornada;
+      } else {
+        this.selectedValue = '';
+      }
     }
-
-    /* console.log(this.datosLocales); */
-
-    this.getTrabajador(this.datosLocales.trabajador);
-
-    /* console.log(this.datosLocales); */
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-    console.log(this.datosLocales.trabajador + 'hola');
   }
 
   getTrabajador(id: any) {
     this.ts.getTrabajadorById(id).subscribe((data) => {
       console.log(data);
       this.registroTrabajador = data;
-      // Realiza cualquier otra acción necesaria con los datos del trabajador
     });
   }
 
   saveToLocalStorage() {
-    const contratoLocaldatos = this.cl.getItem('contratoLocal');
-    contratoLocaldatos.jornada = this.selectedValue;
+    if (this.form1.form.valid) {
+      const contratoLocaldatos = this.cl.getItem('contratoLocal');
+      contratoLocaldatos.jornada = this.selectedValue;
 
-    this.cl.setItem('contratoLocal', contratoLocaldatos);
-    this.router.navigate(['/contratacion/contrato/proceso_4']);
+      this.cl.setItem('contratoLocal', contratoLocaldatos);
+      this.router.navigate(['/contratacion/contrato/proceso_4']);
+    } else {
+      this.alerta();
+    }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Requiere seleccionar por favor',
+    });
   }
 }

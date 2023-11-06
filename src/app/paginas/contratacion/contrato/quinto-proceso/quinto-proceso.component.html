@@ -3,13 +3,14 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <form (ngSubmit)="saveToLocalStorage()" #formProceso1="ngForm">
+      <form (ngSubmit)="saveToLocalStorage()" #form1="ngForm">
         <label for="" class="subtitulo">Modelo de Contrato</label>
         <select
           id="trab"
           name="trab"
           class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-10"
           [(ngModel)]="selectedValue"
+          required
           #trab="ngModel"
         >
           <option value="" selected>Seleccionar</option>

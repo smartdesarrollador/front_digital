@@ -13,13 +13,19 @@ export class NovenoProcesoComponent {
   fiscalizacion_inmediata: boolean = false;
   jornada_maxima: boolean = false;
 
+  dia_inicio: string = '';
+  dia_final: string = '';
+  horario_inicio: string = '';
+  horario_final: string = '';
+
+
   constructor(
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onCheckboxChange(checkboxName: string) {
     if (checkboxName === 'fiscalizacion_inmediata') {
@@ -33,6 +39,10 @@ export class NovenoProcesoComponent {
     const contratoLocaldatos = this.cl.getItem('contratoLocal');
     contratoLocaldatos.fiscalizacion_inmediata = this.fiscalizacion_inmediata;
     contratoLocaldatos.jornada_maxima = this.jornada_maxima;
+    contratoLocaldatos.dia_inicio = this.dia_inicio;
+    contratoLocaldatos.dia_final = this.dia_final;
+    contratoLocaldatos.horario_inicio = this.horario_inicio;
+    contratoLocaldatos.horario_final = this.horario_final;
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);
 

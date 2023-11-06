@@ -39,7 +39,8 @@
           <div class="mt-7">
             <label for="diaInicio">De: </label>
             <select id="diaInicio" name="diaInicio"
-              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 ">
+              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 "
+              [(ngModel)]="dia_inicio" required>
               <option value="lunes">Lunes</option>
               <option value="martes">Martes</option>
               <option value="miercoles">Miércoles</option>
@@ -51,7 +52,8 @@
 
             <label for="diaFin"> a: </label>
             <select id="diaFin" name="diaFin"
-              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 ">
+              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 "
+              [(ngModel)]="dia_final" required>
               <option value="lunes">Lunes</option>
               <option value="martes">Martes</option>
               <option value="miercoles">Miércoles</option>
@@ -63,39 +65,41 @@
           </div>
           <div class="mt-7">
             <label for="">De: </label>
-            <select id="" name=""
-              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 ">
-              <option value="1">1:00</option>
-              <option value="2">2:00</option>
-              <option value="3">3:00</option>
-              <option value="4">4:00</option>
-              <option value="5">5:00</option>
-              <option value="6">6:00</option>
-              <option value="7">7:00</option>
-              <option value="8">8:00</option>
-              <option value="9">9:00</option>
-              <option value="10">10:00</option>
-              <option value="11">11:00</option>
-              <option value="12">12:00</option>
+            <select id="" name="horarioInicio"
+              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 "
+              [(ngModel)]="horario_inicio" required>
+              <option value="1:00 am">1:00 am</option>
+              <option value="2:00 am">2:00 am</option>
+              <option value="3:00 am">3:00 am</option>
+              <option value="4:00 am">4:00 am</option>
+              <option value="5:00 a">5:00 am</option>
+              <option value="6:00 am">6:00 am</option>
+              <option value="7:00 am">7:00 am</option>
+              <option value="8:00 am">8:00 am</option>
+              <option value="9:00 am">9:00 am</option>
+              <option value="10:00 am">10:00 am</option>
+              <option value="11:00 am">11:00 am</option>
+              <option value="12:00 am">12:00 am</option>
             </select>
 
-            <label for=""> am hasta </label>
-            <select id="horario_inicio" name=""
-              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 ">
-              <option value="1">1:00</option>
-              <option value="2">2:00</option>
-              <option value="3">3:00</option>
-              <option value="4">4:00</option>
-              <option value="5">5:00</option>
-              <option value="6">6:00</option>
-              <option value="7">7:00</option>
-              <option value="8">8:00</option>
-              <option value="9">9:00</option>
-              <option value="10">10:00</option>
-              <option value="11">11:00</option>
-              <option value="12">12:00</option>
+            <label for=""> hasta: </label>
+            <select id="horario_inicio" name="horarioFinal"
+              class="bg-gray-50 border border-gray-100 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 "
+              [(ngModel)]="horario_final" required>
+              <option value="1:00 pm">1:00 pm</option>
+              <option value="2:00 pm">2:00 pm</option>
+              <option value="3:00 pm">3:00 pm</option>
+              <option value="4:00 pm">4:00 pm</option>
+              <option value="5:00 pm">5:00 pm</option>
+              <option value="6:00 pm">6:00 pm</option>
+              <option value="7:00 p">7:00 pm</option>
+              <option value="8:00 pm">8:00 pm</option>
+              <option value="9:00 pm">9:00 pm</option>
+              <option value="10:00">10:00 pm</option>
+              <option value="11:00 pm">11:00 pm</option>
+              <option value="12:00 pm">12:00 pm</option>
             </select>
-            <label for=""> pm </label>
+
           </div>
 
         </div>

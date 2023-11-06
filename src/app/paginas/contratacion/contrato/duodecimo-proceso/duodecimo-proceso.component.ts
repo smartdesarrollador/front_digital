@@ -23,6 +23,42 @@ export class DuodecimoProcesoComponent {
   safePdfUrl: SafeResourceUrl;
   mostrarParrafo: boolean = false;
 
+  num_1: string = 'PRIMERA';
+  num_2: string = 'SEGUNDA';
+  num_3: string = 'TERCERA';
+  num_4: string = 'CUARTA';
+  num_5: string = 'QUINTA';
+  num_5a: string = 'SEXTA';
+  num_5b: string = 'SEXTA';
+  num_5c: string = 'SEXTA';
+  num_6: string = 'SEXTA';
+  num_7: string = 'SEPTIMA';
+  num_8: string = 'OCTAVA';
+  num_9: string = 'NOVENA';
+  num_10: string = 'DECIMA';
+  num_11: string = 'DECIMOPRIMERA';
+  num_12: string = 'DECIMOSEGUNDA';
+  num_13: string = 'DECIMOTERCERA';
+  num_14: string = 'DECIMOCUARTA';
+  num_15: string = 'DECIMOQUINTA';
+  num_16: string = 'DECIMOSEXTA';
+  num_17: string = 'DECIMOSEPTIMA';
+  num_18: string = 'DECIMOOCTAVA';
+  num_19: string = 'DECIMONOVENA';
+  num_20: string = 'VIGESIMO';
+  num_21: string = 'VIGESIMOPRIMERA';
+  num_22: string = 'VIGESIMOSEGUNDA';
+  num_23: string = 'VIGESIMOTERCERA';
+  num_24: string = 'VIGESIMOCUARTA';
+  num_25: string = 'VIGESIMOQUINTA';
+  num_26: string = 'VIGESIMOSEXTA';
+  num_27: string = 'VIGESIMOSEPTIMA';
+  num_28: string = 'VIGESIMOOCTAVA';
+  num_29: string = 'VIGESIMONOVENA';
+  num_30: string = 'TRIGESIMO';
+
+  name_remuneracion: string = this.num_8.toLowerCase();
+
   constructor(
     public ts: TrabajadorService,
     private router: Router,
@@ -34,6 +70,37 @@ export class DuodecimoProcesoComponent {
   ngOnInit(): void {
     const contratoLocal = this.cl.getItem('contratoLocal');
     this.datosLocales = contratoLocal;
+
+    if (
+      this.datosLocales.trabajador_confianza == true ||
+      this.datosLocales.trabajador_direccion
+    ) {
+      this.num_6 = 'SEPTIMA';
+      this.num_7 = 'OCTAVA';
+      this.num_8 = 'NOVENA';
+      this.num_9 = 'DECIMA';
+      this.num_10 = 'DECIMOPRIMERA';
+      this.num_11 = 'DECIMOSEGUNDA';
+      this.num_12 = 'DECIMOTERCERA';
+      this.num_13 = 'DECIMOCUARTA';
+      this.num_14 = 'DECIMOQUINTA';
+      this.num_15 = 'DECIMOSEXTA';
+      this.num_16 = 'DECIMOSEPTIMA';
+      this.num_17 = 'DECIMOOCTAVA';
+      this.num_18 = 'DECIMONOVENA';
+      this.num_19 = 'VIGESIMO';
+      this.num_20 = 'VIGESIMOPRIMERA';
+      this.num_21 = 'VIGESIMOSEGUNDA';
+      this.num_22 = 'VIGESIMOTERCERA';
+      this.num_23 = 'VIGESIMOCUARTA';
+      this.num_24 = 'VIGESIMOQUINTA';
+      this.num_25 = 'VIGESIMOSEXTA';
+      this.num_26 = 'VIGESIMOSEPTIMA';
+      this.num_27 = 'VIGESIMOOCTAVA';
+      this.num_28 = 'VIGESIMONOVENA';
+
+      this.name_remuneracion = this.num_8.toLowerCase();
+    }
 
     this.getTrabajador(this.datosLocales.trabajador).subscribe((data) => {
       this.registroTrabajador = data;
@@ -101,7 +168,7 @@ export class DuodecimoProcesoComponent {
           text: 'A quienes se les puede denominar “LAS PARTES”, en los términos y condiciones siguientes:\n\n',
         },
         {
-          text: ['CLÁUSULA PRIMERA. - ANTECEDENTES\n\n'],
+          text: ['CLÁUSULA ', this.num_1, '. - ANTECEDENTES\n\n'],
           style: 'subtitulo',
         },
         {
@@ -130,7 +197,7 @@ export class DuodecimoProcesoComponent {
               text: this.datosLocales.oferta_laboral,
               style: 'datos_locales',
             },
-            ' para que se desempeñe en las siguientes funciones: \n\n',
+            ' para que se desempeñe en las siguientes funciones descritas en el anexo 1-A. \n\n',
           ],
           style: 'parrafo',
         },
@@ -141,7 +208,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA SEGUNDA. - OBJETO DEL CONTRATO\n\n'],
+          text: ['CLÁUSULA ', this.num_2, '. - OBJETO DEL CONTRATO\n\n'],
           style: 'subtitulo',
         },
         {
@@ -150,12 +217,14 @@ export class DuodecimoProcesoComponent {
             { text: this.datosLocales.fecha_inicio, style: 'datos_locales' },
             ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
             { text: this.datosLocales.oferta_laboral, style: 'datos_locales' },
-            '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula octava. \n\n',
+            '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+            this.name_remuneracion,
+            '. \n\n',
           ],
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA TERCERA. - PRESTACIÓN DE SERVICIOS\n\n'],
+          text: ['CLÁUSULA ', this.num_3, '. - PRESTACIÓN DE SERVICIOS\n\n'],
           style: 'subtitulo',
         },
         {
@@ -191,7 +260,11 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA CUARTA. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_4,
+            '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -203,7 +276,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA QUINTA.- DE LA BUENA FE LABORAL\n\n'],
+          text: ['CLÁUSULA ', this.num_5, '.- DE LA BUENA FE LABORAL\n\n'],
           style: 'subtitulo',
         },
         {
@@ -220,7 +293,7 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.trabajador_confianza
           ? {
-              text: ['CLÁUSULA . - PERSONAL DE CONFIANZA\n\n'],
+              text: ['CLÁUSULA ', this.num_5a, '. - PERSONAL DE CONFIANZA\n\n'],
               style: 'subtitulo',
             }
           : null,
@@ -265,7 +338,7 @@ export class DuodecimoProcesoComponent {
           : null,
         this.datosLocales.trabajador_direccion
           ? {
-              text: ['CLÁUSULA .-  PERSONAL DE DIRECCIÓN\n\n'],
+              text: ['CLÁUSULA ', this.num_5b, '.-  PERSONAL DE DIRECCIÓN\n\n'],
               style: 'subtitulo',
             }
           : null,
@@ -334,7 +407,7 @@ export class DuodecimoProcesoComponent {
               style: 'parrafo',
             },
         {
-          text: ['CLÁUSULA SEXTA. - JORNADA LABORAL\n\n'],
+          text: ['CLÁUSULA ', this.num_6, '. - JORNADA LABORAL\n\n'],
           style: 'subtitulo',
         },
         {
@@ -356,7 +429,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA SÉPTIMA. - ÉTICA Y LEY\n\n'],
+          text: ['CLÁUSULA ', this.num_7, '. - ÉTICA Y LEY\n\n'],
           style: 'subtitulo',
         },
         {
@@ -372,7 +445,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA OCTAVA.- REMUNERACIÓN\n\n'],
+          text: ['CLÁUSULA ', this.num_8, '.- REMUNERACIÓN\n\n'],
           style: 'subtitulo',
         },
         {
@@ -382,12 +455,7 @@ export class DuodecimoProcesoComponent {
               text: this.datosLocales.remuneracion,
               style: 'datos_locales',
             },
-            ' .00 (',
-            {
-              text: this.datosLocales.remuneracion,
-              style: 'datos_locales',
-            },
-            ' con 00/100 soles), durante el tiempo de duración de la relación laboral.  \n\n',
+            ' (con 00/100 soles), durante el tiempo de duración de la relación laboral.  \n\n',
           ],
           style: 'parrafo',
         },
@@ -404,7 +472,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA NOVENA. - PERIODO DE PRUEBA\n\n'],
+          text: ['CLÁUSULA ', this.num_9, '. - PERIODO DE PRUEBA\n\n'],
           style: 'subtitulo',
         },
         {
@@ -426,7 +494,9 @@ export class DuodecimoProcesoComponent {
         this.datosLocales.obligaciones_compromisos
           ? {
               text: [
-                'CLÁUSULA DÉCIMA. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
+                'CLÁUSULA ',
+                this.num_10,
+                '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
               ],
               style: 'subtitulo',
             }
@@ -454,7 +524,7 @@ export class DuodecimoProcesoComponent {
             }
           : null,
         {
-          text: ['CLÁUSULA DECIMOPRIMERA. - DURACIÓN DEL CONTRATO \n\n'],
+          text: ['CLÁUSULA ', this.num_11, '. - DURACIÓN DEL CONTRATO \n\n'],
           style: 'subtitulo',
         },
         {
@@ -492,7 +562,7 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.exclusividad
           ? {
-              text: ['CLÁUSULA DECIMOSEGUNDA. - EXCLUSIVIDAD\n\n'],
+              text: ['CLÁUSULA ', this.num_12, '. - EXCLUSIVIDAD\n\n'],
               style: 'subtitulo',
             }
           : null,
@@ -505,7 +575,7 @@ export class DuodecimoProcesoComponent {
             }
           : null,
         {
-          text: ['CLÁUSULA DECIMOTERCERA. - EXTINCIÓN DEL CONTRATO\n\n'],
+          text: ['CLÁUSULA ', this.num_13, '. - EXTINCIÓN DEL CONTRATO\n\n'],
           style: 'subtitulo',
         },
         {
@@ -522,7 +592,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'CLÁUSULA DECIMOCUARTA. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
+            'CLÁUSULA ',
+            this.num_14,
+            '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
           ],
           style: 'subtitulo',
         },
@@ -533,7 +605,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA DECIMOQUINTA. - RÉGIMEN LABORAL PRIVADO\n\n'],
+          text: ['CLÁUSULA ', this.num_15, '. - RÉGIMEN LABORAL PRIVADO\n\n'],
           style: 'subtitulo',
         },
         {
@@ -544,7 +616,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'CLÁUSULA DECIMOSEXTA. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
+            'CLÁUSULA ',
+            this.num_16,
+            '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
           ],
           style: 'subtitulo',
         },
@@ -580,7 +654,7 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.propiedad_intelectual
           ? {
-              text: ['CLÁUSULA DECIMOSÉPTIMA. - PROPIEDAD INTELECTUAL\n\n'],
+              text: ['CLÁUSULA ', this.num_17, '. - PROPIEDAD INTELECTUAL\n\n'],
               style: 'subtitulo',
             }
           : null,
@@ -626,7 +700,7 @@ export class DuodecimoProcesoComponent {
           : null,
         this.datosLocales.confidencialidad
           ? {
-              text: ['CLÁUSULA DECIMOCTAVA. - CONFIDENCIALIDAD\n\n'],
+              text: ['CLÁUSULA ', this.num_18, '. - CONFIDENCIALIDAD\n\n'],
               style: 'subtitulo',
             }
           : null,
@@ -695,7 +769,7 @@ export class DuodecimoProcesoComponent {
             }
           : null,
         {
-          text: ['CLÁUSULA DECIMONOVENA. - VALIDEZ DEL CONTRATO\n\n'],
+          text: ['CLÁUSULA ', this.num_19, '. - VALIDEZ DEL CONTRATO\n\n'],
           style: 'subtitulo',
         },
         {
@@ -718,7 +792,11 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.tecnologia_informacion
           ? {
-              text: ['CLÁUSULA VIGÉSIMA. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n'],
+              text: [
+                'CLÁUSULA ',
+                this.num_20,
+                '. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n',
+              ],
               style: 'subtitulo',
             }
           : null,
@@ -765,7 +843,9 @@ export class DuodecimoProcesoComponent {
         this.datosLocales.proteccion_datos
           ? {
               text: [
-                'CLÁUSULA VIGESIMOPRIMERA. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
+                'CLÁUSULA ',
+                this.num_21,
+                '. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
               ],
               style: 'subtitulo',
             }
@@ -788,7 +868,9 @@ export class DuodecimoProcesoComponent {
           : null,
         {
           text: [
-            'CLÁUSULA VIGESIMOSEGUNDA. - DECLARACIONES DEL TRABAJADOR   \n\n',
+            'CLÁUSULA ',
+            this.num_22,
+            '. - DECLARACIONES DEL TRABAJADOR   \n\n',
           ],
           style: 'subtitulo',
         },
@@ -808,7 +890,7 @@ export class DuodecimoProcesoComponent {
           ],
         },
         {
-          text: ['CLÁUSULA VIGESIMOTERCERA. - DE LA TRIBUTACIÓN   \n\n'],
+          text: ['CLÁUSULA ', this.num_23, '. - DE LA TRIBUTACIÓN   \n\n'],
           style: 'subtitulo',
         },
         {
@@ -818,7 +900,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA VIGESIMOCUARTA. - DOMICILIO   \n\n'],
+          text: ['CLÁUSULA ', this.num_24, '. - DOMICILIO   \n\n'],
           style: 'subtitulo',
         },
         {
@@ -829,7 +911,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'CLÁUSULA VIGESIMOQUINTA. - DECLARACIONES DE LAS PARTES   \n\n',
+            'CLÁUSULA ',
+            this.num_25,
+            '. - DECLARACIONES DE LAS PARTES   \n\n',
           ],
           style: 'subtitulo',
         },
@@ -846,7 +930,11 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA VIGESIMOSEXTA. - MODIFICACIONES Y ENMIENDAS   \n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_26,
+            '. - MODIFICACIONES Y ENMIENDAS   \n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -857,7 +945,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'CLÁUSULA VIGESIMOSÉPTIMA. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
+            'CLÁUSULA ',
+            this.num_27,
+            '. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
           ],
           style: 'subtitulo',
         },
@@ -885,7 +975,7 @@ export class DuodecimoProcesoComponent {
               {
                 // auto-sized columns have their widths based on their content
                 style: 'columna_firma',
-                text: 'EL EMPLEADOR',
+                text: 'Pedro Sanchez Mendoza',
               },
             ],
 
@@ -896,9 +986,15 @@ export class DuodecimoProcesoComponent {
                 text: '______________________________',
               },
               {
-                // auto-sized columns have their widths based on their content
+                text:
+                  datosTrabajador.primer_nombre +
+                  ' ' +
+                  datosTrabajador.segundo_nombre +
+                  ' ' +
+                  datosTrabajador.apellido_paterno +
+                  ' ' +
+                  datosTrabajador.apellido_materno,
                 style: 'columna_firma',
-                text: 'EL TRABAJADOR',
               },
             ],
           ],
@@ -944,7 +1040,7 @@ export class DuodecimoProcesoComponent {
               {
                 // auto-sized columns have their widths based on their content
                 style: 'columna_firma',
-                text: 'EL EMPLEADOR',
+                text: 'Pedro Sanchez Mendoza',
               },
             ],
 
@@ -955,9 +1051,15 @@ export class DuodecimoProcesoComponent {
                 text: '______________________________',
               },
               {
-                // auto-sized columns have their widths based on their content
+                text:
+                  datosTrabajador.primer_nombre +
+                  ' ' +
+                  datosTrabajador.segundo_nombre +
+                  ' ' +
+                  datosTrabajador.apellido_paterno +
+                  ' ' +
+                  datosTrabajador.apellido_materno,
                 style: 'columna_firma',
-                text: 'EL TRABAJADOR',
               },
             ],
           ],
@@ -975,7 +1077,7 @@ export class DuodecimoProcesoComponent {
           style: 'subtitulo_anexo_b',
         },
         {
-          text: ['Cargo: _______   \n\n'],
+          text: ['Cargo: ', this.datosLocales.oferta_laboral, '   \n\n'],
           style: 'anexo',
         },
         {
@@ -1071,7 +1173,7 @@ export class DuodecimoProcesoComponent {
               {
                 // auto-sized columns have their widths based on their content
                 style: 'columna_firma',
-                text: 'EL EMPLEADOR',
+                text: 'Pedro Sanchez Mendoza',
               },
             ],
 
@@ -1082,9 +1184,15 @@ export class DuodecimoProcesoComponent {
                 text: '______________________________',
               },
               {
-                // auto-sized columns have their widths based on their content
+                text:
+                  datosTrabajador.primer_nombre +
+                  ' ' +
+                  datosTrabajador.segundo_nombre +
+                  ' ' +
+                  datosTrabajador.apellido_paterno +
+                  ' ' +
+                  datosTrabajador.apellido_materno,
                 style: 'columna_firma',
-                text: 'EL TRABAJADOR',
               },
             ],
           ],

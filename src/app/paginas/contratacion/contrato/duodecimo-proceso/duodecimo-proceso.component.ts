@@ -22,6 +22,10 @@ export class DuodecimoProcesoComponent {
   urlpdf: any;
   safePdfUrl: SafeResourceUrl;
   mostrarParrafo: boolean = false;
+  prueba_meses: string = '';
+  prueba_inicio: string = '';
+  prueba_termino: string = '';
+  fechaFormateada: string = '';
 
   num_1: string = 'PRIMERA';
   num_2: string = 'SEGUNDA';
@@ -102,6 +106,23 @@ export class DuodecimoProcesoComponent {
       this.name_remuneracion = this.num_8.toLowerCase();
     }
 
+    if (this.datosLocales.confianza == true) {
+      this.prueba_meses = "6 Meses";
+      this.prueba_inicio = this.datosLocales.fecha_inicio;
+      this.fechaFormateada = this.formatearFecha(this.sumarMeses(6));
+      this.prueba_termino = this.fechaFormateada;
+    } else if (this.datosLocales.direccion == true) {
+      this.prueba_meses = "12 Meses";
+      this.prueba_inicio = this.datosLocales.fecha_inicio;
+      this.fechaFormateada = this.formatearFecha(this.sumarMeses(12));
+      this.prueba_termino = this.fechaFormateada;
+    } else {
+      this.prueba_meses = "3 Meses";
+      this.prueba_inicio = this.datosLocales.fecha_inicio;
+      this.fechaFormateada = this.formatearFecha(this.sumarMeses(3));
+      this.prueba_termino = this.fechaFormateada;
+    }
+
     this.getTrabajador(this.datosLocales.trabajador).subscribe((data) => {
       this.registroTrabajador = data;
       console.log(this.registroTrabajador.trabajador);
@@ -109,6 +130,21 @@ export class DuodecimoProcesoComponent {
       const modeloContrato1 = this.modeloContrato(this.registroTrabajador);
       this.generarPdfMake(modeloContrato1);
     });
+  }
+
+
+
+  sumarMeses(meses: number) {
+    const fecha = new Date(this.datosLocales.fecha_inicio);
+    fecha.setMonth(fecha.getMonth() + meses);
+    return fecha;
+  }
+
+  formatearFecha(fecha: Date): string {
+    const dia = fecha.getDate();
+    const mes = fecha.getMonth() + 1; // Los meses en JavaScript empiezan en 0
+    const anio = fecha.getFullYear();
+    return `${dia}/${mes}/${anio}`;
   }
 
   generarPdfMake(docDefinition: any) {
@@ -477,17 +513,7 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de 3 meses, el cual empieza el   ',
-            {
-              text: this.datosLocales.fecha_inicio,
-              style: 'datos_locales',
-            },
-            '  y termina el   ',
-            {
-              text: '3/2/2024',
-              style: 'datos_locales',
-            },
-            ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa. \n\n',
+            'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ', this.prueba_meses, ' , el cual empieza el ', this.prueba_inicio, ' y termina el ', this.prueba_termino, ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
           ],
           style: 'parrafo',
         },

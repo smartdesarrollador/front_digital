@@ -290,7 +290,9 @@ export class DuodecimoProcesoComponent {
             { text: this.datosLocales.fecha_inicio, style: 'datos_locales' },
             ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
             { text: this.datosLocales.oferta_laboral, style: 'datos_locales' },
-            '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula Octava. \n\n',
+            '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+            this.num_valores[10],
+            '. \n\n',
           ],
           style: 'parrafo',
         },
@@ -1097,7 +1099,7 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'Hecho y firmado en Lima, 06 de Noviembre de 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
+            'Hecho y firmado en Lima, 07 de Noviembre de 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },
@@ -1163,7 +1165,7 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            '-	Hecho y firmado en Lima, 06 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
+            '-	Hecho y firmado en Lima, 07 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },
@@ -1296,7 +1298,7 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            '-	Hecho y firmado en Lima, 06 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
+            '-	Hecho y firmado en Lima, 07 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },

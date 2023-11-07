@@ -26,42 +26,7 @@ export class DuodecimoProcesoComponent {
   prueba_inicio: string = '';
   prueba_termino: string = '';
   fechaFormateada: string = '';
-
-  num_1: string = 'PRIMERA';
-  num_2: string = 'SEGUNDA';
-  num_3: string = 'TERCERA';
-  num_4: string = 'CUARTA';
-  num_5: string = 'QUINTA';
-  num_5a: string = 'SEXTA';
-  num_5b: string = 'SEXTA';
-  num_5c: string = 'SEXTA';
-  num_6: string = 'SEXTA';
-  num_7: string = 'SEPTIMA';
-  num_8: string = 'OCTAVA';
-  num_9: string = 'NOVENA';
-  num_10: string = 'DECIMA';
-  num_11: string = 'DECIMOPRIMERA';
-  num_12: string = 'DECIMOSEGUNDA';
-  num_13: string = 'DECIMOTERCERA';
-  num_14: string = 'DECIMOCUARTA';
-  num_15: string = 'DECIMOQUINTA';
-  num_16: string = 'DECIMOSEXTA';
-  num_17: string = 'DECIMOSEPTIMA';
-  num_18: string = 'DECIMOOCTAVA';
-  num_19: string = 'DECIMONOVENA';
-  num_20: string = 'VIGESIMO';
-  num_21: string = 'VIGESIMOPRIMERA';
-  num_22: string = 'VIGESIMOSEGUNDA';
-  num_23: string = 'VIGESIMOTERCERA';
-  num_24: string = 'VIGESIMOCUARTA';
-  num_25: string = 'VIGESIMOQUINTA';
-  num_26: string = 'VIGESIMOSEXTA';
-  num_27: string = 'VIGESIMOSEPTIMA';
-  num_28: string = 'VIGESIMOOCTAVA';
-  num_29: string = 'VIGESIMONOVENA';
-  num_30: string = 'TRIGESIMO';
-
-  name_remuneracion: string = this.num_8.toLowerCase();
+  num_valores: Array<string> = [];
 
   constructor(
     public ts: TrabajadorService,
@@ -75,49 +40,20 @@ export class DuodecimoProcesoComponent {
     const contratoLocal = this.cl.getItem('contratoLocal');
     this.datosLocales = contratoLocal;
 
-    if (
-      this.datosLocales.trabajador_confianza == true ||
-      this.datosLocales.trabajador_direccion
-    ) {
-      this.num_6 = 'SEPTIMA';
-      this.num_7 = 'OCTAVA';
-      this.num_8 = 'NOVENA';
-      this.num_9 = 'DECIMA';
-      this.num_10 = 'DECIMOPRIMERA';
-      this.num_11 = 'DECIMOSEGUNDA';
-      this.num_12 = 'DECIMOTERCERA';
-      this.num_13 = 'DECIMOCUARTA';
-      this.num_14 = 'DECIMOQUINTA';
-      this.num_15 = 'DECIMOSEXTA';
-      this.num_16 = 'DECIMOSEPTIMA';
-      this.num_17 = 'DECIMOOCTAVA';
-      this.num_18 = 'DECIMONOVENA';
-      this.num_19 = 'VIGESIMO';
-      this.num_20 = 'VIGESIMOPRIMERA';
-      this.num_21 = 'VIGESIMOSEGUNDA';
-      this.num_22 = 'VIGESIMOTERCERA';
-      this.num_23 = 'VIGESIMOCUARTA';
-      this.num_24 = 'VIGESIMOQUINTA';
-      this.num_25 = 'VIGESIMOSEXTA';
-      this.num_26 = 'VIGESIMOSEPTIMA';
-      this.num_27 = 'VIGESIMOOCTAVA';
-      this.num_28 = 'VIGESIMONOVENA';
-
-      this.name_remuneracion = this.num_8.toLowerCase();
-    }
+    this.num_valores = this.numeracion_valores();
 
     if (this.datosLocales.trabajador_confianza == true) {
-      this.prueba_meses = "6 Meses";
+      this.prueba_meses = '6 Meses';
       this.prueba_inicio = this.datosLocales.fecha_inicio;
       this.fechaFormateada = this.formatearFecha(this.sumarMeses(6));
       this.prueba_termino = this.fechaFormateada;
     } else if (this.datosLocales.trabajador_direccion == true) {
-      this.prueba_meses = "12 Meses";
+      this.prueba_meses = '12 Meses';
       this.prueba_inicio = this.datosLocales.fecha_inicio;
       this.fechaFormateada = this.formatearFecha(this.sumarMeses(12));
       this.prueba_termino = this.fechaFormateada;
     } else {
-      this.prueba_meses = "3 Meses";
+      this.prueba_meses = '3 Meses';
       this.prueba_inicio = this.datosLocales.fecha_inicio;
       this.fechaFormateada = this.formatearFecha(this.sumarMeses(3));
       this.prueba_termino = this.fechaFormateada;
@@ -132,7 +68,104 @@ export class DuodecimoProcesoComponent {
     });
   }
 
+  numeracion_valores(): Array<string> {
+    // Tus arrays y variables originales
 
+    const clausulasVisibles: boolean[] = [
+      true, //1
+      true, //2
+      true, //3
+      true, //4
+      true, //5
+      this.datosLocales.trabajador_confianza, //6
+      this.datosLocales.trabajador_direccion, //7
+      this.datosLocales.fiscalizacion_inmediata, //8
+      this.datosLocales.jornada_maxima, //9
+      true, // 10
+      true, // 11
+      true, // 12
+      this.datosLocales.obligaciones_compromisos, // 13
+      true, // 14
+      this.datosLocales.exclusividad, // 15
+      true, // 16
+      true, // 17
+      true, // 18
+      true, // 19
+      this.datosLocales.propiedad_intelectual, // 20
+      this.datosLocales.confidencialidad, // 21
+      true, // 22
+      this.datosLocales.tecnologia_informacion, // 23
+      this.datosLocales.proteccion_datos, // 24
+      true, // 25
+      true, // 26
+      true, // 27
+      true, // 28
+      true, // 29
+      true, // 30
+      true, // 31
+      true, // 32
+    ];
+
+    const ordinales: string[] = [
+      'PRIMERA',
+      'SEGUNDA',
+      'TERCERA',
+      'CUARTA',
+      'QUINTA',
+      'SEXTA',
+      'SEPTIMA',
+      'OCTAVA',
+      'NOVENA',
+      'DECIMA',
+      'DECIMOPRIMERA',
+      'DECIMOSEGUNDA',
+      'DECIMOTERCERA',
+      'DECIMOCUARTA',
+      'DECIMOQUINTA',
+      'DECIMOSEXTA',
+      'DECIMOSEPTIMA',
+      'DECIMOOCTAVA',
+      'DECIMONOVENA',
+      'VIGESIMO',
+      'VIGESIMOPRIMERA',
+      'VIGESIMOSEGUNDA',
+      'VIGESIMOTERCERA',
+      'VIGESIMOCUARTA',
+      'VIGESIMOQUINTA',
+      'VIGESIMOSEXTA',
+      'VIGESIMOSEPTIMA',
+      'VIGESIMOOCTAVA',
+      'VIGESIMONOVENA',
+      'TRIGESIMO',
+      'TRIGESIMOPRIMERA',
+      'TRIGESIMOSEGUNDA',
+    ];
+
+    const ValorNoVisible: string = 'Sin_valor';
+
+    // El array que llenarás con los ordinales correctos o "Sin_valor"
+    let reubicar_ordinales_aqui: string[] = [];
+
+    // Contador para los ordinales visibles
+    let contadorVisible = 0;
+
+    // Iterar sobre los arrays
+    for (let i = 0; i < clausulasVisibles.length; i++) {
+      if (clausulasVisibles[i]) {
+        // Añadir el ordinal correspondiente al contador de visibles
+        reubicar_ordinales_aqui.push(ordinales[contadorVisible]);
+        contadorVisible++;
+      } else {
+        // Añadir "Sin_valor" si la cláusula no es visible
+        reubicar_ordinales_aqui.push(ValorNoVisible);
+      }
+    }
+
+    return reubicar_ordinales_aqui;
+
+    // Ahora reubicar_ordinales_aqui contiene los ordinales de las cláusulas visibles y "Sin_valor" para las no visibles
+    console.log(reubicar_ordinales_aqui);
+  }
 
   sumarMeses(meses: number) {
     const fecha = new Date();
@@ -204,7 +237,7 @@ export class DuodecimoProcesoComponent {
           text: 'A quienes se les puede denominar “LAS PARTES”, en los términos y condiciones siguientes:\n\n',
         },
         {
-          text: ['CLÁUSULA ', this.num_1, '. - ANTECEDENTES\n\n'],
+          text: ['CLÁUSULA ', this.num_valores[0], '. - ANTECEDENTES\n\n'],
           style: 'subtitulo',
         },
         {
@@ -244,7 +277,11 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_2, '. - OBJETO DEL CONTRATO\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[1],
+            '. - OBJETO DEL CONTRATO\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -253,14 +290,16 @@ export class DuodecimoProcesoComponent {
             { text: this.datosLocales.fecha_inicio, style: 'datos_locales' },
             ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
             { text: this.datosLocales.oferta_laboral, style: 'datos_locales' },
-            '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
-            this.name_remuneracion,
-            '. \n\n',
+            '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula Octava. \n\n',
           ],
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_3, '. - PRESTACIÓN DE SERVICIOS\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[2],
+            '. - PRESTACIÓN DE SERVICIOS\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -298,7 +337,7 @@ export class DuodecimoProcesoComponent {
         {
           text: [
             'CLÁUSULA ',
-            this.num_4,
+            this.num_valores[3],
             '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
           ],
           style: 'subtitulo',
@@ -312,7 +351,11 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_5, '.- DE LA BUENA FE LABORAL\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[4],
+            '.- DE LA BUENA FE LABORAL\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -329,143 +372,174 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.trabajador_confianza
           ? {
-            text: ['CLÁUSULA ', this.num_5a, '. - PERSONAL DE CONFIANZA\n\n'],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[5],
+                '. - PERSONAL DE CONFIANZA\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.trabajador_confianza
           ? {
-            text: [
-              'En virtud del artículo 43 del Decreto Legislativo N° 728, se considera trabajadores de confianza a aquellos que laboran en contacto personal y directo con EL EMPLEADOR o con el personal de dirección, teniendo acceso a secretos industriales, comerciales o profesionales y, en general, a información de carácter reservado. Asimismo, a los que contribuyen a la formación de decisiones empresariales.\n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'En virtud del artículo 43 del Decreto Legislativo N° 728, se considera trabajadores de confianza a aquellos que laboran en contacto personal y directo con EL EMPLEADOR o con el personal de dirección, teniendo acceso a secretos industriales, comerciales o profesionales y, en general, a información de carácter reservado. Asimismo, a los que contribuyen a la formación de decisiones empresariales.\n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.trabajador_confianza
           ? {
-            text: [
-              'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de   ',
-              {
-                text: this.datosLocales.oferta_laboral,
-                style: 'datos_locales',
-              },
-              '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con la Gerencia administrativa,    ',
-              {
-                text: this.datosLocales.pregunta_1,
-                style: 'datos_locales',
-              },
-              '   , teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como    ',
-              {
-                text: this.datosLocales.pregunta_2,
-                style: 'datos_locales',
-              },
-              '    \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de   ',
+                {
+                  text: this.datosLocales.oferta_laboral,
+                  style: 'datos_locales',
+                },
+                '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con la Gerencia administrativa,    ',
+                {
+                  text: this.datosLocales.pregunta_1,
+                  style: 'datos_locales',
+                },
+                '   , teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como    ',
+                {
+                  text: this.datosLocales.pregunta_2,
+                  style: 'datos_locales',
+                },
+                '    \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.trabajador_confianza
           ? {
-            text: [
-              'De acuerdo a lo antes mencionado, EL TRABAJADOR, cuenta con una relación laboral de confianza exclusiva sujeta a fiscalización inmediata por lo que el desarrollo de sus funciones se regirá por todo aquello que la legislación laboral señale respecto a esta situación especial.\n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'De acuerdo a lo antes mencionado, EL TRABAJADOR, cuenta con una relación laboral de confianza exclusiva sujeta a fiscalización inmediata por lo que el desarrollo de sus funciones se regirá por todo aquello que la legislación laboral señale respecto a esta situación especial.\n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.trabajador_direccion
           ? {
-            text: ['CLÁUSULA ', this.num_5b, '.-  PERSONAL DE DIRECCIÓN\n\n'],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[6],
+                '.-  PERSONAL DE DIRECCIÓN\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.trabajador_direccion
           ? {
-            text: [
-              'En virtud del artículo 43 del Decreto Legislativo N° 728, se considera puesto de dirección a los trabajadores que ejercen la representación de EL EMPLEADOR a nivel interno y externo, ejercen funciones de administración y control y tienen un alto grado de responsabilidad, y de sus labores depende el resultado de la actividad de EL EMPLEADOR.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'En virtud del artículo 43 del Decreto Legislativo N° 728, se considera puesto de dirección a los trabajadores que ejercen la representación de EL EMPLEADOR a nivel interno y externo, ejercen funciones de administración y control y tienen un alto grado de responsabilidad, y de sus labores depende el resultado de la actividad de EL EMPLEADOR.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.trabajador_direccion
           ? {
-            text: [
-              'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de ',
-              {
-                text: this.datosLocales.oferta_laboral,
-                style: 'datos_locales',
-              },
-              ' es considerado como personal de dirección y por ende de confianza debido a que cuenta con representación de EL EMPLEADOR a nivel interno y externo ya que ejerce funciones de administración y control, toda vez que que supervisa y tiene un alto grado de responsabilidad, y de sus labores depende el resultado de la actividad de EL EMPLEADOR, asimismo, tiene acceso a información confidencial tales como  ',
-              {
-                text: this.datosLocales.pregunta_3,
-                style: 'datos_locales',
-              },
-              ' , secretos industriales, comerciales o profesionales y, en general, a información de carácter reservado.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de ',
+                {
+                  text: this.datosLocales.oferta_laboral,
+                  style: 'datos_locales',
+                },
+                ' es considerado como personal de dirección y por ende de confianza debido a que cuenta con representación de EL EMPLEADOR a nivel interno y externo ya que ejerce funciones de administración y control, toda vez que que supervisa y tiene un alto grado de responsabilidad, y de sus labores depende el resultado de la actividad de EL EMPLEADOR, asimismo, tiene acceso a información confidencial tales como  ',
+                {
+                  text: this.datosLocales.pregunta_3,
+                  style: 'datos_locales',
+                },
+                ' , secretos industriales, comerciales o profesionales y, en general, a información de carácter reservado.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.fiscalizacion_inmediata
+          ? {
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[7],
+                '. – PERSONAL SIN FISCALIZACIÓN INMEDIATA  \n\n',
+              ],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.fiscalizacion_inmediata
+          ? this.datosLocales.trabajador_confianza
+            ? {
+                text: [
+                  'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
+                  {
+                    text: ' Trabajador de Confianza',
+                    style: 'datos_locales',
+                  },
+                  '  en virtud del artículo    ',
+                  {
+                    text: ' 10',
+                    style: 'datos_locales',
+                  },
+                  '   del Decreto Supremo N° 008-2002-TR.\n\n',
+                ],
+                style: 'parrafo',
+              }
+            : {
+                text: [
+                  'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
+                  {
+                    text: ' Trabajador de Dirección',
+                    style: 'datos_locales',
+                  },
+                  '  en virtud del artículo    ',
+                  {
+                    text: ' 11',
+                    style: 'datos_locales',
+                  },
+                  '   del Decreto Supremo N° 008-2002-TR.\n\n',
+                ],
+                style: 'parrafo',
+              }
+          : null,
+        this.datosLocales.jornada_maxima
+          ? {
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[8],
+                '. - JORNADA LABORAL\n\n',
+              ],
+              style: 'subtitulo',
+            }
+          : null,
+        this.datosLocales.jornada_maxima
+          ? {
+              text: [
+                'EL TRABAJADOR desarrollará sus funciones en una jornada máxima laboral de 48 horas semanales, siendo el día de descanso semanal obligatorio los domingos. \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.jornada_maxima
+          ? {
+              text: [
+                'El horario de trabajo podrá ser distribuido de lunes a viernes pudiendo ser la jornada laboral de lunes a viernes de',
+                this.datosLocales.horario_inicio,
+                ' a ',
+                this.datosLocales.horario_final,
+                ', incluido los 45 minutos de refrigerio, los cuales no forman parte de la jornada ni del horario de trabajo.  \n\n',
+              ],
+              style: 'parrafo',
+            }
+          : null,
+        this.datosLocales.jornada_maxima
+          ? {
+              text: [
+                'De igual forma EL TRABAJADOR deberá cumplir las normas que EL EMPLEADOR imparta para el cumplimiento de sus objetivos, así como de las funciones y metas impartidas por EL EMPLEADOR, en ejercicio de sus facultades de Administración de acuerdo con lo indicado en el artículo 9° del del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR.   \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         {
-          text: ['CLÁUSULA . – PERSONAL SIN FISCALIZACIÓN INMEDIATA  \n\n'],
-          style: 'subtitulo',
-        },
-
-        this.datosLocales.trabajador_confianza
-          ? {
-            text: [
-              'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-              {
-                text: ' Trabajador de Confianza',
-                style: 'datos_locales',
-              },
-              '  en virtud del artículo    ',
-              {
-                text: ' 10',
-                style: 'datos_locales',
-              },
-              '   del Decreto Supremo N° 008-2002-TR.\n\n',
-            ],
-            style: 'parrafo',
-          }
-          : {
-            text: [
-              'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-              {
-                text: ' Trabajador de Dirección',
-                style: 'datos_locales',
-              },
-              '  en virtud del artículo    ',
-              {
-                text: ' 11',
-                style: 'datos_locales',
-              },
-              '   del Decreto Supremo N° 008-2002-TR.\n\n',
-            ],
-            style: 'parrafo',
-          },
-        {
-          text: ['CLÁUSULA ', this.num_6, '. - JORNADA LABORAL\n\n'],
-          style: 'subtitulo',
-        },
-        {
-          text: [
-            'EL TRABAJADOR desarrollará sus funciones en una jornada máxima laboral de 48 horas semanales, siendo el día de descanso semanal obligatorio los domingos. \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'El horario de trabajo podrá ser distribuido de lunes a viernes pudiendo ser la jornada laboral de lunes a viernes de', this.datosLocales.horario_inicio, ' a ', this.datosLocales.horario_final, ', incluido los 45 minutos de refrigerio, los cuales no forman parte de la jornada ni del horario de trabajo.  \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: [
-            'De igual forma EL TRABAJADOR deberá cumplir las normas que EL EMPLEADOR imparta para el cumplimiento de sus objetivos, así como de las funciones y metas impartidas por EL EMPLEADOR, en ejercicio de sus facultades de Administración de acuerdo con lo indicado en el artículo 9° del del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR.   \n\n',
-          ],
-          style: 'parrafo',
-        },
-        {
-          text: ['CLÁUSULA ', this.num_7, '. - ÉTICA Y LEY\n\n'],
+          text: ['CLÁUSULA ', this.num_valores[9], '. - ÉTICA Y LEY\n\n'],
           style: 'subtitulo',
         },
         {
@@ -481,7 +555,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_8, '.- REMUNERACIÓN\n\n'],
+          text: ['CLÁUSULA ', this.num_valores[10], '.- REMUNERACIÓN\n\n'],
           style: 'subtitulo',
         },
         {
@@ -508,49 +582,63 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_9, '. - PERIODO DE PRUEBA\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[11],
+            '. - PERIODO DE PRUEBA\n\n',
+          ],
           style: 'subtitulo',
         },
         {
           text: [
-            'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ', this.prueba_meses, ' , el cual empieza el ', this.prueba_inicio, ' y termina el ', this.prueba_termino, ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
+            'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ',
+            this.prueba_meses,
+            ' , el cual empieza el ',
+            this.prueba_inicio,
+            ' y termina el ',
+            this.prueba_termino,
+            ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
           ],
           style: 'parrafo',
         },
         this.datosLocales.obligaciones_compromisos
           ? {
-            text: [
-              'CLÁUSULA ',
-              this.num_10,
-              '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
-            ],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[12],
+                '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.obligaciones_compromisos
           ? {
-            text: ['EL TRABAJADOR se compromete a: \n\n'],
-            style: 'parrafo',
-          }
+              text: ['EL TRABAJADOR se compromete a: \n\n'],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.obligaciones_compromisos
           ? {
-            ol: [
-              'Cumplir con lealtad y eficiencia las labores principales, conexas y complementarias, inherentes a su puesto de trabajo, aplicando para tal fin toda su experiencia y capacidad, velando por los intereses de EL EMPLEADOR.',
-              'Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad.',
-              'Cumplir con las funciones, órdenes e instrucciones de EL EMPLEADOR o sus representantes, así como las demás normas que se impartan por necesidad del servicio.',
-              'A guardar reserva de la información a la que acceda en virtud del presente contrato. Esta obligación subsistirá aún después de terminada la relación laboral y su incumplimiento genera la correspondiente responsabilidad por daños y perjuicios, así como la responsabilidad penal por el delito previsto en el artículo 165° del Código Penal.',
-              'No podrá ofrecer o brindar declaraciones a los medios de comunicación sobre asuntos institucionales, sin la autorización expresa de EL EMPLEADOR.',
-              'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
-              'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
-              'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
-              'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR.',
-            ],
-            style: 'parrafo',
-          }
+              ol: [
+                'Cumplir con lealtad y eficiencia las labores principales, conexas y complementarias, inherentes a su puesto de trabajo, aplicando para tal fin toda su experiencia y capacidad, velando por los intereses de EL EMPLEADOR.',
+                'Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad.',
+                'Cumplir con las funciones, órdenes e instrucciones de EL EMPLEADOR o sus representantes, así como las demás normas que se impartan por necesidad del servicio.',
+                'A guardar reserva de la información a la que acceda en virtud del presente contrato. Esta obligación subsistirá aún después de terminada la relación laboral y su incumplimiento genera la correspondiente responsabilidad por daños y perjuicios, así como la responsabilidad penal por el delito previsto en el artículo 165° del Código Penal.',
+                'No podrá ofrecer o brindar declaraciones a los medios de comunicación sobre asuntos institucionales, sin la autorización expresa de EL EMPLEADOR.',
+                'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
+                'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
+                'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
+                'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR.',
+              ],
+              style: 'parrafo',
+            }
           : null,
         {
-          text: ['CLÁUSULA ', this.num_11, '. - DURACIÓN DEL CONTRATO \n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[13],
+            '. - DURACIÓN DEL CONTRATO \n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -588,20 +676,24 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.exclusividad
           ? {
-            text: ['CLÁUSULA ', this.num_12, '. - EXCLUSIVIDAD\n\n'],
-            style: 'subtitulo',
-          }
+              text: ['CLÁUSULA ', this.num_valores[14], '. - EXCLUSIVIDAD\n\n'],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.exclusividad
           ? {
-            text: [
-              'EL TRABAJADOR se obliga por su parte en forma expresa a prestar servicios a EL EMPLEADOR bajo condición de exclusividad, dependencia y lealtad de acuerdo con los reglamentos, prácticas y políticas establecidas por EL EMPLEADOR. En ese sentido, EL TRABAJADOR no podrá prestar servicios paralelos a empresas que se dediquen al mismo rubro que EL EMPLEADOR o brindar servicios similares al de EL EMPLEADOR por su cuenta. \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'EL TRABAJADOR se obliga por su parte en forma expresa a prestar servicios a EL EMPLEADOR bajo condición de exclusividad, dependencia y lealtad de acuerdo con los reglamentos, prácticas y políticas establecidas por EL EMPLEADOR. En ese sentido, EL TRABAJADOR no podrá prestar servicios paralelos a empresas que se dediquen al mismo rubro que EL EMPLEADOR o brindar servicios similares al de EL EMPLEADOR por su cuenta. \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         {
-          text: ['CLÁUSULA ', this.num_13, '. - EXTINCIÓN DEL CONTRATO\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[15],
+            '. - EXTINCIÓN DEL CONTRATO\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -619,7 +711,7 @@ export class DuodecimoProcesoComponent {
         {
           text: [
             'CLÁUSULA ',
-            this.num_14,
+            this.num_valores[16],
             '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
           ],
           style: 'subtitulo',
@@ -631,7 +723,11 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_15, '. - RÉGIMEN LABORAL PRIVADO\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[17],
+            '. - RÉGIMEN LABORAL PRIVADO\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -643,7 +739,7 @@ export class DuodecimoProcesoComponent {
         {
           text: [
             'CLÁUSULA ',
-            this.num_16,
+            this.num_valores[18],
             '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
           ],
           style: 'subtitulo',
@@ -680,122 +776,134 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.propiedad_intelectual
           ? {
-            text: ['CLÁUSULA ', this.num_17, '. - PROPIEDAD INTELECTUAL\n\n'],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[19],
+                '. - PROPIEDAD INTELECTUAL\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.propiedad_intelectual
           ? {
-            text: [
-              'EL TRABAJADOR declara conocer que EL EMPLEADOR es el propietario intelectual y económico de los diseños que se elaboren en la ejecución del presente contrato y de los existentes sean o no inscritos ante el INDECOPI u otro ente Estatal o privado, por lo que reconoce no irrogarse autoría alguna por la elaboración de los diseños que en ejecución del presente contrato elabore.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'EL TRABAJADOR declara conocer que EL EMPLEADOR es el propietario intelectual y económico de los diseños que se elaboren en la ejecución del presente contrato y de los existentes sean o no inscritos ante el INDECOPI u otro ente Estatal o privado, por lo que reconoce no irrogarse autoría alguna por la elaboración de los diseños que en ejecución del presente contrato elabore.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.propiedad_intelectual
           ? {
-            text: [
-              'Todos los derechos patrimoniales y morales legalmente transferibles, que se refieran al trabajo que podría estar protegido por derechos de autor, diseño, patrón, patente o software, y los cuáles sean creados en la ejecución de este Contrato o en relación con este Contrato serán de EL EMPLEADOR.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Todos los derechos patrimoniales y morales legalmente transferibles, que se refieran al trabajo que podría estar protegido por derechos de autor, diseño, patrón, patente o software, y los cuáles sean creados en la ejecución de este Contrato o en relación con este Contrato serán de EL EMPLEADOR.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.propiedad_intelectual
           ? {
-            text: [
-              'La compensación con relación a la transferencia de los derechos patrimoniales, relacionados arriba, está incluida en el salario mensual acordado entre la Partes. La transferencia es exclusiva e irrevocable y no se extingue con la finalización de este Contrato.   \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'La compensación con relación a la transferencia de los derechos patrimoniales, relacionados arriba, está incluida en el salario mensual acordado entre la Partes. La transferencia es exclusiva e irrevocable y no se extingue con la finalización de este Contrato.   \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.propiedad_intelectual
           ? {
-            text: [
-              'Se mantendrá en vigencia por todo el periodo durante el cual la propiedad intelectual esté protegida por ley. \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Se mantendrá en vigencia por todo el periodo durante el cual la propiedad intelectual esté protegida por ley. \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.propiedad_intelectual
           ? {
-            text: [
-              'Por lo cual, por medio de la presente cláusula EL TRABAJADOR se compromete a transferir y transfiere a EL EMPLEADOR de una manera exclusiva, todos los derechos, sin ninguna limitación territorial, temporal, de cantidad o de transferencia, para usar y transferir el uso, en todo o en parte, en todos los campos de aprovechamiento o aplicación, para cualquier propósito, todos los resultados de la actividad de EL TRABAJADOR, incluyendo pero no limitado a inventos, modelos de utilidad, diseños industriales, topografías de circuitos integrados, conocimientos técnicos, soluciones, ideas, realizaciones, creaciones, descubrimientos, proyectos, modelos, procesos, mejoras de cualquier naturaleza, que hayan sido creados como resultado del cumplimiento de las funciones de trabajo de EL TRABAJADOR. \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Por lo cual, por medio de la presente cláusula EL TRABAJADOR se compromete a transferir y transfiere a EL EMPLEADOR de una manera exclusiva, todos los derechos, sin ninguna limitación territorial, temporal, de cantidad o de transferencia, para usar y transferir el uso, en todo o en parte, en todos los campos de aprovechamiento o aplicación, para cualquier propósito, todos los resultados de la actividad de EL TRABAJADOR, incluyendo pero no limitado a inventos, modelos de utilidad, diseños industriales, topografías de circuitos integrados, conocimientos técnicos, soluciones, ideas, realizaciones, creaciones, descubrimientos, proyectos, modelos, procesos, mejoras de cualquier naturaleza, que hayan sido creados como resultado del cumplimiento de las funciones de trabajo de EL TRABAJADOR. \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: ['CLÁUSULA ', this.num_18, '. - CONFIDENCIALIDAD\n\n'],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[20],
+                '. - CONFIDENCIALIDAD\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'La información sobre EL EMPLEADOR, sus clientes, casos y documentos, incluyendo direcciones y datos bancarios, nombres y apellidos de los clientes y sus representantes, así como otros datos, y también la información relativa a la gestión, finanzas, propiedad intelectual y otras actividades de EL EMPLEADOR (o empresas relacionadas) que EL TRABAJADOR reciba durante el cumplimiento de sus obligaciones bajo este Contrato se considerará confidencial y no sujeta a divulgación (en adelante la "Información"). \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'La información sobre EL EMPLEADOR, sus clientes, casos y documentos, incluyendo direcciones y datos bancarios, nombres y apellidos de los clientes y sus representantes, así como otros datos, y también la información relativa a la gestión, finanzas, propiedad intelectual y otras actividades de EL EMPLEADOR (o empresas relacionadas) que EL TRABAJADOR reciba durante el cumplimiento de sus obligaciones bajo este Contrato se considerará confidencial y no sujeta a divulgación (en adelante la "Información"). \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'EL TRABAJADOR procurará evitar cualquier divulgación no autorizada de dicha información a terceros salvo que la divulgación sea necesaria directamente bajo la legislación vigente de Perú o a petición motivada de las autoridades competentes con previo aviso a EL EMPLEADOR (en la persona de su delegado). \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'EL TRABAJADOR procurará evitar cualquier divulgación no autorizada de dicha información a terceros salvo que la divulgación sea necesaria directamente bajo la legislación vigente de Perú o a petición motivada de las autoridades competentes con previo aviso a EL EMPLEADOR (en la persona de su delegado). \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal del EMPLEADOR.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal del EMPLEADOR.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'Queda igualmente establecido que toda la información y documentación relacionada con los servicios prestados en el desarrollo de la relación de trabajo se encuentran amparados por las previsiones de confidencialidad establecidas en esta cláusula.    \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Queda igualmente establecido que toda la información y documentación relacionada con los servicios prestados en el desarrollo de la relación de trabajo se encuentran amparados por las previsiones de confidencialidad establecidas en esta cláusula.    \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente contrato relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente contrato relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'En caso EL TRABAJADOR incumpla con este deber de lealtad y no concurrencia, EL EMPLEADOR se reserva el derecho de accionar en contra de EL TRABAJADOR la demanda civil por daños y perjuicios y la denuncia penal por el delito contra la violación del secreto profesional tipificado en el artículo 165° de nuestro Código Penal así como los delitos contra la propiedad industrial tipificados en los artículos 222° y siguientes del Código Penal, además en caso se infrinja la presente obligación durante la relación laboral, se considera como falta grave, causal de despido inmediato.   \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'En caso EL TRABAJADOR incumpla con este deber de lealtad y no concurrencia, EL EMPLEADOR se reserva el derecho de accionar en contra de EL TRABAJADOR la demanda civil por daños y perjuicios y la denuncia penal por el delito contra la violación del secreto profesional tipificado en el artículo 165° de nuestro Código Penal así como los delitos contra la propiedad industrial tipificados en los artículos 222° y siguientes del Código Penal, además en caso se infrinja la presente obligación durante la relación laboral, se considera como falta grave, causal de despido inmediato.   \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.confidencialidad
           ? {
-            text: [
-              'De la misma manera, EL TRABAJADOR no deberá retirar o guardar cualquier bien, documento, archivo, registro e información de EL EMPLEADOR, en ninguna forma o ninguna copia de los mismos o sus partes (incluso por medios electrónicos) sin el permiso expreso de EL EMPLEADOR. Asimismo, deberá devolver todos los bienes o información ni bien se le solicite, dejando constancia a través de un documento escrito, en el cual EL TRABAJADOR detallará todo el material devuelto.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'De la misma manera, EL TRABAJADOR no deberá retirar o guardar cualquier bien, documento, archivo, registro e información de EL EMPLEADOR, en ninguna forma o ninguna copia de los mismos o sus partes (incluso por medios electrónicos) sin el permiso expreso de EL EMPLEADOR. Asimismo, deberá devolver todos los bienes o información ni bien se le solicite, dejando constancia a través de un documento escrito, en el cual EL TRABAJADOR detallará todo el material devuelto.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         {
-          text: ['CLÁUSULA ', this.num_19, '. - VALIDEZ DEL CONTRATO\n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[21],
+            '. - VALIDEZ DEL CONTRATO\n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -818,84 +926,84 @@ export class DuodecimoProcesoComponent {
         },
         this.datosLocales.tecnologia_informacion
           ? {
-            text: [
-              'CLÁUSULA ',
-              this.num_20,
-              '. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n',
-            ],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[22],
+                '. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.tecnologia_informacion
           ? {
-            text: [
-              'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.tecnologia_informacion
           ? {
-            text: [
-              'Además, EL TRABAJADOR se compromete a no instalar, temporal o permanentemente, en una computadora central, una computadora portátil, una computadora de mesa o cualquier otra máquina computadora de EL EMPLEADOR, un programa de computadora o una copia de dicho programa, para la cual EL TRABAJADOR no posea una licencia de uso aceptada por EL EMPLEADOR. \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Además, EL TRABAJADOR se compromete a no instalar, temporal o permanentemente, en una computadora central, una computadora portátil, una computadora de mesa o cualquier otra máquina computadora de EL EMPLEADOR, un programa de computadora o una copia de dicho programa, para la cual EL TRABAJADOR no posea una licencia de uso aceptada por EL EMPLEADOR. \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.tecnologia_informacion
           ? {
-            text: [
-              'También está prohibido hacer una copia ilegal de un programa de computadora del cual EL TRABAJADOR tenga una licencia de uso.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'También está prohibido hacer una copia ilegal de un programa de computadora del cual EL TRABAJADOR tenga una licencia de uso.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.tecnologia_informacion
           ? {
-            text: [
-              'Por lo tanto, EL TRABAJADOR se compromete a: a) hacer uso exclusivo y adecuado de los instrumentos otorgados para el cumplimiento de sus funciones, b) reportar cualquier falla o pérdida en forma inmediata, c) darle o requerir al área correspondiente el mantenimiento preventivo o correctivo necesario y d) asumir daños o pérdidas por negligencia o dolo.   \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Por lo tanto, EL TRABAJADOR se compromete a: a) hacer uso exclusivo y adecuado de los instrumentos otorgados para el cumplimiento de sus funciones, b) reportar cualquier falla o pérdida en forma inmediata, c) darle o requerir al área correspondiente el mantenimiento preventivo o correctivo necesario y d) asumir daños o pérdidas por negligencia o dolo.   \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.tecnologia_informacion
           ? {
-            text: [
-              'En caso de incumplimiento de lo señalado en la presente cláusula se procederá a sancionar conforme a ley.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'En caso de incumplimiento de lo señalado en la presente cláusula se procederá a sancionar conforme a ley.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.proteccion_datos
           ? {
-            text: [
-              'CLÁUSULA ',
-              this.num_21,
-              '. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
-            ],
-            style: 'subtitulo',
-          }
+              text: [
+                'CLÁUSULA ',
+                this.num_valores[23],
+                '. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
+              ],
+              style: 'subtitulo',
+            }
           : null,
         this.datosLocales.proteccion_datos
           ? {
-            text: [
-              'EL EMPLEADOR manifiesta conocer y se obliga a cumplir con todas las obligaciones contenidas en la   Ley N° 29733 – Ley de   Protección de Datos Personales – y   su reglamento aprobado mediante Decreto Supremo N° 003-2013-JUS, en especial aquellas normas referidas al tratamiento de datos personales, solo previo consentimiento informado,   expreso e inequívoco de EL TRABAJADOR; a no recopilar datos personales por medios fraudulentos, desleales o ilícitos; a recopilar datos personales que sean actualizados, necesarios, pertinentes y adecuados, con relación a finalidades determinadas, explícitas y lícitas para las que se hayan obtenido; a no utilizar los datos personales objeto de   tratamiento para finalidades distintas de aquellas que motivaron su recopilación; a almacenar los datos personales de manera que se posibilite el ejercicio  de los derechos de EL TRABAJADOR; a suprimir y sustituir o, en su caso, completar los datos personales objeto de tratamiento cuando tenga conocimiento de su carácter inexacto o incompleto; a suprimir los datos personales objeto de tratamiento cuando hayan dejado de ser necesarios o pertinentes a la finalidad para la cual hubiesen sido recopilados o hubiese vencido el plazo para su tratamiento, salvo que medie procedimiento de anonimización o disociación, así como cualquier otra obligación prevista por la referida ley o su reglamento.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'EL EMPLEADOR manifiesta conocer y se obliga a cumplir con todas las obligaciones contenidas en la   Ley N° 29733 – Ley de   Protección de Datos Personales – y   su reglamento aprobado mediante Decreto Supremo N° 003-2013-JUS, en especial aquellas normas referidas al tratamiento de datos personales, solo previo consentimiento informado,   expreso e inequívoco de EL TRABAJADOR; a no recopilar datos personales por medios fraudulentos, desleales o ilícitos; a recopilar datos personales que sean actualizados, necesarios, pertinentes y adecuados, con relación a finalidades determinadas, explícitas y lícitas para las que se hayan obtenido; a no utilizar los datos personales objeto de   tratamiento para finalidades distintas de aquellas que motivaron su recopilación; a almacenar los datos personales de manera que se posibilite el ejercicio  de los derechos de EL TRABAJADOR; a suprimir y sustituir o, en su caso, completar los datos personales objeto de tratamiento cuando tenga conocimiento de su carácter inexacto o incompleto; a suprimir los datos personales objeto de tratamiento cuando hayan dejado de ser necesarios o pertinentes a la finalidad para la cual hubiesen sido recopilados o hubiese vencido el plazo para su tratamiento, salvo que medie procedimiento de anonimización o disociación, así como cualquier otra obligación prevista por la referida ley o su reglamento.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         this.datosLocales.proteccion_datos
           ? {
-            text: [
-              'Por su parte, EL TRABAJADOR autoriza a EL EMPLEADOR a utilizar sus datos personales con la finalidad de cumplir estrictamente con las funciones detalladas en el párrafo precedente.  \n\n',
-            ],
-            style: 'parrafo',
-          }
+              text: [
+                'Por su parte, EL TRABAJADOR autoriza a EL EMPLEADOR a utilizar sus datos personales con la finalidad de cumplir estrictamente con las funciones detalladas en el párrafo precedente.  \n\n',
+              ],
+              style: 'parrafo',
+            }
           : null,
         {
           text: [
             'CLÁUSULA ',
-            this.num_22,
+            this.num_valores[24],
             '. - DECLARACIONES DEL TRABAJADOR   \n\n',
           ],
           style: 'subtitulo',
@@ -916,7 +1024,11 @@ export class DuodecimoProcesoComponent {
           ],
         },
         {
-          text: ['CLÁUSULA ', this.num_23, '. - DE LA TRIBUTACIÓN   \n\n'],
+          text: [
+            'CLÁUSULA ',
+            this.num_valores[25],
+            '. - DE LA TRIBUTACIÓN   \n\n',
+          ],
           style: 'subtitulo',
         },
         {
@@ -926,7 +1038,7 @@ export class DuodecimoProcesoComponent {
           style: 'parrafo',
         },
         {
-          text: ['CLÁUSULA ', this.num_24, '. - DOMICILIO   \n\n'],
+          text: ['CLÁUSULA ', this.num_valores[26], '. - DOMICILIO   \n\n'],
           style: 'subtitulo',
         },
         {
@@ -938,7 +1050,7 @@ export class DuodecimoProcesoComponent {
         {
           text: [
             'CLÁUSULA ',
-            this.num_25,
+            this.num_valores[27],
             '. - DECLARACIONES DE LAS PARTES   \n\n',
           ],
           style: 'subtitulo',
@@ -958,7 +1070,7 @@ export class DuodecimoProcesoComponent {
         {
           text: [
             'CLÁUSULA ',
-            this.num_26,
+            this.num_valores[28],
             '. - MODIFICACIONES Y ENMIENDAS   \n\n',
           ],
           style: 'subtitulo',
@@ -972,7 +1084,7 @@ export class DuodecimoProcesoComponent {
         {
           text: [
             'CLÁUSULA ',
-            this.num_27,
+            this.num_valores[29],
             '. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
           ],
           style: 'subtitulo',

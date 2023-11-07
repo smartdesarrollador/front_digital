@@ -106,12 +106,12 @@ export class DuodecimoProcesoComponent {
       this.name_remuneracion = this.num_8.toLowerCase();
     }
 
-    if (this.datosLocales.confianza == true) {
+    if (this.datosLocales.trabajador_confianza == true) {
       this.prueba_meses = "6 Meses";
       this.prueba_inicio = this.datosLocales.fecha_inicio;
       this.fechaFormateada = this.formatearFecha(this.sumarMeses(6));
       this.prueba_termino = this.fechaFormateada;
-    } else if (this.datosLocales.direccion == true) {
+    } else if (this.datosLocales.trabajador_direccion == true) {
       this.prueba_meses = "12 Meses";
       this.prueba_inicio = this.datosLocales.fecha_inicio;
       this.fechaFormateada = this.formatearFecha(this.sumarMeses(12));
@@ -135,7 +135,7 @@ export class DuodecimoProcesoComponent {
 
 
   sumarMeses(meses: number) {
-    const fecha = new Date(this.datosLocales.fecha_inicio);
+    const fecha = new Date();
     fecha.setMonth(fecha.getMonth() + meses);
     return fecha;
   }

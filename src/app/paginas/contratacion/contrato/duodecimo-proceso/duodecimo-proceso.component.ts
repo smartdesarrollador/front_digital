@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Trabajador } from 'src/app/interface/trabajador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
+import { DatePipe } from '@angular/common';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 
@@ -27,6 +28,8 @@ export class DuodecimoProcesoComponent {
   prueba_termino: string = '';
   fechaFormateada: string = '';
   num_valores: Array<string> = [];
+  fechaActual = new Date();
+  fechaActualValor: string = '';
 
   constructor(
     public ts: TrabajadorService,
@@ -66,7 +69,25 @@ export class DuodecimoProcesoComponent {
       const modeloContrato1 = this.modeloContrato(this.registroTrabajador);
       this.generarPdfMake(modeloContrato1);
     });
+
+    this.fecha_actual_formateada();
   }
+
+  fecha_actual_formateada(): void {
+    const fechaActualFormateada = new Intl.DateTimeFormat(
+      'es-ES',
+      this.opcionesDeFormato
+    ).format(this.fechaActual);
+
+    this.fechaActualValor = fechaActualFormateada;
+  }
+
+  // Formatear la fecha
+  opcionesDeFormato: Intl.DateTimeFormatOptions = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  };
 
   numeracion_valores(): Array<string> {
     // Tus arrays y variables originales
@@ -1099,7 +1120,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            'Hecho y firmado en Lima, 07 de Noviembre de 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
+            'Hecho y firmado en Lima, ',
+            this.fechaActualValor,
+            ', en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },
@@ -1169,7 +1192,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            '-	Hecho y firmado en Lima, 07 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
+            '-	Hecho y firmado en Lima, ',
+            this.fechaActualValor,
+            ', en dos ejemplares de un mismo tenor para constancia de las partes.   \n\n\n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },
@@ -1302,7 +1327,9 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            '-	Hecho y firmado en Lima, 07 de Noviembre del 2023, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
+            '-	Hecho y firmado en Lima, ',
+            this.fechaActualValor,
+            ', en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n\n\n',
           ],
           style: 'parrafo',
         },

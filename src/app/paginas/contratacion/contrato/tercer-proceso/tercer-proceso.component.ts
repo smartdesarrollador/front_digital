@@ -66,7 +66,7 @@ export class TercerProcesoComponent implements OnInit {
   alerta() {
     Swal.fire({
       icon: 'error',
-      title: 'Requiere seleccionar por favor',
+      title: 'Campo requerido',
     });
   }
 }

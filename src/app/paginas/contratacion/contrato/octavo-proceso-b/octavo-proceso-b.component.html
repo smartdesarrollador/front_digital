@@ -3,11 +3,7 @@
     <h2 class="titulo-naranja">Contrato</h2>
     <hr class="bg-naranja h-1" />
     <div class="mx-10">
-      <form
-        (ngSubmit)="saveToLocalStorage()"
-        #formProceso1="ngForm"
-        class="mt-10"
-      >
+      <form (ngSubmit)="saveToLocalStorage()" #form1="ngForm" class="mt-10">
         <div class="mb-6">
           <div>
             <label
@@ -23,6 +19,7 @@
               class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
               placeholder="Escribir ..."
               [(ngModel)]="tercera_pregunta"
+              required
             ></textarea>
           </div>
         </div>
@@ -44,6 +41,8 @@
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-900 rounded-full"></span>
+        <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
+        <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
         <span class="w-3 h-3 bg-gray-200 rounded-full"></span>
       </span>
     </div>

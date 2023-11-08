@@ -12,20 +12,46 @@ import { ContratoLocalStorageService } from 'src/app/services/localstorage/contr
 export class NovenoProcesoComponent {
   fiscalizacion_inmediata: boolean = false;
   jornada_maxima: boolean = false;
+  datosLocales: any = {};
 
   dia_inicio: string = '';
   dia_final: string = '';
   horario_inicio: string = '';
   horario_final: string = '';
 
-
   constructor(
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
-  ) { }
+  ) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.asignarCalificacionEspecialF();
+  }
+
+  asignarCalificacionEspecialF(): void {
+    const contratoLocal = this.cl.getItem('contratoLocal');
+
+    if (contratoLocal) {
+      this.datosLocales = contratoLocal;
+      if (
+        this.datosLocales.fiscalizacion_inmediata == true ||
+        this.datosLocales.fiscalizacion_inmediata == false
+      ) {
+        this.fiscalizacion_inmediata =
+          this.datosLocales.fiscalizacion_inmediata;
+        this.jornada_maxima = this.datosLocales.jornada_maxima;
+      } else {
+        if (this.datosLocales.trabajador_direccion == true) {
+          this.fiscalizacion_inmediata = true;
+          this.jornada_maxima = false;
+        } else {
+          this.fiscalizacion_inmediata = false;
+          this.jornada_maxima = false;
+        }
+      }
+    }
+  }
 
   onCheckboxChange(checkboxName: string) {
     if (checkboxName === 'fiscalizacion_inmediata') {

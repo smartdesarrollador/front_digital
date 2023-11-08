@@ -30,8 +30,6 @@ export class SeptimoProcesoComponent {
   fechaActualFormato: string = this.dia + '/' + this.mes + '/' + this.anio;
   fechaRenovacion: string = '';
 
-
-
   constructor(
     public ts: TrabajadorService,
     private router: Router,
@@ -42,24 +40,27 @@ export class SeptimoProcesoComponent {
 
   ngOnInit() {
     this.asignarFechaRemuneracion();
-
   }
 
   procesarFecha(): void {
     let fechaFormateada: string;
 
-    if (this.fecha_periodo === "Año") {
-      fechaFormateada = this.formatearFecha(this.sumarAnios(this.duracion_contrato));
-    } else if (this.fecha_periodo === "Mes") {
-      fechaFormateada = this.formatearFecha(this.sumarMeses(this.duracion_contrato));
+    if (this.fecha_periodo === 'Año') {
+      fechaFormateada = this.formatearFecha(
+        this.sumarAnios(this.duracion_contrato)
+      );
+    } else if (this.fecha_periodo === 'Mes') {
+      fechaFormateada = this.formatearFecha(
+        this.sumarMeses(this.duracion_contrato)
+      );
     } else {
-      fechaFormateada = this.formatearFecha(this.sumarDias(this.duracion_contrato));
+      fechaFormateada = this.formatearFecha(
+        this.sumarDias(this.duracion_contrato)
+      );
     }
 
     this.fechaRenovacion = fechaFormateada;
   }
-
-
 
   sumarDias(dias: number) {
     const fecha = new Date(this.fechaActual);
@@ -85,8 +86,6 @@ export class SeptimoProcesoComponent {
     const anio = fecha.getFullYear();
     return `${dia}/${mes}/${anio}`;
   }
-
-
 
   asignarFechaRemuneracion(): void {
     const contratoLocal = this.cl.getItem('contratoLocal');
@@ -127,12 +126,7 @@ export class SeptimoProcesoComponent {
   alerta() {
     Swal.fire({
       icon: 'error',
-      title: 'Requiere seleccionar por favor',
+      title: 'Campos requeridos',
     });
   }
 }
-
-
-
-
-

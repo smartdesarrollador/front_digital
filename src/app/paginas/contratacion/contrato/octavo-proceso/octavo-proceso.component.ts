@@ -7,21 +7,39 @@ import { ContratoLocalStorageService } from 'src/app/services/localstorage/contr
 @Component({
   selector: 'app-octavo-proceso',
   templateUrl: './octavo-proceso.component.html',
-  styleUrls: ['./octavo-proceso.component.css']
+  styleUrls: ['./octavo-proceso.component.css'],
 })
 export class OctavoProcesoComponent {
   trabajador_confianza: boolean = false;
   trabajador_direccion: boolean = false;
-
+  datosLocales: any = {};
 
   constructor(
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
-  ) { }
+  ) {}
 
   ngOnInit() {
+    this.asignarCalificacionEspecial();
+  }
 
+  asignarCalificacionEspecial(): void {
+    const contratoLocal = this.cl.getItem('contratoLocal');
+
+    if (contratoLocal) {
+      this.datosLocales = contratoLocal;
+      if (
+        this.datosLocales.trabajador_confianza == true ||
+        this.datosLocales.trabajador_confianza == false
+      ) {
+        this.trabajador_confianza = this.datosLocales.trabajador_confianza;
+        this.trabajador_direccion = this.datosLocales.trabajador_direccion;
+      } else {
+        this.trabajador_confianza = false;
+        this.trabajador_direccion = false;
+      }
+    }
   }
 
   onCheckboxChange(checkboxName: string) {
@@ -32,14 +50,10 @@ export class OctavoProcesoComponent {
     }
   }
 
-
-
   saveToLocalStorage() {
     const contratoLocaldatos = this.cl.getItem('contratoLocal');
     contratoLocaldatos.trabajador_confianza = this.trabajador_confianza;
     contratoLocaldatos.trabajador_direccion = this.trabajador_direccion;
-
-
 
     this.cl.setItem('contratoLocal', contratoLocaldatos);
 
@@ -51,15 +65,11 @@ export class OctavoProcesoComponent {
       this.router.navigate(['/contratacion/contrato/proceso_8_b']);
     }
 
-    if (this.trabajador_confianza == false && this.trabajador_direccion == false) {
+    if (
+      this.trabajador_confianza == false &&
+      this.trabajador_direccion == false
+    ) {
       this.router.navigate(['/contratacion/contrato/proceso_9']);
     }
-
-
   }
-
-
-
-
-
 }

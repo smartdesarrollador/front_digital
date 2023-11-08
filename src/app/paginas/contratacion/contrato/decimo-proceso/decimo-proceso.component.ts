@@ -11,6 +11,7 @@ import { ContratoLocalStorageService } from 'src/app/services/localstorage/contr
 })
 export class DecimoProcesoComponent {
   prevencion_covid: boolean = false;
+  datosLocales: any = {};
 
   constructor(
     public ts: TrabajadorService,
@@ -18,7 +19,25 @@ export class DecimoProcesoComponent {
     private cl: ContratoLocalStorageService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.asignarCovid();
+  }
+
+  asignarCovid(): void {
+    const contratoLocal = this.cl.getItem('contratoLocal');
+
+    if (contratoLocal) {
+      this.datosLocales = contratoLocal;
+      if (
+        this.datosLocales.prevencion_covid == true ||
+        this.datosLocales.prevencion_covid == false
+      ) {
+        this.prevencion_covid = this.datosLocales.prevencion_covid;
+      } else {
+        this.prevencion_covid = false;
+      }
+    }
+  }
 
   saveToLocalStorage() {
     const contratoLocaldatos = this.cl.getItem('contratoLocal');

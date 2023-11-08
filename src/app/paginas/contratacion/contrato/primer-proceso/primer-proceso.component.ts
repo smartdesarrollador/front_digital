@@ -71,7 +71,7 @@ export class PrimerProcesoComponent {
   alerta() {
     Swal.fire({
       icon: 'error',
-      title: 'Requiere seleccionar por favor',
+      title: 'Campo requerido',
     });
   }
 }

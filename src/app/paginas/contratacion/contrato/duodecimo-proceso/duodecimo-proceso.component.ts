@@ -272,7 +272,7 @@ export class DuodecimoProcesoComponent {
         },
         {
           text: [
-            '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el numeral 1.3. del presente contrato. \n\n',
+            '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
           ],
           style: 'parrafo',
         },
@@ -308,7 +308,7 @@ export class DuodecimoProcesoComponent {
           text: [
             '3.1	EL TRABAJADOR desempeñará sus labores en el cargo de   ',
             { text: this.datosLocales.oferta_laboral, style: 'datos_locales' },
-            '   desempeñando las funciones que se señalan en el numeral 1.3. del presente contrato.\n\n',
+            '   desempeñando las funciones que se señalan en el Anexo 1-A del presente contrato.\n\n',
           ],
           style: 'parrafo',
         },
@@ -523,7 +523,7 @@ export class DuodecimoProcesoComponent {
         this.datosLocales.jornada_maxima
           ? {
               text: [
-                'El horario de trabajo podrá ser distribuido de lunes a viernes pudiendo ser la jornada laboral de lunes a viernes de',
+                'El horario de trabajo podrá ser distribuido de lunes a viernes pudiendo ser la jornada laboral de lunes a viernes de ',
                 this.datosLocales.horario_inicio,
                 ' a ',
                 this.datosLocales.horario_final,
@@ -630,7 +630,7 @@ export class DuodecimoProcesoComponent {
                 'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
                 'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
                 'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
-                'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR.',
+                'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR. \n\n',
               ],
               style: 'parrafo',
             }
@@ -1022,7 +1022,7 @@ export class DuodecimoProcesoComponent {
             'Que no tiene antecedentes penales, judiciales ni policiales. ',
             'Que el uso de su base de datos no genera violación a derechos de terceros y que la información adquirida para el desempeño de sus funciones ha sido de manera legal. ',
             'No atentar contra la buena imagen de EL EMPLEADOR y que tiene conocimiento que en caso se viera involucrado en un evento público que atente contra la imagen de EL EMPLEADOR de manera directa o indirecta, este hecho será causal de extinción de la relación laboral. ',
-            'Tiene conocimiento y acepta que una vez finalizada la relación laboral no puede usar la base de datos de EL EMPLEADOR ni contactar a los clientes de EL EMPLEADOR para brindar servicios de la misma naturaleza. ',
+            'Tiene conocimiento y acepta que una vez finalizada la relación laboral no puede usar la base de datos de EL EMPLEADOR ni contactar a los clientes de EL EMPLEADOR para brindar servicios de la misma naturaleza. \n\n',
           ],
         },
         {
@@ -1140,6 +1140,10 @@ export class DuodecimoProcesoComponent {
           ],
           // optional space between columns
           columnGap: 10,
+        },
+        {
+          text: [''],
+          pageBreak: 'after',
         },
         {
           text: ['\n\n\n\n\n ANEXO 1-A   \n\n'],

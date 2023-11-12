@@ -26,6 +26,7 @@ import { FormularioValidacionesComponent } from './formulario-validaciones/formu
 import { UploadComponent } from './upload/upload.component';
 import { Pagina1Component } from './localstorage/pagina1/pagina1.component';
 import { Pagina2Component } from './localstorage/pagina2/pagina2.component';
+import { ToastrComponent } from './toastr/toastr.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { Pagina2Component } from './localstorage/pagina2/pagina2.component';
     UploadComponent,
     Pagina1Component,
     Pagina2Component,
+    ToastrComponent,
   ],
   imports: [CommonModule, AngularRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 })

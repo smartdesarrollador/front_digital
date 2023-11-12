@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
 import { myFunctions } from 'src/app/utils/myFunctions';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-primer-proceso',
@@ -23,7 +24,8 @@ export class PrimerProcesoComponent {
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService,
-    private myFunctions: myFunctions
+    private myFunctions: myFunctions,
+    private ToastrSvc: ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +42,11 @@ export class PrimerProcesoComponent {
       this.datosLocales = contratoLocal;
       this.selectedValue = this.datosLocales.trabajador;
     }
+  }
+
+  alerta_toastr() {
+    this.ToastrSvc.success('hola');
+    /* this.alerta(); */
   }
 
   loadTrabajadores() {
@@ -64,7 +71,11 @@ export class PrimerProcesoComponent {
       const formValue = this.form1.form.value;
       console.log('Valores del formulario:', formValue);
     } else {
-      this.alerta();
+      this.ToastrSvc.error(
+        'Se necesita seleccionar trabajador',
+        'Campo Requerido'
+      );
+      /* this.alerta(); */
     }
   }
 

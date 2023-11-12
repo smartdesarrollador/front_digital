@@ -19,6 +19,7 @@ import { FormularioValidacionesComponent } from './formulario-validaciones/formu
 import { UploadComponent } from './upload/upload.component';
 import { Pagina1Component } from './localstorage/pagina1/pagina1.component';
 import { Pagina2Component } from './localstorage/pagina2/pagina2.component';
+import { ToastrComponent } from './toastr/toastr.component';
 
 const routes: Routes = [
   {
@@ -93,11 +94,15 @@ const routes: Routes = [
   {
     path: 'localstorage/pagina2',
     component: Pagina2Component,
-  }
+  },
+  {
+    path: 'toastr',
+    component: ToastrComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AngularRoutingModule { }
+export class AngularRoutingModule {}

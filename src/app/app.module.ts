@@ -18,6 +18,11 @@ import { TestMenuLateralComponent } from './test/shared/components/test-menu-lat
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
+/* Toastr */
+import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +41,9 @@ import { SidebarComponent } from './shared/sidebar/sidebar.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    CommonModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent],

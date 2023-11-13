@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ContratacionRoutingModule } from './contratacion-routing.module';
 import { OfertaLaboralComponent } from './oferta-laboral/oferta-laboral.component';
@@ -47,6 +47,11 @@ import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecim
     UndecimoProcesoComponent,
     DuodecimoProcesoComponent,
   ],
-  imports: [CommonModule, ContratacionRoutingModule, FormsModule],
+  imports: [
+    CommonModule,
+    ContratacionRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
 })
 export class ContratacionModule {}

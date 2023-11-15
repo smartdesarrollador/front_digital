@@ -55,6 +55,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'auth',
+    loadChildren: () =>
+      import('./paginas/login/login.module').then(
+        (m) => m.LoginModule
+      ),
+  },
+  {
     path: 'page-not-found',
     component: PageNotFoundComponent,
   },

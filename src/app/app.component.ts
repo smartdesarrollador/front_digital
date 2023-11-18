@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,24 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  title: string = 'hola mundo';
+  isLoggedIn:boolean = true;
+ 
+
+  constructor(private router:Router){
+    const token = localStorage.getItem('token');
+
+    if (token) {
+     this.isLoggedIn = true;
+    } else {
+      this.isLoggedIn = false;
+    }
+  }
 
   ngOnInit(): void {
-    /*  console.log('Inicio del Proyecto');
-    this.getPost(); */
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  /*   getPost() {
-    fetch('http://localhost/back_legajo/public/api/test_api').then((response) =>
-      console.log(response)
-    );
-  } */
+  
 
-  /* getPost() {
-    fetch('http://localhost/back_legajo/public/api/test_api')
-      .then((response) => response.json())
-      .then((json) => console.log(json));
-  } */
+  
 }

@@ -5,4 +5,5 @@ export const environment = {
   apiUrl3: 'http://127.0.0.1:8000/api/file',
   apiUrlTrabajador: 'http://127.0.0.1:8000/api/trabajador',
   apiUrlRegister: 'http://127.0.0.1:8000/api/register',
+  apiUrlLogin: 'http://127.0.0.1:8000/api/login',
 };

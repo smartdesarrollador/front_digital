@@ -12,4 +12,8 @@ export class DataService {
   registerUser(data:any){
     return this.http.post(environment.apiUrlRegister, data);
   }
+
+  login(data:any){
+    return this.http.post(environment.apiUrlLogin,data);
+  }
 }

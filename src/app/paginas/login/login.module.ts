@@ -15,13 +15,13 @@ import { ToastrModule } from 'ngx-toastr'; */
 @NgModule({
   declarations: [LoginComponent, RegisterComponent],
   imports: [
-            CommonModule, 
-            LoginRoutingModule, 
-            FormsModule, 
-            ReactiveFormsModule, 
-            HttpClientModule,
-           /*  BrowserAnimationsModule,
+    CommonModule,
+    LoginRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    /*  BrowserAnimationsModule,
             ToastrModule.forRoot(), */
-          ],
+  ],
 })
 export class LoginModule {}

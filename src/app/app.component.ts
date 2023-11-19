@@ -7,24 +7,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  isLoggedIn:boolean = true;
- 
-
-  constructor(private router:Router){
-    const token = localStorage.getItem('token');
-
-    if (token) {
-     this.isLoggedIn = true;
-    } else {
-      this.isLoggedIn = false;
-    }
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  
-
-  
 }

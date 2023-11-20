@@ -13,88 +13,19 @@
           Formulario contacto
         </h1>
         <form
-          (ngSubmit)="sendContactForm()"
-          [formGroup]="contactform"
+          [formGroup]="FormContacto"
+          (ngSubmit)="EnviarEmail()"
           class="space-y-4 md:space-y-6"
-          id="contact-form"
         >
-          <div class="row">
-            <div class="col-lg-6">
-              <div class="form-box__single-group">
-                <input
-                  [class.is-invalid]="
-                    contactform.get('name')?.invalid &&
-                    contactform.get('name')?.touched
-                  "
-                  formControlName="name"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-5"
-                  type="text"
-                  placeholder="Nombre"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="form-box__single-group">
-                <input
-                  [class.is-invalid]="
-                    contactform.get('email')?.invalid &&
-                    contactform.get('email')?.touched
-                  "
-                  formControlName="email"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-5"
-                  type="email"
-                  placeholder="Correo"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="form-box__single-group">
-                <input
-                  [class.is-invalid]="
-                    contactform.get('subject')?.invalid &&
-                    contactform.get('subject')?.touched
-                  "
-                  formControlName="subject"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-5"
-                  type="text"
-                  placeholder="Asunto"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="form-box__single-group">
-                <textarea
-                  [class.is-invalidTextArea]="
-                    contactform.get('message')?.invalid &&
-                    contactform.get('message')?.touched
-                  "
-                  formControlName="message"
-                  class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 mt-5"
-                  rows="10"
-                  placeholder="Tu mensaje"
-                  required
-                ></textarea>
-              </div>
-              <button
-                [disabled]="cargando"
-                class="boton-azul mt-5"
-                type="submit"
-              >
-                Enviar
-                <i *ngIf="cargando" class="fa fa-spinner fa-1x fa-spin"></i>
-              </button>
-              <div
-                *ngIf="enviado"
-                class="alert alert-success mt-3"
-                role="alert"
-              >
-                Mensaje enviado correctamente
-              </div>
-            </div>
-          </div>
+          <label>
+            Nombre
+            <input
+              type="text"
+              formControlName="nombre"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-5"
+            />
+          </label>
+          <button class="boton-azul mt-5" type="submit">Submit</button>
         </form>
       </div>
     </div>

@@ -6,5 +6,5 @@ export const environment = {
   apiUrlTrabajador: 'http://127.0.0.1:8000/api/trabajador',
   apiUrlRegister: 'http://127.0.0.1:8000/api/register',
   apiUrlLogin: 'http://127.0.0.1:8000/api/login',
-  apiUrl_domain: 'https://back.iatecdigital.com',
+  apiUrlEmail: 'http://127.0.0.1:8000/api/enviar_correo',
 };

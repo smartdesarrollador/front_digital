@@ -1,56 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment.development';
+import { Observable, Observer } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
-export class ContactComponent implements OnInit {
-  contactform!: FormGroup;
-  cargando = false;
-  enviado = false;
-  API_URL = environment.apiUrl_domain;
-
-  constructor(public formBuilder: FormBuilder, private http: HttpClient) {}
-
-  ngOnInit(): void {
-    this.createContactForm();
-  }
-
-  private createContactForm(): void {
-    this.contactform = this.formBuilder.group({
-      name: ['', [Validators.required]],
-      subject: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', [Validators.required]],
+export class ContactComponent {
+  FormContacto: any = FormGroup;
+  UrlEmail: string = environment.apiUrlEmail;
+  constructor(
+    public fb: FormBuilder,
+    private http: HttpClient,
+    private Toastr: ToastrService
+  ) {
+    this.FormContacto = this.fb.group({
+      nombre: [''],
     });
   }
+  EnviarEmail() {
+    var formData: any = new FormData();
+    formData.append('nombre', this.FormContacto.get('nombre').value);
+    this.http.post(this.UrlEmail, formData).subscribe(
+      (response) => {
+        console.log(response);
+        this.Toastr.success('Email enviado Exitosamente');
+      },
+      (error) => {
+        console.log(error);
+        this.Toastr.error('No se pudo enviar el email');
+      }
+    );
+  }
 
-  sendContactForm(): void {
-    if (this.contactform.invalid) {
-      Object.values(this.contactform.controls).forEach((control) => {
-        if (control instanceof FormGroup) {
-          // tslint:disable-next-line:no-shadowed-variable
-          Object.values(control.controls).forEach((control) =>
-            control.markAsTouched()
-          );
-        } else {
-          control.markAsTouched();
-        }
-      });
-      return;
-    }
-    const url = this.API_URL + '/contact123';
-    this.cargando = true;
-    this.http.post(url, this.contactform.value).subscribe((value) => {
-      this.cargando = false;
-      this.enviado = true;
-      this.contactform.reset();
-      console.log(value);
-    });
-    console.log(this.contactform.value);
+  alerta() {
+    alert('enviado correctamente');
   }
 }

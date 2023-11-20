@@ -4,5 +4,5 @@ export const environment = {
   apiUrl2: 'https://back.iatecdigital.com/api/test_api',
   apiUrl3: 'https://back.iatecdigital.com/api/file',
   apiUrlTrabajador: 'https://back.iatecdigital.com/api/trabajador',
-  apiUrl_domain: 'https://back.iatecdigital.com',
+  apiUrlEmail: 'http://127.0.0.1:8000/api/enviar_correo',
 };

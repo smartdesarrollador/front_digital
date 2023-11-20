@@ -13,9 +13,9 @@ export class AddCategoryComponent {
   constructor(
     public categoryService: CategoryService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   submitForm(categoryForm: NgForm) {
     if (categoryForm.value.id == null) {

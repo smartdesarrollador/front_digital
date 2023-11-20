@@ -3,68 +3,29 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './test/angular/rutas/home/home.component';
 import { PageNotFoundComponent } from './test/angular/rutas/page-not-found/page-not-found.component';
 import { AppComponent } from './app.component';
-/* import { AuthGuard } from 'src/app/guards/auth.guard'; */
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  },
-  /*   {
-      path: 'home',
-      component: HomeComponent,
-    }, */
-  /*   {
-      path: '',
-      component: AppComponent,
-    }, */
-  {
-    path: 'test/carga-perezosa',
+    path: 'admin',
+    canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./test/carga-perezosa/carga-perezosa.module').then(
-        (m) => m.CargaPerezosaModule
-      ),
-    /* canActivate: [AuthGuard], */
+      import('./paginas/admin/admin.module').then((m) => m.AdminModule),
   },
   {
-    path: 'test/tailwind',
-    loadChildren: () =>
-      import('./test/tailwind/tailwind.module').then((m) => m.TailwindModule),
-    /* canActivate: [AuthGuard], */
-  },
-  {
-    path: 'test/angular',
-    loadChildren: () =>
-      import('./test/angular/angular.module').then((m) => m.AngularModule),
-    /* canActivate: [AuthGuard], */
-  },
-  {
-    path: 'test/maqueta',
-    loadChildren: () =>
-      import('./test/maqueta/maqueta.module').then((m) => m.MaquetaModule),
-    /* canActivate: [AuthGuard], */
-  },
-  {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./paginas/dashboard/dashboard.module').then(
-        (m) => m.DashboardModule
-      ),
-    /* canActivate: [AuthGuard], */
-  },
-  {
-    path: 'contratacion',
-    loadChildren: () =>
-      import('./paginas/contratacion/contratacion.module').then(
-        (m) => m.ContratacionModule
-      ),
-    /* canActivate: [AuthGuard], */
+    path: 'test',
+    canActivate: [AuthGuard],
+    loadChildren: () => import('./test/test.module').then((m) => m.TestModule),
   },
   {
     path: 'auth',
     loadChildren: () =>
       import('./paginas/login/login.module').then((m) => m.LoginModule),
+  },
+  {
+    path: '',
+    redirectTo: 'admin/dashboard',
+    pathMatch: 'full',
   },
   {
     path: 'page-not-found',

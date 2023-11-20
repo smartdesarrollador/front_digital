@@ -54,7 +54,7 @@ export class LoginComponent {
       if (this.data.status === 1) {
         this.token = this.data.data.token;
         localStorage.setItem('token', this.token);
-        this.router.navigate(['/']);
+        this.router.navigate(['/admin/dashboard']);
         this.toastr.success(
           JSON.stringify(this.data.message),
           JSON.stringify(this.data.code),

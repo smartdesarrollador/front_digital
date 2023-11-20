@@ -20,6 +20,7 @@ import { UploadComponent } from './upload/upload.component';
 import { Pagina1Component } from './localstorage/pagina1/pagina1.component';
 import { Pagina2Component } from './localstorage/pagina2/pagina2.component';
 import { ToastrComponent } from './toastr/toastr.component';
+import { ContactComponent } from './contact/contact.component';
 /* import { AuthGuard } from 'src/app/guards/auth.guard'; */
 
 const routes: Routes = [
@@ -100,6 +101,10 @@ const routes: Routes = [
     path: 'toastr',
     component: ToastrComponent,
     /* canActivate: [AuthGuard], */
+  },
+  {
+    path: 'contact',
+    component: ContactComponent,
   },
 ];
 

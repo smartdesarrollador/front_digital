@@ -8,4 +8,6 @@ export const environment = {
   apiUrlLogin: 'https://apilegajo.amorinomoda.com/api/login',
   apiUrlEmail: 'https://apilegajo.amorinomoda.com/api/enviar_correo',
   apiUrlEmpleador: 'https://apilegajo.amorinomoda.com/api/empleador',
+  apiUrlUltimoEmpleador:
+    'https://apilegajo.amorinomoda.com/api/ultimo_empleador',
 };

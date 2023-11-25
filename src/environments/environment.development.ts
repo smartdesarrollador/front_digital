@@ -8,4 +8,5 @@ export const environment = {
   apiUrlLogin: 'http://127.0.0.1:8000/api/login',
   apiUrlEmail: 'http://127.0.0.1:8000/api/enviar_correo',
   apiUrlEmpleador: 'http://127.0.0.1:8000/api/empleador',
+  apiUrlUltimoEmpleador: 'http://127.0.0.1:8000/api/ultimo_empleador',
 };

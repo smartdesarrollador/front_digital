@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { Trabajador } from 'src/app/interface/trabajador';
+import { EmpleadorService } from 'src/app/services/empleador.service';
+import { Empleador } from 'src/app/interface/empleador';
 import { Router } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
@@ -14,6 +16,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class PrimerProcesoComponent {
   listTrabajadores: any = [];
+  ultimoIdEmpleador: any = [];
   selectedValue: string = '';
   valorSeleccionado: any;
   datosLocales: any = {};
@@ -22,6 +25,7 @@ export class PrimerProcesoComponent {
 
   constructor(
     public ts: TrabajadorService,
+    public es: EmpleadorService,
     private router: Router,
     private cl: ContratoLocalStorageService,
     private myFunctions: myFunctions,
@@ -32,6 +36,7 @@ export class PrimerProcesoComponent {
     this.asignarValorTrabajador();
     console.log(this.asignarValorTrabajador());
     this.loadTrabajadores();
+    this.getUltimoIdEmpleador();
     this.myFunctions.scrollToTop();
   }
 
@@ -56,15 +61,26 @@ export class PrimerProcesoComponent {
     });
   }
 
+  getUltimoIdEmpleador() {
+    return this.es.getUltimoEmpleador().subscribe((data: {}) => {
+      console.log(data);
+      this.ultimoIdEmpleador = data;
+    });
+  }
+
   saveToLocalStorage() {
     if (this.form1.form.valid) {
       if (this.cl.getItem('contratoLocal')) {
         const contratoLocaldatos = this.cl.getItem('contratoLocal');
         contratoLocaldatos.trabajador = this.selectedValue;
+        contratoLocaldatos.empleador = this.ultimoIdEmpleador['id_empleador'];
 
         this.cl.setItem('contratoLocal', contratoLocaldatos);
       } else {
-        this.cl.setItem('contratoLocal', { trabajador: this.selectedValue });
+        this.cl.setItem('contratoLocal', {
+          trabajador: this.selectedValue,
+          empleador: this.ultimoIdEmpleador['id_empleador'],
+        });
       }
 
       this.router.navigate(['admin/contratacion/contrato/proceso_3']);

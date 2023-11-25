@@ -9,6 +9,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class EmpleadorService {
   url = environment.apiUrlEmpleador;
+  urlUltimoEmpleador = environment.apiUrlUltimoEmpleador;
 
   /* selectTrabajador: Trabajador = new Trabajador(); */
 
@@ -31,5 +32,9 @@ export class EmpleadorService {
   createEmpleador(Empleador: Empleador): Observable<Empleador> {
     console.log(Empleador);
     return this.http.post(this.url, Empleador, { headers: this.reqHeader });
+  }
+
+  getUltimoEmpleador(): Observable<Empleador> {
+    return this.http.get(this.urlUltimoEmpleador);
   }
 }

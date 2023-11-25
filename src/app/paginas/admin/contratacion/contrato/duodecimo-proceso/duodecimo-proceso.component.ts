@@ -2,13 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Trabajador } from 'src/app/interface/trabajador';
+import { Empleador } from 'src/app/interface/empleador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
+import { EmpleadorService } from 'src/app/services/empleador.service';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import { DatePipe } from '@angular/common';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { contratoInicioActividad } from './funciones-contratos/contrato-inicio-actividad';
 import { contratoIncrementoActividad } from './funciones-contratos/contrato-incremento-actividad';
+import { forkJoin } from 'rxjs';
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
@@ -22,6 +25,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 export class DuodecimoProcesoComponent {
   datosLocales: any = {};
   registroTrabajador: any;
+  registroEmpleador: any;
   urlpdf: any;
   safePdfUrl: SafeResourceUrl;
   mostrarParrafo: boolean = false;
@@ -35,6 +39,7 @@ export class DuodecimoProcesoComponent {
 
   constructor(
     public ts: TrabajadorService,
+    public es: EmpleadorService,
     private router: Router,
     private cl: ContratoLocalStorageService,
     private sanitizer: DomSanitizer
@@ -64,24 +69,69 @@ export class DuodecimoProcesoComponent {
       this.prueba_termino = this.fechaFormateada;
     }
 
-    this.getTrabajador(this.datosLocales.trabajador).subscribe((data) => {
-      this.registroTrabajador = data;
-      console.log(this.registroTrabajador.trabajador);
+    const trabajador$ = this.getTrabajador(this.datosLocales.trabajador);
+    const empleador$ = this.getEmpleador(this.datosLocales.empleador);
 
-      if(this.datosLocales.modelo_contrato == "CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD"){
-        const modeloContrato1 = contratoInicioActividad(this.registroTrabajador,this.datosLocales,this.prueba_meses,this.prueba_inicio,this.prueba_termino,this.fechaFormateada,this.num_valores,this.fechaActualValor);
+    forkJoin([trabajador$, empleador$]).subscribe(
+      ([trabajadorData, empleadorData]) => {
+        this.registroTrabajador = trabajadorData;
+        this.registroEmpleador = empleadorData;
+
+        console.log(this.registroTrabajador.trabajador);
+        console.log(this.registroEmpleador.empleador);
+
+        let modeloContrato1;
+
+        modeloContrato1 = contratoInicioActividad(
+          this.registroTrabajador,
+          this.registroEmpleador,
+          this.datosLocales,
+          this.prueba_meses,
+          this.prueba_inicio,
+          this.prueba_termino,
+          this.fechaFormateada,
+          this.num_valores,
+          this.fechaActualValor
+        );
+
+        /*  if (
+          this.datosLocales.modelo_contrato ===
+          'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD'
+        ) {
+          modeloContrato1 = contratoInicioActividad(
+            this.registroTrabajador,
+            this.registroEmpleador, 
+            this.datosLocales,
+            this.prueba_meses,
+            this.prueba_inicio,
+            this.prueba_termino,
+            this.fechaFormateada,
+            this.num_valores,
+            this.fechaActualValor
+          );
+        } else if (
+          this.datosLocales.modelo_contrato ===
+          'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD'
+        ) {
+          modeloContrato1 = contratoIncrementoActividad(
+            this.registroTrabajador,
+            this.registroEmpleador, 
+            this.datosLocales,
+            this.prueba_meses,
+            this.prueba_inicio,
+            this.prueba_termino,
+            this.fechaFormateada,
+            this.num_valores,
+            this.fechaActualValor
+          );
+        } */
+
         this.generarPdfMake(modeloContrato1);
-      }else if(this.datosLocales.modelo_contrato == "CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD"){
-        const modeloContrato1 = contratoIncrementoActividad(this.registroTrabajador,this.datosLocales,this.prueba_meses,this.prueba_inicio,this.prueba_termino,this.fechaFormateada,this.num_valores,this.fechaActualValor);
-        this.generarPdfMake(modeloContrato1);
+        this.fecha_actual_formateada();
       }
-
-      
-    });
+    );
 
     this.fecha_actual_formateada();
-
-    
   }
 
   fecha_actual_formateada(): void {
@@ -230,5 +280,9 @@ export class DuodecimoProcesoComponent {
 
   getTrabajador(id: any) {
     return this.ts.getTrabajadorById(id); // Devuelve el observable para su suscripción
+  }
+
+  getEmpleador(id: any) {
+    return this.es.getEmpleadorById(id); // Devuelve el observable para su suscripción
   }
 }

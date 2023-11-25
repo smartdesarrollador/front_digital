@@ -1,0 +1,145 @@
+<div class="grid grid-cols-1">
+  <div class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px] shadow-lg">
+    <h2 class="titulo-naranja">Empresa</h2>
+    <hr class="bg-naranja h-1" />
+    <div class="mx-10">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-10">
+        <div class="mb-6">
+          <label
+            for="empleador"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Empresa</label
+          >
+          <input
+            type="text"
+            name="empleador"
+            id="empleador"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Empresa"
+            formControlName="empleador"
+          />
+        </div>
+        <div class="mb-6">
+          <label for="ruc" class="block mb-2 text-sm font-medium text-gray-900"
+            >Ruc</label
+          >
+          <input
+            type="text"
+            name="ruc"
+            id="ruc"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Ruc"
+            formControlName="ruc"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="domicilio"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Domicilio</label
+          >
+          <input
+            type="text"
+            name="domicilio"
+            id="domicilio"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Domicilio"
+            formControlName="domicilio"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="representanta_legal"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Representante Legal</label
+          >
+          <input
+            type="text"
+            name="representanta_legal"
+            id="representanta_legal"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Representante Legal"
+            formControlName="representante_legal"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="cargo_representante_legal"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Cargo representante legal</label
+          >
+          <input
+            type="text"
+            name="cargo_representante_legal"
+            id="cargo_representante_legal"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Cargo representante legal"
+            formControlName="cargo_representante_legal"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="numero_partida_poderes"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Numero partida poderes</label
+          >
+          <input
+            type="text"
+            name="numero_partida_poderes"
+            id="numero_partida_poderes"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Numero partida poderes"
+            formControlName="numero_partida_poderes"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="numero_asiento"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Numero asiento</label
+          >
+          <input
+            type="text"
+            name="numero_asiento"
+            id="numero_asiento"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Numero asiento"
+            formControlName="numero_asiento"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="oficina_registral"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Oficina Registral</label
+          >
+          <input
+            type="text"
+            name="oficina_registral"
+            id="oficina_registral"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Oficina Registral"
+            formControlName="oficina_registral"
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="numero_partida_registral"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Numero partida registral</label
+          >
+          <input
+            type="text"
+            name="numero_partida_registral"
+            id="numero_partida_registral"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Numero partida registral"
+            formControlName="numero_partida_registral"
+          />
+        </div>
+
+        <button class="boton-verde">Guardar</button>
+      </form>
+    </div>
+  </div>
+</div>

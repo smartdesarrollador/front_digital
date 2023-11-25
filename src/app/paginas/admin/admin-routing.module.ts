@@ -17,6 +17,14 @@ const routes: Routes = [
         (m) => m.ContratacionModule
       ),
   },
+  {
+    path: 'configuracion',
+    component: AdminComponent,
+    loadChildren: () =>
+      import('./configuracion/configuracion.module').then(
+        (m) => m.ConfiguracionModule
+      ),
+  },
 ];
 
 @NgModule({

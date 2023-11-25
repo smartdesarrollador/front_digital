@@ -7,4 +7,5 @@ export const environment = {
   apiUrlRegister: 'http://127.0.0.1:8000/api/register',
   apiUrlLogin: 'http://127.0.0.1:8000/api/login',
   apiUrlEmail: 'http://127.0.0.1:8000/api/enviar_correo',
+  apiUrlEmpleador: 'http://127.0.0.1:8000/api/empleador',
 };

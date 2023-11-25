@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Trabajador } from '../interface/trabajador';
+import { Empleador } from '../interface/empleador';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -7,8 +7,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
 })
-export class TrabajadorService {
-  url = environment.apiUrlTrabajador;
+export class EmpleadorService {
+  url = environment.apiUrlEmpleador;
 
   /* selectTrabajador: Trabajador = new Trabajador(); */
 
@@ -19,17 +19,17 @@ export class TrabajadorService {
 
   constructor(private http: HttpClient) {}
 
-  getTrabajadores(): Observable<Trabajador> {
+  getEmpleadores(): Observable<Empleador> {
     return this.http.get(this.url);
   }
 
-  getTrabajadorById(id: number): Observable<Trabajador> {
-    const urlTrabajador = this.url + '/' + id;
-    return this.http.get<Trabajador>(urlTrabajador);
+  getEmpleadorById(id: number): Observable<Empleador> {
+    const urlEmpleador = this.url + '/' + id;
+    return this.http.get<Empleador>(urlEmpleador);
   }
 
-  createTrabajador(trabajador: Trabajador): Observable<Trabajador> {
-    console.log(trabajador);
-    return this.http.post(this.url, trabajador, { headers: this.reqHeader });
+  createEmpleador(Empleador: Empleador): Observable<Empleador> {
+    console.log(Empleador);
+    return this.http.post(this.url, Empleador, { headers: this.reqHeader });
   }
 }

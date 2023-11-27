@@ -1,4 +1,9 @@
 <app-navbar></app-navbar>
+<a (click)="cambiarTranslate()" class="md:hidden absolute top-0">
+  <i class="fa fa-bars fa-lg"></i>
+</a>
+<br />
+<br />
 
 <section>
   <div
@@ -18,7 +23,23 @@
           <app-sidebar></app-sidebar>
         </div>
       </div>
-      <div class="sm:col-span-8 md:col-span-9">
+      <div
+        class="fixed inset-0 transition-transform mt-10"
+        [ngClass]="{
+          'translate-x-[-100%]': !claseCambiada,
+          'translate-x-0': claseCambiada,
+        }"
+      >
+        <div class="absolute inset-x-0 sm:z-10 md:hidden">
+          <div
+            class="bg-white mr-14 mt-20 gap-y-14 py-10 px-5 w-40 rounded-[35px] h-full"
+          >
+            <app-sidebar></app-sidebar>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm:col-span-8 sm:z-0 md:col-span-9">
         <router-outlet></router-outlet>
       </div>
     </div>

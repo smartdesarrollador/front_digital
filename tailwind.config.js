@@ -24,7 +24,19 @@ module.exports = {
         test_fuente: ["Gloria Hallelujah", "cursive"],
         roboto: ["Roboto", "sans-serif"],
       },
+      backgroundImage: {
+        "close-menu": "url('/assets/images/icons/icon-close.svg')",
+        "open-menu": "url('/assets/images/icons/icon-hamburger.svg')",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({ addVariant }) {
+      addVariant("peer", ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.peer + .${className} ~ .peer-checked:${separator}${className}`;
+        });
+      });
+    },
+  ],
 };

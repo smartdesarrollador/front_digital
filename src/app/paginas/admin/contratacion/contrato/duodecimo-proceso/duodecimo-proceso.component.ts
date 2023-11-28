@@ -9,9 +9,23 @@ import { ContratoLocalStorageService } from 'src/app/services/localstorage/contr
 import { DatePipe } from '@angular/common';
 import * as pdfMake from 'pdfmake/build/pdfmake';
 import * as pdfFonts from 'pdfmake/build/vfs_fonts';
+import { forkJoin } from 'rxjs';
+
 import { contratoInicioActividad } from './funciones-contratos/contrato-inicio-actividad';
 import { contratoIncrementoActividad } from './funciones-contratos/contrato-incremento-actividad';
-import { forkJoin } from 'rxjs';
+import { contratoDeEmergencia } from './funciones-contratos/contrato-de-emergencia';
+import { contratoIndeterminadoConFiscalizacion } from './funciones-contratos/contrato-indeterminado-con-fiscalizacion';
+import { contratoIndeterminadoSinFiscalizacion } from './funciones-contratos/contrato-indeterminado-sin-fiscalizacion';
+import { contratoIndeterminado } from './funciones-contratos/contrato-indeterminado';
+import { contratoInnominado } from './funciones-contratos/contrato-innominado';
+import { contratoIntermitente } from './funciones-contratos/contrato-intermitente';
+import { contratoNecesidadMercado } from './funciones-contratos/contrato-necesidad-mercado';
+import { contratoObraDeterminada } from './funciones-contratos/contrato-obra-determinada';
+import { contratoOcacional } from './funciones-contratos/contrato-ocacional';
+import { contratoPorSuplencia } from './funciones-contratos/contrato-por-suplencia';
+import { contratoPorTemporada } from './funciones-contratos/contrato-por-temporada';
+import { contratoReconversionEmpresarial } from './funciones-contratos/contrato-reconversion-empresarial';
+import { contratoServicioEspecifico } from './funciones-contratos/contrato-servicio-especifico';
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
@@ -82,49 +96,204 @@ export class DuodecimoProcesoComponent {
 
         let modeloContrato1;
 
-        modeloContrato1 = contratoInicioActividad(
-          this.registroTrabajador,
-          this.registroEmpleador,
-          this.datosLocales,
-          this.prueba_meses,
-          this.prueba_inicio,
-          this.prueba_termino,
-          this.fechaFormateada,
-          this.num_valores,
-          this.fechaActualValor
-        );
-
-        /*  if (
-          this.datosLocales.modelo_contrato ===
-          'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD'
-        ) {
-          modeloContrato1 = contratoInicioActividad(
-            this.registroTrabajador,
-            this.registroEmpleador, 
-            this.datosLocales,
-            this.prueba_meses,
-            this.prueba_inicio,
-            this.prueba_termino,
-            this.fechaFormateada,
-            this.num_valores,
-            this.fechaActualValor
-          );
-        } else if (
-          this.datosLocales.modelo_contrato ===
-          'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD'
-        ) {
-          modeloContrato1 = contratoIncrementoActividad(
-            this.registroTrabajador,
-            this.registroEmpleador, 
-            this.datosLocales,
-            this.prueba_meses,
-            this.prueba_inicio,
-            this.prueba_termino,
-            this.fechaFormateada,
-            this.num_valores,
-            this.fechaActualValor
-          );
-        } */
+        switch (this.datosLocales.modelo_contrato) {
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD':
+            modeloContrato1 = contratoInicioActividad(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD':
+            modeloContrato1 = contratoIncrementoActividad(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO':
+            modeloContrato1 = contratoNecesidadMercado(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL':
+            modeloContrato1 = contratoReconversionEmpresarial(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL':
+            modeloContrato1 = contratoOcacional(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE SUPLENCIA':
+            modeloContrato1 = contratoPorSuplencia(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE EMERGENCIA':
+            modeloContrato1 = contratoDeEmergencia(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR OBRA DETERMINADA':
+            modeloContrato1 = contratoObraDeterminada(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR SERVICIO ESPECÍFICO':
+            modeloContrato1 = contratoServicioEspecifico(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD INTERMITENTE':
+            modeloContrato1 = contratoIntermitente(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD DE CONTRATO DE TEMPORADA':
+            modeloContrato1 = contratoPorTemporada(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO INNOMINADO A PLAZO FIJO':
+            modeloContrato1 = contratoInnominado(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
+            modeloContrato1 = contratoIndeterminado(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN FISCALIZACION':
+            modeloContrato1 = contratoIndeterminadoSinFiscalizacion(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          case 'MODELO DE CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN CONFIANZA Y CON FISCALIZACION':
+            modeloContrato1 = contratoIndeterminadoConFiscalizacion(
+              this.registroTrabajador,
+              this.registroEmpleador,
+              this.datosLocales,
+              this.prueba_meses,
+              this.prueba_inicio,
+              this.prueba_termino,
+              this.fechaFormateada,
+              this.num_valores,
+              this.fechaActualValor
+            );
+            break;
+          default:
+        }
 
         this.generarPdfMake(modeloContrato1);
         this.fecha_actual_formateada();

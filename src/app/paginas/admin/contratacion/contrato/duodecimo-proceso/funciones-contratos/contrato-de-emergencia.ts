@@ -1,4 +1,4 @@
-export function contratoInicioActividad(
+export function contratoDeEmergencia(
   registroTrabajador: any,
   registroEmpleador: any,
   datosLocales: any,

@@ -1,5 +1,3 @@
-// En nombre-del-archivo.ts
-
 export function contratoIncrementoActividad(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -11,15 +9,6 @@ export function contratoIncrementoActividad(
   num_valores: Array<string>,
   fechaActualValor: string
 ): any {
-  // Aquí dentro de la función puedes utilizar estos parámetros según sea necesario
-  // Por ejemplo:
-  /*  console.log(datosLocales);
-    console.log(prueba_meses);
-    console.log(prueba_inicio);
-    console.log(fechaFormateada);
-    console.log(num_valores);
-    console.log(fechaActualValor); */
-
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -922,12 +911,10 @@ export function contratoIncrementoActividad(
         columns: [
           [
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: '______________________________',
             },
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: 'Pedro Sanchez Mendoza',
             },
@@ -935,7 +922,6 @@ export function contratoIncrementoActividad(
 
           [
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: '______________________________',
             },
@@ -952,7 +938,6 @@ export function contratoIncrementoActividad(
             },
           ],
         ],
-        // optional space between columns
         columnGap: 10,
       },
       {
@@ -993,12 +978,10 @@ export function contratoIncrementoActividad(
         columns: [
           [
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: '______________________________',
             },
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: 'Pedro Sanchez Mendoza',
             },
@@ -1006,7 +989,6 @@ export function contratoIncrementoActividad(
 
           [
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: '______________________________',
             },
@@ -1023,7 +1005,6 @@ export function contratoIncrementoActividad(
             },
           ],
         ],
-        // optional space between columns
         columnGap: 10,
       },
       {
@@ -1126,12 +1107,10 @@ export function contratoIncrementoActividad(
         columns: [
           [
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: '______________________________',
             },
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: 'Pedro Sanchez Mendoza',
             },
@@ -1139,7 +1118,6 @@ export function contratoIncrementoActividad(
 
           [
             {
-              // auto-sized columns have their widths based on their content
               style: 'columna_firma',
               text: '______________________________',
             },
@@ -1156,7 +1134,6 @@ export function contratoIncrementoActividad(
             },
           ],
         ],
-        // optional space between columns
         columnGap: 10,
       },
     ],
@@ -1177,7 +1154,6 @@ export function contratoIncrementoActividad(
         alignment: 'justify',
       },
       alinear: {
-        /* alignment: 'right', */
         margin: [50, 0, -15, 0],
       },
       subtitulo: {
@@ -1192,7 +1168,6 @@ export function contratoIncrementoActividad(
       datos_locales: {
         bold: true,
         fontSize: 12,
-        /* color: 'blue', */
       },
       anexo: {
         alignment: 'center',

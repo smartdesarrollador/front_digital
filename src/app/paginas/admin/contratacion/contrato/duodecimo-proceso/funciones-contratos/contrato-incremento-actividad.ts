@@ -15,7 +15,7 @@ export function contratoIncrementoActividad(
       '\n',
       {
         text: [
-          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por incremento de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
         ],
         style: 'parrafo',
       },
@@ -93,20 +93,13 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          '1.2.	Siendo que EL EMPLEADOR inició sus actividades con fecha ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' tal como consta en el Registro de SUNAT, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' \n\n',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ______ toda vez que se ha dado un incremento sustancial de las actividades de la compañía debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara contar con la experiencia requerida por EL EMPLEADOR, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
+          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ________, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
@@ -117,7 +110,7 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
+          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de incremento de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -127,9 +120,7 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ______ toda vez que se ha dado un incremento sustancial de las actividades de la compañía debido a ______, lo cual queda evidenciado en documentos como: ______. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de incremento de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
           { text: datosLocales.oferta_laboral, style: 'datos_locales' },
           '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],

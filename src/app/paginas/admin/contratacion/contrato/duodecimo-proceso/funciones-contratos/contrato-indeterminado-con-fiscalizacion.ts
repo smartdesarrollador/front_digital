@@ -15,7 +15,7 @@ export function contratoIndeterminadoConFiscalizacion(
       '\n',
       {
         text: [
-          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo a plazo indeterminado que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
         ],
         style: 'parrafo',
       },
@@ -79,7 +79,7 @@ export function contratoIndeterminadoConFiscalizacion(
         style: 'alinear',
       },
       {
-        text: 'A quienes se les puede denominar “LAS PARTES”, en los términos y condiciones siguientes:\n\n',
+        text: 'A quienes en conjunto se les podrá denominar “LAS PARTES”, en los términos y condiciones siguientes:\n\n',
       },
       {
         text: ['CLÁUSULA ', num_valores[0], '. - ANTECEDENTES\n\n'],
@@ -87,31 +87,19 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº 12345 del Registro de Personas Jurídicas de Lima y tiene por objeto social dedicarse a la importación y distribución de productos electrónicos..\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de ______, que se dedica a ________.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	Siendo que EL EMPLEADOR inició sus actividades con fecha ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' tal como consta en el Registro de SUNAT, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' \n\n',
+          '1.2.	EL EMPLEADOR requiere contratar los servicios de un profesional para desempeñar el cargo de _________ y será el responsable de______ . \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara contar con la experiencia requerida por EL EMPLEADOR, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' para que se desempeñe en las siguientes funciones descritas en el anexo 1-A. \n\n',
+          '1.3.	Por su parte, EL TRABAJADOR declara ser ___________ de profesión, y contar con la capacidad y experiencia necesaria para desempeñar el cargo ofrecido. \n\n',
         ],
         style: 'parrafo',
       },
@@ -127,11 +115,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata a plazo indeterminado a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de ___________, bajo subordinación y de manera personal; de conformidad con lo establecido por el artículo 9 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -151,25 +135,25 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'Sin embargo, EL EMPLEADOR está facultado a efectuar modificaciones razonables en función de la capacidad y aptitud de EL TRABAJADOR y a las necesidades y requerimiento de este, sin que dichas variaciones signifiquen menoscabo de categoría y/o remuneración. Queda entendido que las funciones deberán ser efectuadas de manera personal, no pudiendo EL TRABAJADOR ser reemplazado ni ayudado por tercera persona\n\n',
+          'EL TRABAJADOR declara conocer la actividad que desarrollará y se obliga a desempeñar sus funciones con la mayor eficiencia y espíritu de colaboración, actuando con responsabilidad, honestidad, dedicación y diligencia. EL TRABAJADOR declara conocer los reglamentos, prácticas y políticas específicas de EL EMPLEADOR, por lo cual acepta cumplirlas.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.2	EL TRABAJADOR declara conocer la actividad que desarrollará y se obliga a desempeñar sus funciones con la mayor eficiencia y espíritu de colaboración, actuando con responsabilidad, honestidad, dedicación y diligencia. EL TRABAJADOR declara conocer los reglamentos, prácticas y políticas específicas de EL EMPLEADOR, por lo cual acepta cumplirlas. \n\n',
+          'Sin embargo, EL EMPLEADOR está facultado a efectuar modificaciones razonables en función de la capacidad y aptitud de EL TRABAJADOR y a las necesidades y requerimiento de este, sin que dichas variaciones signifiquen menoscabo de categoría y/o remuneración. Queda entendido que las funciones deberán ser efectuadas de manera personal, no pudiendo EL TRABAJADOR ser reemplazado ni ayudado por tercera persona.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.3	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR.\n\n',
+          '3.2	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.4	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en EL EMPLEADOR. \n\n',
+          '3.3	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en EL EMPLEADOR.\n\n',
         ],
         style: 'parrafo',
       },
@@ -205,139 +189,29 @@ export function contratoIndeterminadoConFiscalizacion(
         ],
         style: 'parrafo',
       },
-      datosLocales.trabajador_confianza
-        ? {
-            text: [
-              'CLÁUSULA ',
-              num_valores[5],
-              '. - PERSONAL DE CONFIANZA\n\n',
-            ],
-            style: 'subtitulo',
-          }
-        : null,
-      datosLocales.trabajador_confianza
-        ? {
-            text: [
-              'En virtud del artículo 43 del Decreto Legislativo N° 728, se considera trabajadores de confianza a aquellos que laboran en contacto personal y directo con EL EMPLEADOR o con el personal de dirección, teniendo acceso a secretos industriales, comerciales o profesionales y, en general, a información de carácter reservado. Asimismo, a los que contribuyen a la formación de decisiones empresariales.\n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.trabajador_confianza
-        ? {
-            text: [
-              'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de   ',
-              {
-                text: datosLocales.oferta_laboral,
-                style: 'datos_locales',
-              },
-              '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con la Gerencia administrativa,    ',
-              {
-                text: datosLocales.pregunta_1,
-                style: 'datos_locales',
-              },
-              '   , teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como    ',
-              {
-                text: datosLocales.pregunta_2,
-                style: 'datos_locales',
-              },
-              '    \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.trabajador_confianza
-        ? {
-            text: [
-              'De acuerdo a lo antes mencionado, EL TRABAJADOR, cuenta con una relación laboral de confianza exclusiva sujeta a fiscalización inmediata por lo que el desarrollo de sus funciones se regirá por todo aquello que la legislación laboral señale respecto a esta situación especial.\n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.trabajador_direccion
-        ? {
-            text: [
-              'CLÁUSULA ',
-              num_valores[6],
-              '.-  PERSONAL DE DIRECCIÓN\n\n',
-            ],
-            style: 'subtitulo',
-          }
-        : null,
-      datosLocales.trabajador_direccion
-        ? {
-            text: [
-              'En virtud del artículo 43 del Decreto Legislativo N° 728, se considera puesto de dirección a los trabajadores que ejercen la representación de EL EMPLEADOR a nivel interno y externo, ejercen funciones de administración y control y tienen un alto grado de responsabilidad, y de sus labores depende el resultado de la actividad de EL EMPLEADOR.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.trabajador_direccion
-        ? {
-            text: [
-              'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de ',
-              {
-                text: datosLocales.oferta_laboral,
-                style: 'datos_locales',
-              },
-              ' es considerado como personal de dirección y por ende de confianza debido a que cuenta con representación de EL EMPLEADOR a nivel interno y externo ya que ejerce funciones de administración y control, toda vez que que supervisa y tiene un alto grado de responsabilidad, y de sus labores depende el resultado de la actividad de EL EMPLEADOR, asimismo, tiene acceso a información confidencial tales como  ',
-              {
-                text: datosLocales.pregunta_3,
-                style: 'datos_locales',
-              },
-              ' , secretos industriales, comerciales o profesionales y, en general, a información de carácter reservado.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.fiscalizacion_inmediata
-        ? {
-            text: [
-              'CLÁUSULA ',
-              num_valores[7],
-              '. – PERSONAL SIN FISCALIZACIÓN INMEDIATA  \n\n',
-            ],
-            style: 'subtitulo',
-          }
-        : null,
-      datosLocales.fiscalizacion_inmediata
-        ? datosLocales.trabajador_confianza
-          ? {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-                {
-                  text: ' Trabajador de Confianza',
-                  style: 'datos_locales',
-                },
-                '  en virtud del artículo    ',
-                {
-                  text: ' 10',
-                  style: 'datos_locales',
-                },
-                '   del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }
-          : {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-                {
-                  text: ' Trabajador de Dirección',
-                  style: 'datos_locales',
-                },
-                '  en virtud del artículo    ',
-                {
-                  text: ' 11',
-                  style: 'datos_locales',
-                },
-                '   del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }
-        : null,
+      {
+        text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR desempeñará sus funciones profesionales de acuerdo con las normas usuales de ética y las leyes peruanas, de acuerdo con el Código de Conducta existente en EL EMPLEADOR, así como de acuerdo con los mejores intereses de EL EMPLEADOR, siempre y cuando estas no sean contrarias a las leyes peruanas vigentes.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR declara que no tiene ningún conflicto de interés personal a declarar para EL EMPLEADOR y se compromete a informar sobre cualquier conflicto de interés que pueda surgir durante su relación laboral.  \n\n',
+        ],
+        style: 'parrafo',
+      },
       datosLocales.jornada_maxima
         ? {
-            text: ['CLÁUSULA ', num_valores[8], '. - JORNADA LABORAL\n\n'],
+            text: [
+              'CLÁUSULA ',
+              num_valores[8],
+              '. - JORNADA Y HORARIO DE TRABAJO\n\n',
+            ],
             style: 'subtitulo',
           }
         : null,
@@ -369,22 +243,14 @@ export function contratoIndeterminadoConFiscalizacion(
             style: 'parrafo',
           }
         : null,
-      {
-        text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'EL TRABAJADOR desempeñará sus funciones profesionales de acuerdo con las normas usuales de ética y las leyes peruanas, de acuerdo con el Código de Conducta existente en EL EMPLEADOR, así como de acuerdo con los mejores intereses de EL EMPLEADOR, siempre y cuando estas no sean contrarias a las leyes peruanas vigentes.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'EL TRABAJADOR declara que no tiene ningún conflicto de interés personal a declarar para EL EMPLEADOR y se compromete a informar sobre cualquier conflicto de interés que pueda surgir durante su relación laboral.  \n\n',
-        ],
-        style: 'parrafo',
-      },
+      datosLocales.jornada_maxima
+        ? {
+            text: [
+              'Asimismo, EL EMPLEADOR podrá variar el horario señalado precedentemente, de acuerdo con sus necesidades, las mismas que están relacionadas con las funciones que desempeña EL TRABAJADOR, sin que ello represente hostilidad u otro similar de alguna clase, sujetándose EL TRABAJADOR a las jornadas alternativas o acumulativas que establezca EL EMPLEADOR.   \n\n',
+            ],
+            style: 'parrafo',
+          }
+        : null,
       {
         text: ['CLÁUSULA ', num_valores[10], '.- REMUNERACIÓN\n\n'],
         style: 'subtitulo',
@@ -409,22 +275,6 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'Las ausencias injustificadas por parte de EL TRABAJADOR implican la pérdida de la remuneración proporcionalmente a la duración de dicha ausencia, sin perjuicio del ejercicio de las facultades disciplinarias propias de EL EMPLEADOR previstas en la legislación laboral y normas internas de EL EMPLEADOR.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ',
-          prueba_meses,
-          ' , el cual empieza el ',
-          prueba_inicio,
-          ' y termina el ',
-          prueba_termino,
-          ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -466,34 +316,35 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es de    ',
-          {
-            text: '1 año',
-            style: 'datos_locales',
-          },
-          '  , y rige desde el    ',
-          {
-            text: datosLocales.fecha_inicio,
-            style: 'datos_locales',
-          },
-          '  , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el    ',
-          {
-            text: datosLocales.fecha_renovacion,
-            style: 'datos_locales',
-          },
-          '  , fecha en que termina el contrato.\n\n',
+          'El plazo de duración del presente contrato es indeterminado, siendo su fecha de inicio el día ___ de_______ de ___.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Queda entendido que EL EMPLEADOR no está obligado a dar aviso alguno adicional referente al término del presente contrato, operando la extinción a la expiración del tiempo, oportunidad en la cual se le abonará a EL TRABAJADOR los beneficios sociales que pudieran corresponderle de acuerdo a Ley.\n\n',
+          'En caso EL TRABAJADOR decida renunciar voluntariamente al cargo, deberá dar aviso escrito a EL EMPLEADOR con una anticipación de 30 días naturales, conforme a ley.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Sin perjuicio de lo anteriormente señalado, las partes podrán convenir la renovación del contrato por el tiempo que resulte necesario seguir brindando los servicios en tanto se mantengan las condiciones señaladas en la cláusula primera del presente contrato. \n\n',
+          'Queda entendido que EL EMPLEADOR no está obligado a dar aviso alguno adicional referente al término del presente contrato, operando la extinción a la expiración del tiempo señalado en el párrafo anterior, oportunidad en la cual se le abonará a EL TRABAJADOR los beneficios sociales que pudieran corresponderle de acuerdo con Ley.\n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ',
+          prueba_meses,
+          ' , el cual empieza el ',
+          prueba_inicio,
+          ' y termina el ',
+          prueba_termino,
+          ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -523,7 +374,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL y en virtud de aquellos supuestos de extinción del vínculo laboral establecidos en la jurisprudencia peruana. \n\n',
+          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL. \n\n',
         ],
         style: 'parrafo',
       },
@@ -547,7 +398,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'Este contrato queda sujeto a las disposiciones que contiene el TUO del D. Leg. N° 728 aprobado por D.S. N° 003-97-TR TR Ley de Productividad y Competitividad Laboral, y demás normas legales que lo regulen o que sean dictadas durante la vigencia del contrato. \n\n',
+          'El presente contrato se encuentra sujeto a las disposiciones laborales que regulan los contratos de trabajo a plazo indeterminado contenidas en el Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y demás normas legales que lo regulen o que sean dictadas durante la vigencia del contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -567,7 +418,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          '16.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
+          '16.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y   supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el ANEXO 1-B, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
         ],
         style: 'parrafo',
       },
@@ -664,7 +515,7 @@ export function contratoIndeterminadoConFiscalizacion(
       datosLocales.confidencialidad
         ? {
             text: [
-              'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal del EMPLEADOR.  \n\n',
+              'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal de EL EMPLEADOR.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -688,7 +539,7 @@ export function contratoIndeterminadoConFiscalizacion(
       datosLocales.confidencialidad
         ? {
             text: [
-              'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente contrato relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
+              'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente convenio relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
             ],
             style: 'parrafo',
           }
@@ -744,7 +595,7 @@ export function contratoIndeterminadoConFiscalizacion(
       datosLocales.tecnologia_informacion
         ? {
             text: [
-              'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
+              'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, él asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -836,7 +687,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'En materia de obligaciones tributarias, EL TRABAJADOR queda claramente instruida que está sujeta a la legislación peruana. En consecuencia, deberá cumplir con las obligaciones tributarias y previsionales previstas por la legislación de Perú. EL EMPLEADOR se compromete a efectuar las retenciones y aportaciones o contribuciones de ley que correspondan.  \n\n',
+          'En materia de obligaciones tributarias, EL TRABAJADOR queda claramente instruido que está sujeto a la legislación peruana. En consecuencia, deberá cumplir con las obligaciones tributarias y previsionales previstas por la legislación de Perú. EL EMPLEADOR se compromete a efectuar las retenciones y aportaciones o contribuciones de ley que correspondan.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -894,7 +745,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       {
         text: [
-          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de Lima, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez. \n\n',
+          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de ____, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez. \n\n',
         ],
         style: 'parrafo',
       },

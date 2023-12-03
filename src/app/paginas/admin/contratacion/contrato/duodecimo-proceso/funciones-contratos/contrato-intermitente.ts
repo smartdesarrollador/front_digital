@@ -15,7 +15,7 @@ export function contratoIntermitente(
       '\n',
       {
         text: [
-          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          'Conste por el presente documento, el Contrato Individual de Trabajo bajo la modalidad de Intermitente que celebran, de conformidad con lo establecido en el artículo 64 del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, de una parte,\n\n',
         ],
         style: 'parrafo',
       },
@@ -79,7 +79,10 @@ export function contratoIntermitente(
         style: 'alinear',
       },
       {
-        text: 'A quienes se les puede denominar “LAS PARTES”, en los términos y condiciones siguientes:\n\n',
+        text: 'Para efectos del presente documento, EL EMPLEADOR y EL TRABAJADOR serán denominados conjuntamente como “LAS PARTES”.\n\n',
+      },
+      {
+        text: 'El presente Contrato se celebra y suscribe conforme a los términos y condiciones siguientes:\n\n',
       },
       {
         text: ['CLÁUSULA ', num_valores[0], '. - ANTECEDENTES\n\n'],
@@ -87,37 +90,19 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº 12345 del Registro de Personas Jurídicas de Lima y tiene por objeto social dedicarse a la importación y distribución de productos electrónicos..\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de _______.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	Siendo que EL EMPLEADOR inició sus actividades con fecha ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' tal como consta en el Registro de SUNAT, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' \n\n',
+          '1.2.	EL EMPLEADOR se dedica a las actividades de ____________ motivo por el que requiere contratar a un ___________ para que lleve a cabo las funciones de naturaleza discontinuas que se desprenden de dicho cargo. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara contar con la experiencia requerida por EL EMPLEADOR, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' para que se desempeñe en las siguientes funciones descritas en el anexo 1-A. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
+          '1.3.	EL TRABAJADOR es una persona natural apta para desarrollar las labores requeridas por EL EMPLEADOR y se encuentra de acuerdo con las condiciones de trabajo conforme se señala en la presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -127,13 +112,13 @@ export function contratoIntermitente(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
-          num_valores[10],
-          '. \n\n',
+          '2.1 Por el presente CONTRATO las Partes convienen que EL TRABAJADOR preste servicios intermitentes para EL EMPLEADOR en calidad de _____________, con ocasión de las actividades de ____________, a cambio de la retribución pactada en la Cláusula Séptima, para cubrir las necesidades de las actividades de EL EMPLEADOR que por su naturaleza y particularidades, son discontinuas, las cuales se relacionan con _________. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '2.2 Las Partes declaran conocer que las necesidades de trabajo de EL EMPLEADOR, al desarrollar una actividad de _________, son discontinuas debido a _____, por lo que estos factores determinan que EL TRABAJADOR preste servicios de modo intermitente. \n\n',
         ],
         style: 'parrafo',
       },
@@ -143,7 +128,29 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '3.1	EL TRABAJADOR desempeñará sus labores en el cargo de   ',
+          '3.1	En su calidad de _____________ EL TRABAJADOR se compromete a ejecutar las tareas propias de su cargo en cada oportunidad que se reanude la labor intermitente del CONTRATO, cumpliendo para tal efecto las órdenes que disponga la empresa.\n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '3.2	LAS PARTES declaran que la labor intermitente del CONTRATO se reanudará si y solo si se verifica una necesidad de personal para atender las actividades de EL EMPLEADOR con posición vacante en las secciones correspondientes en _________, para satisfacer _______ que dan lugar a la presente contratación. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '3.3	De conformidad con lo dispuesto por el Decreto Supremo No 003-97-TR, las circunstancias o condiciones que deben observarse para que se reanude la labor intermitente vienen dadas por la necesidad de ________________; y la verificación de puestos vacantes para atender tales actividades, con relación a los requerimientos de producción.\n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: ['CLÁUSULA ', num_valores[2], '. - PRESTACIÓN DE SERVICIOS\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          '4.1	EL TRABAJADOR desempeñará sus labores en el cargo de   ',
           { text: datosLocales.oferta_laboral, style: 'datos_locales' },
           '   desempeñando las funciones que se señalan en el Anexo 1-A del presente contrato.\n\n',
         ],
@@ -157,19 +164,19 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '3.2	EL TRABAJADOR declara conocer la actividad que desarrollará y se obliga a desempeñar sus funciones con la mayor eficiencia y espíritu de colaboración, actuando con responsabilidad, honestidad, dedicación y diligencia. EL TRABAJADOR declara conocer los reglamentos, prácticas y políticas específicas de EL EMPLEADOR, por lo cual acepta cumplirlas. \n\n',
+          '4.2	EL TRABAJADOR declara conocer la actividad que desarrollará y se obliga a desempeñar sus funciones con la mayor eficiencia y espíritu de colaboración, actuando con responsabilidad, honestidad, dedicación y diligencia. EL TRABAJADOR declara conocer los reglamentos, prácticas y políticas específicas de EL EMPLEADOR, por lo cual acepta cumplirlas. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.3	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR.\n\n',
+          '4.3	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.4	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en EL EMPLEADOR. \n\n',
+          '4.4	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en EL EMPLEADOR. \n\n',
         ],
         style: 'parrafo',
       },
@@ -185,7 +192,7 @@ export function contratoIntermitente(
         text: [
           'Las partes acuerdan que, en atención al cargo de   ',
           { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula primera del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en Los Olivos. \n\n',
+          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula cuarta del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en __________. \n\n',
         ],
         style: 'parrafo',
       },
@@ -301,39 +308,12 @@ export function contratoIntermitente(
           }
         : null,
       datosLocales.fiscalizacion_inmediata
-        ? datosLocales.trabajador_confianza
-          ? {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-                {
-                  text: ' Trabajador de Confianza',
-                  style: 'datos_locales',
-                },
-                '  en virtud del artículo    ',
-                {
-                  text: ' 10',
-                  style: 'datos_locales',
-                },
-                '   del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }
-          : {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-                {
-                  text: ' Trabajador de Dirección',
-                  style: 'datos_locales',
-                },
-                '  en virtud del artículo    ',
-                {
-                  text: ' 11',
-                  style: 'datos_locales',
-                },
-                '   del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }
+        ? {
+            text: [
+              'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como personal sin fiscalización inmediata en virtud del artículo 10 del Decreto Supremo N° 008-2002-TR.\n\n',
+            ],
+            style: 'parrafo',
+          }
         : null,
       datosLocales.jornada_maxima
         ? {
@@ -352,11 +332,7 @@ export function contratoIntermitente(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de lunes a viernes pudiendo ser la jornada laboral de lunes a viernes de ',
-              datosLocales.horario_inicio,
-              ' a ',
-              datosLocales.horario_final,
-              ', incluido los 45 minutos de refrigerio, los cuales no forman parte de la jornada ni del horario de trabajo.  \n\n',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: de _____ a _____  incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -418,13 +394,7 @@ export function contratoIntermitente(
       },
       {
         text: [
-          'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ',
-          prueba_meses,
-          ' , el cual empieza el ',
-          prueba_inicio,
-          ' y termina el ',
-          prueba_termino,
-          ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
+          'EL TRABAJADOR estará sujeto a un periodo de prueba de __________, cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -466,34 +436,59 @@ export function contratoIntermitente(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es de    ',
-          {
-            text: '1 año',
-            style: 'datos_locales',
-          },
-          '  , y rige desde el    ',
-          {
-            text: datosLocales.fecha_inicio,
-            style: 'datos_locales',
-          },
-          '  , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el    ',
-          {
-            text: datosLocales.fecha_renovacion,
-            style: 'datos_locales',
-          },
-          '  , fecha en que termina el contrato.\n\n',
+          '12.1 La duración del presente CONTRATO será desde el ___ de ___ de ____ hasta el ___ de ___ de ____ o la culminación de los servicios intermitentes señalados en las cláusulas segunda y tercera, lo que ocurra primero.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Queda entendido que EL EMPLEADOR no está obligado a dar aviso alguno adicional referente al término del presente contrato, operando la extinción a la expiración del tiempo, oportunidad en la cual se le abonará a EL TRABAJADOR los beneficios sociales que pudieran corresponderle de acuerdo a Ley.\n\n',
+          '12.2 LAS PARTES dejan constancia de que el plazo señalado se ajusta a los factores objetivos que hacen posible estimar que en dicho periodo se culminarán los servicios intermitentes. A la fecha de vencimiento convenida, EL CONTRATO se extinguirá de manera automática. EL EMPLEADOR no está obligado a dar aviso adicional alguno referente al término del plazo establecido en EL CONTRATO. Sin embargo, las partes, de común acuerdo, podrán nuevamente prorrogar o renovar el presente CONTRATO respetando el derecho de preferencia de EL TRABAJADOR previsto en el Decreto Supremo No 003-97-TR. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Sin perjuicio de lo anteriormente señalado, las partes podrán convenir la renovación del contrato por el tiempo que resulte necesario seguir brindando los servicios en tanto se mantengan las condiciones señaladas en la cláusula primera del presente contrato. \n\n',
+          '12.3 LAS PARTES ratifican que los servicios solamente se prestarán cuando se presente la necesidad de contratación temporal. Para tales efectos, únicamente se computarán como laborados los días real y efectivamente trabajados. Los periodos de suspensión o inactividad no se considerarán trabajados para ningún efecto legal. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '12.4 La relación laboral podrá extinguirse por cualquiera de las causales previstas en la legislación. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[13],
+          '. - DERECHO PREFERENCIAL DE CONTRATACIÓN \n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'LAS PARTES reconocen que EL TRABAJADOR tiene derecho preferencial de contratación cuando corresponda según lo establecido en el artículo 64 del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR.\n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[13],
+          '. - DE LA SUSPENSIÓN DE LABORES \n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          '14.1	Dadas las características propias de la actividad _______, éstas son de tipo  permanente pero discontinuas, es decir intermitentes; en ese sentido cuando por razones de _________, no puedan desarrollarse las actividades laborales, éstas se suspenden y para ello la empresa comunica a EL TRABAJADOR esta situación mediante una boleta de suspensión de labores o de descanso temporal, consignando en dicho documento el período de suspensión, así como la fecha, hora y el área probable en que se reanudarán las labores. EL TRABAJADOR deberá presentarse en el centro de trabajo en la oportunidad fijada, con la finalidad de reincorporarse al área que venía laborando o a otra nueva, según las disposiciones que la empresa emita o inclusive de recibir la comunicación de una nueva o la continuación de la suspensión.\n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '14.2	La suspensión del presente CONTRATO de trabajo por alguna de las causas previstas en el Art. 11 del D.S. Nº 003-97-TR, incluyendo las que se den por la naturaleza intermitente ya señalada, no interrumpirán su vigencia del presente CONTRATO, pues ésta seguirá siendo la misma. \n\n',
         ],
         style: 'parrafo',
       },
@@ -523,7 +518,7 @@ export function contratoIntermitente(
       },
       {
         text: [
-          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL y en virtud de aquellos supuestos de extinción del vínculo laboral establecidos en la jurisprudencia peruana. \n\n',
+          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL. \n\n',
         ],
         style: 'parrafo',
       },
@@ -561,19 +556,19 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '16.1.  EL TRABAJADOR se compromete a trabajar honestamente y conscientemente, llevar a cabo sus funciones puntualmente y en forma precisa, a seguir estrictamente cualquier disciplina de trabajo y tecnológica, protección laboral, prevención de accidentes, saneamiento, higiene ocupacional y requisitos contra incendios, según lo establecido por estándares apropiados de nuestro país, por los estatutos internos de EL EMPLEADOR y a cuidar debidamente nuestros bienes. \n\n',
+          '19.1.  EL TRABAJADOR se compromete a trabajar honestamente y conscientemente, llevar a cabo sus funciones puntualmente y en forma precisa, a seguir estrictamente cualquier disciplina de trabajo y tecnológica, protección laboral, prevención de accidentes, saneamiento, higiene ocupacional y requisitos contra incendios, según lo establecido por estándares apropiados de nuestro país, por los estatutos internos de EL EMPLEADOR y a cuidar debidamente nuestros bienes. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '16.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
+          '19.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '16.3.   En el desarrollo de la relación laboral, EL TRABAJADOR: \n\n',
+          '19.3.   En el desarrollo de la relación laboral, EL TRABAJADOR: \n\n',
         ],
         style: 'parrafo',
       },
@@ -672,7 +667,7 @@ export function contratoIntermitente(
       datosLocales.confidencialidad
         ? {
             text: [
-              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
+              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación del mismo.   \n\n',
             ],
             style: 'parrafo',
           }

@@ -15,7 +15,7 @@ export function contratoNecesidadMercado(
       '\n',
       {
         text: [
-          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          'Conste por el presente documento, el Contrato Individual de Trabajo a plazo determinado por necesidad de mercado que celebran, de conformidad con lo establecido por artículo 58 del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, de una parte,\n\n',
         ],
         style: 'parrafo',
       },
@@ -87,20 +87,13 @@ export function contratoNecesidadMercado(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº 12345 del Registro de Personas Jurídicas de Lima y tiene por objeto social dedicarse a la importación y distribución de productos electrónicos..\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de _______.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	Siendo que EL EMPLEADOR inició sus actividades con fecha ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' tal como consta en el Registro de SUNAT, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' \n\n',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ______ toda vez que se ha dado un incremento en la producción originados por la variación de la demanda en el mercado debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
         ],
         style: 'parrafo',
       },
@@ -117,7 +110,7 @@ export function contratoNecesidadMercado(
       },
       {
         text: [
-          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
+          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de necesidad de mercado contemplada en el artículo 58 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -127,11 +120,7 @@ export function contratoNecesidadMercado(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ______ toda vez que se ha dado un incremento en la producción originados por la variación de la demanda en el mercado debido a ______, lo cual queda evidenciado en documentos como: ______. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de necesidad de mercado a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ________ y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 58 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -301,39 +290,12 @@ export function contratoNecesidadMercado(
           }
         : null,
       datosLocales.fiscalizacion_inmediata
-        ? datosLocales.trabajador_confianza
-          ? {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-                {
-                  text: ' Trabajador de Confianza',
-                  style: 'datos_locales',
-                },
-                '  en virtud del artículo    ',
-                {
-                  text: ' 10',
-                  style: 'datos_locales',
-                },
-                '   del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }
-          : {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como   ',
-                {
-                  text: ' Trabajador de Dirección',
-                  style: 'datos_locales',
-                },
-                '  en virtud del artículo    ',
-                {
-                  text: ' 11',
-                  style: 'datos_locales',
-                },
-                '   del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }
+        ? {
+            text: [
+              'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como personal sin fiscalización inmediata en virtud del artículo 10 del Decreto Supremo N° 008-2002-TR.\n\n',
+            ],
+            style: 'parrafo',
+          }
         : null,
       datosLocales.jornada_maxima
         ? {
@@ -352,11 +314,7 @@ export function contratoNecesidadMercado(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de lunes a viernes pudiendo ser la jornada laboral de lunes a viernes de ',
-              datosLocales.horario_inicio,
-              ' a ',
-              datosLocales.horario_final,
-              ', incluido los 45 minutos de refrigerio, los cuales no forman parte de la jornada ni del horario de trabajo.  \n\n',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de _____am a _____ pm, incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -418,13 +376,7 @@ export function contratoNecesidadMercado(
       },
       {
         text: [
-          'En atención al artículo 10 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR, el período de prueba es de ',
-          prueba_meses,
-          ' , el cual empieza el ',
-          prueba_inicio,
-          ' y termina el ',
-          prueba_termino,
-          ' . Queda entendido que durante este periodo de prueba EL EMPLEADOR puede resolver el contrato sin expresión de causa.  \n\n',
+          'EL TRABAJADOR estará sujeto a un periodo de prueba de __________, cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -523,7 +475,7 @@ export function contratoNecesidadMercado(
       },
       {
         text: [
-          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL y en virtud de aquellos supuestos de extinción del vínculo laboral establecidos en la jurisprudencia peruana. \n\n',
+          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL. \n\n',
         ],
         style: 'parrafo',
       },
@@ -672,7 +624,7 @@ export function contratoNecesidadMercado(
       datosLocales.confidencialidad
         ? {
             text: [
-              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
+              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación del mismo.   \n\n',
             ],
             style: 'parrafo',
           }

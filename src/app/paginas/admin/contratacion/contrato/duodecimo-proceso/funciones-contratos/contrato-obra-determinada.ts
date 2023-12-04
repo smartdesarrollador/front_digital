@@ -15,7 +15,7 @@ export function contratoObraDeterminada(
       '\n',
       {
         text: [
-          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por Obra determinada que celebran, de conformidad con lo establecido por el artículo 63 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo Nº 003-97-TR, de una parte, \n\n',
         ],
         style: 'parrafo',
       },
@@ -46,11 +46,7 @@ export function contratoObraDeterminada(
             text: registroEmpleador.numero_partida_registral,
             style: 'datos_locales',
           },
-          ' Asiento ',
-          { text: registroEmpleador.numero_asiento, style: 'datos_locales' },
-          ' del Registro de Personas Jurídicas de la Oficina Registral de ',
-          { text: registroEmpleador.oficina_registral },
-          ' , a quien en adelante se le denominará EL EMPLEADOR y de la otra parte, \n\n',
+          ' , del Registro de Personas Jurídicas de la Oficina Registral de_________, a quien en adelante se le denominará “EL EMPLEADOR”, y, de otra parte, \n\n',
         ],
         style: 'alinear',
       },
@@ -74,12 +70,12 @@ export function contratoObraDeterminada(
           },
           ', con domicilio en ',
           { text: registroTrabajador.direccion, bold: true, fontSize: 12 },
-          ', a quien en adelante se le denominará EL TRABAJADOR.\n\n',
+          ', a quien en adelante se le denominará “EL TRABAJADOR”.\n\n',
         ],
         style: 'alinear',
       },
       {
-        text: 'A quienes se les puede denominar “LAS PARTES”, en los términos y condiciones siguientes:\n\n',
+        text: 'En conjunto, serán denominados “LAS PARTES”. En los términos y condiciones siguientes:\n\n',
       },
       {
         text: ['CLÁUSULA ', num_valores[0], '. - ANTECEDENTES\n\n'],
@@ -87,20 +83,13 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº 12345 del Registro de Personas Jurídicas de Lima y tiene por objeto social dedicarse a la importación y distribución de productos electrónicos..\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú inscrita en la Ficha de Partida Electrónica N° _________ del Registro de Personas Jurídicas de ______, que tiene por objeto social dedicarse a ________y que ha iniciado actividades con fecha __________, tal como consta en el Registro de SUNAT.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	Siendo que EL EMPLEADOR inició sus actividades con fecha ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' tal como consta en el Registro de SUNAT, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' \n\n',
+          '1.2.	EL EMPLEADOR necesita cubrir de manera temporal las necesidades de recursos humanos, motivo por el que requiere contratar a EL TRABAJADOR para que se desempeñe como _________ para el proyecto “___________”, ubicado en _____________, que EL EMPLEADOR se encuentra ejecutando directamente o para terceros. \n\n',
         ],
         style: 'parrafo',
       },
@@ -117,7 +106,7 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
+          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de obra determinada contemplada en el artículo 63 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el numeral 1.3. del presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -127,11 +116,13 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de obra determinada a EL TRABAJADOR para que desempeñe sus funciones en el puesto de __________ toda vez que se requiere de sus servicios para el proyecto _______, ubicado en _____________. En base a dicho proyecto, actualmente se requiere contratar personal por un plazo determinado a fin de cumplir con las obligaciones y condiciones de servicio que fueron pactadas, en tanto se desarrolle el citado servicio para el proyecto bajo comentario. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR deberá de prestar sus servicios de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9, 56 y 63 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -163,45 +154,19 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          '3.3	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR.\n\n',
+          '3.3	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de la compañía de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.4	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en EL EMPLEADOR. \n\n',
+          '3.4	LAS PARTES acuerdan que, en atención al cargo de ______________ que ocupará EL TRABAJADOR para el proyecto “___________”, los servicios descritos del presente contrato serán prestados en ______. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'CLÁUSULA ',
-          num_valores[3],
-          '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
-        ],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'Las partes acuerdan que, en atención al cargo de   ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula primera del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en Los Olivos. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: ['CLÁUSULA ', num_valores[4], '.- DE LA BUENA FE LABORAL\n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'EL TRABAJADOR se obliga, en forma expresa, a poner al servicio de EL EMPLEADOR toda su capacidad y lealtad.\n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'EL TRABAJADOR se compromete siempre y en todo caso a obrar de buena fe en relación con su empleo. Asimismo, EL TRABAJADOR se compromete a observar las políticas y normas que disponga EL EMPLEADOR, teniendo como objetivo su progreso y permanente desarrollo.\n\n',
+          '3.5	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en la compañía de EL EMPLEADOR. \n\n',
         ],
         style: 'parrafo',
       },
@@ -231,7 +196,7 @@ export function contratoObraDeterminada(
                 text: datosLocales.oferta_laboral,
                 style: 'datos_locales',
               },
-              '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con la Gerencia administrativa,    ',
+              '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con    ',
               {
                 text: datosLocales.pregunta_1,
                 style: 'datos_locales',
@@ -337,7 +302,11 @@ export function contratoObraDeterminada(
         : null,
       datosLocales.jornada_maxima
         ? {
-            text: ['CLÁUSULA ', num_valores[8], '. - JORNADA LABORAL\n\n'],
+            text: [
+              'CLÁUSULA ',
+              num_valores[8],
+              '. - JORNADA Y HORARIO DE TRABAJO\n\n',
+            ],
             style: 'subtitulo',
           }
         : null,
@@ -369,13 +338,37 @@ export function contratoObraDeterminada(
             style: 'parrafo',
           }
         : null,
+      datosLocales.jornada_maxima
+        ? {
+            text: [
+              'Asimismo, EL EMPLEADOR podrá variar el horario señalado precedentemente, de acuerdo con sus necesidades, las mismas que están relacionadas con las funciones que desempeña EL TRABAJADOR, sin que ello represente hostilidad u otro similar de alguna clase, sujetándose EL TRABAJADOR a las jornadas alternativas o acumulativas que establezca EL EMPLEADOR.   \n\n',
+            ],
+            style: 'parrafo',
+          }
+        : null,
+      {
+        text: ['CLÁUSULA ', num_valores[9], '. - DE LA BUENA FE LABORAL\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR se obliga, en forma expresa, a poner al servicio de EL EMPLEADOR toda su capacidad y lealtad.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR se compromete siempre y en todo caso a obrar de buena fe en relación con su empleo. Asimismo, EL TRABAJADOR se compromete a observar las políticas y normas que disponga EL EMPLEADOR teniendo como objetivo su progreso y permanente desarrollo. \n\n',
+        ],
+        style: 'parrafo',
+      },
       {
         text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
         style: 'subtitulo',
       },
       {
         text: [
-          'EL TRABAJADOR desempeñará sus funciones profesionales de acuerdo con las normas usuales de ética y las leyes peruanas, de acuerdo con el Código de Conducta existente en EL EMPLEADOR, así como de acuerdo con los mejores intereses de EL EMPLEADOR, siempre y cuando estas no sean contrarias a las leyes peruanas vigentes.  \n\n',
+          'EL TRABAJADOR desempeñará sus funciones profesionales de acuerdo con las normas usuales de éticas y leyes peruanas, así como de acuerdo con los mejores intereses de EL EMPLEADOR, siempre y cuando estas no sean contrarias a las leyes peruanas vigentes.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -466,34 +459,23 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es de    ',
-          {
-            text: '1 año',
-            style: 'datos_locales',
-          },
-          '  , y rige desde el    ',
-          {
-            text: datosLocales.fecha_inicio,
-            style: 'datos_locales',
-          },
-          '  , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el    ',
-          {
-            text: datosLocales.fecha_renovacion,
-            style: 'datos_locales',
-          },
-          '  , fecha en que termina el contrato.\n\n',
+          'El plazo de duración del presente contrato es de _____________,  siendo su fecha de inicio el día ___ de_______ de ___, fecha en que debe empezar sus labores EL TRABAJADOR, hasta el ___de ______de ________, fecha en que termina el contrato. Sin perjuicio de lo anteriormente señalado, las partes podrán convenir la renovación del contrato por el tiempo que resulte necesario seguir brindando los servicios en tanto se mantengan las condiciones señaladas en el presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Queda entendido que EL EMPLEADOR no está obligado a dar aviso alguno adicional referente al término del presente contrato, operando la extinción a la expiración del tiempo, oportunidad en la cual se le abonará a EL TRABAJADOR los beneficios sociales que pudieran corresponderle de acuerdo a Ley.\n\n',
+          'Queda entendido que EL EMPLEADOR no está obligado a dar aviso alguno adicional referente al término del presente contrato, operando su extinción en la fecha de vencimiento establecido en la presente cláusula, oportunidad en la cual se abonará a EL TRABAJADOR los beneficios sociales que le pudieran corresponder de acuerdo con ley.\n\n',
         ],
         style: 'parrafo',
       },
       {
+        text: ['CLÁUSULA ', num_valores[17], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
+        style: 'subtitulo',
+      },
+      {
         text: [
-          'Sin perjuicio de lo anteriormente señalado, las partes podrán convenir la renovación del contrato por el tiempo que resulte necesario seguir brindando los servicios en tanto se mantengan las condiciones señaladas en la cláusula primera del presente contrato. \n\n',
+          'Este contrato queda sujeto a las disposiciones que contiene el TUO del D. Leg. N° 728 aprobado por D.S. N° 003-97-TR TR Ley de Productividad y Competitividad Laboral, y demás normas legales que lo regulen o que sean dictadas durante la vigencia del contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -506,7 +488,7 @@ export function contratoObraDeterminada(
       datosLocales.exclusividad
         ? {
             text: [
-              'EL TRABAJADOR se obliga por su parte en forma expresa a prestar servicios a EL EMPLEADOR bajo condición de exclusividad, dependencia y lealtad de acuerdo con los reglamentos, prácticas y políticas establecidas por EL EMPLEADOR. En ese sentido, EL TRABAJADOR no podrá prestar servicios paralelos a empresas que se dediquen al mismo rubro que EL EMPLEADOR o brindar servicios similares al de EL EMPLEADOR por su cuenta. \n\n',
+              'EL TRABAJADOR se obliga por su parte en forma expresa prestar servicios a EL EMPLEADOR bajo condición de exclusividad, dependencia y lealtad de acuerdo con los reglamentos, prácticas y políticas establecidas por EL EMPLEADOR. En ese sentido, EL TRABAJADOR no podrá prestar servicios paralelos a empresas que se dediquen al mismo rubro que EL EMPLEADOR o brindar servicios similares al de EL EMPLEADOR por su cuenta. \n\n',
             ],
             style: 'parrafo',
           }
@@ -517,13 +499,19 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'EL EMPLEADOR podrá resolver inmediatamente el presente contrato, si es que EL TRABAJADOR se conduce o realiza sus labores en forma negligente, sin observar el Reglamento Interno, o realizando acciones que configuren falta grave, conforme al artículo 25º del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral, Decreto Legislativo N° 728. \n\n',
+          'EL EMPLEADOR podrá resolver inmediatamente el presente contrato si es que EL TRABAJADOR se conduce o realiza sus labores en forma negligente, sin observar el reglamento interno, o realizando acciones que configuren falta grave, conforme al artículo 25° del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral, Decreto Legislativo N° 728. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL y en virtud de aquellos supuestos de extinción del vínculo laboral establecidos en la jurisprudencia peruana. \n\n',
+          'Queda entendido que EL EMPLEADOR no está obligado a dar aviso alguno adicional referente al término del presente contrato, operando la extinción a la expiración del tiempo convenido en el mismo, oportunidad en la cual se le abonará a EL TRABAJADOR los beneficios sociales que pudieran corresponder de acuerdo con ley. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la Ley de Productividad y Competitividad Laboral y en virtud de aquellos supuestos de extinción del vínculo laboral establecidos en la jurisprudencia peruana. \n\n',
         ],
         style: 'parrafo',
       },
@@ -542,16 +530,6 @@ export function contratoObraDeterminada(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[17], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'Este contrato queda sujeto a las disposiciones que contiene el TUO del D. Leg. N° 728 aprobado por D.S. N° 003-97-TR TR Ley de Productividad y Competitividad Laboral, y demás normas legales que lo regulen o que sean dictadas durante la vigencia del contrato. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
         text: [
           'CLÁUSULA ',
           num_valores[18],
@@ -561,25 +539,25 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          '16.1.  EL TRABAJADOR se compromete a trabajar honestamente y conscientemente, llevar a cabo sus funciones puntualmente y en forma precisa, a seguir estrictamente cualquier disciplina de trabajo y tecnológica, protección laboral, prevención de accidentes, saneamiento, higiene ocupacional y requisitos contra incendios, según lo establecido por estándares apropiados de nuestro país, por los estatutos internos de EL EMPLEADOR y a cuidar debidamente nuestros bienes. \n\n',
+          '15.1.  EL TRABAJADOR se compromete a trabajar honestamente y conscientemente, llevar a cabo sus funciones puntualmente y en forma precisa, a seguir estrictamente cualquier disciplina de trabajo y tecnológica, protección laboral, prevención de accidentes, saneamiento, higiene ocupacional y requisitos contra incendios, según lo establecido por estándares apropiados de nuestro país, por los estatutos internos de EL EMPLEADOR y a cuidar debidamente nuestros bienes. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '16.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
+          '15.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Seguridad y Salud en el Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '16.3.   En el desarrollo de la relación laboral, EL TRABAJADOR: \n\n',
+          '15.3.   En el desarrollo de la relación laboral, EL TRABAJADOR: \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'a)	Declara conocer el contenido del Reglamento Interno de Trabajo, del Código de Ética, Reglamento de Seguridad y Salud en el Trabajo, Política sobre Conflicto de Intereses, y demás normas, políticas y reglamentos emitidos o por emitirse por EL EMPLEADOR a nivel local o corporativo, expresando su conformidad con ellos y comprometiéndose a su cabal cumplimiento. \n\n',
+          'a)	Declara conocer el contenido del Reglamento Interno de Seguridad y Salud en el Trabajo, y demás normas, políticas y reglamentos emitidos o por emitirse por EL EMPLEADOR a nivel local o corporativo, expresando su conformidad con ellos y comprometiéndose a su cabal cumplimiento. \n\n',
         ],
         style: 'parrafo',
       },
@@ -672,7 +650,7 @@ export function contratoObraDeterminada(
       datosLocales.confidencialidad
         ? {
             text: [
-              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
+              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación del mismo.    \n\n',
             ],
             style: 'parrafo',
           }
@@ -727,7 +705,7 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'Todo aquello que no se encuentre expresamente regulado por este contrato se regirán por las normas legales aplicables que derivan del ordenamiento Jurídico Laboral establecido en la Ley de Productividad y Competitividad Laboral, y normas conexas, normas administrativas vigentes en Perú.  \n\n',
+          'Todo aquello que no se encuentra expresamente regulado por este contrato se regirán por las normas legales aplicables que derivan del ordenamiento jurídico laboral, por la ley general del trabajo, y normas conexas, normas administrativas vigentes en Perú. \n\n',
         ],
         style: 'parrafo',
       },
@@ -744,7 +722,7 @@ export function contratoObraDeterminada(
       datosLocales.tecnologia_informacion
         ? {
             text: [
-              'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
+              'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, debiendo asumir el pago de los daños ocasionados como custodio de dichos equipos.   \n\n',
             ],
             style: 'parrafo',
           }
@@ -831,16 +809,6 @@ export function contratoObraDeterminada(
         ],
       },
       {
-        text: ['CLÁUSULA ', num_valores[25], '. - DE LA TRIBUTACIÓN   \n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'En materia de obligaciones tributarias, EL TRABAJADOR queda claramente instruida que está sujeta a la legislación peruana. En consecuencia, deberá cumplir con las obligaciones tributarias y previsionales previstas por la legislación de Perú. EL EMPLEADOR se compromete a efectuar las retenciones y aportaciones o contribuciones de ley que correspondan.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
         text: ['CLÁUSULA ', num_valores[26], '. - DOMICILIO   \n\n'],
         style: 'subtitulo',
       },
@@ -874,75 +842,35 @@ export function contratoObraDeterminada(
         text: [
           'CLÁUSULA ',
           num_valores[28],
-          '. - MODIFICACIONES Y ENMIENDAS   \n\n',
-        ],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'Cualquier modificación o enmienda a este Contrato requiere un acuerdo firmado por ambas partes. Este requisito de forma escrita también se aplica a cualquier renuncia del requisito de forma escrita.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'CLÁUSULA ',
-          num_valores[29],
           '. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
         ],
         style: 'subtitulo',
       },
       {
         text: [
-          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de Lima, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez. \n\n',
+          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de _____, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez.  \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Hecho y firmado en Lima, ',
-          fechaActualValor,
-          ', en dos ejemplares de un mismo tenor para constancia de las partes. \n\n\n\n\n\n\n\n\n',
+          'CLÁUSULA ',
+          num_valores[28],
+          '. - MODIFICACIONES Y ENMIENDAS   \n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'Cualquier modificación o enmienda a este contrato requiere un acuerdo firmado por ambas partes. Este requisito de forma escrita también se aplica a cualquier renuncia.  \n\n',
         ],
         style: 'parrafo',
       },
-
       {
-        columns: [
-          [
-            {
-              style: 'columna_firma',
-              text: '______________________________',
-            },
-            {
-              style: 'columna_firma',
-              text: 'Pedro Sanchez Mendoza',
-            },
-          ],
-
-          [
-            {
-              style: 'columna_firma',
-              text: '______________________________',
-            },
-            {
-              text:
-                registroTrabajador.primer_nombre +
-                ' ' +
-                registroTrabajador.segundo_nombre +
-                ' ' +
-                registroTrabajador.apellido_paterno +
-                ' ' +
-                registroTrabajador.apellido_materno,
-              style: 'columna_firma',
-            },
-          ],
+        text: [
+          'Hecho y firmado en Lima, el ___ de ______ de 20__, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n',
         ],
-        columnGap: 10,
-      },
-      {
-        text: [''],
-        pageBreak: 'after',
+        style: 'parrafo',
       },
       {
         text: ['\n\n\n\n\n ANEXO 1-A   \n\n'],

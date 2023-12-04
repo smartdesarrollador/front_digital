@@ -15,7 +15,7 @@ export function contratoPorSuplencia(
       '\n',
       {
         text: [
-          'Conste mediante el presente documento, suscrito por duplicado con igual valor y tenor, el Contrato Individual de Trabajo por inicio de actividad que celebran, de conformidad con lo establecido por el Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR, de una parte,\n\n',
+          'Conste por el presente documento, el Contrato de Trabajo de Naturaleza Accidental bajo la modalidad de Suplencia, al amparo del art. 61º del TUO del Decreto Legislativo 728, Ley de productividad y competitividad laboral, aprobado por D.S. Nº 003-97-TR, y normas complementarias, que celebran, de una parte,\n\n',
         ],
         style: 'parrafo',
       },
@@ -87,37 +87,25 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº 12345 del Registro de Personas Jurídicas de Lima y tiene por objeto social dedicarse a la importación y distribución de productos electrónicos..\n\n',
+          'EL EMPLEADOR es una sociedad constituida y existente bajo las leyes del Perú, cuyo objeto social es dedicarse a _______________.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	Siendo que EL EMPLEADOR inició sus actividades con fecha ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' tal como consta en el Registro de SUNAT, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' \n\n',
+          'Por su parte, EL TRABAJADOR declara ser ____________ de profesión, y contar con la capacidad y experiencia necesaria para desempeñar el cargo ofrecido. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara contar con la experiencia requerida por EL EMPLEADOR, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
-          {
-            text: datosLocales.oferta_laboral,
-            style: 'datos_locales',
-          },
-          ' para que se desempeñe en las siguientes funciones descritas en el anexo 1-A. \n\n',
+          'Con fecha _____, EL EMPLEADOR contrató a __________ (en adelante, “LA TRABAJADORA SUPLIDA”), identificada con DNI N° _________, en el cargo de ___________. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.4.	En virtud de los antecedentes señalados, LAS PARTES acuerdan celebrar el presente contrato bajo la modalidad temporal de inicio de actividad contemplada en el artículo 57 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral – LPCL – para que desempeñe la realización de funciones descritas en el Anexo 1-A del presente contrato. \n\n',
+          'Siendo que con fecha _________________, LA TRABAJADORA SUPLIDA comunicó a EL EMPLEADOR que se encuentra en estado de gestación y que, a consecuencia de ello, hará ejercicio de su derecho a la licencia por maternidad, según lo regulado en la Ley N° 26644 y su reglamento, EL EMPLEADOR requiere de la contratación de un trabajador para cubrir la ausencia de LA TRABAJADORA SUPLIDA durante el periodo de tiempo que se contempla en la cláusula novena del presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -127,13 +115,13 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
-          num_valores[10],
-          '. \n\n',
+          'Por el presente documento, EL EMPLEADOR contrata a plazo fijo - bajo la modalidad de Suplencia, regulada a través del artículo 61 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral (LPCL) - los servicios de EL TRABAJADOR para que desempeñe el cargo de _____________, en razón de los hechos descritos en la cláusula primera; teniendo como principal motivo de contratación el reemplazo temporal de LA TRABAJADORA SUPLIDA  por la licencia por maternidad que gozará, a menos que se amplie su licencia por cualquier otro motivo y a solicitud de LA TRABAJADORA SUPLIDA. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'EL EMPLEADOR, en ejercicio de las facultades conferidas por el artículo 9º del Decreto Supremo Nº 003-97-TR, Ley de Productividad y Competitividad Laboral, podrá establecer modificaciones en las tareas asignadas a EL TRABAJADOR, tomando en cuenta las necesidades de EL EMPLEADOR. Para lo cual, EL EMPLEADOR se reserva la facultad de poder modificar el centro de trabajo en caso las necesidades comerciales así lo requieran. \n\n',
         ],
         style: 'parrafo',
       },
@@ -143,49 +131,25 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          '3.1	EL TRABAJADOR desempeñará sus labores en el cargo de   ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '   desempeñando las funciones que se señalan en el Anexo 1-A del presente contrato.\n\n',
+          'EL TRABAJADOR se compromete a cumplir las labores encomendadas y aquellas que le pudiera impartir EL EMPLEADOR. Dicha obligación incluye el cumplimiento de todas las normas internas de EL EMPLEADOR, aquellas propias del centro de trabajo en el cual brindará sus servicios, las contenidas en las Políticas y Reglamentos Internos, y todas aquellas disposiciones internas que se le impartan por necesidades del servicio.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Sin embargo, EL EMPLEADOR está facultado a efectuar modificaciones razonables en función de la capacidad y aptitud de EL TRABAJADOR y a las necesidades y requerimiento de este, sin que dichas variaciones signifiquen menoscabo de categoría y/o remuneración. Queda entendido que las funciones deberán ser efectuadas de manera personal, no pudiendo EL TRABAJADOR ser reemplazado ni ayudado por tercera persona\n\n',
+          'Corresponde en especial a EL TRABAJADOR, desempeñar las funciones principales, conexas y complementarias al cargo para el cual es contratado, principalmente las que se detallan en el Anexo A del presente contrato.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.2	EL TRABAJADOR declara conocer la actividad que desarrollará y se obliga a desempeñar sus funciones con la mayor eficiencia y espíritu de colaboración, actuando con responsabilidad, honestidad, dedicación y diligencia. EL TRABAJADOR declara conocer los reglamentos, prácticas y políticas específicas de EL EMPLEADOR, por lo cual acepta cumplirlas. \n\n',
+          'Se deja constancia que, en el cumplimiento de sus obligaciones derivadas del presente contrato, EL TRABAJADOR deberá en todo momento cumplir con las obligaciones habituales para este tipo de funciones. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.3	Dentro del alcance de sus competencias, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de EL EMPLEADOR, acorde a lo instruido por EL EMPLEADOR.\n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          '3.4	EL EMPLEADOR proporcionará a EL TRABAJADOR los materiales y condiciones de trabajo necesarios para la adecuada prestación de sus labores y le otorgará los beneficios que por ley, pacto o costumbre tuvieran los trabajadores de su misma categoría en EL EMPLEADOR. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'CLÁUSULA ',
-          num_valores[3],
-          '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
-        ],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'Las partes acuerdan que, en atención al cargo de   ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula primera del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en Los Olivos. \n\n',
+          'Así, EL TRABAJADOR estará obligado a desempeñar todas las labores que complementen o favorezcan la correcta ejecución de su cargo, y a seguir las instrucciones específicas que EL EMPLEADOR le comunique directamente o a través de sus representantes.\n\n',
         ],
         style: 'parrafo',
       },
@@ -231,7 +195,7 @@ export function contratoPorSuplencia(
                 text: datosLocales.oferta_laboral,
                 style: 'datos_locales',
               },
-              '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con la Gerencia administrativa,    ',
+              '   es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con    ',
               {
                 text: datosLocales.pregunta_1,
                 style: 'datos_locales',
@@ -335,6 +299,22 @@ export function contratoPorSuplencia(
               style: 'parrafo',
             }
         : null,
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[3],
+          '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'Las partes acuerdan que, en atención al cargo de   ',
+          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
+          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula primera del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en Los Olivos. \n\n',
+        ],
+        style: 'parrafo',
+      },
       datosLocales.jornada_maxima
         ? {
             text: ['CLÁUSULA ', num_valores[8], '. - JORNADA LABORAL\n\n'],
@@ -369,6 +349,14 @@ export function contratoPorSuplencia(
             style: 'parrafo',
           }
         : null,
+      datosLocales.jornada_maxima
+        ? {
+            text: [
+              'Asimismo, EL EMPLEADOR podrá variar el horario señalado precedentemente, de acuerdo con sus necesidades, las mismas que están relacionadas con las funciones que desempeña EL TRABAJADOR, sin que ello represente hostilidad u otro similar de alguna clase, sujetándose EL TRABAJADOR a las jornadas alternativas o acumulativas que establezca EL EMPLEADOR.   \n\n',
+            ],
+            style: 'parrafo',
+          }
+        : null,
       {
         text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
         style: 'subtitulo',
@@ -382,6 +370,20 @@ export function contratoPorSuplencia(
       {
         text: [
           'EL TRABAJADOR declara que no tiene ningún conflicto de interés personal a declarar para EL EMPLEADOR y se compromete a informar sobre cualquier conflicto de interés que pueda surgir durante su relación laboral.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[10],
+          '.- RECURSOS TECNOLÓGICOS E INFORMÁTICOS\n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'EL EMPLEADOR proporcionará a EL TRABAJADOR diversos equipos informáticos (hardware y software) para el cabal desempeño de sus labores. EL TRABAJADOR declara conocer que dichos equipos sólo podrán ser empleados para asuntos propios de su trabajo; consecuentemente, dichos equipos no podrán ser utilizado para asuntos ajenos a su labor o que sean personales. EL TRABAJADOR reconoce que dichos equipos y software son de propiedad exclusiva de EL EMPLEADOR, así como la información almacenada en el mismo, la cual en modo alguno le pertenece a EL TRABAJADOR. EL TRABAJADOR y EL EMPLEADOR acuerdan que éste último tiene el derecho de acceder, por cualquier medio, al equipo informático entregado a EL TRABAJADOR, incluyendo a la información guardada en el mismo, con la finalidad de consolidar información, verificar cuestiones relacionadas con la seguridad de su información y comprobar que no venga siendo empleado con fines distintos de aquellos para los cuales fue entregado.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -413,6 +415,22 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
+        text: ['CLÁUSULA ', num_valores[11], '. - PLAZO\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'El plazo de duración del presente contrato es de _______ (___) meses, tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera, mientras retorna a sus labores diarias LA TRABAJADORA SUPLIDA. Este plazo se iniciará el ______ de __________ de 2022 y concluirá el ___ de ______ de 202_.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'En el supuesto que EL TRABAJADOR decidiera poner término a la relación laboral emanada del presente documento, deberá comunicarlo por escrito a EL EMPLEADOR con una anterioridad a la fecha de cese, no menor de treinta (30) días calendario. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
         text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
         style: 'subtitulo',
       },
@@ -428,38 +446,56 @@ export function contratoPorSuplencia(
         ],
         style: 'parrafo',
       },
-      datosLocales.obligaciones_compromisos
-        ? {
-            text: [
-              'CLÁUSULA ',
-              num_valores[12],
-              '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
-            ],
-            style: 'subtitulo',
-          }
-        : null,
-      datosLocales.obligaciones_compromisos
-        ? {
-            text: ['EL TRABAJADOR se compromete a: \n\n'],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.obligaciones_compromisos
-        ? {
-            ol: [
-              'Cumplir con lealtad y eficiencia las labores principales, conexas y complementarias, inherentes a su puesto de trabajo, aplicando para tal fin toda su experiencia y capacidad, velando por los intereses de EL EMPLEADOR.',
-              'Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad.',
-              'Cumplir con las funciones, órdenes e instrucciones de EL EMPLEADOR o sus representantes, así como las demás normas que se impartan por necesidad del servicio.',
-              'A guardar reserva de la información a la que acceda en virtud del presente contrato. Esta obligación subsistirá aún después de terminada la relación laboral y su incumplimiento genera la correspondiente responsabilidad por daños y perjuicios, así como la responsabilidad penal por el delito previsto en el artículo 165° del Código Penal.',
-              'No podrá ofrecer o brindar declaraciones a los medios de comunicación sobre asuntos institucionales, sin la autorización expresa de EL EMPLEADOR.',
-              'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
-              'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
-              'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
-              'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR. \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[15],
+          '. - RENOVACIÓN Y EXTINCIÓN DEL CONTRATO\n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'Las partes podrán prorrogar o renovar el presente contrato si la ausencia del titular se mantiene por cualquier otro motivo, hasta su reincorporación. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'Asimismo, considerando que el presente contrato temporal por suplencia tiene por objeto el desempeño provisional del cargo de ______________, el presente contrato se extinguirá automáticamente, sin penalidades ni indemnizaciones cuando LA TRABAJADORA SUPLIDA retorne a su puesto original. Esta disposición opera como una condición resolutoria y se regula por lo establecido en el artículo 16 inciso c) del Decreto Supremo N° 003-97-TR, Ley de Productividad y Competitividad Laboral. Esta disposición se aplicará aun cuando no haya concluido el plazo del presente contrato o de cualquiera de sus prórrogas, de ser el caso. EL TRABAJADOR declara tener pleno conocimiento de la naturaleza del contrato de suplencia y de las implicancias de la presente cláusula. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[16],
+          '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR se obliga, en caso de terminar por cualquier razón la relación laboral, a entregar en forma inmediata y ordenada a EL EMPLEADOR toda la documentación, material técnico o comercial y cualquier otro bien de propiedad de EL EMPLEADOR que tuviera en su poder, así como a trasladar sus funciones y responsabilidades a la persona designada a tal efecto por EL EMPLEADOR. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: ['CLÁUSULA ', num_valores[16], '. - BUENA FE LABORAL\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR se obliga, en forma expresa, a poner al servicio de EL EMPLEADOR toda su capacidad y lealtad. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'EL TRABAJADOR se compromete siempre y en todo caso a obrar de buena fe en relación con su empleo.  Asimismo, EL TRABAJADOR se compromete a observar las políticas y normas que disponga EL EMPLEADOR, teniendo como objetivo su progreso y permanente desarrollo. \n\n',
+        ],
+        style: 'parrafo',
+      },
       {
         text: ['CLÁUSULA ', num_valores[13], '. - DURACIÓN DEL CONTRATO \n\n'],
         style: 'subtitulo',
@@ -512,83 +548,69 @@ export function contratoPorSuplencia(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[15], '. - EXTINCIÓN DEL CONTRATO\n\n'],
+        text: ['CLÁUSULA ', num_valores[16], '. - PROHIBICIONES\n\n'],
         style: 'subtitulo',
       },
       {
+        text: ['EL TRABAJADOR queda expresamente prohibido a: \n\n'],
+        style: 'parrafo',
+      },
+      {
         text: [
-          'EL EMPLEADOR podrá resolver inmediatamente el presente contrato, si es que EL TRABAJADOR se conduce o realiza sus labores en forma negligente, sin observar el Reglamento Interno, o realizando acciones que configuren falta grave, conforme al artículo 25º del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral, Decreto Legislativo N° 728. \n\n',
+          '1.	Ceder o encargar a otra persona la realización de los servicios personales que está obligado a prestar a EL EMPLEADOR al amparo de este contrato. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Asimismo, el vínculo laboral se extinguirá en virtud de las demás causales de extinción del contrato de trabajo, señaladas en el artículo 16 de la LPCL y en virtud de aquellos supuestos de extinción del vínculo laboral establecidos en la jurisprudencia peruana. \n\n',
+          '2.	Tener un comportamiento incorrecto o indebido para con sus superiores, compañeros de trabajo, clientes o que signifiquen una perturbación en la armonía y/o clima laboral que debe existir en el centro de labores y al momento de la prestación de servicios. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'CLÁUSULA ',
-          num_valores[16],
-          '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
-        ],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'EL TRABAJADOR se obliga, en caso de terminar por cualquier razón la relación laboral, a entregar en forma inmediata y ordenada a EL EMPLEADOR toda la documentación, material técnico o comercial y cualquier otro bien de propiedad de EL EMPLEADOR que tuviera en su poder, así como a trasladar sus funciones y responsabilidades a la persona designada a tal efecto por EL EMPLEADOR. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: ['CLÁUSULA ', num_valores[17], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'Este contrato queda sujeto a las disposiciones que contiene el TUO del D. Leg. N° 728 aprobado por D.S. N° 003-97-TR TR Ley de Productividad y Competitividad Laboral, y demás normas legales que lo regulen o que sean dictadas durante la vigencia del contrato. \n\n',
+          '3.	Ejecutar cualquier tipo de negociaciones dentro del giro del negocio de EL EMPLEADOR, sea o no en nombre de éste, y sin su autorización. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'CLÁUSULA ',
-          num_valores[18],
-          '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
-        ],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          '16.1.  EL TRABAJADOR se compromete a trabajar honestamente y conscientemente, llevar a cabo sus funciones puntualmente y en forma precisa, a seguir estrictamente cualquier disciplina de trabajo y tecnológica, protección laboral, prevención de accidentes, saneamiento, higiene ocupacional y requisitos contra incendios, según lo establecido por estándares apropiados de nuestro país, por los estatutos internos de EL EMPLEADOR y a cuidar debidamente nuestros bienes. \n\n',
+          '4.	Cualquier otra que se establezca en las directivas y/o normativas internas de EL EMPLEADOR. \n\n',
         ],
         style: 'parrafo',
       },
-      {
-        text: [
-          '16.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          '16.3.   En el desarrollo de la relación laboral, EL TRABAJADOR: \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'a)	Declara conocer el contenido del Reglamento Interno de Trabajo, del Código de Ética, Reglamento de Seguridad y Salud en el Trabajo, Política sobre Conflicto de Intereses, y demás normas, políticas y reglamentos emitidos o por emitirse por EL EMPLEADOR a nivel local o corporativo, expresando su conformidad con ellos y comprometiéndose a su cabal cumplimiento. \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'b)	EL TRABAJADOR declara que conoce el contenido del Plan de Vigilancia, Prevención y Control del COVID-19 en el Trabajo implementado por EL EMPLEADOR, así como las implicancias del desarrollo del mismo, y se compromete a cumplir las disposiciones que este contenga, así como adecuar el desarrollo de sus funciones a lo solicitado para evitar el contagio de COVID-19. \n\n',
-        ],
-        style: 'parrafo',
-      },
+      datosLocales.obligaciones_compromisos
+        ? {
+            text: [
+              'CLÁUSULA ',
+              num_valores[12],
+              '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
+            ],
+            style: 'subtitulo',
+          }
+        : null,
+      datosLocales.obligaciones_compromisos
+        ? {
+            text: ['EL TRABAJADOR se compromete a: \n\n'],
+            style: 'parrafo',
+          }
+        : null,
+      datosLocales.obligaciones_compromisos
+        ? {
+            ol: [
+              'Cumplir con lealtad y eficiencia las labores principales, conexas y complementarias, inherentes a su puesto de trabajo, aplicando para tal fin toda su experiencia y capacidad, velando por los intereses de EL EMPLEADOR.',
+              'Ejercer las funciones propias de su cargo con la mayor diligencia y responsabilidad.',
+              'Cumplir con las funciones, órdenes e instrucciones de EL EMPLEADOR o sus representantes, así como las demás normas que se impartan por necesidad del servicio.',
+              'A guardar reserva de la información a la que acceda en virtud del presente contrato. Esta obligación subsistirá aún después de terminada la relación laboral y su incumplimiento genera la correspondiente responsabilidad por daños y perjuicios, así como la responsabilidad penal por el delito previsto en el artículo 165° del Código Penal.',
+              'No podrá ofrecer o brindar declaraciones a los medios de comunicación sobre asuntos institucionales, sin la autorización expresa de EL EMPLEADOR.',
+              'No brindar servicios similares a terceras personas sin autorización expresa previa de EL EMPLEADOR.',
+              'A participar en las evaluaciones y a respetar los resultados que de ellos provengan.',
+              'Someterse a los exámenes médicos que sean necesarios para verificar su buen estado de salud, en la medida que éstos obedezcan a sus funciones.',
+              'Cumplir con las Normas propias del centro de trabajo, así como las contenidas en el Reglamento Interno de Trabajo y en la normativa laboral y las que se impartan por necesidades del servicio en ejercicio de las facultades de administración que le corresponden a EL EMPLEADOR. \n\n',
+            ],
+            style: 'parrafo',
+          }
+        : null,
       datosLocales.propiedad_intelectual
         ? {
             text: [
@@ -639,148 +661,6 @@ export function contratoPorSuplencia(
             style: 'parrafo',
           }
         : null,
-      datosLocales.confidencialidad
-        ? {
-            text: ['CLÁUSULA ', num_valores[20], '. - CONFIDENCIALIDAD\n\n'],
-            style: 'subtitulo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'La información sobre EL EMPLEADOR, sus clientes, casos y documentos, incluyendo direcciones y datos bancarios, nombres y apellidos de los clientes y sus representantes, así como otros datos, y también la información relativa a la gestión, finanzas, propiedad intelectual y otras actividades de EL EMPLEADOR (o empresas relacionadas) que EL TRABAJADOR reciba durante el cumplimiento de sus obligaciones bajo este Contrato se considerará confidencial y no sujeta a divulgación (en adelante la "Información"). \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'EL TRABAJADOR procurará evitar cualquier divulgación no autorizada de dicha información a terceros salvo que la divulgación sea necesaria directamente bajo la legislación vigente de Perú o a petición motivada de las autoridades competentes con previo aviso a EL EMPLEADOR (en la persona de su delegado). \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'EL TRABAJADOR no tiene derecho a revelar la información a los otros trabajadores de EL EMPLEADOR, excepto en la medida necesaria para el desempeño de sus funciones y el funcionamiento normal del EMPLEADOR.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'Se deja constancia que toda información suministrada a, y/o utilizada por EL TRABAJADOR permanecerá amparada por la presente disposición de confidencialidad, en los términos aquí establecidos mientras esté en vigencia la relación de trabajo y hasta por un período de cinco (5) años siguientes a la terminación de este.   \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'Queda igualmente establecido que toda la información y documentación relacionada con los servicios prestados en el desarrollo de la relación de trabajo se encuentran amparados por las previsiones de confidencialidad establecidas en esta cláusula.    \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'Las obligaciones asumidas por EL TRABAJADOR en virtud del presente contrato relacionadas con no revelar los secretos de gestión, manufactura, mercadeo, ventas, proveedores y la información confidencial a la que EL TRABAJADOR tuvo acceso en EL EMPLEADOR, entre otras, serán vinculantes para EL TRABAJADOR, su representante legal, herederos, sucesores y cesionarios.    \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'En caso EL TRABAJADOR incumpla con este deber de lealtad y no concurrencia, EL EMPLEADOR se reserva el derecho de accionar en contra de EL TRABAJADOR la demanda civil por daños y perjuicios y la denuncia penal por el delito contra la violación del secreto profesional tipificado en el artículo 165° de nuestro Código Penal así como los delitos contra la propiedad industrial tipificados en los artículos 222° y siguientes del Código Penal, además en caso se infrinja la presente obligación durante la relación laboral, se considera como falta grave, causal de despido inmediato.   \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.confidencialidad
-        ? {
-            text: [
-              'De la misma manera, EL TRABAJADOR no deberá retirar o guardar cualquier bien, documento, archivo, registro e información de EL EMPLEADOR, en ninguna forma o ninguna copia de los mismos o sus partes (incluso por medios electrónicos) sin el permiso expreso de EL EMPLEADOR. Asimismo, deberá devolver todos los bienes o información ni bien se le solicite, dejando constancia a través de un documento escrito, en el cual EL TRABAJADOR detallará todo el material devuelto.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      {
-        text: ['CLÁUSULA ', num_valores[21], '. - VALIDEZ DEL CONTRATO\n\n'],
-        style: 'subtitulo',
-      },
-      {
-        text: [
-          'Si cualquiera de las disposiciones de este contrato es contraria a la normativa legal peruana vigente o se vuelve invalida o inejecutable, la validez del resto de las disposiciones del Contrato no se verá afectadas. En lugar de la disposición inválida o inejecutable, se aplicará la disposición válida o ejecutable que más se adecue al propósito económico pretendido de la disposición inválida o inejecutable o se aplicará lo estipulado por le legislación vigente peruana. Lo mismo se aplicará a las lagunas en el Contrato.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'Los títulos de los artículos que aparecen en este contrato han sido incluidos con un propósito práctico y de referencia rápida. Su propósito no es el de definir, limitar o ampliar el alcance o el propósito de la disposición a la que corresponden.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      {
-        text: [
-          'Todo aquello que no se encuentre expresamente regulado por este contrato se regirán por las normas legales aplicables que derivan del ordenamiento Jurídico Laboral establecido en la Ley de Productividad y Competitividad Laboral, y normas conexas, normas administrativas vigentes en Perú.  \n\n',
-        ],
-        style: 'parrafo',
-      },
-      datosLocales.tecnologia_informacion
-        ? {
-            text: [
-              'CLÁUSULA ',
-              num_valores[22],
-              '. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n',
-            ],
-            style: 'subtitulo',
-          }
-        : null,
-      datosLocales.tecnologia_informacion
-        ? {
-            text: [
-              'EL TRABAJADOR declara que se compromete a utilizar los uniformes, equipos, herramientas, materiales, claves, accesos, usuarios y cuentas, así como los demás recursos que se le proporcionen exclusivamente para el desempeño de su trabajo de manera diligente y responsable. Asimismo, declara que en caso estos equipos sean utilizados de manera incorrecta, se malogren o pierdan por negligencia o dolo de EL TRABAJADOR, ella asumirá el pago de los daños ocasionados, como custodio de dichos equipos.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.tecnologia_informacion
-        ? {
-            text: [
-              'Además, EL TRABAJADOR se compromete a no instalar, temporal o permanentemente, en una computadora central, una computadora portátil, una computadora de mesa o cualquier otra máquina computadora de EL EMPLEADOR, un programa de computadora o una copia de dicho programa, para la cual EL TRABAJADOR no posea una licencia de uso aceptada por EL EMPLEADOR. \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.tecnologia_informacion
-        ? {
-            text: [
-              'También está prohibido hacer una copia ilegal de un programa de computadora del cual EL TRABAJADOR tenga una licencia de uso.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.tecnologia_informacion
-        ? {
-            text: [
-              'Por lo tanto, EL TRABAJADOR se compromete a: a) hacer uso exclusivo y adecuado de los instrumentos otorgados para el cumplimiento de sus funciones, b) reportar cualquier falla o pérdida en forma inmediata, c) darle o requerir al área correspondiente el mantenimiento preventivo o correctivo necesario y d) asumir daños o pérdidas por negligencia o dolo.   \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
-      datosLocales.tecnologia_informacion
-        ? {
-            text: [
-              'En caso de incumplimiento de lo señalado en la presente cláusula se procederá a sancionar conforme a ley.  \n\n',
-            ],
-            style: 'parrafo',
-          }
-        : null,
       datosLocales.proteccion_datos
         ? {
             text: [
@@ -808,6 +688,66 @@ export function contratoPorSuplencia(
           }
         : null,
       {
+        text: ['CLÁUSULA ', num_valores[21], '. - VALIDEZ DEL CONTRATO\n\n'],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          'Si cualquiera de las disposiciones de este contrato es contraria a la normativa legal peruana vigente o se vuelve invalida o inejecutable, la validez del resto de las disposiciones del Contrato no se verá afectadas. En lugar de la disposición inválida o inejecutable, se aplicará la disposición válida o ejecutable que más se adecue al propósito económico pretendido de la disposición inválida o inejecutable o se aplicará lo estipulado por le legislación vigente peruana. Lo mismo se aplicará a las lagunas en el Contrato.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'Los títulos de los artículos que aparecen en este contrato han sido incluidos con un propósito práctico y de referencia rápida. Su propósito no es el de definir, limitar o ampliar el alcance o el propósito de la disposición a la que corresponden.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'Todo aquello que no se encuentre expresamente regulado por este contrato se regirán por las normas legales aplicables que derivan del ordenamiento Jurídico Laboral establecido en la Ley de Productividad y Competitividad Laboral, y normas conexas, normas administrativas vigentes en Perú.  \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'CLÁUSULA ',
+          num_valores[18],
+          '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
+        ],
+        style: 'subtitulo',
+      },
+      {
+        text: [
+          '16.1.  EL TRABAJADOR se compromete a trabajar honestamente y conscientemente, llevar a cabo sus funciones puntualmente y en forma precisa, a seguir estrictamente cualquier disciplina de trabajo y tecnológica, protección laboral, prevención de accidentes, saneamiento, higiene ocupacional y requisitos contra incendios, según lo establecido por estándares apropiados de nuestro país, por los estatutos internos de EL EMPLEADOR y a cuidar debidamente nuestros bienes. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '16.2.  EL TRABAJADOR prestará sus servicios a EL EMPLEADOR bajo su control y supervisión, debiendo cumplir las normas de Seguridad e Higiene Industrial, señaladas en el Anexo 1 A, a cumplir en las instalaciones de EL EMPLEADOR cuando realice labores presenciales, así como el Reglamento Interno de Trabajo de EL EMPLEADOR, que ambas partes declaran conocer. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          '16.3.   En el desarrollo de la relación laboral, EL TRABAJADOR: \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'a)	Declara conocer el contenido del Reglamento Interno de Trabajo, del Código de Ética, Reglamento de Seguridad y Salud en el Trabajo, Política sobre Conflicto de Intereses, y demás normas, políticas y reglamentos emitidos o por emitirse por EL EMPLEADOR a nivel local o corporativo, expresando su conformidad con ellos y comprometiéndose a su cabal cumplimiento. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
+        text: [
+          'b)	EL TRABAJADOR declara que conoce el contenido del Plan de Vigilancia, Prevención y Control del COVID-19 en el Trabajo implementado por EL EMPLEADOR, así como las implicancias del desarrollo del mismo, y se compromete a cumplir las disposiciones que este contenga, así como adecuar el desarrollo de sus funciones a lo solicitado para evitar el contagio de COVID-19. \n\n',
+        ],
+        style: 'parrafo',
+      },
+      {
         text: [
           'CLÁUSULA ',
           num_valores[24],
@@ -830,6 +770,20 @@ export function contratoPorSuplencia(
           'Tiene conocimiento y acepta que una vez finalizada la relación laboral no puede usar la base de datos de EL EMPLEADOR ni contactar a los clientes de EL EMPLEADOR para brindar servicios de la misma naturaleza. \n\n',
         ],
       },
+      datosLocales.confidencialidad
+        ? {
+            text: ['CLÁUSULA ', num_valores[20], '. - RÉGIMEN LABORAL\n\n'],
+            style: 'subtitulo',
+          }
+        : null,
+      datosLocales.confidencialidad
+        ? {
+            text: [
+              'En todo lo no previsto en el presente contrato, resulta aplicable el Decreto Supremo N° 003-97-TR, y la legislación laboral peruana vigente para el régimen laboral de la actividad privada. \n\n',
+            ],
+            style: 'parrafo',
+          }
+        : null,
       {
         text: ['CLÁUSULA ', num_valores[25], '. - DE LA TRIBUTACIÓN   \n\n'],
         style: 'subtitulo',
@@ -846,7 +800,7 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'Las partes señalan como sus respectivos domicilios los especificados en la introducción del presente contrato, por lo que se considerarán válidas todas las comunicaciones y notificaciones dirigidas a estos con motivo de la ejecución del presente contrato. El cambio de domicilio de cualquiera de las partes surtirá efecto desde la fecha de su comunicación a la contraparte, por cualquier medio escrito. \n\n',
+          'Las partes señalan como sus respectivos domicilios los especificados en la introducción del presente contrato de trabajo, por lo que se reputarán válidas todas las comunicaciones y notificaciones dirigidas a las mismas con motivo de la ejecución del presente documento.  El cambio de domicilio de cualquiera de las partes surtirá efecto desde la fecha de comunicación de dicho cambio a la contraparte por cualquier medio escrito. \n\n',
         ],
         style: 'parrafo',
       },
@@ -894,7 +848,7 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de Lima, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez. \n\n',
+          'Las partes acuerdan someter cualquier discrepancia o controversia respecto a la ejecución, interpretación o cumplimiento del presente contrato, incluida su nulidad o invalidez, a los Jueces y Tribunales del Cercado de Lima, Perú. \n\n',
         ],
         style: 'parrafo',
       },

@@ -123,7 +123,11 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[2], '. - PRESTACIÓN DE SERVICIOS\n\n'],
+        text: [
+          'CLÁUSULA ',
+          num_valores[2],
+          '. - DE LAS ACTIVIDADES DISCONTINUAS\n\n',
+        ],
         style: 'subtitulo',
       },
       {
@@ -145,7 +149,7 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[2], '. - PRESTACIÓN DE SERVICIOS\n\n'],
+        text: ['CLÁUSULA ', num_valores[3], '. - PRESTACIÓN DE SERVICIOS\n\n'],
         style: 'subtitulo',
       },
       {
@@ -183,7 +187,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[3],
+          num_valores[4],
           '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
         ],
         style: 'subtitulo',
@@ -197,7 +201,7 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[4], '.- DE LA BUENA FE LABORAL\n\n'],
+        text: ['CLÁUSULA ', num_valores[5], '.- DE LA BUENA FE LABORAL\n\n'],
         style: 'subtitulo',
       },
       {
@@ -216,7 +220,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[5],
+              num_valores[6],
               '. - PERSONAL DE CONFIANZA\n\n',
             ],
             style: 'subtitulo',
@@ -265,7 +269,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[6],
+              num_valores[7],
               '.-  PERSONAL DE DIRECCIÓN\n\n',
             ],
             style: 'subtitulo',
@@ -301,7 +305,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[7],
+              num_valores[8],
               '. – PERSONAL SIN FISCALIZACIÓN INMEDIATA  \n\n',
             ],
             style: 'subtitulo',
@@ -317,7 +321,7 @@ export function contratoIntermitente(
         : null,
       datosLocales.jornada_maxima
         ? {
-            text: ['CLÁUSULA ', num_valores[8], '. - JORNADA LABORAL\n\n'],
+            text: ['CLÁUSULA ', num_valores[9], '. - JORNADA LABORAL\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -346,7 +350,7 @@ export function contratoIntermitente(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
+        text: ['CLÁUSULA ', num_valores[10], '. - ÉTICA Y LEY\n\n'],
         style: 'subtitulo',
       },
       {
@@ -362,7 +366,7 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[10], '.- REMUNERACIÓN\n\n'],
+        text: ['CLÁUSULA ', num_valores[11], '.- REMUNERACIÓN\n\n'],
         style: 'subtitulo',
       },
       {
@@ -389,7 +393,7 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
+        text: ['CLÁUSULA ', num_valores[12], '. - PERIODO DE PRUEBA\n\n'],
         style: 'subtitulo',
       },
       {
@@ -402,7 +406,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[12],
+              num_valores[13],
               '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
             ],
             style: 'subtitulo',
@@ -431,7 +435,7 @@ export function contratoIntermitente(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[13], '. - DURACIÓN DEL CONTRATO \n\n'],
+        text: ['CLÁUSULA ', num_valores[14], '. - DURACIÓN DEL CONTRATO \n\n'],
         style: 'subtitulo',
       },
       {
@@ -461,7 +465,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[13],
+          num_valores[15],
           '. - DERECHO PREFERENCIAL DE CONTRATACIÓN \n\n',
         ],
         style: 'subtitulo',
@@ -475,7 +479,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[13],
+          num_valores[16],
           '. - DE LA SUSPENSIÓN DE LABORES \n\n',
         ],
         style: 'subtitulo',
@@ -494,7 +498,7 @@ export function contratoIntermitente(
       },
       datosLocales.exclusividad
         ? {
-            text: ['CLÁUSULA ', num_valores[14], '. - EXCLUSIVIDAD\n\n'],
+            text: ['CLÁUSULA ', num_valores[17], '. - EXCLUSIVIDAD\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -507,7 +511,7 @@ export function contratoIntermitente(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[15], '. - EXTINCIÓN DEL CONTRATO\n\n'],
+        text: ['CLÁUSULA ', num_valores[18], '. - EXTINCIÓN DEL CONTRATO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -525,7 +529,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[16],
+          num_valores[19],
           '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
         ],
         style: 'subtitulo',
@@ -537,7 +541,7 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[17], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
+        text: ['CLÁUSULA ', num_valores[20], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -549,7 +553,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[18],
+          num_valores[21],
           '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
         ],
         style: 'subtitulo',
@@ -588,7 +592,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[19],
+              num_valores[22],
               '. - PROPIEDAD INTELECTUAL\n\n',
             ],
             style: 'subtitulo',
@@ -636,7 +640,7 @@ export function contratoIntermitente(
         : null,
       datosLocales.confidencialidad
         ? {
-            text: ['CLÁUSULA ', num_valores[20], '. - CONFIDENCIALIDAD\n\n'],
+            text: ['CLÁUSULA ', num_valores[23], '. - CONFIDENCIALIDAD\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -705,7 +709,7 @@ export function contratoIntermitente(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[21], '. - VALIDEZ DEL CONTRATO\n\n'],
+        text: ['CLÁUSULA ', num_valores[24], '. - VALIDEZ DEL CONTRATO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -730,7 +734,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[22],
+              num_valores[25],
               '. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n',
             ],
             style: 'subtitulo',
@@ -780,7 +784,7 @@ export function contratoIntermitente(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[23],
+              num_valores[26],
               '. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
             ],
             style: 'subtitulo',
@@ -805,7 +809,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[24],
+          num_valores[27],
           '. - DECLARACIONES DEL TRABAJADOR   \n\n',
         ],
         style: 'subtitulo',
@@ -826,7 +830,7 @@ export function contratoIntermitente(
         ],
       },
       {
-        text: ['CLÁUSULA ', num_valores[25], '. - DE LA TRIBUTACIÓN   \n\n'],
+        text: ['CLÁUSULA ', num_valores[28], '. - DE LA TRIBUTACIÓN   \n\n'],
         style: 'subtitulo',
       },
       {
@@ -836,7 +840,7 @@ export function contratoIntermitente(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[26], '. - DOMICILIO   \n\n'],
+        text: ['CLÁUSULA ', num_valores[29], '. - DOMICILIO   \n\n'],
         style: 'subtitulo',
       },
       {
@@ -848,7 +852,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[27],
+          num_valores[30],
           '. - DECLARACIONES DE LAS PARTES   \n\n',
         ],
         style: 'subtitulo',
@@ -868,7 +872,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[28],
+          num_valores[31],
           '. - MODIFICACIONES Y ENMIENDAS   \n\n',
         ],
         style: 'subtitulo',
@@ -882,7 +886,7 @@ export function contratoIntermitente(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[29],
+          num_valores[32],
           '. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
         ],
         style: 'subtitulo',

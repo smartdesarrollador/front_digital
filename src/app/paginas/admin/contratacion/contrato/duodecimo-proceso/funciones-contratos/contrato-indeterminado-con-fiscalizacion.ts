@@ -190,7 +190,7 @@ export function contratoIndeterminadoConFiscalizacion(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
+        text: ['CLÁUSULA ', num_valores[5], '. - ÉTICA Y LEY\n\n'],
         style: 'subtitulo',
       },
       {
@@ -209,7 +209,7 @@ export function contratoIndeterminadoConFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[8],
+              num_valores[6],
               '. - JORNADA Y HORARIO DE TRABAJO\n\n',
             ],
             style: 'subtitulo',
@@ -252,7 +252,7 @@ export function contratoIndeterminadoConFiscalizacion(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[10], '.- REMUNERACIÓN\n\n'],
+        text: ['CLÁUSULA ', num_valores[7], '.- REMUNERACIÓN\n\n'],
         style: 'subtitulo',
       },
       {
@@ -282,7 +282,7 @@ export function contratoIndeterminadoConFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[12],
+              num_valores[8],
               '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
             ],
             style: 'subtitulo',
@@ -311,7 +311,7 @@ export function contratoIndeterminadoConFiscalizacion(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[13], '. - DURACIÓN DEL CONTRATO \n\n'],
+        text: ['CLÁUSULA ', num_valores[9], '. - DURACIÓN DEL CONTRATO \n\n'],
         style: 'subtitulo',
       },
       {
@@ -333,7 +333,7 @@ export function contratoIndeterminadoConFiscalizacion(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
+        text: ['CLÁUSULA ', num_valores[10], '. - PERIODO DE PRUEBA\n\n'],
         style: 'subtitulo',
       },
       {
@@ -350,7 +350,7 @@ export function contratoIndeterminadoConFiscalizacion(
       },
       datosLocales.exclusividad
         ? {
-            text: ['CLÁUSULA ', num_valores[14], '. - EXCLUSIVIDAD\n\n'],
+            text: ['CLÁUSULA ', num_valores[11], '. - EXCLUSIVIDAD\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -363,7 +363,7 @@ export function contratoIndeterminadoConFiscalizacion(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[15], '. - EXTINCIÓN DEL CONTRATO\n\n'],
+        text: ['CLÁUSULA ', num_valores[12], '. - EXTINCIÓN DEL CONTRATO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -381,7 +381,7 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[16],
+          num_valores[13],
           '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
         ],
         style: 'subtitulo',
@@ -393,7 +393,7 @@ export function contratoIndeterminadoConFiscalizacion(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[17], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
+        text: ['CLÁUSULA ', num_valores[14], '. - RÉGIMEN LABORAL PRIVADO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -405,7 +405,7 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[18],
+          num_valores[15],
           '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
         ],
         style: 'subtitulo',
@@ -444,7 +444,7 @@ export function contratoIndeterminadoConFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[19],
+              num_valores[16],
               '. - PROPIEDAD INTELECTUAL\n\n',
             ],
             style: 'subtitulo',
@@ -492,7 +492,7 @@ export function contratoIndeterminadoConFiscalizacion(
         : null,
       datosLocales.confidencialidad
         ? {
-            text: ['CLÁUSULA ', num_valores[20], '. - CONFIDENCIALIDAD\n\n'],
+            text: ['CLÁUSULA ', num_valores[17], '. - CONFIDENCIALIDAD\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -561,7 +561,7 @@ export function contratoIndeterminadoConFiscalizacion(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[21], '. - VALIDEZ DEL CONTRATO\n\n'],
+        text: ['CLÁUSULA ', num_valores[18], '. - VALIDEZ DEL CONTRATO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -586,7 +586,7 @@ export function contratoIndeterminadoConFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[22],
+              num_valores[19],
               '. - TECNOLOGÍAS DE LA INFORMACIÓN\n\n',
             ],
             style: 'subtitulo',
@@ -636,7 +636,7 @@ export function contratoIndeterminadoConFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[23],
+              num_valores[20],
               '. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
             ],
             style: 'subtitulo',
@@ -661,7 +661,7 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[24],
+          num_valores[21],
           '. - DECLARACIONES DEL TRABAJADOR   \n\n',
         ],
         style: 'subtitulo',
@@ -682,7 +682,7 @@ export function contratoIndeterminadoConFiscalizacion(
         ],
       },
       {
-        text: ['CLÁUSULA ', num_valores[25], '. - DE LA TRIBUTACIÓN   \n\n'],
+        text: ['CLÁUSULA ', num_valores[22], '. - DE LA TRIBUTACIÓN   \n\n'],
         style: 'subtitulo',
       },
       {
@@ -692,7 +692,7 @@ export function contratoIndeterminadoConFiscalizacion(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[26], '. - DOMICILIO   \n\n'],
+        text: ['CLÁUSULA ', num_valores[23], '. - DOMICILIO   \n\n'],
         style: 'subtitulo',
       },
       {
@@ -704,7 +704,7 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[27],
+          num_valores[24],
           '. - DECLARACIONES DE LAS PARTES   \n\n',
         ],
         style: 'subtitulo',
@@ -724,7 +724,7 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[28],
+          num_valores[25],
           '. - MODIFICACIONES Y ENMIENDAS   \n\n',
         ],
         style: 'subtitulo',
@@ -738,7 +738,7 @@ export function contratoIndeterminadoConFiscalizacion(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[29],
+          num_valores[26],
           '. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
         ],
         style: 'subtitulo',

@@ -287,7 +287,7 @@ export function contratoIndeterminadoSinFiscalizacion(
             }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[9], '. - ÉTICA Y LEY\n\n'],
+        text: ['CLÁUSULA ', num_valores[8], '. - ÉTICA Y LEY\n\n'],
         style: 'subtitulo',
       },
       {
@@ -306,7 +306,7 @@ export function contratoIndeterminadoSinFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[8],
+              num_valores[9],
               '. - JORNADA Y HORARIO DE TRABAJO\n\n',
             ],
             style: 'subtitulo',
@@ -359,7 +359,7 @@ export function contratoIndeterminadoSinFiscalizacion(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[12],
+              num_valores[11],
               '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
             ],
             style: 'subtitulo',
@@ -388,7 +388,7 @@ export function contratoIndeterminadoSinFiscalizacion(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[13], '. - DURACIÓN DEL CONTRATO \n\n'],
+        text: ['CLÁUSULA ', num_valores[12], '. - DURACIÓN DEL CONTRATO \n\n'],
         style: 'subtitulo',
       },
       {
@@ -410,7 +410,7 @@ export function contratoIndeterminadoSinFiscalizacion(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
+        text: ['CLÁUSULA ', num_valores[13], '. - PERIODO DE PRUEBA\n\n'],
         style: 'subtitulo',
       },
       {

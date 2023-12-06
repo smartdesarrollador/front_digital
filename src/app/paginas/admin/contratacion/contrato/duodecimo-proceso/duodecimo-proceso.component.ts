@@ -321,41 +321,243 @@ export class DuodecimoProcesoComponent {
 
   numeracion_valores(): Array<string> {
     // Tus arrays y variables originales
+    const contratoLocal = this.cl.getItem('contratoLocal');
+    this.datosLocales = contratoLocal;
 
-    const clausulasVisibles: boolean[] = [
-      true, //1
-      true, //2
-      true, //3
-      true, //4
-      true, //5
-      this.datosLocales.trabajador_confianza, //6
-      this.datosLocales.trabajador_direccion, //7
-      this.datosLocales.fiscalizacion_inmediata, //8
-      this.datosLocales.jornada_maxima, //9
-      true, // 10
-      true, // 11
-      true, // 12
-      this.datosLocales.obligaciones_compromisos, // 13
-      true, // 14
-      this.datosLocales.exclusividad, // 15
-      true, // 16
-      true, // 17
-      true, // 18
-      true, // 19
-      this.datosLocales.propiedad_intelectual, // 20
-      this.datosLocales.confidencialidad, // 21
-      true, // 22
-      this.datosLocales.tecnologia_informacion, // 23
-      this.datosLocales.proteccion_datos, // 24
-      true, // 25
-      true, // 26
-      true, // 27
-      true, // 28
-      true, // 29
-      true, // 30
-      true, // 31
-      true, // 32
-    ];
+    let clausulasVisibles: boolean[] = [];
+
+    switch (this.datosLocales.modelo_contrato) {
+      case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE SUPLENCIA':
+        const clausulasVisibles1: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          this.datosLocales.trabajador_confianza, //4
+          this.datosLocales.trabajador_direccion, //5
+          this.datosLocales.fiscalizacion_inmediata, //6
+          true, //7
+          this.datosLocales.jornada_maxima, //8
+          true, // 9
+          true, // 10
+          true, // 11
+          true, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          true, // 19
+          this.datosLocales.obligaciones_compromisos, // 20
+          this.datosLocales.propiedad_intelectual, // 21
+          this.datosLocales.proteccion_datos, // 22
+          true, // 23
+          true, // 24
+          true, // 25
+          this.datosLocales.confidencialidad, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+
+        clausulasVisibles = clausulasVisibles1;
+        break;
+
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR OBRA DETERMINADA':
+        const clausulasVisibles2: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          this.datosLocales.jornada_maxima, //8
+          true, // 9
+          true, // 10
+          true, // 11
+          this.datosLocales.obligaciones_compromisos, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+
+        clausulasVisibles = clausulasVisibles2;
+        break;
+
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD INTERMITENTE':
+        const clausulasVisibles3: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          this.datosLocales.jornada_maxima, //8
+          true, // 9
+          true, // 10
+          true, // 11
+          this.datosLocales.obligaciones_compromisos, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+
+        clausulasVisibles = clausulasVisibles3;
+        break;
+
+      case 'CONTRATO DE TRABAJO INNOMINADO A PLAZO FIJO':
+        const clausulasVisibles4: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          this.datosLocales.jornada_maxima, //8
+          true, // 9
+          true, // 10
+          true, // 11
+          this.datosLocales.obligaciones_compromisos, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+
+        clausulasVisibles = clausulasVisibles4;
+        break;
+      case 'MODELO DE CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN CONFIANZA Y CON FISCALIZACION':
+        const clausulasVisibles5: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          this.datosLocales.jornada_maxima, //8
+          true, // 9
+          true, // 10
+          true, // 11
+          this.datosLocales.obligaciones_compromisos, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+
+        clausulasVisibles = clausulasVisibles5;
+        break;
+      default:
+        const clausulasVisibles6: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          this.datosLocales.jornada_maxima, //8
+          true, // 9
+          true, // 10
+          true, // 11
+          this.datosLocales.obligaciones_compromisos, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+
+        clausulasVisibles = clausulasVisibles6;
+    }
 
     const ordinales: string[] = [
       'PRIMERA',

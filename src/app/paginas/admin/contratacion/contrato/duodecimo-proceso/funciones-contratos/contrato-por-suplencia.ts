@@ -154,7 +154,7 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[4], '.- DE LA BUENA FE LABORAL\n\n'],
+        text: ['CLÁUSULA ', num_valores[3], '.- DE LA BUENA FE LABORAL\n\n'],
         style: 'subtitulo',
       },
       {
@@ -173,7 +173,7 @@ export function contratoPorSuplencia(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[5],
+              num_valores[4],
               '. - PERSONAL DE CONFIANZA\n\n',
             ],
             style: 'subtitulo',
@@ -222,7 +222,7 @@ export function contratoPorSuplencia(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[6],
+              num_valores[5],
               '.-  PERSONAL DE DIRECCIÓN\n\n',
             ],
             style: 'subtitulo',
@@ -258,7 +258,7 @@ export function contratoPorSuplencia(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[7],
+              num_valores[6],
               '. – PERSONAL SIN FISCALIZACIÓN INMEDIATA  \n\n',
             ],
             style: 'subtitulo',
@@ -302,7 +302,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[3],
+          num_valores[7],
           '. - DEL LUGAR DE PRESTACIÓN DE SERVICIOS\n\n',
         ],
         style: 'subtitulo',
@@ -388,7 +388,7 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[10], '.- REMUNERACIÓN\n\n'],
+        text: ['CLÁUSULA ', num_valores[11], '.- REMUNERACIÓN\n\n'],
         style: 'subtitulo',
       },
       {
@@ -415,7 +415,7 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[11], '. - PLAZO\n\n'],
+        text: ['CLÁUSULA ', num_valores[12], '. - PLAZO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -431,7 +431,7 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[11], '. - PERIODO DE PRUEBA\n\n'],
+        text: ['CLÁUSULA ', num_valores[13], '. - PERIODO DE PRUEBA\n\n'],
         style: 'subtitulo',
       },
       {
@@ -449,7 +449,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[15],
+          num_valores[14],
           '. - RENOVACIÓN Y EXTINCIÓN DEL CONTRATO\n\n',
         ],
         style: 'subtitulo',
@@ -469,7 +469,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[16],
+          num_valores[15],
           '. - ENTREGA DE MATERIALES EN CASO DE CESE\n\n',
         ],
         style: 'subtitulo',
@@ -497,7 +497,7 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[13], '. - DURACIÓN DEL CONTRATO \n\n'],
+        text: ['CLÁUSULA ', num_valores[17], '. - DURACIÓN DEL CONTRATO \n\n'],
         style: 'subtitulo',
       },
       {
@@ -535,7 +535,7 @@ export function contratoPorSuplencia(
       },
       datosLocales.exclusividad
         ? {
-            text: ['CLÁUSULA ', num_valores[14], '. - EXCLUSIVIDAD\n\n'],
+            text: ['CLÁUSULA ', num_valores[18], '. - EXCLUSIVIDAD\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -548,7 +548,7 @@ export function contratoPorSuplencia(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[16], '. - PROHIBICIONES\n\n'],
+        text: ['CLÁUSULA ', num_valores[19], '. - PROHIBICIONES\n\n'],
         style: 'subtitulo',
       },
       {
@@ -583,7 +583,7 @@ export function contratoPorSuplencia(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[12],
+              num_valores[20],
               '. - OBLIGACIONES Y COMPROMISO DE EL TRABAJADOR\n\n',
             ],
             style: 'subtitulo',
@@ -615,7 +615,7 @@ export function contratoPorSuplencia(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[19],
+              num_valores[21],
               '. - PROPIEDAD INTELECTUAL\n\n',
             ],
             style: 'subtitulo',
@@ -665,7 +665,7 @@ export function contratoPorSuplencia(
         ? {
             text: [
               'CLÁUSULA ',
-              num_valores[23],
+              num_valores[22],
               '. - DE LA PROTECCIÓN DE DATOS PERSONALES\n\n',
             ],
             style: 'subtitulo',
@@ -688,7 +688,7 @@ export function contratoPorSuplencia(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[21], '. - VALIDEZ DEL CONTRATO\n\n'],
+        text: ['CLÁUSULA ', num_valores[23], '. - VALIDEZ DEL CONTRATO\n\n'],
         style: 'subtitulo',
       },
       {
@@ -712,7 +712,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[18],
+          num_valores[24],
           '. - DE LA SEGURIDAD Y SALUD EN EL TRABAJO\n\n',
         ],
         style: 'subtitulo',
@@ -750,7 +750,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[24],
+          num_valores[25],
           '. - DECLARACIONES DEL TRABAJADOR   \n\n',
         ],
         style: 'subtitulo',
@@ -772,7 +772,7 @@ export function contratoPorSuplencia(
       },
       datosLocales.confidencialidad
         ? {
-            text: ['CLÁUSULA ', num_valores[20], '. - RÉGIMEN LABORAL\n\n'],
+            text: ['CLÁUSULA ', num_valores[26], '. - RÉGIMEN LABORAL\n\n'],
             style: 'subtitulo',
           }
         : null,
@@ -785,7 +785,7 @@ export function contratoPorSuplencia(
           }
         : null,
       {
-        text: ['CLÁUSULA ', num_valores[25], '. - DE LA TRIBUTACIÓN   \n\n'],
+        text: ['CLÁUSULA ', num_valores[27], '. - DE LA TRIBUTACIÓN   \n\n'],
         style: 'subtitulo',
       },
       {
@@ -795,7 +795,7 @@ export function contratoPorSuplencia(
         style: 'parrafo',
       },
       {
-        text: ['CLÁUSULA ', num_valores[26], '. - DOMICILIO   \n\n'],
+        text: ['CLÁUSULA ', num_valores[28], '. - DOMICILIO   \n\n'],
         style: 'subtitulo',
       },
       {
@@ -807,7 +807,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[27],
+          num_valores[29],
           '. - DECLARACIONES DE LAS PARTES   \n\n',
         ],
         style: 'subtitulo',
@@ -827,7 +827,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[28],
+          num_valores[30],
           '. - MODIFICACIONES Y ENMIENDAS   \n\n',
         ],
         style: 'subtitulo',
@@ -841,7 +841,7 @@ export function contratoPorSuplencia(
       {
         text: [
           'CLÁUSULA ',
-          num_valores[29],
+          num_valores[31],
           '. - SOLUCIÓN DE CONTROVERSIAS   \n\n',
         ],
         style: 'subtitulo',

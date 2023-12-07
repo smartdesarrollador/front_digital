@@ -371,27 +371,27 @@ export class DuodecimoProcesoComponent {
           true, //0
           true, //1
           true, //2
-          true, //3
-          true, //4
-          this.datosLocales.trabajador_confianza, //5
-          this.datosLocales.trabajador_direccion, //6
-          this.datosLocales.fiscalizacion_inmediata, //7
-          this.datosLocales.jornada_maxima, //8
+          this.datosLocales.trabajador_confianza, //3
+          this.datosLocales.trabajador_direccion, //4
+          this.datosLocales.fiscalizacion_inmediata, //5
+          this.datosLocales.jornada_maxima, //6
+          true, //7
+          true, //8
           true, // 9
           true, // 10
-          true, // 11
-          this.datosLocales.obligaciones_compromisos, // 12
+          this.datosLocales.obligaciones_compromisos, // 11
+          true, // 12
           true, // 13
           this.datosLocales.exclusividad, // 14
           true, // 15
           true, // 16
           true, // 17
-          true, // 18
-          this.datosLocales.propiedad_intelectual, // 19
-          this.datosLocales.confidencialidad, // 20
-          true, // 21
-          this.datosLocales.tecnologia_informacion, // 22
-          this.datosLocales.proteccion_datos, // 23
+          this.datosLocales.propiedad_intelectual, // 18
+          this.datosLocales.confidencialidad, // 19
+          true, // 20
+          this.datosLocales.tecnologia_informacion, // 21
+          this.datosLocales.proteccion_datos, // 22
+          true, // 23
           true, // 24
           true, // 25
           true, // 26
@@ -412,33 +412,34 @@ export class DuodecimoProcesoComponent {
           true, //2
           true, //3
           true, //4
-          this.datosLocales.trabajador_confianza, //5
-          this.datosLocales.trabajador_direccion, //6
-          this.datosLocales.fiscalizacion_inmediata, //7
-          this.datosLocales.jornada_maxima, //8
-          true, // 9
+          true, //5
+          this.datosLocales.trabajador_confianza, //6
+          this.datosLocales.trabajador_direccion, //7
+          this.datosLocales.fiscalizacion_inmediata, //8
+          this.datosLocales.jornada_maxima, //9
           true, // 10
           true, // 11
-          this.datosLocales.obligaciones_compromisos, // 12
-          true, // 13
-          this.datosLocales.exclusividad, // 14
+          true, // 12
+          this.datosLocales.obligaciones_compromisos, // 13
+          true, // 14
           true, // 15
           true, // 16
           true, // 17
           true, // 18
-          this.datosLocales.propiedad_intelectual, // 19
-          this.datosLocales.confidencialidad, // 20
+          true, // 19
+          true, // 20
           true, // 21
-          this.datosLocales.tecnologia_informacion, // 22
-          this.datosLocales.proteccion_datos, // 23
+          true, // 22
+          this.datosLocales.confidencialidad, // 23
           true, // 24
-          true, // 25
-          true, // 26
+          this.datosLocales.tecnologia_informacion, // 25
+          this.datosLocales.proteccion_datos, // 26
           true, // 27
           true, // 28
           true, // 29
           true, // 30
           true, // 31
+          true, // 32
         ];
 
         clausulasVisibles = clausulasVisibles3;
@@ -449,27 +450,27 @@ export class DuodecimoProcesoComponent {
           true, //0
           true, //1
           true, //2
-          true, //3
+          this.datosLocales.jornada_maxima, //3
           true, //4
-          this.datosLocales.trabajador_confianza, //5
+          true, //5
           this.datosLocales.trabajador_direccion, //6
-          this.datosLocales.fiscalizacion_inmediata, //7
-          this.datosLocales.jornada_maxima, //8
+          this.datosLocales.trabajador_confianza, //7
+          this.datosLocales.obligaciones_compromisos, //8
           true, // 9
           true, // 10
           true, // 11
-          this.datosLocales.obligaciones_compromisos, // 12
+          this.datosLocales.exclusividad, // 12
           true, // 13
-          this.datosLocales.exclusividad, // 14
+          true, // 14
           true, // 15
-          true, // 16
-          true, // 17
+          this.datosLocales.propiedad_intelectual, // 16
+          this.datosLocales.confidencialidad, // 17
           true, // 18
-          this.datosLocales.propiedad_intelectual, // 19
-          this.datosLocales.confidencialidad, // 20
+          this.datosLocales.tecnologia_informacion, // 19
+          this.datosLocales.proteccion_datos, // 20
           true, // 21
-          this.datosLocales.tecnologia_informacion, // 22
-          this.datosLocales.proteccion_datos, // 23
+          true, // 22
+          true, // 23
           true, // 24
           true, // 25
           true, // 26
@@ -489,25 +490,25 @@ export class DuodecimoProcesoComponent {
           true, //2
           true, //3
           true, //4
-          this.datosLocales.trabajador_confianza, //5
-          this.datosLocales.trabajador_direccion, //6
-          this.datosLocales.fiscalizacion_inmediata, //7
-          this.datosLocales.jornada_maxima, //8
+          true, //5
+          this.datosLocales.jornada_maxima, //6
+          true, //7
+          this.datosLocales.obligaciones_compromisos, //8
           true, // 9
           true, // 10
           true, // 11
-          this.datosLocales.obligaciones_compromisos, // 12
+          true, // 12
           true, // 13
-          this.datosLocales.exclusividad, // 14
+          true, // 14
           true, // 15
-          true, // 16
-          true, // 17
+          this.datosLocales.propiedad_intelectual, // 16
+          this.datosLocales.confidencialidad, // 17
           true, // 18
-          this.datosLocales.propiedad_intelectual, // 19
-          this.datosLocales.confidencialidad, // 20
+          this.datosLocales.tecnologia_informacion, // 19
+          this.datosLocales.proteccion_datos, // 20
           true, // 21
-          this.datosLocales.tecnologia_informacion, // 22
-          this.datosLocales.proteccion_datos, // 23
+          true, // 22
+          true, // 23
           true, // 24
           true, // 25
           true, // 26

@@ -598,6 +598,12 @@ export class DuodecimoProcesoComponent {
       default:
         // contrato de emergencia
         // contrato incremento actividad
+        // contrato necesidad mercado
+        // contrato inicio actividad
+        // contrato ocacional
+        // contrato por temporada
+        // contrato reconversion empresarial
+        // contrato servicio especifico
         const clausulasVisibles8: boolean[] = [
           true, //0
           true, //1

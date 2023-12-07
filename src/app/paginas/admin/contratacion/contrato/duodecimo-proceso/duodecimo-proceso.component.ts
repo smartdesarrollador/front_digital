@@ -558,10 +558,47 @@ export class DuodecimoProcesoComponent {
           ];
           clausulasVisibles = clausulasVisibles6;
             break;
+            case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
+              const clausulasVisibles7: boolean[] = [
+                true, //0
+                true, //1
+                true, //2
+                true, //3
+                true, //4
+                this.datosLocales.trabajador_confianza, //5
+                this.datosLocales.trabajador_direccion, //6
+                this.datosLocales.fiscalizacion_inmediata, //7
+                true, //8
+                this.datosLocales.jornada_maxima, // 9
+                true, // 10
+                this.datosLocales.obligaciones_compromisos, // 11
+                true, // 12
+                true, // 13
+                this.datosLocales.exclusividad, // 14
+                true, // 15
+                true, // 16
+                true, // 17
+                true, // 18
+                this.datosLocales.propiedad_intelectual, // 19
+                this.datosLocales.confidencialidad, // 20
+                true, // 21
+                this.datosLocales.tecnologia_informacion, // 22
+                this.datosLocales.proteccion_datos, // 23
+                true, // 24
+                true, // 25
+                true, // 26
+                true, // 27
+                true, // 28
+                true, // 29
+                true, // 30
+                true, // 31
+              ];
+              clausulasVisibles = clausulasVisibles7;
+              break;
       default:
         // contrato de emergencia
         // contrato incremento actividad
-        const clausulasVisibles7: boolean[] = [
+        const clausulasVisibles8: boolean[] = [
           true, //0
           true, //1
           true, //2
@@ -596,7 +633,7 @@ export class DuodecimoProcesoComponent {
           true, // 31
         ];
 
-        clausulasVisibles = clausulasVisibles7;
+        clausulasVisibles = clausulasVisibles8;
     }
 
     const ordinales: string[] = [

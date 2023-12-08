@@ -87,16 +87,27 @@ export function contratoDeEmergencia(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº ',{text:registroEmpleador.numero_partida_registral,
-            style: 'datos_locales'},' Asiento ',{text:registroEmpleador.numero_asiento,
-              style: 'datos_locales'},' del Registro de Personas Jurídicas de la Oficina Registral de ',{text:registroEmpleador.oficina_registral,
-                style: 'datos_locales'},'.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº ',
+          {
+            text: registroEmpleador.numero_partida_registral,
+            style: 'datos_locales',
+          },
+          ' Asiento ',
+          { text: registroEmpleador.numero_asiento, style: 'datos_locales' },
+          ' del Registro de Personas Jurídicas de la Oficina Registral de ',
+          { text: registroEmpleador.oficina_registral, style: 'datos_locales' },
+          '.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere contratar a una persona para que desempeñe el cargo de ______ para cubrir las necesidades originadas por _____, situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ______. \n\n',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere contratar a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' para cubrir las necesidades originadas por _____, situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ______. \n\n',
         ],
         style: 'parrafo',
       },
@@ -123,7 +134,17 @@ export function contratoDeEmergencia(
       },
       {
         text: [
-          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ______ para cubrir las necesidades originadas por _____, situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ______.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Emergencia” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ________ y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 62 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' para cubrir las necesidades originadas por _____, situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ______.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Emergencia” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 62 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -334,7 +355,17 @@ export function contratoDeEmergencia(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de _____am a _____ pm, incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              {
+                text: datosLocales.horario_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.horario_final,
+                style: 'datos_locales',
+              },
+              ' , incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -396,7 +427,12 @@ export function contratoDeEmergencia(
       },
       {
         text: [
-          'EL TRABAJADOR estará sujeto a un periodo de prueba de __________, cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
+          'EL TRABAJADOR estará sujeto a un periodo de prueba de ',
+          {
+            text: datosLocales.duracion_contrato,
+            style: 'datos_locales',
+          },
+          ' , cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -438,7 +474,12 @@ export function contratoDeEmergencia(
       },
       {
         text: [
-          'La duración del presente contrato será de____ (lo que dure la emergencia), tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera. El plazo rige desde el ___ de _____ de 202_hasta el ___ de ____ de 202_.\n\n',
+          'La duración del presente contrato será de ',
+          {
+            text: datosLocales.duracion_contrato,
+            style: 'datos_locales',
+          },
+          ' (lo que dure la emergencia), tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera. El plazo rige desde el ___ de _____ de 202_hasta el ___ de ____ de 202_.\n\n',
         ],
         style: 'parrafo',
       },

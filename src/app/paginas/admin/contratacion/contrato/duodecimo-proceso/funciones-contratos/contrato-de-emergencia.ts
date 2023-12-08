@@ -87,7 +87,10 @@ export function contratoDeEmergencia(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de _______.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº ',{text:registroEmpleador.numero_partida_registral,
+            style: 'datos_locales'},' Asiento ',{text:registroEmpleador.numero_asiento,
+              style: 'datos_locales'},' del Registro de Personas Jurídicas de la Oficina Registral de ',{text:registroEmpleador.oficina_registral,
+                style: 'datos_locales'},'.\n\n',
         ],
         style: 'parrafo',
       },

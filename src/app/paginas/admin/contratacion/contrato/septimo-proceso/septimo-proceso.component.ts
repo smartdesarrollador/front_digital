@@ -18,7 +18,7 @@ export class SeptimoProcesoComponent {
 
   fechaActual = new Date();
   remuneracion: string = '';
-  duracion_contrato: number;
+  duracion_contrato: number = 1;
   fecha_periodo: string = '';
 
   //declarar dia mes y año de fechaActual
@@ -29,14 +29,13 @@ export class SeptimoProcesoComponent {
   //declarar variable para almacenar la fecha actual con el formato dd/MM/yyyy
   fechaActualFormato: string = this.dia + '/' + this.mes + '/' + this.anio;
   fechaRenovacion: string = '';
+  fecha_inicio: string = '';
 
   constructor(
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
-  ) {
-    this.duracion_contrato = 2;
-  }
+  ) {}
 
   ngOnInit() {
     this.asignarFechaRemuneracion();
@@ -63,25 +62,25 @@ export class SeptimoProcesoComponent {
   }
 
   sumarDias(dias: number) {
-    const fecha = new Date(this.fechaActual);
+    const fecha = new Date(this.fecha_inicio);
     fecha.setDate(fecha.getDate() + dias);
     return fecha;
   }
 
   sumarMeses(meses: number) {
-    const fecha = new Date(this.fechaActual);
+    const fecha = new Date(this.fecha_inicio);
     fecha.setMonth(fecha.getMonth() + meses);
     return fecha;
   }
 
   sumarAnios(anios: number) {
-    const fecha = new Date(this.fechaActual);
+    const fecha = new Date(this.fecha_inicio);
     fecha.setFullYear(fecha.getFullYear() + anios);
     return fecha;
   }
 
   formatearFecha(fecha: Date): string {
-    const dia = fecha.getDate();
+    const dia = fecha.getDate() + 1;
     const mes = fecha.getMonth() + 1; // Los meses en JavaScript empiezan en 0
     const anio = fecha.getFullYear();
     return `${dia}/${mes}/${anio}`;
@@ -98,7 +97,7 @@ export class SeptimoProcesoComponent {
         this.remuneracion = this.datosLocales.remuneracion;
         this.fecha_periodo = this.datosLocales.duracion_contrato;
       } else {
-        this.fechaActualFormato = this.dia + '/' + this.mes + '/' + this.anio;
+        this.fechaActualFormato = this.fecha_inicio;
         this.fechaRenovacion = '';
         this.remuneracion = '';
         this.fecha_periodo = '';
@@ -109,7 +108,7 @@ export class SeptimoProcesoComponent {
   saveToLocalStorage() {
     if (this.form1.form.valid) {
       const contratoLocaldatos = this.cl.getItem('contratoLocal');
-      contratoLocaldatos.fecha_inicio = this.fechaActualFormato;
+      contratoLocaldatos.fecha_inicio = this.fecha_inicio;
       contratoLocaldatos.fecha_renovacion = this.fechaRenovacion;
       contratoLocaldatos.remuneracion = this.remuneracion;
       contratoLocaldatos.duracion_contrato =

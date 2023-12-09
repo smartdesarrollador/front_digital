@@ -31,6 +31,8 @@ import { contratoServicioEspecifico } from './funciones-contratos/contrato-servi
 
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 @Component({
   selector: 'app-duodecimo-proceso',
   templateUrl: './duodecimo-proceso.component.html',
@@ -56,7 +58,8 @@ export class DuodecimoProcesoComponent {
     public es: EmpleadorService,
     private router: Router,
     private cl: ContratoLocalStorageService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private convertirFormatoFecha: dateFunctions
   ) {
     this.safePdfUrl = this.sanitizer.bypassSecurityTrustResourceUrl('');
   }
@@ -107,7 +110,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD':
@@ -120,7 +124,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO':
@@ -133,7 +138,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL':
@@ -146,7 +152,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL':
@@ -159,7 +166,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE SUPLENCIA':
@@ -172,7 +180,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE EMERGENCIA':
@@ -185,7 +194,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR OBRA DETERMINADA':
@@ -198,7 +208,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR SERVICIO ESPECÍFICO':
@@ -211,7 +222,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD INTERMITENTE':
@@ -224,7 +236,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD DE CONTRATO DE TEMPORADA':
@@ -237,7 +250,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO INNOMINADO A PLAZO FIJO':
@@ -250,7 +264,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
@@ -263,7 +278,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN FISCALIZACION':
@@ -276,7 +292,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           case 'MODELO DE CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN CONFIANZA Y CON FISCALIZACION':
@@ -289,7 +306,8 @@ export class DuodecimoProcesoComponent {
               this.prueba_termino,
               this.fechaFormateada,
               this.num_valores,
-              this.fechaActualValor
+              this.fechaActualValor,
+              this.convertirFormatoFecha
             );
             break;
           default:
@@ -521,80 +539,80 @@ export class DuodecimoProcesoComponent {
 
         clausulasVisibles = clausulasVisibles5;
         break;
-        case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN FISCALIZACION':
-          const clausulasVisibles6: boolean[] = [
-            true, //0
-            true, //1
-            true, //2
-            true, //3
-            true, //4
-            this.datosLocales.trabajador_confianza, //5
-            this.datosLocales.trabajador_direccion, //6
-            this.datosLocales.fiscalizacion_inmediata, //7
-            true, //8
-            this.datosLocales.jornada_maxima, // 9
-            true, // 10
-            this.datosLocales.obligaciones_compromisos, // 11
-            true, // 12
-            true, // 13
-            this.datosLocales.exclusividad, // 14
-            true, // 15
-            true, // 16
-            true, // 17
-            true, // 18
-            this.datosLocales.propiedad_intelectual, // 19
-            this.datosLocales.confidencialidad, // 20
-            true, // 21
-            this.datosLocales.tecnologia_informacion, // 22
-            this.datosLocales.proteccion_datos, // 23
-            true, // 24
-            true, // 25
-            true, // 26
-            true, // 27
-            true, // 28
-            true, // 29
-            true, // 30
-            true, // 31
-          ];
-          clausulasVisibles = clausulasVisibles6;
-            break;
-            case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
-              const clausulasVisibles7: boolean[] = [
-                true, //0
-                true, //1
-                true, //2
-                true, //3
-                true, //4
-                this.datosLocales.trabajador_confianza, //5
-                this.datosLocales.trabajador_direccion, //6
-                this.datosLocales.fiscalizacion_inmediata, //7
-                true, //8
-                this.datosLocales.jornada_maxima, // 9
-                true, // 10
-                this.datosLocales.obligaciones_compromisos, // 11
-                true, // 12
-                true, // 13
-                this.datosLocales.exclusividad, // 14
-                true, // 15
-                true, // 16
-                true, // 17
-                true, // 18
-                this.datosLocales.propiedad_intelectual, // 19
-                this.datosLocales.confidencialidad, // 20
-                true, // 21
-                this.datosLocales.tecnologia_informacion, // 22
-                this.datosLocales.proteccion_datos, // 23
-                true, // 24
-                true, // 25
-                true, // 26
-                true, // 27
-                true, // 28
-                true, // 29
-                true, // 30
-                true, // 31
-              ];
-              clausulasVisibles = clausulasVisibles7;
-              break;
+      case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN FISCALIZACION':
+        const clausulasVisibles6: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          true, //8
+          this.datosLocales.jornada_maxima, // 9
+          true, // 10
+          this.datosLocales.obligaciones_compromisos, // 11
+          true, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+        clausulasVisibles = clausulasVisibles6;
+        break;
+      case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
+        const clausulasVisibles7: boolean[] = [
+          true, //0
+          true, //1
+          true, //2
+          true, //3
+          true, //4
+          this.datosLocales.trabajador_confianza, //5
+          this.datosLocales.trabajador_direccion, //6
+          this.datosLocales.fiscalizacion_inmediata, //7
+          true, //8
+          this.datosLocales.jornada_maxima, // 9
+          true, // 10
+          this.datosLocales.obligaciones_compromisos, // 11
+          true, // 12
+          true, // 13
+          this.datosLocales.exclusividad, // 14
+          true, // 15
+          true, // 16
+          true, // 17
+          true, // 18
+          this.datosLocales.propiedad_intelectual, // 19
+          this.datosLocales.confidencialidad, // 20
+          true, // 21
+          this.datosLocales.tecnologia_informacion, // 22
+          this.datosLocales.proteccion_datos, // 23
+          true, // 24
+          true, // 25
+          true, // 26
+          true, // 27
+          true, // 28
+          true, // 29
+          true, // 30
+          true, // 31
+        ];
+        clausulasVisibles = clausulasVisibles7;
+        break;
       default:
         // contrato de emergencia
         // contrato incremento actividad

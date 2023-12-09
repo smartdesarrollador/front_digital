@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoInicioActividad(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoInicioActividad(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -471,17 +480,17 @@ export function contratoInicioActividad(
             text: '1 año',
             style: 'datos_locales',
           },
-          '  , y rige desde el    ',
+          '  , y rige desde el ',
           {
-            text: datosLocales.fecha_inicio,
+            text: formatoFechaInicio,
             style: 'datos_locales',
           },
-          '  , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el    ',
+          ' , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el ',
           {
-            text: datosLocales.fecha_renovacion,
+            text: formatoFechaRenovacion,
             style: 'datos_locales',
           },
-          '  , fecha en que termina el contrato.\n\n',
+          ' , fecha en que termina el contrato.\n\n',
         ],
         style: 'parrafo',
       },

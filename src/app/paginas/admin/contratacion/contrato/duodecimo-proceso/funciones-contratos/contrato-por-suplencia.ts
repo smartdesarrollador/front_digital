@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoPorSuplencia(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoPorSuplencia(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -93,19 +102,56 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'Por su parte, EL TRABAJADOR declara ser ____________ de profesión, y contar con la capacidad y experiencia necesaria para desempeñar el cargo ofrecido. \n\n',
+          'Por su parte, EL TRABAJADOR declara ser ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' de profesión, y contar con la capacidad y experiencia necesaria para desempeñar el cargo ofrecido. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Con fecha _____, EL EMPLEADOR contrató a __________ (en adelante, “LA TRABAJADORA SUPLIDA”), identificada con DNI N° _________, en el cargo de ___________. \n\n',
+          'Con fecha ',
+          {
+            text: datosLocales.fecha_inicio,
+            style: 'datos_locales',
+          },
+          ', EL EMPLEADOR contrató a ',
+          {
+            text:
+              registroTrabajador.primer_nombre +
+              ' ' +
+              registroTrabajador.segundo_nombre +
+              ' ' +
+              registroTrabajador.apellido_paterno +
+              ' ' +
+              registroTrabajador.apellido_materno,
+            style: 'datos_locales',
+          },
+          ' (en adelante, “LA TRABAJADORA SUPLIDA”), identificada con DNI N° ',
+          {
+            text: registroTrabajador.numero_documento,
+            style: 'datos_locales',
+          },
+          ', en el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          'Siendo que con fecha _________________, LA TRABAJADORA SUPLIDA comunicó a EL EMPLEADOR que se encuentra en estado de gestación y que, a consecuencia de ello, hará ejercicio de su derecho a la licencia por maternidad, según lo regulado en la Ley N° 26644 y su reglamento, EL EMPLEADOR requiere de la contratación de un trabajador para cubrir la ausencia de LA TRABAJADORA SUPLIDA durante el periodo de tiempo que se contempla en la cláusula novena del presente contrato. \n\n',
+          'Siendo que con fecha ',
+          {
+            text: datosLocales.fecha_inicio,
+            style: 'datos_locales',
+          },
+          ' , LA TRABAJADORA SUPLIDA comunicó a EL EMPLEADOR que se encuentra en estado de gestación y que, a consecuencia de ello, hará ejercicio de su derecho a la licencia por maternidad, según lo regulado en la Ley N° 26644 y su reglamento, EL EMPLEADOR requiere de la contratación de un trabajador para cubrir la ausencia de LA TRABAJADORA SUPLIDA durante el periodo de tiempo que se contempla en la cláusula novena del presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -115,7 +161,12 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'Por el presente documento, EL EMPLEADOR contrata a plazo fijo - bajo la modalidad de Suplencia, regulada a través del artículo 61 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral (LPCL) - los servicios de EL TRABAJADOR para que desempeñe el cargo de _____________, en razón de los hechos descritos en la cláusula primera; teniendo como principal motivo de contratación el reemplazo temporal de LA TRABAJADORA SUPLIDA  por la licencia por maternidad que gozará, a menos que se amplie su licencia por cualquier otro motivo y a solicitud de LA TRABAJADORA SUPLIDA. \n\n',
+          'Por el presente documento, EL EMPLEADOR contrata a plazo fijo - bajo la modalidad de Suplencia, regulada a través del artículo 61 del Texto Único Ordenado de la Ley de Productividad y Competitividad Laboral (LPCL) - los servicios de EL TRABAJADOR para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', en razón de los hechos descritos en la cláusula primera; teniendo como principal motivo de contratación el reemplazo temporal de LA TRABAJADORA SUPLIDA  por la licencia por maternidad que gozará, a menos que se amplie su licencia por cualquier otro motivo y a solicitud de LA TRABAJADORA SUPLIDA. \n\n',
         ],
         style: 'parrafo',
       },
@@ -420,7 +471,22 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es de _______ (___) meses, tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera, mientras retorna a sus labores diarias LA TRABAJADORA SUPLIDA. Este plazo se iniciará el ______ de __________ de 2022 y concluirá el ___ de ______ de 202_.  \n\n',
+          'El plazo de duración del presente contrato es de ',
+          {
+            text: datosLocales.duracion_contrato,
+            style: 'datos_locales',
+          },
+          ' , tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera, mientras retorna a sus labores diarias LA TRABAJADORA SUPLIDA. Este plazo se iniciará el ',
+          {
+            text: formatoFechaInicio,
+            style: 'datos_locales',
+          },
+          ' y concluirá el ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          '.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -462,7 +528,12 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'Asimismo, considerando que el presente contrato temporal por suplencia tiene por objeto el desempeño provisional del cargo de ______________, el presente contrato se extinguirá automáticamente, sin penalidades ni indemnizaciones cuando LA TRABAJADORA SUPLIDA retorne a su puesto original. Esta disposición opera como una condición resolutoria y se regula por lo establecido en el artículo 16 inciso c) del Decreto Supremo N° 003-97-TR, Ley de Productividad y Competitividad Laboral. Esta disposición se aplicará aun cuando no haya concluido el plazo del presente contrato o de cualquiera de sus prórrogas, de ser el caso. EL TRABAJADOR declara tener pleno conocimiento de la naturaleza del contrato de suplencia y de las implicancias de la presente cláusula. \n\n',
+          'Asimismo, considerando que el presente contrato temporal por suplencia tiene por objeto el desempeño provisional del cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', el presente contrato se extinguirá automáticamente, sin penalidades ni indemnizaciones cuando LA TRABAJADORA SUPLIDA retorne a su puesto original. Esta disposición opera como una condición resolutoria y se regula por lo establecido en el artículo 16 inciso c) del Decreto Supremo N° 003-97-TR, Ley de Productividad y Competitividad Laboral. Esta disposición se aplicará aun cuando no haya concluido el plazo del presente contrato o de cualquiera de sus prórrogas, de ser el caso. EL TRABAJADOR declara tener pleno conocimiento de la naturaleza del contrato de suplencia y de las implicancias de la presente cláusula. \n\n',
         ],
         style: 'parrafo',
       },

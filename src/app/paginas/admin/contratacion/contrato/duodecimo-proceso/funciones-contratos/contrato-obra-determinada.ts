@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoObraDeterminada(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoObraDeterminada(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -46,7 +55,12 @@ export function contratoObraDeterminada(
             text: registroEmpleador.numero_partida_registral,
             style: 'datos_locales',
           },
-          ' , del Registro de Personas Jurídicas de la Oficina Registral de_________, a quien en adelante se le denominará “EL EMPLEADOR”, y, de otra parte, \n\n',
+          ' , del Registro de Personas Jurídicas de la Oficina Registral de ',
+          {
+            text: registroEmpleador.oficina_registral,
+            style: 'datos_locales',
+          },
+          ', a quien en adelante se le denominará “EL EMPLEADOR”, y, de otra parte, \n\n',
         ],
         style: 'alinear',
       },
@@ -83,13 +97,33 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú inscrita en la Ficha de Partida Electrónica N° _________ del Registro de Personas Jurídicas de ______, que tiene por objeto social dedicarse a ________y que ha iniciado actividades con fecha __________, tal como consta en el Registro de SUNAT.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú inscrita en la Ficha de Partida Electrónica N° ',
+          {
+            text: registroEmpleador.numero_partida_registral,
+            style: 'datos_locales',
+          },
+          ' del Registro de Personas Jurídicas de ______, que tiene por objeto social dedicarse a ________y que ha iniciado actividades con fecha ',
+          {
+            text: datosLocales.fecha_inicio,
+            style: 'datos_locales',
+          },
+          ', tal como consta en el Registro de SUNAT.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR necesita cubrir de manera temporal las necesidades de recursos humanos, motivo por el que requiere contratar a EL TRABAJADOR para que se desempeñe como _________ para el proyecto “___________”, ubicado en _____________, que EL EMPLEADOR se encuentra ejecutando directamente o para terceros. \n\n',
+          '1.2.	EL EMPLEADOR necesita cubrir de manera temporal las necesidades de recursos humanos, motivo por el que requiere contratar a EL TRABAJADOR para que se desempeñe como ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' para el proyecto “___________”, ubicado en ',
+          {
+            text: registroEmpleador.domicilio,
+            style: 'datos_locales',
+          },
+          ', que EL EMPLEADOR se encuentra ejecutando directamente o para terceros. \n\n',
         ],
         style: 'parrafo',
       },
@@ -116,7 +150,17 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de obra determinada a EL TRABAJADOR para que desempeñe sus funciones en el puesto de __________ toda vez que se requiere de sus servicios para el proyecto _______, ubicado en _____________. En base a dicho proyecto, actualmente se requiere contratar personal por un plazo determinado a fin de cumplir con las obligaciones y condiciones de servicio que fueron pactadas, en tanto se desarrolle el citado servicio para el proyecto bajo comentario. \n\n',
+          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de obra determinada a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' toda vez que se requiere de sus servicios para el proyecto _______, ubicado en ',
+          {
+            text: registroEmpleador.domicilio,
+            style: 'datos_locales',
+          },
+          '. En base a dicho proyecto, actualmente se requiere contratar personal por un plazo determinado a fin de cumplir con las obligaciones y condiciones de servicio que fueron pactadas, en tanto se desarrolle el citado servicio para el proyecto bajo comentario. \n\n',
         ],
         style: 'parrafo',
       },
@@ -160,7 +204,17 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          '3.4	LAS PARTES acuerdan que, en atención al cargo de ______________ que ocupará EL TRABAJADOR para el proyecto “___________”, los servicios descritos del presente contrato serán prestados en ______. \n\n',
+          '3.4	LAS PARTES acuerdan que, en atención al cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' que ocupará EL TRABAJADOR para el proyecto “___________”, los servicios descritos del presente contrato serán prestados en ',
+          {
+            text: registroEmpleador.domicilio,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -459,7 +513,22 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es de _____________,  siendo su fecha de inicio el día ___ de_______ de ___, fecha en que debe empezar sus labores EL TRABAJADOR, hasta el ___de ______de ________, fecha en que termina el contrato. Sin perjuicio de lo anteriormente señalado, las partes podrán convenir la renovación del contrato por el tiempo que resulte necesario seguir brindando los servicios en tanto se mantengan las condiciones señaladas en el presente contrato. \n\n',
+          'El plazo de duración del presente contrato es de ',
+          {
+            text: datosLocales.duracion_contrato,
+            style: 'datos_locales',
+          },
+          ',  siendo su fecha de inicio el día ',
+          {
+            text: formatoFechaInicio,
+            style: 'datos_locales',
+          },
+          ', fecha en que debe empezar sus labores EL TRABAJADOR, hasta el ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          ', fecha en que termina el contrato. Sin perjuicio de lo anteriormente señalado, las partes podrán convenir la renovación del contrato por el tiempo que resulte necesario seguir brindando los servicios en tanto se mantengan las condiciones señaladas en el presente contrato. \n\n',
         ],
         style: 'parrafo',
       },
@@ -848,7 +917,7 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de _____, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez.  \n\n',
+          'Las partes se someten expresamente a la competencia jurisdiccional de los juzgados y salas jurisdiccionales especializadas de trabajo de la ciudad de Lima, Perú, para todo asunto que no pudiendo ser resuelto de manera armoniosa entre las mismas, se derive la interpretación, aplicación o ejecución de este contrato de trabajo, incluida su nulidad o invalidez.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -868,7 +937,12 @@ export function contratoObraDeterminada(
       },
       {
         text: [
-          'Hecho y firmado en Lima, el ___ de ______ de 20__, en dos ejemplares de un mismo tenor para constancia de las partes. \n\n',
+          'Hecho y firmado en Lima, el ',
+          {
+            text: fechaActualValor,
+            style: 'datos_locales',
+          },
+          ', en dos ejemplares de un mismo tenor para constancia de las partes. \n\n',
         ],
         style: 'parrafo',
       },

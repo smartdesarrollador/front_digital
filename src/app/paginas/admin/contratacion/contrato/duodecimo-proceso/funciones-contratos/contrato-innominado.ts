@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoInnominado(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoInnominado(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -87,19 +96,34 @@ export function contratoInnominado(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú inscrita en la Ficha de Partida Electrónica N° ______ del Registro de Personas Jurídicas de Lima.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú inscrita en la Ficha de Partida Electrónica N° ',
+          {
+            text: registroEmpleador.numero_partida_registral,
+            style: 'datos_locales',
+          },
+          ' del Registro de Personas Jurídicas de Lima.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR, quien tiene por objeto social _______, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ________, toda vez que _________ lo cual queda evidenciado en documentos como: ______. \n\n',
+          '1.2.	EL EMPLEADOR, quien tiene por objeto social _______, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', toda vez que _________ lo cual queda evidenciado en documentos como: ______. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ____________ y contar con amplia experiencia para el cargo ofrecido, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
+          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' y contar con amplia experiencia para el cargo ofrecido, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
@@ -120,7 +144,12 @@ export function contratoInnominado(
       },
       {
         text: [
-          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de contrato innominado a EL TRABAJADOR para que desempeñe sus funciones en el puesto de _______ y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por el  Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de contrato innominado a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por el  Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -152,13 +181,23 @@ export function contratoInnominado(
       },
       {
         text: [
-          '3.3	Dentro del alcance de sus competencias como ______, EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de la compañía, acorde a lo instruido por EL EMPLEADOR.\n\n',
+          '3.3	Dentro del alcance de sus competencias como ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', EL TRABAJADOR ejercerá sus funciones reportando de manera directa a EL EMPLEADOR y será responsable por la gestión diaria y el correcto funcionamiento de la compañía, acorde a lo instruido por EL EMPLEADOR.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.4	El lugar de trabajo de EL TRABAJADOR será en la oficina principal de EL EMPLEADOR en __________. \n\n',
+          '3.4	El lugar de trabajo de EL TRABAJADOR será en la oficina principal de EL EMPLEADOR en ',
+          {
+            text: registroEmpleador.domicilio,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -189,7 +228,17 @@ export function contratoInnominado(
       datosLocales.jornada_maxima
         ? {
             text: [
-              '4.2 El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de _____am a _____ pm, incluida una hora de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración. \n\n',
+              '4.2 El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              {
+                text: datosLocales.horario_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.horario_final,
+                style: 'datos_locales',
+              },
+              ' pm, incluida una hora de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración. \n\n',
             ],
             style: 'parrafo',
           }
@@ -381,17 +430,17 @@ export function contratoInnominado(
             text: '1 año',
             style: 'datos_locales',
           },
-          '  , y rige desde el    ',
+          '  , y rige desde el ',
           {
-            text: datosLocales.fecha_inicio,
+            text: formatoFechaInicio,
             style: 'datos_locales',
           },
-          '  , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el    ',
+          ' , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el ',
           {
-            text: datosLocales.fecha_renovacion,
+            text: formatoFechaRenovacion,
             style: 'datos_locales',
           },
-          '  , fecha en que termina el contrato.\n\n',
+          ' , fecha en que termina el contrato.\n\n',
         ],
         style: 'parrafo',
       },

@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoReconversionEmpresarial(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoReconversionEmpresarial(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -87,13 +96,33 @@ export function contratoReconversionEmpresarial(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de _______.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº ',
+          {
+            text: registroEmpleador.numero_partida_registral,
+            style: 'datos_locales',
+          },
+          ' Asiento ',
+          {
+            text: registroEmpleador.numero_asiento,
+            style: 'datos_locales',
+          },
+          ' del Registro de Personas Jurídicas de la Oficina Registral de ',
+          {
+            text: registroEmpleador.oficina_registral,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ______ toda vez que ________ debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' toda vez que ________ debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
         ],
         style: 'parrafo',
       },
@@ -295,11 +324,12 @@ export function contratoReconversionEmpresarial(
         : null,
       datosLocales.fiscalizacion_inmediata
         ? {
-              text: [
-                'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como personal sin fiscalización inmediata en virtud del artículo 10 del Decreto Supremo N° 008-2002-TR.\n\n',
-              ],
-              style: 'parrafo',
-            }: null,
+            text: [
+              'Por el puesto que ocupa EL TRABAJADOR, este reconoce que desempeña sus labores sin supervisión inmediata de EL EMPLEADOR, por lo tanto, es considerado como personal sin fiscalización inmediata en virtud del artículo 10 del Decreto Supremo N° 008-2002-TR.\n\n',
+            ],
+            style: 'parrafo',
+          }
+        : null,
       datosLocales.jornada_maxima
         ? {
             text: ['CLÁUSULA ', num_valores[8], '. - JORNADA LABORAL\n\n'],
@@ -317,7 +347,17 @@ export function contratoReconversionEmpresarial(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de _____am a _____ pm, incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              {
+                text: datosLocales.horario_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.horario_final,
+                style: 'datos_locales',
+              },
+              ', incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -379,7 +419,17 @@ export function contratoReconversionEmpresarial(
       },
       {
         text: [
-          'EL TRABAJADOR estará sujeto a un periodo de prueba de __________, cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
+          'EL TRABAJADOR estará sujeto a un periodo de prueba de ',
+          {
+            text: datosLocales.duracion_contrato,
+            style: 'datos_locales',
+          },
+          ', cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          '. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -421,22 +471,22 @@ export function contratoReconversionEmpresarial(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es de    ',
+          'El plazo de duración del presente contrato es de ',
           {
-            text: '1 año',
+            text: datosLocales.duracion_contrato,
             style: 'datos_locales',
           },
-          '  , y rige desde el    ',
+          ', y rige desde el ',
           {
-            text: datosLocales.fecha_inicio,
+            text: formatoFechaInicio,
             style: 'datos_locales',
           },
-          '  , fecha en que debe empezar sus labores EL TRABAJADOR, hasta el    ',
+          ', fecha en que debe empezar sus labores EL TRABAJADOR, hasta el ',
           {
-            text: datosLocales.fecha_renovacion,
+            text: formatoFechaRenovacion,
             style: 'datos_locales',
           },
-          '  , fecha en que termina el contrato.\n\n',
+          ', fecha en que termina el contrato.\n\n',
         ],
         style: 'parrafo',
       },

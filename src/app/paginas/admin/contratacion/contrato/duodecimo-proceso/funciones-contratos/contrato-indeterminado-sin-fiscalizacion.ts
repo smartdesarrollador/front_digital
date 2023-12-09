@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoIndeterminadoSinFiscalizacion(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoIndeterminadoSinFiscalizacion(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -93,13 +102,23 @@ export function contratoIndeterminadoSinFiscalizacion(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR requiere contratar los servicios de un profesional para desempeñar el cargo de _________ y será el responsable de______ . \n\n',
+          '1.2.	EL EMPLEADOR requiere contratar los servicios de un profesional para desempeñar el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' y será el responsable de______ . \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	Por su parte, EL TRABAJADOR declara ser ___________ de profesión, y contar con la capacidad y experiencia necesaria para desempeñar el cargo ofrecido. \n\n',
+          '1.3.	Por su parte, EL TRABAJADOR declara ser ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' de profesión, y contar con la capacidad y experiencia necesaria para desempeñar el cargo ofrecido. \n\n',
         ],
         style: 'parrafo',
       },
@@ -109,7 +128,12 @@ export function contratoIndeterminadoSinFiscalizacion(
       },
       {
         text: [
-          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata a plazo indeterminado a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de ___________, bajo subordinación y de manera personal; de conformidad con lo establecido por el artículo 9 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata a plazo indeterminado a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', bajo subordinación y de manera personal; de conformidad con lo establecido por el artículo 9 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -121,7 +145,12 @@ export function contratoIndeterminadoSinFiscalizacion(
       },
       {
         text: [
-          '3.1	EL TRABAJADOR desempeñará sus labores en el cargo de ___________ desempeñando las funciones que se señalan en el Anexo 1-A del presente contrato.\n\n',
+          '3.1	EL TRABAJADOR desempeñará sus labores en el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' desempeñando las funciones que se señalan en el Anexo 1-A del presente contrato.\n\n',
         ],
         style: 'parrafo',
       },
@@ -159,7 +188,17 @@ export function contratoIndeterminadoSinFiscalizacion(
       },
       {
         text: [
-          'Las partes acuerdan que, en atención al cargo de ______________ que ocupará EL TRABAJADOR, los servicios descritos en la cláusula tercera del presente contrato, serán prestados en las oficinas de EL EMPLEADOR ubicadas en ______. \n\n',
+          'Las partes acuerdan que, en atención al cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' que ocupará EL TRABAJADOR, los servicios descritos en la cláusula tercera del presente contrato, serán prestados en las oficinas de EL EMPLEADOR ubicadas en ',
+          {
+            text: registroEmpleador.domicilio,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -200,7 +239,12 @@ export function contratoIndeterminadoSinFiscalizacion(
       datosLocales.trabajador_confianza
         ? {
             text: [
-              'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de ____ es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con   _________, teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como ___________.    \n\n',
+              'En ese sentido, EL TRABAJADOR al desempeñarse en el cargo de ',
+              {
+                text: datosLocales.oferta_laboral,
+                style: 'datos_locales',
+              },
+              ' es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con   _________, teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como ___________.    \n\n',
             ],
             style: 'parrafo',
           }
@@ -393,7 +437,12 @@ export function contratoIndeterminadoSinFiscalizacion(
       },
       {
         text: [
-          'El plazo de duración del presente contrato es indeterminado, siendo su fecha de inicio el día ___ de_______ de ___.\n\n',
+          'El plazo de duración del presente contrato es indeterminado, siendo su fecha de inicio el día ',
+          {
+            text: formatoFechaInicio,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },

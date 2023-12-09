@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoIncrementoActividad(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoIncrementoActividad(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -93,7 +102,12 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ______ toda vez que se ha dado un incremento sustancial de las actividades de la compañía debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' toda vez que se ha dado un incremento sustancial de las actividades de la compañía debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
         ],
         style: 'parrafo',
       },
@@ -120,7 +134,12 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ______ toda vez que se ha dado un incremento sustancial de las actividades de la compañía debido a ______, lo cual queda evidenciado en documentos como: ______. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de incremento de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' toda vez que se ha dado un incremento sustancial de las actividades de la compañía debido a ______, lo cual queda evidenciado en documentos como: ______. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de incremento de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
           { text: datosLocales.oferta_laboral, style: 'datos_locales' },
           '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],

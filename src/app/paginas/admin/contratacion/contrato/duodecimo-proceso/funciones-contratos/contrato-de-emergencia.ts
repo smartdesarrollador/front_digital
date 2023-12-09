@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoDeEmergencia(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,16 @@ export function contratoDeEmergencia(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -432,7 +442,12 @@ export function contratoDeEmergencia(
             text: datosLocales.duracion_contrato,
             style: 'datos_locales',
           },
-          ' , cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
+          ' , cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          '. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -479,7 +494,17 @@ export function contratoDeEmergencia(
             text: datosLocales.duracion_contrato,
             style: 'datos_locales',
           },
-          ' (lo que dure la emergencia), tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera. El plazo rige desde el ___ de _____ de 202_hasta el ___ de ____ de 202_.\n\n',
+          ' (lo que dure la emergencia), tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera. El plazo rige desde el ',
+          {
+            text: formatoFechaInicio,
+            style: 'datos_locales',
+          },
+          ' hasta el ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },

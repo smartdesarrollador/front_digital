@@ -1,3 +1,5 @@
+import { dateFunctions } from 'src/app/utils/dateFunctions';
+
 export function contratoIntermitente(
   registroTrabajador: any,
   registroEmpleador: any,
@@ -7,8 +9,15 @@ export function contratoIntermitente(
   prueba_termino: string,
   fechaFormateada: string,
   num_valores: Array<string>,
-  fechaActualValor: string
+  fechaActualValor: string,
+  convertirFormatoFecha: dateFunctions
 ): any {
+  const formatoFechaInicio = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_inicio
+  );
+  const formatoFechaRenovacion = convertirFormatoFecha.convertirFecha(
+    datosLocales.fecha_renovacion
+  );
   var docDefinition = {
     content: [
       { text: datosLocales.modelo_contrato, style: 'header' },
@@ -90,13 +99,38 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de _______.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº ',
+          {
+            text: registroEmpleador.numero_partida_registral,
+            style: 'datos_locales',
+          },
+          ' Asiento ',
+          {
+            text: registroEmpleador.numero_asiento,
+            style: 'datos_locales',
+          },
+          ' del Registro de Personas Jurídicas de la Oficina Registral de ',
+          {
+            text: registroEmpleador.oficina_registral,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR se dedica a las actividades de ____________ motivo por el que requiere contratar a un ___________ para que lleve a cabo las funciones de naturaleza discontinuas que se desprenden de dicho cargo. \n\n',
+          '1.2.	EL EMPLEADOR se dedica a las actividades de ',
+          {
+            text: registroEmpleador.cargo_representante_legal,
+            style: 'datos_locales',
+          },
+          ' motivo por el que requiere contratar a un ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' para que lleve a cabo las funciones de naturaleza discontinuas que se desprenden de dicho cargo. \n\n',
         ],
         style: 'parrafo',
       },
@@ -112,7 +146,17 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '2.1 Por el presente CONTRATO las Partes convienen que EL TRABAJADOR preste servicios intermitentes para EL EMPLEADOR en calidad de _____________, con ocasión de las actividades de ____________, a cambio de la retribución pactada en la Cláusula Séptima, para cubrir las necesidades de las actividades de EL EMPLEADOR que por su naturaleza y particularidades, son discontinuas, las cuales se relacionan con _________. \n\n',
+          '2.1 Por el presente CONTRATO las Partes convienen que EL TRABAJADOR preste servicios intermitentes para EL EMPLEADOR en calidad de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', con ocasión de las actividades de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', a cambio de la retribución pactada en la Cláusula Séptima, para cubrir las necesidades de las actividades de EL EMPLEADOR que por su naturaleza y particularidades, son discontinuas, las cuales se relacionan con _________. \n\n',
         ],
         style: 'parrafo',
       },
@@ -132,7 +176,12 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '3.1	En su calidad de _____________ EL TRABAJADOR se compromete a ejecutar las tareas propias de su cargo en cada oportunidad que se reanude la labor intermitente del CONTRATO, cumpliendo para tal efecto las órdenes que disponga la empresa.\n\n',
+          '3.1	En su calidad de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' EL TRABAJADOR se compromete a ejecutar las tareas propias de su cargo en cada oportunidad que se reanude la labor intermitente del CONTRATO, cumpliendo para tal efecto las órdenes que disponga la empresa.\n\n',
         ],
         style: 'parrafo',
       },
@@ -196,7 +245,12 @@ export function contratoIntermitente(
         text: [
           'Las partes acuerdan que, en atención al cargo de   ',
           { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula cuarta del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en __________. \n\n',
+          '   que ocupará EL TRABAJADOR, los servicios descritos en la cláusula cuarta del presente contrato, serán prestados en las instalaciones de EL EMPLEADOR ubicada en ',
+          {
+            text: registroEmpleador.domicilio,
+            style: 'datos_locales',
+          },
+          ' . \n\n',
         ],
         style: 'parrafo',
       },
@@ -336,7 +390,17 @@ export function contratoIntermitente(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: de _____ a _____  incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: de ',
+              {
+                text: datosLocales.horario_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.horario_final,
+                style: 'datos_locales',
+              },
+              ' incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
             ],
             style: 'parrafo',
           }
@@ -398,7 +462,17 @@ export function contratoIntermitente(
       },
       {
         text: [
-          'EL TRABAJADOR estará sujeto a un periodo de prueba de __________, cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ____ de ____ del 202_. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
+          'EL TRABAJADOR estará sujeto a un periodo de prueba de ',
+          {
+            text: datosLocales.duracion_contrato,
+            style: 'datos_locales',
+          },
+          ', cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          '. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',
         ],
         style: 'parrafo',
       },
@@ -440,7 +514,17 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '12.1 La duración del presente CONTRATO será desde el ___ de ___ de ____ hasta el ___ de ___ de ____ o la culminación de los servicios intermitentes señalados en las cláusulas segunda y tercera, lo que ocurra primero.\n\n',
+          '12.1 La duración del presente CONTRATO será desde el  ',
+          {
+            text: formatoFechaInicio,
+            style: 'datos_locales',
+          },
+          '  hasta el  ',
+          {
+            text: formatoFechaRenovacion,
+            style: 'datos_locales',
+          },
+          '  o la culminación de los servicios intermitentes señalados en las cláusulas segunda y tercera, lo que ocurra primero.\n\n',
         ],
         style: 'parrafo',
       },

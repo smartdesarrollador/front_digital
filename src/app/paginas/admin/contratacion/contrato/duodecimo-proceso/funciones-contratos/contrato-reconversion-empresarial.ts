@@ -149,11 +149,7 @@ export function contratoReconversionEmpresarial(
       },
       {
         text: [
-          'Siendo que las actividades de EL EMPLEADOR iniciaron con fecha  ',
-          { text: datosLocales.fecha_inicio, style: 'datos_locales' },
-          ' , por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR contrata de forma temporal y bajo la modalidad de inicio de actividad a EL TRABAJADOR, para que desempeñe sus funciones en el puesto de  ',
-          { text: datosLocales.oferta_laboral, style: 'datos_locales' },
-          '  y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 57 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ______ toda vez que ________ debido a ______, lo cual queda evidenciado en documentos como: ______.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de reconversión empresarial a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ________ y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 59 del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -421,7 +417,7 @@ export function contratoReconversionEmpresarial(
         text: [
           'EL TRABAJADOR estará sujeto a un periodo de prueba de ',
           {
-            text: datosLocales.duracion_contrato,
+            text: prueba_meses,
             style: 'datos_locales',
           },
           ', cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ',

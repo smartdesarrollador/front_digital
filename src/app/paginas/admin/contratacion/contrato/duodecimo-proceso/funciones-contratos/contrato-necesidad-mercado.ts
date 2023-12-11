@@ -427,12 +427,12 @@ export function contratoNecesidadMercado(
         text: [
           'EL TRABAJADOR estará sujeto a un periodo de prueba de ',
           {
-            text: formatoFechaInicio,
+            text: prueba_meses,
             style: 'datos_locales',
           },
           ', cuyo inicio coincide con el comienzo de las labores de EL TRABAJADOR y concluye el ',
           {
-            text: formatoFechaRenovacion,
+            text: prueba_termino,
             style: 'datos_locales',
           },
           '. Queda entendido que durante este período de prueba EL EMPLEADOR puede rescindir el contrato sin expresión de causa.  \n\n',

@@ -29,13 +29,16 @@ export class SeptimoProcesoComponent {
   //declarar variable para almacenar la fecha actual con el formato dd/MM/yyyy
   fechaActualFormato: string = this.dia + '/' + this.mes + '/' + this.anio;
   fechaRenovacion: string = '';
-  fecha_inicio: string = '';
+  fecha_inicio: Date = this.fechaActual;
+  fechaInicioFormateado: string;
 
   constructor(
     public ts: TrabajadorService,
     private router: Router,
     private cl: ContratoLocalStorageService
-  ) {}
+  ) {
+    this.fechaInicioFormateado = this.convertirFechaInicio(this.fecha_inicio);
+  }
 
   ngOnInit() {
     this.asignarFechaRemuneracion();
@@ -86,6 +89,20 @@ export class SeptimoProcesoComponent {
     return `${dia}/${mes}/${anio}`;
   }
 
+  convertirFechaInicio(fecha: any): string {
+    const fechaObj = new Date(fecha);
+    const dia = fechaObj.getDate();
+    const mes = fechaObj.getMonth() + 1; // Se suma 1 porque los meses comienzan desde 0
+    const anio = fechaObj.getFullYear();
+
+    // Formatea los componentes de la fecha para obtener 'dd/MM/yyyy'
+    const fechaFormateada = `${dia.toString().padStart(2, '0')}/${mes
+      .toString()
+      .padStart(2, '0')}/${anio}`;
+
+    return fechaFormateada;
+  }
+
   asignarFechaRemuneracion(): void {
     const contratoLocal = this.cl.getItem('contratoLocal');
 
@@ -97,7 +114,7 @@ export class SeptimoProcesoComponent {
         this.remuneracion = this.datosLocales.remuneracion;
         this.fecha_periodo = this.datosLocales.duracion_contrato;
       } else {
-        this.fechaActualFormato = this.fecha_inicio;
+        this.fechaActualFormato = this.fechaInicioFormateado;
         this.fechaRenovacion = '';
         this.remuneracion = '';
         this.fecha_periodo = '';
@@ -108,7 +125,7 @@ export class SeptimoProcesoComponent {
   saveToLocalStorage() {
     if (this.form1.form.valid) {
       const contratoLocaldatos = this.cl.getItem('contratoLocal');
-      contratoLocaldatos.fecha_inicio = this.fecha_inicio;
+      contratoLocaldatos.fecha_inicio = this.fechaInicioFormateado;
       contratoLocaldatos.fecha_renovacion = this.fechaRenovacion;
       contratoLocaldatos.remuneracion = this.remuneracion;
       contratoLocaldatos.duracion_contrato =

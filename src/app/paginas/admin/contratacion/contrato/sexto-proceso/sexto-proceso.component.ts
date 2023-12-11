@@ -48,7 +48,7 @@ export class SextoProcesoComponent implements OnInit {
 
       /* localStorage.setItem('selectedValue', this.selectedValue); */
 
-      this.router.navigate(['admin/contratacion/contrato/proceso_7']);
+      this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
     } else {
       this.alerta();
     }

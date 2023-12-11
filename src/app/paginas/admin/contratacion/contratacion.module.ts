@@ -23,6 +23,7 @@ import { QuintoProcesoDComponent } from './contrato/quinto-proceso-d/quinto-proc
 import { DecimoProcesoComponent } from './contrato/decimo-proceso/decimo-proceso.component';
 import { UndecimoProcesoComponent } from './contrato/undecimo-proceso/undecimo-proceso.component';
 import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecimo-proceso.component';
+import { SextoProcesoBComponent } from './contrato/sexto-proceso-b/sexto-proceso-b.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecim
     DecimoProcesoComponent,
     UndecimoProcesoComponent,
     DuodecimoProcesoComponent,
+    SextoProcesoBComponent,
   ],
   imports: [
     CommonModule,

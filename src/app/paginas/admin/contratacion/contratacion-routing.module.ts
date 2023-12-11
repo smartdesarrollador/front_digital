@@ -21,6 +21,7 @@ import { QuintoProcesoDComponent } from './contrato/quinto-proceso-d/quinto-proc
 import { DecimoProcesoComponent } from './contrato/decimo-proceso/decimo-proceso.component';
 import { UndecimoProcesoComponent } from './contrato/undecimo-proceso/undecimo-proceso.component';
 import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecimo-proceso.component';
+import { SextoProcesoBComponent } from './contrato/sexto-proceso-b/sexto-proceso-b.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: 'contrato/proceso_6',
     component: SextoProcesoComponent,
+  },
+  {
+    path: 'contrato/proceso_6_b',
+    component: SextoProcesoBComponent,
   },
   {
     path: 'contrato/proceso_7',

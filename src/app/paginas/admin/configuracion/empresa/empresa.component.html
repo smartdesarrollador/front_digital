@@ -47,6 +47,7 @@
             formControlName="domicilio"
           />
         </div>
+
         <div class="mb-6">
           <label
             for="representanta_legal"
@@ -62,6 +63,22 @@
             formControlName="representante_legal"
           />
         </div>
+        <div class="mb-6">
+          <label
+            for="representanta_legal"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Dni Representante Legal</label
+          >
+          <input
+            type="text"
+            name="dni_representanta_legal"
+            id="dni_representanta_legal"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-naranja focus:border-naranja block w-full p-2.5"
+            placeholder="Dni Representante Legal"
+            formControlName="dni_representante_legal"
+          />
+        </div>
+
         <div class="mb-6">
           <label
             for="cargo_representante_legal"
@@ -136,6 +153,28 @@
             placeholder="Numero partida registral"
             formControlName="numero_partida_registral"
           />
+        </div>
+        <div class="mb-6">
+          <label
+            for="representanta_legal"
+            class="block mb-2 text-sm font-medium text-gray-900"
+            >Actividad Economica</label
+          >
+          <select
+            id="countries"
+            name="id_actividad_economica"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+            formControlName="id_actividad_economica"
+          >
+            <option selected>Seleccionar</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+          </select>
         </div>
 
         <button class="boton-verde">Guardar</button>

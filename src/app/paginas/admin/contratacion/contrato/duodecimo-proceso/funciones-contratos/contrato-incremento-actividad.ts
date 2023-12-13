@@ -42,7 +42,7 @@ export function contratoIncrementoActividad(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -102,7 +102,12 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',

@@ -10,4 +10,6 @@ export const environment = {
   apiUrlEmpleador: 'https://apilegajo.amorinomoda.com/api/empleador',
   apiUrlUltimoEmpleador:
     'https://apilegajo.amorinomoda.com/api/ultimo_empleador',
+  apiUrlActividadUltimoEmpleador:
+    'https://apilegajo.amorinomoda.com/api/actividad_ultimo_empleador',
 };

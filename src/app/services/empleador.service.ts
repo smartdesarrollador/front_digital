@@ -10,6 +10,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class EmpleadorService {
   url = environment.apiUrlEmpleador;
   urlUltimoEmpleador = environment.apiUrlUltimoEmpleador;
+  urlActividadUltimoEmpleador = environment.apiUrlActividadUltimoEmpleador;
 
   /* selectTrabajador: Trabajador = new Trabajador(); */
 
@@ -36,5 +37,9 @@ export class EmpleadorService {
 
   getUltimoEmpleador(): Observable<Empleador> {
     return this.http.get(this.urlUltimoEmpleador);
+  }
+
+  getActividadUltimoEmpleador(): Observable<Empleador> {
+    return this.http.get(this.urlActividadUltimoEmpleador);
   }
 }

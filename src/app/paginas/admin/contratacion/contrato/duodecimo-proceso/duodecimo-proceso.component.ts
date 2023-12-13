@@ -87,7 +87,8 @@ export class DuodecimoProcesoComponent {
     }
 
     const trabajador$ = this.getTrabajador(this.datosLocales.trabajador);
-    const empleador$ = this.getEmpleador(this.datosLocales.empleador);
+    /* const empleador$ = this.getEmpleador(this.datosLocales.empleador); */
+    const empleador$ = this.getEmpleador();
 
     forkJoin([trabajador$, empleador$]).subscribe(
       ([trabajadorData, empleadorData]) => {
@@ -754,7 +755,11 @@ export class DuodecimoProcesoComponent {
     return this.ts.getTrabajadorById(id); // Devuelve el observable para su suscripción
   }
 
-  getEmpleador(id: any) {
-    return this.es.getEmpleadorById(id); // Devuelve el observable para su suscripción
+  /* getEmpleador(id: any) {
+    return this.es.getEmpleadorById(id);
+  } */
+
+  getEmpleador() {
+    return this.es.getActividadUltimoEmpleador();
   }
 }

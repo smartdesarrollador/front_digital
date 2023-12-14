@@ -42,7 +42,7 @@ export function contratoPorSuplencia(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -96,7 +96,12 @@ export function contratoPorSuplencia(
       },
       {
         text: [
-          'EL EMPLEADOR es una sociedad constituida y existente bajo las leyes del Perú, cuyo objeto social es dedicarse a _______________.\n\n',
+          'EL EMPLEADOR es una sociedad constituida y existente bajo las leyes del Perú, cuyo objeto social es dedicarse a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },

@@ -42,7 +42,7 @@ export function contratoObraDeterminada(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -102,7 +102,17 @@ export function contratoObraDeterminada(
             text: registroEmpleador.numero_partida_registral,
             style: 'datos_locales',
           },
-          ' del Registro de Personas Jurídicas de ______, que tiene por objeto social dedicarse a ________y que ha iniciado actividades con fecha ',
+          ' del Registro de Personas Jurídicas de ',
+          {
+            text: registroEmpleador.oficina_registral,
+            style: 'datos_locales',
+          },
+          ', que tiene por objeto social dedicarse a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ' y que ha iniciado actividades con fecha ',
           {
             text: datosLocales.fecha_inicio,
             style: 'datos_locales',
@@ -118,7 +128,12 @@ export function contratoObraDeterminada(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' para el proyecto “___________”, ubicado en ',
+          ' para el proyecto ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', ubicado en ',
           {
             text: registroEmpleador.domicilio,
             style: 'datos_locales',
@@ -155,7 +170,12 @@ export function contratoObraDeterminada(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' toda vez que se requiere de sus servicios para el proyecto _______, ubicado en ',
+          ' toda vez que se requiere de sus servicios para el proyecto ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', ubicado en ',
           {
             text: registroEmpleador.domicilio,
             style: 'datos_locales',
@@ -209,7 +229,12 @@ export function contratoObraDeterminada(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' que ocupará EL TRABAJADOR para el proyecto “___________”, los servicios descritos del presente contrato serán prestados en ',
+          ' que ocupará EL TRABAJADOR para el proyecto “',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          '”, los servicios descritos del presente contrato serán prestados en ',
           {
             text: registroEmpleador.domicilio,
             style: 'datos_locales',
@@ -945,6 +970,10 @@ export function contratoObraDeterminada(
           ', en dos ejemplares de un mismo tenor para constancia de las partes. \n\n',
         ],
         style: 'parrafo',
+      },
+      {
+        text: [''],
+        pageBreak: 'after',
       },
       {
         text: ['\n\n\n\n\n ANEXO 1-A   \n\n'],

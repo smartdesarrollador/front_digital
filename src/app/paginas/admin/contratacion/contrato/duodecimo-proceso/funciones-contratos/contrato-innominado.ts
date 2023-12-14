@@ -243,7 +243,17 @@ export function contratoInnominado(
       datosLocales.jornada_maxima
         ? {
             text: [
-              '4.2 El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              '4.2 El horario de trabajo podrá ser distribuido de la siguiente manera: de ',
+              {
+                text: datosLocales.dia_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.dia_final,
+                style: 'datos_locales',
+              },
+              ' de ',
               {
                 text: datosLocales.horario_inicio,
                 style: 'datos_locales',

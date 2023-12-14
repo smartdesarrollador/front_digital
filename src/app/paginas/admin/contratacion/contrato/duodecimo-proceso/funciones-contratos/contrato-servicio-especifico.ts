@@ -42,7 +42,7 @@ export function contratoServicioEspecifico(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -112,7 +112,17 @@ export function contratoServicioEspecifico(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal con el objeto de _________, por lo cual requiere contratar a una persona para que brinde el servicio específico de ',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', la cual requiere cubrir las necesidades de recursos humanos de manera temporal con el objeto de ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', por lo cual requiere contratar a una persona para que brinde el servicio específico de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
@@ -143,7 +153,12 @@ export function contratoServicioEspecifico(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ', toda vez que por su experiencia en el rubro se requiere de sus servicios con el objeto de _________. \n\n',
+          ', toda vez que por su experiencia en el rubro se requiere de sus servicios con el objeto de ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -348,7 +363,17 @@ export function contratoServicioEspecifico(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: de ',
+              {
+                text: datosLocales.dia_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.dia_final,
+                style: 'datos_locales',
+              },
+              ' de ',
               {
                 text: datosLocales.horario_inicio,
                 style: 'datos_locales',

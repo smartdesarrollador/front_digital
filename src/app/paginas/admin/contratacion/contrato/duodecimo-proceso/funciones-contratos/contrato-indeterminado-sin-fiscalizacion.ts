@@ -42,7 +42,7 @@ export function contratoIndeterminadoSinFiscalizacion(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -244,7 +244,17 @@ export function contratoIndeterminadoSinFiscalizacion(
                 text: datosLocales.oferta_laboral,
                 style: 'datos_locales',
               },
-              ' es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con   _________, teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como ___________.    \n\n',
+              ' es considerado como personal de confianza debido al puesto que desempeña al laborar en contacto personal y directo con ',
+              {
+                text: registroEmpleador.cargo_representante_legal,
+                style: 'datos_locales',
+              },
+              ', teniendo acceso a información confidencial de EL EMPLEADOR y la información contable, en general a información de carácter reservado tales como ',
+              {
+                text: datosLocales.pregunta_1,
+                style: 'datos_locales',
+              },
+              '.    \n\n',
             ],
             style: 'parrafo',
           }

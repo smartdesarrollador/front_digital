@@ -378,7 +378,17 @@ export function contratoNecesidadMercado(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: de ',
+              {
+                text: datosLocales.dia_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.dia_final,
+                style: 'datos_locales',
+              },
+              ' de ',
               {
                 text: datosLocales.horario_inicio,
                 style: 'datos_locales',

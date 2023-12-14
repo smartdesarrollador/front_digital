@@ -42,7 +42,7 @@ export function contratoReconversionEmpresarial(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -117,12 +117,27 @@ export function contratoReconversionEmpresarial(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ',
+          {
+            text: registroEmpleador.activiadad_economica,
+            style: 'datos_locales',
+          },
+          ', la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' toda vez que ________ debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
+          ' toda vez que ________ debido a ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -149,7 +164,27 @@ export function contratoReconversionEmpresarial(
       },
       {
         text: [
-          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ______ toda vez que ________ debido a ______, lo cual queda evidenciado en documentos como: ______.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de reconversión empresarial a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ________ y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 59 del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' toda vez que ________ debido a ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de reconversión empresarial a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 59 del Texto Único Ordenado del Decreto Legislativo 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N.º 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -343,7 +378,17 @@ export function contratoReconversionEmpresarial(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de ',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: de ',
+              {
+                text: datosLocales.dia_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.dia_final,
+                style: 'datos_locales',
+              },
+              ' de ',
               {
                 text: datosLocales.horario_inicio,
                 style: 'datos_locales',

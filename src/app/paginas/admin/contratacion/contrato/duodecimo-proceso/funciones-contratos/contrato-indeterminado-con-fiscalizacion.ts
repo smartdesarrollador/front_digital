@@ -42,7 +42,7 @@ export function contratoIndeterminadoConFiscalizacion(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -111,7 +111,12 @@ export function contratoIndeterminadoConFiscalizacion(
             text: registroEmpleador.oficina_registral,
             style: 'datos_locales',
           },
-          ' , que se dedica a ________.\n\n',
+          ' , que se dedica a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },

@@ -42,7 +42,7 @@ export function contratoPorTemporada(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -96,19 +96,64 @@ export function contratoPorTemporada(
       },
       {
         text: [
-          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº _____ Asiento _________ del Registro de Personas Jurídicas de la Oficina Registral de _______.\n\n',
+          '1.1.	EL EMPLEADOR es una persona jurídica constituida bajo las leyes de la República de Perú que corre inscrita en la Partida Electrónica Nº ',
+          {
+            text: registroEmpleador.numero_partida_registral,
+            style: 'datos_locales',
+          },
+          ' Asiento ',
+          {
+            text: registroEmpleador.numero_asiento,
+            style: 'datos_locales',
+          },
+          ' del Registro de Personas Jurídicas de la Oficina Registral de ',
+          {
+            text: registroEmpleador.oficina_registral,
+            style: 'datos_locales',
+          },
+          '.\n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ______ con el objeto de incrementar la producción de_____ durante la temporada del_______, lo cual queda evidenciado en documentos como: ______. \n\n',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' con el objeto de incrementar la producción de ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ' durante la temporada del ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ________, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
+          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
@@ -129,7 +174,32 @@ export function contratoPorTemporada(
       },
       {
         text: [
-          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que  desempeñe el cargo de ______ con el objeto de incrementar la producción de_____ durante la temporada del_______, lo cual queda evidenciado en documentos como: ______. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Contrato de Temporada” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ________ y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 67 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
+          'Siendo que EL EMPLEADOR requiere contratar de manera temporal a una persona para que  desempeñe el cargo de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' con el objeto de incrementar la producción de ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ' durante la temporada del ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Contrato de Temporada” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ' y lo haga de manera personal, bajo subordinación de conformidad con lo establecido por los artículos 9 y 67 del Texto Único Ordenado del Decreto Legislativo N° 728 – Ley de Productividad y Competitividad Laboral aprobado por el Decreto Supremo N° 003-97-TR y su Reglamento, y a cambio de la remuneración convenida en la cláusula ',
           num_valores[10],
           '. \n\n',
         ],
@@ -323,7 +393,27 @@ export function contratoPorTemporada(
       datosLocales.jornada_maxima
         ? {
             text: [
-              'El horario de trabajo podrá ser distribuido de la siguiente manera: _______ de _____am a _____ pm, incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
+              'El horario de trabajo podrá ser distribuido de la siguiente manera: de ',
+              {
+                text: datosLocales.dia_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.dia_final,
+                style: 'datos_locales',
+              },
+              ' de ',
+              {
+                text: datosLocales.horario_inicio,
+                style: 'datos_locales',
+              },
+              ' a ',
+              {
+                text: datosLocales.horario_final,
+                style: 'datos_locales',
+              },
+              ', incluido los 60 minutos de refrigerio (los cuales no forman parte de la jornada ni del horario de trabajo); pudiendo ser modificado ajustándolo a la jornada máxima legal permitida, sin que dichas modificaciones impliquen en EL TRABAJADOR menoscabo de su categoría y/o remuneración.  \n\n',
             ],
             style: 'parrafo',
           }

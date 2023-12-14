@@ -42,7 +42,7 @@ export function contratoInnominado(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -107,12 +107,27 @@ export function contratoInnominado(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR, quien tiene por objeto social _______, requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
+          '1.2.	EL EMPLEADOR, quien tiene por objeto social ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', requiere contratar de manera temporal los servicios de un profesional para desempeñar el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ', toda vez que _________ lo cual queda evidenciado en documentos como: ______. \n\n',
+          ', toda vez que ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ' lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },

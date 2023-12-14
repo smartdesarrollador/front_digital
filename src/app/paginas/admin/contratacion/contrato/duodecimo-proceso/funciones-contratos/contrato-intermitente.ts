@@ -42,7 +42,7 @@ export function contratoIntermitente(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -122,7 +122,7 @@ export function contratoIntermitente(
         text: [
           '1.2.	EL EMPLEADOR se dedica a las actividades de ',
           {
-            text: registroEmpleador.cargo_representante_legal,
+            text: registroEmpleador.actividad_economica,
             style: 'datos_locales',
           },
           ' motivo por el que requiere contratar a un ',
@@ -156,13 +156,28 @@ export function contratoIntermitente(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ', a cambio de la retribución pactada en la Cláusula Séptima, para cubrir las necesidades de las actividades de EL EMPLEADOR que por su naturaleza y particularidades, son discontinuas, las cuales se relacionan con _________. \n\n',
+          ', a cambio de la retribución pactada en la Cláusula Séptima, para cubrir las necesidades de las actividades de EL EMPLEADOR que por su naturaleza y particularidades, son discontinuas, las cuales se relacionan con ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '2.2 Las Partes declaran conocer que las necesidades de trabajo de EL EMPLEADOR, al desarrollar una actividad de _________, son discontinuas debido a _____, por lo que estos factores determinan que EL TRABAJADOR preste servicios de modo intermitente. \n\n',
+          '2.2 Las Partes declaran conocer que las necesidades de trabajo de EL EMPLEADOR, al desarrollar una actividad de ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', son discontinuas debido a ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', por lo que estos factores determinan que EL TRABAJADOR preste servicios de modo intermitente. \n\n',
         ],
         style: 'parrafo',
       },
@@ -187,13 +202,28 @@ export function contratoIntermitente(
       },
       {
         text: [
-          '3.2	LAS PARTES declaran que la labor intermitente del CONTRATO se reanudará si y solo si se verifica una necesidad de personal para atender las actividades de EL EMPLEADOR con posición vacante en las secciones correspondientes en _________, para satisfacer _______ que dan lugar a la presente contratación. \n\n',
+          '3.2	LAS PARTES declaran que la labor intermitente del CONTRATO se reanudará si y solo si se verifica una necesidad de personal para atender las actividades de EL EMPLEADOR con posición vacante en las secciones correspondientes en ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', para satisfacer ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ' que dan lugar a la presente contratación. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '3.3	De conformidad con lo dispuesto por el Decreto Supremo No 003-97-TR, las circunstancias o condiciones que deben observarse para que se reanude la labor intermitente vienen dadas por la necesidad de ________________; y la verificación de puestos vacantes para atender tales actividades, con relación a los requerimientos de producción.\n\n',
+          '3.3	De conformidad con lo dispuesto por el Decreto Supremo No 003-97-TR, las circunstancias o condiciones que deben observarse para que se reanude la labor intermitente vienen dadas por la necesidad de ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          '; y la verificación de puestos vacantes para atender tales actividades, con relación a los requerimientos de producción.\n\n',
         ],
         style: 'parrafo',
       },

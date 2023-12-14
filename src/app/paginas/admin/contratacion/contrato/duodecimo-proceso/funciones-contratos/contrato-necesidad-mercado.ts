@@ -42,7 +42,7 @@ export function contratoNecesidadMercado(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -117,12 +117,27 @@ export function contratoNecesidadMercado(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', la cual requiere cubrir las necesidades de recursos humanos de manera temporal, por lo cual requiere contratar a una persona para que desempeñe el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' toda vez que se ha dado un incremento en la producción originados por la variación de la demanda en el mercado debido a ______, lo cual queda evidenciado en documentos como: ______. \n\n',
+          ' toda vez que se ha dado un incremento en la producción originados por la variación de la demanda en el mercado debido a ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -154,7 +169,17 @@ export function contratoNecesidadMercado(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' toda vez que se ha dado un incremento en la producción originados por la variación de la demanda en el mercado debido a ______, lo cual queda evidenciado en documentos como: ______. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de necesidad de mercado a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          ' toda vez que se ha dado un incremento en la producción originados por la variación de la demanda en el mercado debido a ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de necesidad de mercado a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',

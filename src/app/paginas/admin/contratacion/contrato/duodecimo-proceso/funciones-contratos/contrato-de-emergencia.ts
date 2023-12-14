@@ -43,7 +43,7 @@ export function contratoDeEmergencia(
           },
           ' identificado con DNI Nº ',
           {
-            text: registroEmpleador.numero_partida_poderes,
+            text: registroEmpleador.dni_representante_legal,
             style: 'datos_locales',
           },
           ' en calidad de ',
@@ -112,18 +112,38 @@ export function contratoDeEmergencia(
       },
       {
         text: [
-          '1.2.	EL EMPLEADOR es una empresa dedicada a ______, la cual requiere contratar a una persona para que desempeñe el cargo de ',
+          '1.2.	EL EMPLEADOR es una empresa dedicada a ',
+          {
+            text: registroEmpleador.actividad_economica,
+            style: 'datos_locales',
+          },
+          ', la cual requiere contratar a una persona para que desempeñe el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' para cubrir las necesidades originadas por _____, situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ______. \n\n',
+          ' para cubrir las necesidades originadas por ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ________, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
+          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
@@ -149,7 +169,17 @@ export function contratoDeEmergencia(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ' para cubrir las necesidades originadas por _____, situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ______.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Emergencia” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
+          ' para cubrir las necesidades originadas por ',
+          {
+            text: datosLocales.motivo_contrato,
+            style: 'datos_locales',
+          },
+          ', situación que constituye un caso fortuito o fuerza mayor, lo cual queda evidenciado en documentos como: ',
+          {
+            text: datosLocales.evidencia_documentaria,
+            style: 'datos_locales',
+          },
+          '.Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Emergencia” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',

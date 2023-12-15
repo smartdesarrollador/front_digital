@@ -47,8 +47,14 @@ export class SextoProcesoComponent implements OnInit {
       this.cl.setItem('contratoLocal', contratoLocaldatos);
 
       /* localStorage.setItem('selectedValue', this.selectedValue); */
-
-      this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+      if (
+        this.datosLocales.modelo_contrato !=
+        'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD'
+      ) {
+        this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+      } else {
+        this.router.navigate(['admin/contratacion/contrato/proceso_7']);
+      }
     } else {
       this.alerta();
     }

@@ -128,7 +128,12 @@ export function contratoIncrementoActividad(
       },
       {
         text: [
-          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ________, queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
+          '1.3.	En atención a lo indicado en el punto anterior, siendo que EL TRABAJADOR declara ser ',
+          {
+            text: datosLocales.oferta_laboral,
+            style: 'datos_locales',
+          },
+          ', queda sustentada la necesidad de contratar a EL TRABAJADOR en el cargo de ',
           {
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',

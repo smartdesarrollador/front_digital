@@ -24,6 +24,10 @@ import { DecimoProcesoComponent } from './contrato/decimo-proceso/decimo-proceso
 import { UndecimoProcesoComponent } from './contrato/undecimo-proceso/undecimo-proceso.component';
 import { DuodecimoProcesoComponent } from './contrato/duodecimo-proceso/duodecimo-proceso.component';
 import { SextoProcesoBComponent } from './contrato/sexto-proceso-b/sexto-proceso-b.component';
+import { SextoProcesoCComponent } from './contrato/sexto-proceso-c/sexto-proceso-c.component';
+import { SextoProcesoDComponent } from './contrato/sexto-proceso-d/sexto-proceso-d.component';
+import { SextoProcesoEComponent } from './contrato/sexto-proceso-e/sexto-proceso-e.component';
+import { SextoProcesoFComponent } from './contrato/sexto-proceso-f/sexto-proceso-f.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +52,10 @@ import { SextoProcesoBComponent } from './contrato/sexto-proceso-b/sexto-proceso
     UndecimoProcesoComponent,
     DuodecimoProcesoComponent,
     SextoProcesoBComponent,
+    SextoProcesoCComponent,
+    SextoProcesoDComponent,
+    SextoProcesoEComponent,
+    SextoProcesoFComponent,
   ],
   imports: [
     CommonModule,

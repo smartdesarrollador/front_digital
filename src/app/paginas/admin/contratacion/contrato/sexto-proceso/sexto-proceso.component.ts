@@ -46,14 +46,53 @@ export class SextoProcesoComponent implements OnInit {
 
       this.cl.setItem('contratoLocal', contratoLocaldatos);
 
-      /* localStorage.setItem('selectedValue', this.selectedValue); */
-      if (
-        this.datosLocales.modelo_contrato !=
-        'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD'
-      ) {
-        this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
-      } else {
-        this.router.navigate(['admin/contratacion/contrato/proceso_7']);
+      switch (this.datosLocales.modelo_contrato) {
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD':
+          this.router.navigate(['admin/contratacion/contrato/proceso_7']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE SUPLENCIA':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_c']);
+          break;
+        case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE EMERGENCIA':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR OBRA DETERMINADA':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_d']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR SERVICIO ESPECÍFICO':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_e']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD INTERMITENTE':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD DE CONTRATO DE TEMPORADA':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_f']);
+          break;
+        case 'CONTRATO DE TRABAJO INNOMINADO A PLAZO FIJO':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN FISCALIZACION':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        case 'MODELO DE CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN CONFIANZA Y CON FISCALIZACION':
+          this.router.navigate(['admin/contratacion/contrato/proceso_6_b']);
+          break;
+        default:
       }
     } else {
       this.alerta();

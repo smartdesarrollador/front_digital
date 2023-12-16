@@ -36,13 +36,6 @@ export class SextoProcesoBComponent implements OnInit {
 
   preguntas_contrato(modelo_contrato: string): void {
     switch (modelo_contrato) {
-      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD':
-        this.pregunta_motivo_contrato =
-          'Cual es el motivo para el inicio de actividad?';
-        this.pregunta_evidencia_documentaria =
-          'Evidencia documentaria para el inicio de actividad.';
-        this.titulo_motivo = 'Motivo de Inicio de Actividad';
-        break;
       case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD':
         this.pregunta_motivo_contrato =
           'Cual es el motivo para el incremento de actividades?';
@@ -71,13 +64,6 @@ export class SextoProcesoBComponent implements OnInit {
           'Evidencia documentaria por modalidad ocasional.';
         this.titulo_motivo = 'Motivo por modalidad ocasional';
         break;
-      case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE SUPLENCIA':
-        this.pregunta_motivo_contrato =
-          'Cual es el motivo por modalidad de suplencia?';
-        this.pregunta_evidencia_documentaria =
-          'Evidencia documentaria por modalidad de suplencia.';
-        this.titulo_motivo = 'Motivo por modalidad de suplencia';
-        break;
       case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE EMERGENCIA':
         this.pregunta_motivo_contrato =
           'Cual es el motivo por modalidad de emergencia?';
@@ -85,33 +71,12 @@ export class SextoProcesoBComponent implements OnInit {
           'Evidencia documentaria por modalidad de emergencia.';
         this.titulo_motivo = 'Motivo por modalidad de emergencia';
         break;
-      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR OBRA DETERMINADA':
-        this.pregunta_motivo_contrato =
-          'Cual es el motivo por obra determinada?';
-        this.pregunta_evidencia_documentaria =
-          'Evidencia documentaria por obra determinada.';
-        this.titulo_motivo = 'Motivo por obra determinada';
-        break;
-      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR SERVICIO ESPECÍFICO':
-        this.pregunta_motivo_contrato =
-          'Cual es el motivo por servicio específico?';
-        this.pregunta_evidencia_documentaria =
-          'Evidencia documentaria por servicio específico.';
-        this.titulo_motivo = 'Motivo por servicio específico';
-        break;
       case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD INTERMITENTE':
         this.pregunta_motivo_contrato =
           'Cual es el motivo para modalidad intermitente?';
         this.pregunta_evidencia_documentaria =
           'Evidencia documentaria para modalidad intermitente.';
         this.titulo_motivo = 'Motivo para modalidad intermitente';
-        break;
-      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD DE CONTRATO DE TEMPORADA':
-        this.pregunta_motivo_contrato =
-          'Cual es el motivo para contrato de temporada?';
-        this.pregunta_evidencia_documentaria =
-          'Evidencia documentaria para contrato de temporada.';
-        this.titulo_motivo = 'Motivo para contrato de temporada';
         break;
       case 'CONTRATO DE TRABAJO INNOMINADO A PLAZO FIJO':
         this.pregunta_motivo_contrato =

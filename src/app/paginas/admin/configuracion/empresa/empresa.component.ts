@@ -34,7 +34,7 @@ export class EmpresaComponent {
       empleador: ['', Validators.required],
       ruc: ['', Validators.required],
       domicilio: ['', Validators.required],
-      id_actividad_economica: ['', Validators.required],
+      /* id_actividad_economica: ['', Validators.required], */
       representante_legal: ['', Validators.required],
       dni_representante_legal: ['', Validators.required],
       cargo_representante_legal: ['', Validators.required],

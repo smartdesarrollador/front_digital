@@ -35,6 +35,16 @@ export class EmpleadorService {
     return this.http.post(this.url, Empleador, { headers: this.reqHeader });
   }
 
+  updateEmpleador(id: number, empleador: Empleador) {
+    return this.http.put(this.url + '/' + id, empleador, {
+      headers: this.reqHeader,
+    });
+  }
+
+  deleteCategory(id: number) {
+    return this.http.delete(this.url + '/' + id);
+  }
+
   getUltimoEmpleador(): Observable<Empleador> {
     return this.http.get(this.urlUltimoEmpleador);
   }

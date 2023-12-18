@@ -2,8 +2,16 @@
   <div class="bg-white mr-14 mt-20 gap-y-14 p-10 rounded-[35px] shadow-lg">
     <h2 class="titulo-naranja">Empresa</h2>
     <hr class="bg-naranja h-1" />
+
+    <button class="boton-verde" (click)="habilitarEdicion()">Editar</button>
+
     <div class="mx-10">
-      <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="mt-10">
+      <form
+        [formGroup]="myForm"
+        (ngSubmit)="onSubmit()"
+        class="mt-10"
+        [hidden]="!modoEdicion"
+      >
         <div class="mb-6">
           <label
             for="empleador"
@@ -166,8 +174,7 @@
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
             formControlName="id_actividad_economica"
           >
-            <option selected>Seleccionar</option>
-            <option value="1">Tecnología de la Información</option>
+            <option selected value="1">Tecnología de la Información</option>
             <option value="2">Servicios de Consultoría y Asesoría</option>
             <option value="3">Medios de Comunicación</option>
             <option value="4">Servicios de salud y bienestar</option>
@@ -177,6 +184,43 @@
 
         <button class="boton-verde">Guardar</button>
       </form>
+    </div>
+
+    <div class="relative overflow-x-auto" [hidden]="modoEdicion">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500"
+        *ngIf="empleador"
+      >
+        <tbody>
+          <tr class="bg-white border-b">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+            >
+              EMPRESA:
+            </th>
+            <td class="px-6 py-4">{{ empleador.empleador }}</td>
+          </tr>
+          <tr class="bg-white border-b">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+            >
+              RUC
+            </th>
+            <td class="px-6 py-4">{{ empleador.ruc }}</td>
+          </tr>
+          <tr class="bg-white">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+            >
+              DOMICILIO:
+            </th>
+            <td class="px-6 py-4">{{ empleador.domicilio }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>

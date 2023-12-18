@@ -20,6 +20,9 @@ import { ToastrService } from 'ngx-toastr';
 export class EmpresaComponent {
   myForm: FormGroup;
   datosEmpleador: any = {};
+  modoEdicion = false;
+  empleadorIdEditar: number | undefined;
+  empleador: Empleador | undefined;
 
   constructor(
     public empleadorService: EmpleadorService,
@@ -43,8 +46,39 @@ export class EmpresaComponent {
     });
   }
 
+  habilitarEdicion(id: number = 8) {
+    this.modoEdicion = true;
+    this.empleadorIdEditar = id;
+    this.obtenerDatosEmpleadoParaEdicion(id);
+  }
+
+  obtenerDatosEmpleadoParaEdicion(id: number) {
+    this.empleadorService.getEmpleadorById(id).subscribe((empleador) => {
+      this.myForm.patchValue({
+        empleador: empleador.empleador,
+        ruc: empleador.ruc,
+        domicilio: empleador.domicilio,
+        representante_legal: empleador.representante_legal,
+        dni_representante_legal: empleador.dni_representante_legal,
+        cargo_representante_legal: empleador.cargo_representante_legal,
+        numero_partida_poderes: empleador.numero_partida_poderes,
+        numero_asiento: empleador.numero_asiento,
+        oficina_registral: empleador.oficina_registral,
+        numero_partida_registral: empleador.numero_partida_registral,
+        // Otras propiedades si existen
+      });
+    });
+  }
+
   ngOnInit() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.EmpleadorById();
+  }
+
+  EmpleadorById() {
+    return this.empleadorService.getEmpleadorById(8).subscribe((data: {}) => {
+      this.empleador = data;
+    });
   }
 
   onSubmit() {
@@ -52,12 +86,22 @@ export class EmpresaComponent {
     if (this.myForm.valid) {
       this.datosEmpleador = this.myForm.value;
 
-      this.empleadorService
-        .createEmpleador(this.datosEmpleador)
-        .subscribe((response) => {
-          /* this.router.navigate(['admin/contratacion/contrato/proceso_1']); */
-          this.Toastr.success('Datos ingresados correctamente');
-        });
+      if (this.modoEdicion && this.empleadorIdEditar) {
+        this.empleadorService
+          .updateEmpleador(this.empleadorIdEditar, this.datosEmpleador)
+          .subscribe((response) => {
+            this.Toastr.success('Datos actualizados correctamente');
+            this.modoEdicion = false; // Deshabilitar el modo de edición después de la actualización
+            window.location.reload();
+          });
+      } else {
+        this.empleadorService
+          .createEmpleador(this.datosEmpleador)
+          .subscribe((response) => {
+            /* this.router.navigate(['admin/contratacion/contrato/proceso_1']); */
+            this.Toastr.success('Datos ingresados correctamente');
+          });
+      }
     } else {
       this.Toastr.error('Por favor, completa todos los campos correctamente.');
     }

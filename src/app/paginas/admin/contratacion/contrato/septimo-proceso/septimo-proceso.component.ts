@@ -20,6 +20,7 @@ export class SeptimoProcesoComponent {
   remuneracion: string = '';
   duracion_contrato: number = 1;
   fecha_periodo: string = '';
+  url_atras: string = '';
 
   //declarar dia mes y año de fechaActual
   dia = this.fechaActual.getDate();
@@ -42,6 +43,62 @@ export class SeptimoProcesoComponent {
 
   ngOnInit() {
     this.asignarFechaRemuneracion();
+
+    const contratoLocal = this.cl.getItem('contratoLocal');
+    this.datosLocales = contratoLocal;
+
+    this.urls_atras(this.datosLocales.modelo_contrato);
+  }
+
+  urls_atras(modelo_contrato: string): void {
+    switch (this.datosLocales.modelo_contrato) {
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INICIO DE ACTIVIDAD':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR INCREMENTO DE ACTIVIDAD':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR NECESIDAD DE MERCADO':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR RECONVERSION EMPRESARIAL':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE OCASIONAL':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE SUPLENCIA':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_c';
+        break;
+      case 'CONTRATO DE TRABAJO DE NATURALEZA ACCIDENTAL BAJO LA MODALIDAD DE EMERGENCIA':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR OBRA DETERMINADA':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_d';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD POR SERVICIO ESPECÍFICO':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_e';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD INTERMITENTE':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO SUJETO A MODALIDAD DE CONTRATO DE TEMPORADA':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_f';
+        break;
+      case 'CONTRATO DE TRABAJO INNOMINADO A PLAZO FIJO':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN FISCALIZACION':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      case 'MODELO DE CONTRATO DE TRABAJO A PLAZO INDETERMINADO - SIN CONFIANZA Y CON FISCALIZACION':
+        this.url_atras = '/admin/contratacion/contrato/proceso_6_b';
+        break;
+      default:
+    }
   }
 
   procesarFecha(): void {

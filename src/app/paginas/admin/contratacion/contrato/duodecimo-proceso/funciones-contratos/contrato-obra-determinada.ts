@@ -130,12 +130,12 @@ export function contratoObraDeterminada(
           },
           ' para el proyecto ',
           {
-            text: registroEmpleador.actividad_economica,
+            text: datosLocales.proyecto_obra_determinada,
             style: 'datos_locales',
           },
           ', ubicado en ',
           {
-            text: registroEmpleador.domicilio,
+            text: datosLocales.ubicacion_obra_determinada,
             style: 'datos_locales',
           },
           ', que EL EMPLEADOR se encuentra ejecutando directamente o para terceros. \n\n',
@@ -172,12 +172,12 @@ export function contratoObraDeterminada(
           },
           ' toda vez que se requiere de sus servicios para el proyecto ',
           {
-            text: registroEmpleador.actividad_economica,
+            text: datosLocales.proyecto_obra_determinada,
             style: 'datos_locales',
           },
           ', ubicado en ',
           {
-            text: registroEmpleador.domicilio,
+            text: datosLocales.ubicacion_obra_determinada,
             style: 'datos_locales',
           },
           '. En base a dicho proyecto, actualmente se requiere contratar personal por un plazo determinado a fin de cumplir con las obligaciones y condiciones de servicio que fueron pactadas, en tanto se desarrolle el citado servicio para el proyecto bajo comentario. \n\n',
@@ -231,12 +231,12 @@ export function contratoObraDeterminada(
           },
           ' que ocupará EL TRABAJADOR para el proyecto “',
           {
-            text: registroEmpleador.actividad_economica,
+            text: datosLocales.proyecto_obra_determinada,
             style: 'datos_locales',
           },
           '”, los servicios descritos del presente contrato serán prestados en ',
           {
-            text: registroEmpleador.domicilio,
+            text: datosLocales.ubicacion_obra_determinada,
             style: 'datos_locales',
           },
           '. \n\n',

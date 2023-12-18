@@ -135,7 +135,9 @@ export function contratoPorSuplencia(
               registroTrabajador.apellido_materno,
             style: 'datos_locales',
           },
-          ' (en adelante, “LA TRABAJADORA SUPLIDA”), identificada con DNI N° ',
+          datosLocales.genero_suplencia == 'femenino'
+            ? ' (en adelante, “LA TRABAJADORA SUPLIDA”), identificada con DNI N° '
+            : ' (en adelante, “LA TRABAJADORA SUPLIDO”), identificada con DNI N° ',
           {
             text: registroTrabajador.numero_documento,
             style: 'datos_locales',
@@ -149,17 +151,29 @@ export function contratoPorSuplencia(
         ],
         style: 'parrafo',
       },
-      {
-        text: [
-          'Siendo que con fecha ',
-          {
-            text: datosLocales.fecha_inicio,
-            style: 'datos_locales',
+      datosLocales.genero_suplencia == 'femenino'
+        ? {
+            text: [
+              'Siendo que con fecha ',
+              {
+                text: datosLocales.fecha_suplencia,
+                style: 'datos_locales',
+              },
+              ' , LA TRABAJADORA SUPLIDA comunicó a EL EMPLEADOR que se encuentra en estado de gestación y que, a consecuencia de ello, hará ejercicio de su derecho a la licencia por maternidad, según lo regulado en la Ley N° 26644 y su reglamento, EL EMPLEADOR requiere de la contratación de un trabajador para cubrir la ausencia de LA TRABAJADORA SUPLIDA durante el periodo de tiempo que se contempla en la cláusula novena del presente contrato. \n\n',
+            ],
+            style: 'parrafo',
+          }
+        : {
+            text: [
+              'Siendo que con fecha ',
+              {
+                text: datosLocales.fecha_suplencia,
+                style: 'datos_locales',
+              },
+              ' , LA TRABAJADORA SUPLIDO comunicó a EL EMPLEADOR que se encuentra en estado de gestación y que, a consecuencia de ello, hará ejercicio de su derecho a la licencia por maternidad, según lo regulado en la Ley N° 26644 y su reglamento, EL EMPLEADOR requiere de la contratación de un trabajador para cubrir la ausencia de LA TRABAJADORA SUPLIDO durante el periodo de tiempo que se contempla en la cláusula novena del presente contrato. \n\n',
+            ],
+            style: 'parrafo',
           },
-          ' , LA TRABAJADORA SUPLIDA comunicó a EL EMPLEADOR que se encuentra en estado de gestación y que, a consecuencia de ello, hará ejercicio de su derecho a la licencia por maternidad, según lo regulado en la Ley N° 26644 y su reglamento, EL EMPLEADOR requiere de la contratación de un trabajador para cubrir la ausencia de LA TRABAJADORA SUPLIDA durante el periodo de tiempo que se contempla en la cláusula novena del presente contrato. \n\n',
-        ],
-        style: 'parrafo',
-      },
       {
         text: ['CLÁUSULA ', num_valores[1], '. - OBJETO DEL CONTRATO\n\n'],
         style: 'subtitulo',
@@ -171,7 +185,9 @@ export function contratoPorSuplencia(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ', en razón de los hechos descritos en la cláusula primera; teniendo como principal motivo de contratación el reemplazo temporal de LA TRABAJADORA SUPLIDA  por la licencia por maternidad que gozará, a menos que se amplie su licencia por cualquier otro motivo y a solicitud de LA TRABAJADORA SUPLIDA. \n\n',
+          datosLocales.genero_suplencia == 'femenino'
+            ? ', en razón de los hechos descritos en la cláusula primera; teniendo como principal motivo de contratación el reemplazo temporal de LA TRABAJADORA SUPLIDA  por la licencia por maternidad que gozará, a menos que se amplie su licencia por cualquier otro motivo y a solicitud de LA TRABAJADORA SUPLIDA. \n\n'
+            : ', en razón de los hechos descritos en la cláusula primera; teniendo como principal motivo de contratación el reemplazo temporal de LA TRABAJADORA SUPLIDO  por la licencia por maternidad que gozará, a menos que se amplie su licencia por cualquier otro motivo y a solicitud de LA TRABAJADORA SUPLIDO. \n\n',
         ],
         style: 'parrafo',
       },
@@ -481,7 +497,9 @@ export function contratoPorSuplencia(
             text: datosLocales.duracion_contrato,
             style: 'datos_locales',
           },
-          ' , tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera, mientras retorna a sus labores diarias LA TRABAJADORA SUPLIDA. Este plazo se iniciará el ',
+          datosLocales.genero_suplencia == 'femenino'
+            ? ' , tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera, mientras retorna a sus labores diarias LA TRABAJADORA SUPLIDA. Este plazo se iniciará el '
+            : ' , tiempo estimado para cubrir las necesidades a que se hace referencia en la cláusula primera, mientras retorna a sus labores diarias LA TRABAJADORA SUPLIDO. Este plazo se iniciará el ',
           {
             text: formatoFechaInicio,
             style: 'datos_locales',
@@ -538,7 +556,9 @@ export function contratoPorSuplencia(
             text: datosLocales.oferta_laboral,
             style: 'datos_locales',
           },
-          ', el presente contrato se extinguirá automáticamente, sin penalidades ni indemnizaciones cuando LA TRABAJADORA SUPLIDA retorne a su puesto original. Esta disposición opera como una condición resolutoria y se regula por lo establecido en el artículo 16 inciso c) del Decreto Supremo N° 003-97-TR, Ley de Productividad y Competitividad Laboral. Esta disposición se aplicará aun cuando no haya concluido el plazo del presente contrato o de cualquiera de sus prórrogas, de ser el caso. EL TRABAJADOR declara tener pleno conocimiento de la naturaleza del contrato de suplencia y de las implicancias de la presente cláusula. \n\n',
+          datosLocales.genero_suplencia == 'femenino'
+            ? ', el presente contrato se extinguirá automáticamente, sin penalidades ni indemnizaciones cuando LA TRABAJADORA SUPLIDA retorne a su puesto original. Esta disposición opera como una condición resolutoria y se regula por lo establecido en el artículo 16 inciso c) del Decreto Supremo N° 003-97-TR, Ley de Productividad y Competitividad Laboral. Esta disposición se aplicará aun cuando no haya concluido el plazo del presente contrato o de cualquiera de sus prórrogas, de ser el caso. EL TRABAJADOR declara tener pleno conocimiento de la naturaleza del contrato de suplencia y de las implicancias de la presente cláusula. \n\n'
+            : ', el presente contrato se extinguirá automáticamente, sin penalidades ni indemnizaciones cuando LA TRABAJADORA SUPLIDO retorne a su puesto original. Esta disposición opera como una condición resolutoria y se regula por lo establecido en el artículo 16 inciso c) del Decreto Supremo N° 003-97-TR, Ley de Productividad y Competitividad Laboral. Esta disposición se aplicará aun cuando no haya concluido el plazo del presente contrato o de cualquiera de sus prórrogas, de ser el caso. EL TRABAJADOR declara tener pleno conocimiento de la naturaleza del contrato de suplencia y de las implicancias de la presente cláusula. \n\n',
         ],
         style: 'parrafo',
       },

@@ -129,17 +129,17 @@ export function contratoPorTemporada(
           },
           ' con el objeto de incrementar la producción de ',
           {
-            text: registroEmpleador.actividad_economica,
+            text: datosLocales.objeto_contrato_temporada,
             style: 'datos_locales',
           },
           ' durante la temporada del ',
           {
-            text: datosLocales.motivo_contrato,
+            text: datosLocales.motivo_contrato_temporada,
             style: 'datos_locales',
           },
           ', lo cual queda evidenciado en documentos como: ',
           {
-            text: datosLocales.evidencia_documentaria,
+            text: datosLocales.evidencia_contrato_temporada,
             style: 'datos_locales',
           },
           '. \n\n',
@@ -181,17 +181,17 @@ export function contratoPorTemporada(
           },
           ' con el objeto de incrementar la producción de ',
           {
-            text: registroEmpleador.actividad_economica,
+            text: datosLocales.objeto_contrato_temporada,
             style: 'datos_locales',
           },
           ' durante la temporada del ',
           {
-            text: datosLocales.motivo_contrato,
+            text: datosLocales.motivo_contrato_temporada,
             style: 'datos_locales',
           },
           ', lo cual queda evidenciado en documentos como: ',
           {
-            text: datosLocales.evidencia_documentaria,
+            text: datosLocales.evidencia_contrato_temporada,
             style: 'datos_locales',
           },
           '. Por medio del presente contrato, y al amparo de la legislación laboral vigente, EL EMPLEADOR, contrata de forma temporal y bajo la modalidad de “Contrato de Temporada” a EL TRABAJADOR para que desempeñe sus funciones en el puesto de ',

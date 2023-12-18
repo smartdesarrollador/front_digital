@@ -119,15 +119,20 @@ export function contratoServicioEspecifico(
           },
           ', la cual requiere cubrir las necesidades de recursos humanos de manera temporal con el objeto de ',
           {
-            text: datosLocales.motivo_contrato,
+            text: datosLocales.objeto_servicio_especifico,
             style: 'datos_locales',
           },
           ', por lo cual requiere contratar a una persona para que brinde el servicio específico de ',
           {
-            text: datosLocales.oferta_laboral,
+            text: datosLocales.nombre_servicio_especifico,
             style: 'datos_locales',
           },
-          ' para _________. \n\n',
+          ' para ',
+          {
+            text: datosLocales.locacion_servicio_especifico,
+            style: 'datos_locales',
+          },
+          '. \n\n',
         ],
         style: 'parrafo',
       },
@@ -155,7 +160,7 @@ export function contratoServicioEspecifico(
           },
           ', toda vez que por su experiencia en el rubro se requiere de sus servicios con el objeto de ',
           {
-            text: datosLocales.motivo_contrato,
+            text: datosLocales.objeto_servicio_especifico,
             style: 'datos_locales',
           },
           '. \n\n',

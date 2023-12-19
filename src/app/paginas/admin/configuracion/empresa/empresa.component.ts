@@ -46,7 +46,7 @@ export class EmpresaComponent {
     });
   }
 
-  habilitarEdicion(id: number = 8) {
+  habilitarEdicion(id: number = 1) {
     this.modoEdicion = true;
     this.empleadorIdEditar = id;
     this.obtenerDatosEmpleadoParaEdicion(id);
@@ -76,7 +76,7 @@ export class EmpresaComponent {
   }
 
   EmpleadorById() {
-    return this.empleadorService.getEmpleadorById(8).subscribe((data: {}) => {
+    return this.empleadorService.getEmpleadorById(1).subscribe((data: {}) => {
       this.empleador = data;
     });
   }

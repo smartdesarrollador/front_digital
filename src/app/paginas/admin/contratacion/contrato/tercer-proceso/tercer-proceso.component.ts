@@ -5,9 +5,13 @@ import { Router } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import { myFunctions } from 'src/app/utils/myFunctions';
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-tercer-proceso',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './tercer-proceso.component.html',
   styleUrls: ['./tercer-proceso.component.css'],
 })

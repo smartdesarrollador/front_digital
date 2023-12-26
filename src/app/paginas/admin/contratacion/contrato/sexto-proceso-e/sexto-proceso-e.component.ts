@@ -5,9 +5,13 @@ import { Trabajador } from 'src/app/interface/trabajador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-sexto-proceso-e',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './sexto-proceso-e.component.html',
   styleUrls: ['./sexto-proceso-e.component.css'],
 })

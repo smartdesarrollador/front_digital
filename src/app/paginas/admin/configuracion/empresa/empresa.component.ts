@@ -6,14 +6,18 @@ import {
   FormControl,
   FormGroup,
   Validators,
+  ReactiveFormsModule,
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Empleador } from 'src/app/interface/empleador';
 import { EmpleadorService } from 'src/app/services/empleador.service';
 import { ToastrService } from 'ngx-toastr';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-empresa',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './empresa.component.html',
   styleUrls: ['./empresa.component.css'],
 })

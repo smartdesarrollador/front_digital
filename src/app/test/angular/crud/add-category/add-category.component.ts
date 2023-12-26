@@ -3,9 +3,14 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category } from '../../interfaces/category';
 import { CategoryService } from '../../services/category.service';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-add-category',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
   templateUrl: './add-category.component.html',
   styleUrls: ['./add-category.component.css'],
 })

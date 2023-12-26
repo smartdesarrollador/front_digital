@@ -32,9 +32,13 @@ import { contratoServicioEspecifico } from './funciones-contratos/contrato-servi
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 import { dateFunctions } from 'src/app/utils/dateFunctions';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-duodecimo-proceso',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './duodecimo-proceso.component.html',
   styleUrls: ['./duodecimo-proceso.component.css'],
 })

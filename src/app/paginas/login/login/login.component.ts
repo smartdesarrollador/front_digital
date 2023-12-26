@@ -4,13 +4,20 @@ import {
   FormGroup,
   Validators,
   FormControl,
+  FormsModule,
+  ReactiveFormsModule,
 } from '@angular/forms';
-import { ToastrService } from 'ngx-toastr';
+/* import { ToastrService } from 'ngx-toastr'; */
 import { DataService } from 'src/app/services/login/data.service';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  providers: [DataService /* , ToastrService */],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
@@ -22,7 +29,7 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private toastr: ToastrService,
+    /* private toastr: ToastrService, */
     private dataService: DataService,
     private router: Router
   ) {
@@ -55,23 +62,23 @@ export class LoginComponent {
         this.token = this.data.data.token;
         localStorage.setItem('token', this.token);
         this.router.navigate(['/admin/dashboard']);
-        this.toastr.success(
+        /*  this.toastr.success(
           JSON.stringify(this.data.message),
           JSON.stringify(this.data.code),
           {
             timeOut: 2000,
             progressBar: true,
           }
-        );
+        ); */
       } else if (this.data.status === 0) {
-        this.toastr.error(
+        /* this.toastr.error(
           JSON.stringify(this.data.message),
           JSON.stringify(this.data.code),
           {
             timeOut: 2000,
             progressBar: true,
           }
-        );
+        ); */
       }
     });
   }

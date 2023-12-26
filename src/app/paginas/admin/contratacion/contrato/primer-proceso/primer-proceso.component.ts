@@ -1,35 +1,49 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { TrabajadorService } from 'src/app/services/trabajador.service';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { Trabajador } from 'src/app/interface/trabajador';
-import { EmpleadorService } from 'src/app/services/empleador.service';
+
 import { Empleador } from 'src/app/interface/empleador';
 import { Router } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
 import { myFunctions } from 'src/app/utils/myFunctions';
-import { ToastrService } from 'ngx-toastr';
+/* import { ToastrService } from 'ngx-toastr'; */
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TrabajadorService } from 'src/app/services/trabajador.service';
+import { EmpleadorService } from 'src/app/services/empleador.service';
 
 @Component({
   selector: 'app-primer-proceso',
+  standalone: true,
+  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  providers: [
+    TrabajadorService,
+    EmpleadorService,
+    /* ToastrService, */
+    ContratoLocalStorageService,
+  ],
   templateUrl: './primer-proceso.component.html',
   styleUrls: ['./primer-proceso.component.css'],
 })
 export class PrimerProcesoComponent {
+  ts: TrabajadorService = inject(TrabajadorService);
+  es: EmpleadorService = inject(EmpleadorService);
+  /* ToastrSvc: ToastrService = inject(ToastrService); */
   listTrabajadores: any = [];
   ultimoIdEmpleador: any = [];
   selectedValue: string = '';
   valorSeleccionado: any;
   datosLocales: any = {};
-  Swal = require('sweetalert2');
+  /* Swal = require('sweetalert2'); */
   @ViewChild('form1', { static: true }) form1: any;
 
   constructor(
-    public ts: TrabajadorService,
-    public es: EmpleadorService,
+    /* public ts: TrabajadorService, */
+    /* public es: EmpleadorService, */
     private router: Router,
     private cl: ContratoLocalStorageService,
-    private myFunctions: myFunctions,
-    private ToastrSvc: ToastrService
+    private myFunctions: myFunctions /* private ToastrSvc: ToastrService */
   ) {}
 
   ngOnInit(): void {
@@ -50,7 +64,7 @@ export class PrimerProcesoComponent {
   }
 
   alerta_toastr() {
-    this.ToastrSvc.success('hola');
+    /* this.ToastrSvc.success('hola'); */
     /* this.alerta(); */
   }
 
@@ -87,10 +101,10 @@ export class PrimerProcesoComponent {
       const formValue = this.form1.form.value;
       console.log('Valores del formulario:', formValue);
     } else {
-      this.ToastrSvc.error(
+      /* this.ToastrSvc.error(
         'Se necesita seleccionar trabajador',
         'Campo Requerido'
-      );
+      ); */
       /* this.alerta(); */
     }
   }

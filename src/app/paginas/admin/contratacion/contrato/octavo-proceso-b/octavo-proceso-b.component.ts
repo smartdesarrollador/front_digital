@@ -5,9 +5,13 @@ import { Trabajador } from 'src/app/interface/trabajador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-octavo-proceso-b',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './octavo-proceso-b.component.html',
   styleUrls: ['./octavo-proceso-b.component.css'],
 })

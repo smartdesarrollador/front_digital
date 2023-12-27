@@ -26,7 +26,7 @@ import { OctavoProcesoAComponent } from './paginas/admin/contratacion/contrato/o
 import { NovenoProcesoComponent } from './paginas/admin/contratacion/contrato/noveno-proceso/noveno-proceso.component';
 import { DecimoProcesoComponent } from './paginas/admin/contratacion/contrato/decimo-proceso/decimo-proceso.component';
 import { UndecimoProcesoComponent } from './paginas/admin/contratacion/contrato/undecimo-proceso/undecimo-proceso.component';
-import { DuodecimoProcesoComponent } from './paginas/admin/contratacion/contrato/duodecimo-proceso/duodecimo-proceso.component copy';
+import { DuodecimoProcesoComponent } from './paginas/admin/contratacion/contrato/duodecimo-proceso/duodecimo-proceso.component';
 import { SeptimoProcesoComponent } from './paginas/admin/contratacion/contrato/septimo-proceso/septimo-proceso.component';
 
 export const routes: Routes = [
@@ -63,28 +63,27 @@ export const routes: Routes = [
             path: 'contrato',
             children: [
               { path: 'proceso_1', component: PrimerProcesoComponent },
-              { path: 'proceso_2', component:  SegundoProcesoComponent},
-              { path: 'proceso_3', component:  TercerProcesoComponent},
-              { path: 'proceso_4', component:  CuartoProcesoComponent},
-              { path: 'proceso_5_a', component:  QuintoProcesoComponent},
-              { path: 'proceso_5_b', component:  QuintoProcesoBComponent},
-              { path: 'proceso_5_c', component:  QuintoProcesoCComponent},
-              { path: 'proceso_5_d', component:  QuintoProcesoDComponent},
-              { path: 'proceso_6', component:  SextoProcesoComponent},
-              { path: 'proceso_6_b', component:  SextoProcesoBComponent},
-              { path: 'proceso_6_c', component:  SextoProcesoCComponent},
-              { path: 'proceso_6_d', component:  SextoProcesoDComponent},
-              { path: 'proceso_6_e', component:  SextoProcesoEComponent},
-              { path: 'proceso_6_f', component:  SextoProcesoFComponent},
-              { path: 'proceso_7', component:  SeptimoProcesoComponent},
-              { path: 'proceso_8', component:  OctavoProcesoComponent},
-              { path: 'proceso_8_a', component:  OctavoProcesoAComponent},
-              { path: 'proceso_8_b', component:  OctavoProcesoBComponent},
-              { path: 'proceso_9', component:  NovenoProcesoComponent},
-              { path: 'proceso_10', component:  DecimoProcesoComponent},
-              { path: 'proceso_11', component:  UndecimoProcesoComponent},
-              { path: 'proceso_12', component:  DuodecimoProcesoComponent},
-
+              { path: 'proceso_2', component: SegundoProcesoComponent },
+              { path: 'proceso_3', component: TercerProcesoComponent },
+              { path: 'proceso_4', component: CuartoProcesoComponent },
+              { path: 'proceso_5_a', component: QuintoProcesoComponent },
+              { path: 'proceso_5_b', component: QuintoProcesoBComponent },
+              { path: 'proceso_5_c', component: QuintoProcesoCComponent },
+              { path: 'proceso_5_d', component: QuintoProcesoDComponent },
+              { path: 'proceso_6', component: SextoProcesoComponent },
+              { path: 'proceso_6_b', component: SextoProcesoBComponent },
+              { path: 'proceso_6_c', component: SextoProcesoCComponent },
+              { path: 'proceso_6_d', component: SextoProcesoDComponent },
+              { path: 'proceso_6_e', component: SextoProcesoEComponent },
+              { path: 'proceso_6_f', component: SextoProcesoFComponent },
+              { path: 'proceso_7', component: SeptimoProcesoComponent },
+              { path: 'proceso_8', component: OctavoProcesoComponent },
+              { path: 'proceso_8_a', component: OctavoProcesoAComponent },
+              { path: 'proceso_8_b', component: OctavoProcesoBComponent },
+              { path: 'proceso_9', component: NovenoProcesoComponent },
+              { path: 'proceso_10', component: DecimoProcesoComponent },
+              { path: 'proceso_11', component: UndecimoProcesoComponent },
+              { path: 'proceso_12', component: DuodecimoProcesoComponent },
             ],
           },
         ],

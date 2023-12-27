@@ -7,17 +7,17 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Trabajador } from 'src/app/interface/trabajador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
-import { ToastrService } from 'ngx-toastr';
+/* import { ToastrService } from 'ngx-toastr'; */
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-segundo-proceso',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,RouterLink],
   templateUrl: './segundo-proceso.component.html',
   styleUrls: ['./segundo-proceso.component.css'],
 })
@@ -28,7 +28,7 @@ export class SegundoProcesoComponent {
   constructor(
     public trabajadorService: TrabajadorService,
     private router: Router,
-    private Toastr: ToastrService,
+    /* private Toastr: ToastrService, */
     private fb: FormBuilder
   ) {
     this.myForm = this.fb.group({
@@ -67,7 +67,7 @@ export class SegundoProcesoComponent {
           this.router.navigate(['admin/contratacion/contrato/proceso_1']);
         });
     } else {
-      this.Toastr.error('Por favor, completa todos los campos correctamente.');
+      /* this.Toastr.error('Por favor, completa todos los campos correctamente.'); */
     }
   }
 }

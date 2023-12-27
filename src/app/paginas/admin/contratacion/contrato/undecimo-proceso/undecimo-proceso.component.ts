@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { Trabajador } from 'src/app/interface/trabajador';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -9,7 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-undecimo-proceso',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,RouterLink],
   templateUrl: './undecimo-proceso.component.html',
   styleUrls: ['./undecimo-proceso.component.css'],
 })

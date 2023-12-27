@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Trabajador } from 'src/app/interface/trabajador';
 import { Empleador } from 'src/app/interface/empleador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
@@ -38,7 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-duodecimo-proceso',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './duodecimo-proceso.component.html',
   styleUrls: ['./duodecimo-proceso.component.css'],
 })

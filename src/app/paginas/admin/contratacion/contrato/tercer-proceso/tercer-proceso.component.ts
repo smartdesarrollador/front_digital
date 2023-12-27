@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { Trabajador } from 'src/app/interface/trabajador';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import { myFunctions } from 'src/app/utils/myFunctions';
 import Swal from 'sweetalert2';
@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-tercer-proceso',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,RouterLink],
   templateUrl: './tercer-proceso.component.html',
   styleUrls: ['./tercer-proceso.component.css'],
 })

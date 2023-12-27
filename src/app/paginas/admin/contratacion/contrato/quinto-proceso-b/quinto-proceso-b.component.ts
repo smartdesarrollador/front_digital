@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { Trabajador } from 'src/app/interface/trabajador';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-quinto-proceso-b',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,RouterLink],
   templateUrl: './quinto-proceso-b.component.html',
   styleUrls: ['./quinto-proceso-b.component.css'],
 })

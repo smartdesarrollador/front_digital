@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, NgModel } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Trabajador } from 'src/app/interface/trabajador';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
@@ -11,7 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-sexto-proceso-d',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule,RouterLink],
   templateUrl: './sexto-proceso-d.component.html',
   styleUrls: ['./sexto-proceso-d.component.css'],
 })

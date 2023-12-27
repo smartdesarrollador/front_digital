@@ -9,7 +9,7 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { MustMatch } from '../confirmed.validator';
-import { ToastrService } from 'ngx-toastr';
+/* import { ToastrService } from 'ngx-toastr'; */
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private dataService: DataService,
-    private toastr: ToastrService
+    /* private toastr: ToastrService */
   ) {
     this.form = this.formBuilder.group(
       {
@@ -75,23 +75,23 @@ export class RegisterComponent implements OnInit {
       this.data = res;
       /* console.log(res); */
       if (this.data.status === 1) {
-        this.toastr.success(
+        /* this.toastr.success(
           JSON.stringify(this.data.message),
           JSON.stringify(this.data.code),
           {
             timeOut: 2000,
             progressBar: true,
           }
-        );
+        ); */
       } else {
-        this.toastr.error(
+        /* this.toastr.error(
           JSON.stringify(this.data.message),
           JSON.stringify(this.data.code),
           {
             timeOut: 2000,
             progressBar: true,
           }
-        );
+        ); */
       }
       this.submitted = false;
       this.form.get('name')?.reset();

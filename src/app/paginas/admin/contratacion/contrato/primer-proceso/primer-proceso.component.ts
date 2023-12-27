@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { Trabajador } from 'src/app/interface/trabajador';
 
 import { Empleador } from 'src/app/interface/empleador';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ContratoLocalStorageService } from 'src/app/services/localstorage/contrato-local-storage.service';
 import Swal from 'sweetalert2';
 import { myFunctions } from 'src/app/utils/myFunctions';
@@ -16,7 +16,7 @@ import { EmpleadorService } from 'src/app/services/empleador.service';
 @Component({
   selector: 'app-primer-proceso',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule,RouterLink],
   providers: [
     TrabajadorService,
     EmpleadorService,

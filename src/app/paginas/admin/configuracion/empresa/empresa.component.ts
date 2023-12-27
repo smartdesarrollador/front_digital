@@ -11,7 +11,7 @@ import {
 import { Router } from '@angular/router';
 import { Empleador } from 'src/app/interface/empleador';
 import { EmpleadorService } from 'src/app/services/empleador.service';
-import { ToastrService } from 'ngx-toastr';
+/* import { ToastrService } from 'ngx-toastr'; */
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -31,7 +31,7 @@ export class EmpresaComponent {
   constructor(
     public empleadorService: EmpleadorService,
     private router: Router,
-    private Toastr: ToastrService,
+    /* private Toastr: ToastrService, */
     private fb: FormBuilder
   ) {
     this.myForm = this.fb.group({
@@ -94,7 +94,7 @@ export class EmpresaComponent {
         this.empleadorService
           .updateEmpleador(this.empleadorIdEditar, this.datosEmpleador)
           .subscribe((response) => {
-            this.Toastr.success('Datos actualizados correctamente');
+            /* this.Toastr.success('Datos actualizados correctamente'); */
             this.modoEdicion = false; // Deshabilitar el modo de edición después de la actualización
             window.location.reload();
           });
@@ -103,11 +103,11 @@ export class EmpresaComponent {
           .createEmpleador(this.datosEmpleador)
           .subscribe((response) => {
             /* this.router.navigate(['admin/contratacion/contrato/proceso_1']); */
-            this.Toastr.success('Datos ingresados correctamente');
+            /* this.Toastr.success('Datos ingresados correctamente'); */
           });
       }
     } else {
-      this.Toastr.error('Por favor, completa todos los campos correctamente.');
+      /* this.Toastr.error('Por favor, completa todos los campos correctamente.'); */
     }
   }
 }

@@ -12,11 +12,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TrabajadorService } from 'src/app/services/trabajador.service';
 import { EmpleadorService } from 'src/app/services/empleador.service';
+/* import { ToastrService } from 'ngx-toastr'; */
 
 @Component({
   selector: 'app-primer-proceso',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, FormsModule, ReactiveFormsModule,RouterLink],
+  imports: [
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterLink,
+  ],
   providers: [
     TrabajadorService,
     EmpleadorService,
@@ -29,7 +36,7 @@ import { EmpleadorService } from 'src/app/services/empleador.service';
 export class PrimerProcesoComponent {
   ts: TrabajadorService = inject(TrabajadorService);
   es: EmpleadorService = inject(EmpleadorService);
-  /* ToastrSvc: ToastrService = inject(ToastrService); */
+  /*  ToastrSvc: ToastrService = inject(ToastrService); */
   listTrabajadores: any = [];
   ultimoIdEmpleador: any = [];
   selectedValue: string = '';
@@ -43,8 +50,9 @@ export class PrimerProcesoComponent {
     /* public es: EmpleadorService, */
     private router: Router,
     private cl: ContratoLocalStorageService,
-    private myFunctions: myFunctions /* private ToastrSvc: ToastrService */
-  ) {}
+    private myFunctions: myFunctions
+  ) /* private ToastrSvc: ToastrService */
+  {}
 
   ngOnInit(): void {
     this.asignarValorTrabajador();
@@ -101,11 +109,10 @@ export class PrimerProcesoComponent {
       const formValue = this.form1.form.value;
       console.log('Valores del formulario:', formValue);
     } else {
-      /* this.ToastrSvc.error(
-        'Se necesita seleccionar trabajador',
-        'Campo Requerido'
-      ); */
-      /* this.alerta(); */
+      /* this.ToastrSvc.error('everything is broken', 'Major Error', {
+        timeOut: 3000,
+      }); */
+      this.alerta();
     }
   }
 

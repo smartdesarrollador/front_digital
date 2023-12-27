@@ -13,11 +13,12 @@ import { TrabajadorService } from 'src/app/services/trabajador.service';
 /* import { ToastrService } from 'ngx-toastr'; */
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-segundo-proceso',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule,RouterLink],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterLink],
   templateUrl: './segundo-proceso.component.html',
   styleUrls: ['./segundo-proceso.component.css'],
 })
@@ -68,6 +69,14 @@ export class SegundoProcesoComponent {
         });
     } else {
       /* this.Toastr.error('Por favor, completa todos los campos correctamente.'); */
+      this.alerta();
     }
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Campo requerido',
+    });
   }
 }

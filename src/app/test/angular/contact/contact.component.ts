@@ -3,10 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable, Observer } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
+/* import { ToastrService } from 'ngx-toastr'; */
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-contact',
@@ -21,7 +22,7 @@ export class ContactComponent {
   constructor(
     public fb: FormBuilder,
     private http: HttpClient,
-    private Toastr: ToastrService
+    /* private Toastr: ToastrService */
   ) {
     this.FormContacto = this.fb.group({
       nombre: [''],
@@ -33,16 +34,20 @@ export class ContactComponent {
     this.http.post(this.UrlEmail, formData).subscribe(
       (response) => {
         console.log(response);
-        this.Toastr.success('Email enviado Exitosamente');
+        /* this.Toastr.success('Email enviado Exitosamente'); */
+        this.alerta();
       },
       (error) => {
         console.log(error);
-        this.Toastr.error('No se pudo enviar el email');
+        /* this.Toastr.error('No se pudo enviar el email'); */
       }
     );
   }
 
   alerta() {
-    alert('enviado correctamente');
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro exitoso',
+    });
   }
 }

@@ -12,6 +12,7 @@ import { MustMatch } from '../confirmed.validator';
 /* import { ToastrService } from 'ngx-toastr'; */
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register',
@@ -83,6 +84,7 @@ export class RegisterComponent implements OnInit {
             progressBar: true,
           }
         ); */
+        this.alerta();
       } else {
         /* this.toastr.error(
           JSON.stringify(this.data.message),
@@ -98,6 +100,13 @@ export class RegisterComponent implements OnInit {
       this.form.get('email')?.reset();
       this.form.get('password')?.reset();
       this.form.get('confirmPassword')?.reset();
+    });
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro exitoso',
     });
   }
 }

@@ -12,6 +12,7 @@ import { DataService } from 'src/app/services/login/data.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -79,7 +80,15 @@ export class LoginComponent {
             progressBar: true,
           }
         ); */
+        this.alerta();
       }
+    });
+  }
+
+  alerta() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Correo o Contraseña incorrecto',
     });
   }
 }

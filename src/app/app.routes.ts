@@ -61,6 +61,7 @@ import { PositionComponent } from './test/tailwind/layout/position/position.comp
 import { LayoutComponent } from './test/tailwind/layout/layout/layout.component';
 import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
 import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
+import { ImplementacionDirectivaComponent } from './test/angular/implementacion-directiva/implementacion-directiva.component';
 
 export const routes: Routes = [
   {
@@ -225,6 +226,10 @@ export const routes: Routes = [
            },
             ]
           },
+          {
+            path:'directiva-1',
+            component:ImplementacionDirectivaComponent
+          }
          
         ]
      },

@@ -63,8 +63,16 @@ import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component'
 import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
 import { ImplementacionDirectivaComponent } from './test/angular/implementacion-directiva/implementacion-directiva.component';
 import { EjemploPermisosComponent } from './test/angular/ejemplo-permisos/ejemplo-permisos.component';
+import { AdminGuard } from './guards/admin.guard';
+import { EmpleadorGuard } from './guards/empleador.guard';
+import { TrabajadorGuard } from './guards/trabajador';
+import { PortalComponent } from './paginas/login/portal/portal.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: PortalComponent,
+  },
   {
     path: 'auth',
     children: [
@@ -80,19 +88,21 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    canActivate: [AuthGuard],
     component: AdminComponent,
     children: [
       {
         path: 'dashboard',
+        canActivate: [TrabajadorGuard],
         component: DashboardComponent,
       },
       {
         path: 'configuracion/empresa',
+        canActivate: [AdminGuard],
         component: EmpresaComponent,
       },
       {
         path: 'contratacion',
+        canActivate: [EmpleadorGuard],
         children: [
           {
             path: 'contrato',
@@ -127,15 +137,17 @@ export const routes: Routes = [
   },
   {
     path: 'test',
-    canActivate: [AuthGuard],
+
     component: TestComponent,
     children: [
       {
         path: 'maqueta',
+        canActivate: [TrabajadorGuard],
         component: MaquetaComponent,
       },
       {
         path: 'angular',
+        canActivate: [AdminGuard],
         children: [
           {
             path: 'contact',
@@ -252,6 +264,7 @@ export const routes: Routes = [
     }, */
       {
         path: 'tailwind',
+        canActivate: [AdminGuard],
         children: [
           {
             path: 'botones',
@@ -305,6 +318,14 @@ export const routes: Routes = [
     } */
     ],
   },
-  { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
+  {
+    path: '',
+    /* canActivate: [AuthGuard], */
+    redirectTo: '/admin/dashboard',
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    /* canActivate: [AuthGuard], */ component: PageNotFoundComponent,
+  },
 ];

@@ -62,6 +62,7 @@ import { LayoutComponent } from './test/tailwind/layout/layout/layout.component'
 import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
 import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
 import { ImplementacionDirectivaComponent } from './test/angular/implementacion-directiva/implementacion-directiva.component';
+import { EjemploPermisosComponent } from './test/angular/ejemplo-permisos/ejemplo-permisos.component';
 
 export const routes: Routes = [
   {
@@ -125,115 +126,118 @@ export const routes: Routes = [
     ],
   },
   {
-    path:'test',
+    path: 'test',
     canActivate: [AuthGuard],
-    component:TestComponent,
-    children:[
-     {
-        path:'maqueta',
-        component:MaquetaComponent,
-     },
-     {
-        path:'angular',
-        children:[
+    component: TestComponent,
+    children: [
+      {
+        path: 'maqueta',
+        component: MaquetaComponent,
+      },
+      {
+        path: 'angular',
+        children: [
           {
-            path:'contact',
-            component:ContactComponent,
+            path: 'contact',
+            component: ContactComponent,
           },
           {
-            path:'localstorage',
-            children:[
+            path: 'localstorage',
+            children: [
               {
-                path:'pagina1',
-                component:Pagina1Component,
+                path: 'pagina1',
+                component: Pagina1Component,
               },
               {
-                path:'pagina2',
-                component:Pagina2Component,
+                path: 'pagina2',
+                component: Pagina2Component,
               },
-            ]
+            ],
           },
           {
-            path:'toastr',
-            component:ToastrComponent,
+            path: 'toastr',
+            component: ToastrComponent,
           },
           {
-            path:'upload',
-            component:UploadComponent,
+            path: 'upload',
+            component: UploadComponent,
           },
           {
-            path:'formulario-validaciones',
-            component:FormularioValidacionesComponent,
+            path: 'formulario-validaciones',
+            component: FormularioValidacionesComponent,
           },
           {
-            path:'pdf',
-            component:PdfComponent,
+            path: 'pdf',
+            component: PdfComponent,
           },
           {
-            path:'interpolacion',
-            component:InterpolacionComponent,
+            path: 'interpolacion',
+            component: InterpolacionComponent,
           },
           {
-            path:'event-binding',
-            component:EventBindingComponent,
+            path: 'event-binding',
+            component: EventBindingComponent,
           },
           {
-            path:'class-binding',
-            component:ClassBindingComponent,
+            path: 'class-binding',
+            component: ClassBindingComponent,
           },
           {
-            path:'formulario',
-            component:FormularioComponent,
+            path: 'formulario',
+            component: FormularioComponent,
           },
           {
-            path:'property-binding',
-            component:PropertyBindingComponent,
+            path: 'property-binding',
+            component: PropertyBindingComponent,
           },
           {
-            path:'ngif',
-            component:NgifComponent,
+            path: 'ngif',
+            component: NgifComponent,
           },
           {
-            path:'children',
-            component:ChildrenComponent,
+            path: 'children',
+            component: ChildrenComponent,
           },
           {
-            path:'rutas/home',
-            component:HomeComponent,
+            path: 'rutas/home',
+            component: HomeComponent,
           },
           {
-            path:'user-details',
-            component:UserDetailsComponent,
+            path: 'user-details',
+            component: UserDetailsComponent,
           },
           /* {
             path:'rutas/page-not-found',
             
           }, */
           {
-            path:'formulario2',
-            component:Formulario2Component,
+            path: 'formulario2',
+            component: Formulario2Component,
           },
           {
-            path:'crud',
-            children:[
+            path: 'crud',
+            children: [
               {
-                   path:'add-category',
-                   component:AddCategoryComponent,
+                path: 'add-category',
+                component: AddCategoryComponent,
               },
               {
-                path:'list-category',
-                component:ListCategoryComponent,
-           },
-            ]
+                path: 'list-category',
+                component: ListCategoryComponent,
+              },
+            ],
           },
           {
-            path:'directiva-1',
-            component:ImplementacionDirectivaComponent
-          }
-         
-        ]
-     },
-    /* {
+            path: 'directiva-1',
+            component: ImplementacionDirectivaComponent,
+          },
+          {
+            path: 'ejemplo-permisos',
+            component: EjemploPermisosComponent,
+          },
+        ],
+      },
+      /* {
       path:'carga-perezosa',
       children:[
         {
@@ -246,52 +250,52 @@ export const routes: Routes = [
         }
       ]
     }, */
-    {
-      path:'tailwind',
-      children:[
-        {
-          path:'botones',
-          component:BotonesComponent,
-        },
-        {
-          path:'alertas',
-          component:AlertasComponent,
-        },
-        {
-          path:'cards',
-          component:CardsComponent,
-        },
-        {
-          path:'login-form',
-          component:LoginFormComponent,
-        },
-        {
-          path:'grid',
-          component:GridComponent,
-        },
-        {
-          path:'layout/container',
-          component:ContainerComponent,
-        },
-        {
-          path:'layout/position',
-          component:PositionComponent,
-        },
-        {
-          path:'layout/layout',
-          component:LayoutComponent,
-        },
-        {
-          path:'sticky',
-          component:StickyComponent,
-        },
-        {
-          path:'flexbox-basico',
-          component:FlexboxBasicoComponent,
-        },
-      ]
-    },
-    /* {
+      {
+        path: 'tailwind',
+        children: [
+          {
+            path: 'botones',
+            component: BotonesComponent,
+          },
+          {
+            path: 'alertas',
+            component: AlertasComponent,
+          },
+          {
+            path: 'cards',
+            component: CardsComponent,
+          },
+          {
+            path: 'login-form',
+            component: LoginFormComponent,
+          },
+          {
+            path: 'grid',
+            component: GridComponent,
+          },
+          {
+            path: 'layout/container',
+            component: ContainerComponent,
+          },
+          {
+            path: 'layout/position',
+            component: PositionComponent,
+          },
+          {
+            path: 'layout/layout',
+            component: LayoutComponent,
+          },
+          {
+            path: 'sticky',
+            component: StickyComponent,
+          },
+          {
+            path: 'flexbox-basico',
+            component: FlexboxBasicoComponent,
+          },
+        ],
+      },
+      /* {
       path:'maqueta',
       children:[
         {
@@ -299,7 +303,7 @@ export const routes: Routes = [
         }
       ]
     } */
-    ]
+    ],
   },
   { path: '', redirectTo: '/admin/dashboard', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },

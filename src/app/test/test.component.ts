@@ -9,6 +9,7 @@ import {
 } from '@angular/router';
 import { TestNavbarComponent } from './shared/components/test-navbar/test-navbar.component';
 import { TestMenuLateralComponent } from './shared/components/test-menu-lateral/test-menu-lateral.component';
+import { NavbarBasicoComponent } from './shared/navbar-basico/navbar-basico.component';
 
 @Component({
   selector: 'app-test',
@@ -22,6 +23,7 @@ import { TestMenuLateralComponent } from './shared/components/test-menu-lateral/
     RouterLinkActive,
     TestNavbarComponent,
     TestMenuLateralComponent,
+    NavbarBasicoComponent,
   ],
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css'],

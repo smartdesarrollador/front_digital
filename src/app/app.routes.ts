@@ -58,7 +58,7 @@ import { LoginFormComponent } from './test/tailwind/login-form/login-form.compon
 import { GridComponent } from './test/tailwind/grid/grid.component';
 import { ContainerComponent } from './test/tailwind/layout/container/container.component';
 import { PositionComponent } from './test/tailwind/layout/position/position.component';
-import { LayoutComponent } from './test/tailwind/layout/layout/layout.component';
+/* import { LayoutComponent } from './test/tailwind/layout/layout/layout.component'; */
 import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
 import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
 import { ImplementacionDirectivaComponent } from './test/angular/implementacion-directiva/implementacion-directiva.component';
@@ -67,6 +67,9 @@ import { AdminGuard } from './guards/admin.guard';
 import { EmpleadorGuard } from './guards/empleador.guard';
 import { TrabajadorGuard } from './guards/trabajador';
 import { PortalComponent } from './paginas/login/portal/portal.component';
+import { LayoutUnoComponent } from './layout/layout-uno/layout-uno.component';
+import { LayoutDosComponent } from './layout/layout-dos/layout-dos.component';
+import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
   {
@@ -294,10 +297,10 @@ export const routes: Routes = [
             path: 'layout/position',
             component: PositionComponent,
           },
-          {
+          /* {
             path: 'layout/layout',
             component: LayoutComponent,
-          },
+          }, */
           {
             path: 'sticky',
             component: StickyComponent,
@@ -316,6 +319,20 @@ export const routes: Routes = [
         }
       ]
     } */
+    ],
+  },
+  {
+    path: 'layout',
+    component: LayoutComponent,
+    children: [
+      {
+        path: 'layout-uno',
+        component: LayoutUnoComponent,
+      },
+      {
+        path: 'layout-dos',
+        component: LayoutDosComponent,
+      },
     ],
   },
   {

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavbarBasicoComponent } from '../componentes/navbar-basico/navbar-basico.component';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-layout-uno',
@@ -8,4 +9,10 @@ import { NavbarBasicoComponent } from '../componentes/navbar-basico/navbar-basic
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',
 })
-export class LayoutUnoComponent {}
+export class LayoutUnoComponent implements OnInit {
+  title = 'web-app';
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
+}

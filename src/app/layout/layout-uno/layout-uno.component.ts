@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavbarBasicoComponent } from '../componentes/navbar-basico/navbar-basico.component';
 import { DropdownBasicoComponent } from '../componentes/dropdown-basico/dropdown-basico.component';
 import { ModalBasicoComponent } from '../componentes/modal-basico/modal-basico.component';
+import { NavbarDropdownComponent } from '../componentes/navbar-dropdown/navbar-dropdown.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -10,6 +11,7 @@ import { ModalBasicoComponent } from '../componentes/modal-basico/modal-basico.c
     NavbarBasicoComponent,
     DropdownBasicoComponent,
     ModalBasicoComponent,
+    NavbarDropdownComponent,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

@@ -4,6 +4,7 @@ import { DropdownBasicoComponent } from '../componentes/dropdown-basico/dropdown
 import { ModalBasicoComponent } from '../componentes/modal-basico/modal-basico.component';
 import { NavbarDropdownComponent } from '../componentes/navbar-dropdown/navbar-dropdown.component';
 import { CarouselComponent } from '../componentes/carousel/carousel.component';
+import { Card1Component } from '../componentes/card-1/card-1.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -14,6 +15,7 @@ import { CarouselComponent } from '../componentes/carousel/carousel.component';
     ModalBasicoComponent,
     NavbarDropdownComponent,
     CarouselComponent,
+    Card1Component,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

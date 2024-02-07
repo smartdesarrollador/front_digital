@@ -6,6 +6,7 @@ import { NavbarDropdownComponent } from '../componentes/navbar-dropdown/navbar-d
 import { CarouselComponent } from '../componentes/carousel/carousel.component';
 import { Card1Component } from '../componentes/card-1/card-1.component';
 import { Footer1Component } from '../componentes/footer-1/footer-1.component';
+import { PostCardComponent } from '../componentes/post-card/post-card.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -18,6 +19,7 @@ import { Footer1Component } from '../componentes/footer-1/footer-1.component';
     CarouselComponent,
     Card1Component,
     Footer1Component,
+    PostCardComponent,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

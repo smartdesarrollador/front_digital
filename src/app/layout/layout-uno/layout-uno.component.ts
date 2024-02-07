@@ -7,6 +7,7 @@ import { CarouselComponent } from '../componentes/carousel/carousel.component';
 import { Card1Component } from '../componentes/card-1/card-1.component';
 import { Footer1Component } from '../componentes/footer-1/footer-1.component';
 import { PostCardComponent } from '../componentes/post-card/post-card.component';
+import { Post1Component } from '../componentes/post-1/post-1.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -20,6 +21,7 @@ import { PostCardComponent } from '../componentes/post-card/post-card.component'
     Card1Component,
     Footer1Component,
     PostCardComponent,
+    Post1Component,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

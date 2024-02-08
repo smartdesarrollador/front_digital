@@ -70,6 +70,7 @@ import { PortalComponent } from './paginas/login/portal/portal.component';
 import { LayoutUnoComponent } from './layout/layout-uno/layout-uno.component';
 import { LayoutDosComponent } from './layout/layout-dos/layout-dos.component';
 import { LayoutComponent } from './layout/layout.component';
+import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component';
 
 export const routes: Routes = [
   {
@@ -332,6 +333,10 @@ export const routes: Routes = [
       {
         path: 'layout-dos',
         component: LayoutDosComponent,
+      },
+      {
+        path: 'layout-tres',
+        component: LayoutTresComponent,
       },
     ],
   },

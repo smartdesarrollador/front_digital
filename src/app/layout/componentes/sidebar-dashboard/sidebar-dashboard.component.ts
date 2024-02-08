@@ -8,7 +8,7 @@ import { initFlowbite } from 'flowbite';
   templateUrl: './sidebar-dashboard.component.html',
   styleUrl: './sidebar-dashboard.component.css',
 })
-export class SidebarDashboardComponent {
+export class SidebarDashboardComponent implements OnInit {
   ngOnInit(): void {
     initFlowbite();
   }

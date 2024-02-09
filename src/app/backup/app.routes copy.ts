@@ -1,83 +1,76 @@
 import { Routes } from '@angular/router';
-
-import { LoginComponent } from './pages/login/login/login.component';
-import { RegisterComponent } from './pages/login/register/register.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
-
-import { AdminGuard } from './guards/admin.guard';
-import { EmpleadorGuard } from './guards/empleador.guard';
-import { TrabajadorGuard } from './guards/trabajador';
-
-/* ---------------------------------------------------------------------- */
-
-import { DashboardComponent } from './paginas/admin/dashboard/dashboard.component';
-import { AdminComponent } from './paginas/admin/admin.component';
-import { EmpresaComponent } from './paginas/admin/configuracion/empresa/empresa.component';
-import { PrimerProcesoComponent } from './paginas/admin/contratacion/contrato/primer-proceso/primer-proceso.component';
-import { AuthGuard } from './guards/auth.guard';
-import { SegundoProcesoComponent } from './paginas/admin/contratacion/contrato/segundo-proceso/segundo-proceso.component';
-import { TercerProcesoComponent } from './paginas/admin/contratacion/contrato/tercer-proceso/tercer-proceso.component';
-import { CuartoProcesoComponent } from './paginas/admin/contratacion/contrato/cuarto-proceso/cuarto-proceso.component';
-import { QuintoProcesoComponent } from './paginas/admin/contratacion/contrato/quinto-proceso/quinto-proceso.component';
-import { QuintoProcesoBComponent } from './paginas/admin/contratacion/contrato/quinto-proceso-b/quinto-proceso-b.component';
-import { QuintoProcesoCComponent } from './paginas/admin/contratacion/contrato/quinto-proceso-c/quinto-proceso-c.component';
-import { QuintoProcesoDComponent } from './paginas/admin/contratacion/contrato/quinto-proceso-d/quinto-proceso-d.component';
-import { SextoProcesoComponent } from './paginas/admin/contratacion/contrato/sexto-proceso/sexto-proceso.component';
-import { SextoProcesoBComponent } from './paginas/admin/contratacion/contrato/sexto-proceso-b/sexto-proceso-b.component';
-import { SextoProcesoCComponent } from './paginas/admin/contratacion/contrato/sexto-proceso-c/sexto-proceso-c.component';
-import { SextoProcesoDComponent } from './paginas/admin/contratacion/contrato/sexto-proceso-d/sexto-proceso-d.component';
-import { SextoProcesoEComponent } from './paginas/admin/contratacion/contrato/sexto-proceso-e/sexto-proceso-e.component';
-import { SextoProcesoFComponent } from './paginas/admin/contratacion/contrato/sexto-proceso-f/sexto-proceso-f.component';
-import { OctavoProcesoComponent } from './paginas/admin/contratacion/contrato/octavo-proceso/octavo-proceso.component';
-import { OctavoProcesoBComponent } from './paginas/admin/contratacion/contrato/octavo-proceso-b/octavo-proceso-b.component';
-import { OctavoProcesoAComponent } from './paginas/admin/contratacion/contrato/octavo-proceso-a/octavo-proceso-a.component';
-import { NovenoProcesoComponent } from './paginas/admin/contratacion/contrato/noveno-proceso/noveno-proceso.component';
-import { DecimoProcesoComponent } from './paginas/admin/contratacion/contrato/decimo-proceso/decimo-proceso.component';
-import { UndecimoProcesoComponent } from './paginas/admin/contratacion/contrato/undecimo-proceso/undecimo-proceso.component';
-import { DuodecimoProcesoComponent } from './paginas/admin/contratacion/contrato/duodecimo-proceso/duodecimo-proceso.component';
-import { SeptimoProcesoComponent } from './paginas/admin/contratacion/contrato/septimo-proceso/septimo-proceso.component';
-import { MaquetaComponent } from './test/maqueta/maqueta.component';
-import { ContactComponent } from './test/angular/contact/contact.component';
-import { TestComponent } from './test/test.component';
-import { Pagina1Component } from './test/angular/localstorage/pagina1/pagina1.component';
-import { Pagina2Component } from './test/angular/localstorage/pagina2/pagina2.component';
-import { ToastrComponent } from './test/angular/toastr/toastr.component';
-import { UploadComponent } from './test/angular/upload/upload.component';
-import { FormularioValidacionesComponent } from './test/angular/formulario-validaciones/formulario-validaciones.component';
-import { PdfComponent } from './test/angular/pdf/pdf.component';
-import { InterpolacionComponent } from './test/angular/interpolacion/interpolacion.component';
-import { EventBindingComponent } from './test/angular/event-binding/event-binding.component';
-import { ClassBindingComponent } from './test/angular/class-binding/class-binding.component';
-import { FormularioComponent } from './test/angular/formulario/formulario.component';
-import { PropertyBindingComponent } from './test/angular/property-binding/property-binding.component';
-import { NgifComponent } from './test/angular/ngif/ngif.component';
-import { ChildrenComponent } from './test/angular/children/children.component';
-import { HomeComponent } from './test/angular/rutas/home/home.component';
-import { UserDetailsComponent } from './test/angular/rutas/user-details/user-details.component';
-import { Formulario2Component } from './test/angular/formulario2/formulario2.component';
-import { AddCategoryComponent } from './test/angular/crud/add-category/add-category.component';
-import { ListCategoryComponent } from './test/angular/crud/list-category/list-category.component';
-import { WelcomeComponent } from './test/carga-perezosa/welcome/welcome.component';
-import { BlogComponent } from './test/carga-perezosa/blog/blog.component';
-import { BotonesComponent } from './test/tailwind/botones/botones.component';
-import { AlertasComponent } from './test/tailwind/alertas/alertas.component';
-import { CardsComponent } from './test/tailwind/cards/cards.component';
-import { LoginFormComponent } from './test/tailwind/login-form/login-form.component';
-import { GridComponent } from './test/tailwind/grid/grid.component';
-import { ContainerComponent } from './test/tailwind/layout/container/container.component';
-import { PositionComponent } from './test/tailwind/layout/position/position.component';
-import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
-import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
-import { ImplementacionDirectivaComponent } from './test/angular/implementacion-directiva/implementacion-directiva.component';
-import { EjemploPermisosComponent } from './test/angular/ejemplo-permisos/ejemplo-permisos.component';
-
-import { PortalComponent } from './paginas/login/portal/portal.component';
-import { LayoutUnoComponent } from './layout/layout-uno/layout-uno.component';
-import { LayoutDosComponent } from './layout/layout-dos/layout-dos.component';
-import { LayoutComponent } from './layout/layout.component';
-import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component';
-import { VistaComponent } from './pages/vista/vista.component';
-import { InicioComponent } from './pages/vista/inicio/inicio.component';
+import { DashboardComponent } from '../paginas/admin/dashboard/dashboard.component';
+import { AdminComponent } from '../paginas/admin/admin.component';
+import { LoginComponent } from '../paginas/login/login/login.component';
+import { RegisterComponent } from '../paginas/login/register/register.component';
+import { PageNotFoundComponent } from '../paginas/page-not-found/page-not-found.component';
+import { EmpresaComponent } from '../paginas/admin/configuracion/empresa/empresa.component';
+import { PrimerProcesoComponent } from '../paginas/admin/contratacion/contrato/primer-proceso/primer-proceso.component';
+import { AuthGuard } from '../guards/auth.guard';
+import { SegundoProcesoComponent } from '../paginas/admin/contratacion/contrato/segundo-proceso/segundo-proceso.component';
+import { TercerProcesoComponent } from '../paginas/admin/contratacion/contrato/tercer-proceso/tercer-proceso.component';
+import { CuartoProcesoComponent } from '../paginas/admin/contratacion/contrato/cuarto-proceso/cuarto-proceso.component';
+import { QuintoProcesoComponent } from '../paginas/admin/contratacion/contrato/quinto-proceso/quinto-proceso.component';
+import { QuintoProcesoBComponent } from '../paginas/admin/contratacion/contrato/quinto-proceso-b/quinto-proceso-b.component';
+import { QuintoProcesoCComponent } from '../paginas/admin/contratacion/contrato/quinto-proceso-c/quinto-proceso-c.component';
+import { QuintoProcesoDComponent } from '../paginas/admin/contratacion/contrato/quinto-proceso-d/quinto-proceso-d.component';
+import { SextoProcesoComponent } from '../paginas/admin/contratacion/contrato/sexto-proceso/sexto-proceso.component';
+import { SextoProcesoBComponent } from '../paginas/admin/contratacion/contrato/sexto-proceso-b/sexto-proceso-b.component';
+import { SextoProcesoCComponent } from '../paginas/admin/contratacion/contrato/sexto-proceso-c/sexto-proceso-c.component';
+import { SextoProcesoDComponent } from '../paginas/admin/contratacion/contrato/sexto-proceso-d/sexto-proceso-d.component';
+import { SextoProcesoEComponent } from '../paginas/admin/contratacion/contrato/sexto-proceso-e/sexto-proceso-e.component';
+import { SextoProcesoFComponent } from '../paginas/admin/contratacion/contrato/sexto-proceso-f/sexto-proceso-f.component';
+import { OctavoProcesoComponent } from '../paginas/admin/contratacion/contrato/octavo-proceso/octavo-proceso.component';
+import { OctavoProcesoBComponent } from '../paginas/admin/contratacion/contrato/octavo-proceso-b/octavo-proceso-b.component';
+import { OctavoProcesoAComponent } from '../paginas/admin/contratacion/contrato/octavo-proceso-a/octavo-proceso-a.component';
+import { NovenoProcesoComponent } from '../paginas/admin/contratacion/contrato/noveno-proceso/noveno-proceso.component';
+import { DecimoProcesoComponent } from '../paginas/admin/contratacion/contrato/decimo-proceso/decimo-proceso.component';
+import { UndecimoProcesoComponent } from '../paginas/admin/contratacion/contrato/undecimo-proceso/undecimo-proceso.component';
+import { DuodecimoProcesoComponent } from '../paginas/admin/contratacion/contrato/duodecimo-proceso/duodecimo-proceso.component';
+import { SeptimoProcesoComponent } from '../paginas/admin/contratacion/contrato/septimo-proceso/septimo-proceso.component';
+import { MaquetaComponent } from '../test/maqueta/maqueta.component';
+import { ContactComponent } from '../test/angular/contact/contact.component';
+import { TestComponent } from '../test/test.component';
+import { Pagina1Component } from '../test/angular/localstorage/pagina1/pagina1.component';
+import { Pagina2Component } from '../test/angular/localstorage/pagina2/pagina2.component';
+import { ToastrComponent } from '../test/angular/toastr/toastr.component';
+import { UploadComponent } from '../test/angular/upload/upload.component';
+import { FormularioValidacionesComponent } from '../test/angular/formulario-validaciones/formulario-validaciones.component';
+import { PdfComponent } from '../test/angular/pdf/pdf.component';
+import { InterpolacionComponent } from '../test/angular/interpolacion/interpolacion.component';
+import { EventBindingComponent } from '../test/angular/event-binding/event-binding.component';
+import { ClassBindingComponent } from '../test/angular/class-binding/class-binding.component';
+import { FormularioComponent } from '../test/angular/formulario/formulario.component';
+import { PropertyBindingComponent } from '../test/angular/property-binding/property-binding.component';
+import { NgifComponent } from '../test/angular/ngif/ngif.component';
+import { ChildrenComponent } from '../test/angular/children/children.component';
+import { HomeComponent } from '../test/angular/rutas/home/home.component';
+import { UserDetailsComponent } from '../test/angular/rutas/user-details/user-details.component';
+import { Formulario2Component } from '../test/angular/formulario2/formulario2.component';
+import { AddCategoryComponent } from '../test/angular/crud/add-category/add-category.component';
+import { ListCategoryComponent } from '../test/angular/crud/list-category/list-category.component';
+import { WelcomeComponent } from '../test/carga-perezosa/welcome/welcome.component';
+import { BlogComponent } from '../test/carga-perezosa/blog/blog.component';
+import { BotonesComponent } from '../test/tailwind/botones/botones.component';
+import { AlertasComponent } from '../test/tailwind/alertas/alertas.component';
+import { CardsComponent } from '../test/tailwind/cards/cards.component';
+import { LoginFormComponent } from '../test/tailwind/login-form/login-form.component';
+import { GridComponent } from '../test/tailwind/grid/grid.component';
+import { ContainerComponent } from '../test/tailwind/layout/container/container.component';
+import { PositionComponent } from '../test/tailwind/layout/position/position.component';
+/* import { LayoutComponent } from './test/tailwind/layout/layout/layout.component'; */
+import { StickyComponent } from '../test/tailwind/layout/sticky/sticky.component';
+import { FlexboxBasicoComponent } from '../test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
+import { ImplementacionDirectivaComponent } from '../test/angular/implementacion-directiva/implementacion-directiva.component';
+import { EjemploPermisosComponent } from '../test/angular/ejemplo-permisos/ejemplo-permisos.component';
+import { AdminGuard } from '../guards/admin.guard';
+import { EmpleadorGuard } from '../guards/empleador.guard';
+import { TrabajadorGuard } from '../guards/trabajador';
+import { PortalComponent } from '../paginas/login/portal/portal.component';
+import { LayoutUnoComponent } from '../layout/layout-uno/layout-uno.component';
+import { LayoutDosComponent } from '../layout/layout-dos/layout-dos.component';
+import { LayoutComponent } from '../layout/layout.component';
+import { LayoutTresComponent } from '../layout/layout-tres/layout-tres.component';
 
 export const routes: Routes = [
   {
@@ -344,16 +337,6 @@ export const routes: Routes = [
       {
         path: 'layout-tres',
         component: LayoutTresComponent,
-      },
-    ],
-  },
-  {
-    path: 'onedigital',
-    component: VistaComponent,
-    children: [
-      {
-        path: 'inicio',
-        component: InicioComponent,
       },
     ],
   },

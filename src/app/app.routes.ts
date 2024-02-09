@@ -3,6 +3,10 @@ import { Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login/login.component';
 import { RegisterComponent } from './pages/login/register/register.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { VistaComponent } from './pages/vista/vista.component';
+import { InicioComponent } from './pages/vista/inicio/inicio.component';
+import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 
 import { AdminGuard } from './guards/admin.guard';
 import { EmpleadorGuard } from './guards/empleador.guard';
@@ -10,7 +14,9 @@ import { TrabajadorGuard } from './guards/trabajador';
 
 /* ---------------------------------------------------------------------- */
 
-import { DashboardComponent } from './paginas/admin/dashboard/dashboard.component';
+/* paginas */
+
+/* import { DashboardComponent } from './paginas/admin/dashboard/dashboard.component';
 import { AdminComponent } from './paginas/admin/admin.component';
 import { EmpresaComponent } from './paginas/admin/configuracion/empresa/empresa.component';
 import { PrimerProcesoComponent } from './paginas/admin/contratacion/contrato/primer-proceso/primer-proceso.component';
@@ -35,7 +41,10 @@ import { NovenoProcesoComponent } from './paginas/admin/contratacion/contrato/no
 import { DecimoProcesoComponent } from './paginas/admin/contratacion/contrato/decimo-proceso/decimo-proceso.component';
 import { UndecimoProcesoComponent } from './paginas/admin/contratacion/contrato/undecimo-proceso/undecimo-proceso.component';
 import { DuodecimoProcesoComponent } from './paginas/admin/contratacion/contrato/duodecimo-proceso/duodecimo-proceso.component';
-import { SeptimoProcesoComponent } from './paginas/admin/contratacion/contrato/septimo-proceso/septimo-proceso.component';
+import { SeptimoProcesoComponent } from './paginas/admin/contratacion/contrato/septimo-proceso/septimo-proceso.component'; */
+
+/* END paginas */
+
 import { MaquetaComponent } from './test/maqueta/maqueta.component';
 import { ContactComponent } from './test/angular/contact/contact.component';
 import { TestComponent } from './test/test.component';
@@ -76,12 +85,10 @@ import { LayoutUnoComponent } from './layout/layout-uno/layout-uno.component';
 import { LayoutDosComponent } from './layout/layout-dos/layout-dos.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component';
-import { VistaComponent } from './pages/vista/vista.component';
-import { InicioComponent } from './pages/vista/inicio/inicio.component';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'portal',
     component: PortalComponent,
   },
   {
@@ -98,6 +105,27 @@ export const routes: Routes = [
     ],
   },
   {
+    path: '',
+    component: VistaComponent,
+    children: [
+      {
+        path: '',
+        component: InicioComponent,
+      },
+    ],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'dashboard',
+        canActivate: [TrabajadorGuard],
+        component: DashboardComponent,
+      },
+    ],
+  },
+  /*  {
     path: 'admin',
     component: AdminComponent,
     children: [
@@ -145,7 +173,7 @@ export const routes: Routes = [
         ],
       },
     ],
-  },
+  }, */
   {
     path: 'test',
 
@@ -344,16 +372,6 @@ export const routes: Routes = [
       {
         path: 'layout-tres',
         component: LayoutTresComponent,
-      },
-    ],
-  },
-  {
-    path: 'onedigital',
-    component: VistaComponent,
-    children: [
-      {
-        path: 'inicio',
-        component: InicioComponent,
       },
     ],
   },

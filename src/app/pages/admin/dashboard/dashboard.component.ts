@@ -9,8 +9,6 @@ import { PermissionDirective } from 'src/app/directives/permission.directive';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
-export class DashboardComponent {
-  ngOnInit() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+export class DashboardComponent implements OnInit {
+  ngOnInit() {}
 }

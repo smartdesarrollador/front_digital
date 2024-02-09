@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { Component, ChangeDetectorRef } from '@angular/core';
+import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   Router,
@@ -9,8 +9,12 @@ import {
   RouterModule,
   RouterOutlet,
 } from '@angular/router';
-import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
-import { SidebarComponent } from 'src/app/shared/sidebar/sidebar.component';
+import { Footer1Component } from 'src/app/layout/componentes/footer-1/footer-1.component';
+import { SidebarDashboardComponent } from 'src/app/layout/componentes/sidebar-dashboard/sidebar-dashboard.component';
+import { Table1Component } from 'src/app/layout/componentes/table-1/table-1.component';
+import { Toast1Component } from 'src/app/layout/componentes/toast-1/toast-1.component';
+import { SpeedDialComponent } from 'src/app/layout/componentes/speed-dial/speed-dial.component';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-admin',
@@ -24,23 +28,17 @@ import { SidebarComponent } from 'src/app/shared/sidebar/sidebar.component';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    NavbarComponent,
-    SidebarComponent,
+    Footer1Component,
+    SidebarDashboardComponent,
+    Table1Component,
+    Toast1Component,
+    SpeedDialComponent,
   ],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css'],
 })
-export class AdminComponent {
-  claseCambiada: boolean = false;
-
-  constructor(private cdr: ChangeDetectorRef) {}
-
+export class AdminComponent implements OnInit {
   ngOnInit(): void {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-
-  cambiarTranslate() {
-    this.claseCambiada = !this.claseCambiada;
-    this.cdr.detectChanges();
+    initFlowbite();
   }
 }

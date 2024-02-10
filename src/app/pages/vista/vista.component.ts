@@ -15,6 +15,7 @@ import { Post2Component } from 'src/app/layout/componentes/post-2/post-2.compone
 import { PostGridComponent } from 'src/app/layout/componentes/post-grid/post-grid.component';
 import { Galeria1Component } from 'src/app/layout/componentes/galeria-1/galeria-1.component';
 import { Header1Component } from 'src/app/layout/componentes/header-1/header-1.component';
+import { Jumbotron1Component } from 'src/app/layout/componentes/jumbotron-1/jumbotron-1.component';
 
 @Component({
   selector: 'app-vista',
@@ -34,6 +35,7 @@ import { Header1Component } from 'src/app/layout/componentes/header-1/header-1.c
     PostGridComponent,
     Galeria1Component,
     Header1Component,
+    Jumbotron1Component,
   ],
   templateUrl: './vista.component.html',
   styleUrl: './vista.component.css',

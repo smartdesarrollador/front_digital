@@ -11,6 +11,7 @@ import { DashboardComponent } from './pages/admin/dashboard/dashboard.component'
 import { AdminGuard } from './guards/admin.guard';
 import { EmpleadorGuard } from './guards/empleador.guard';
 import { TrabajadorGuard } from './guards/trabajador';
+import { AuthGuard } from './guards/auth.guard';
 
 /* ---------------------------------------------------------------------- */
 
@@ -45,7 +46,9 @@ import { SeptimoProcesoComponent } from './paginas/admin/contratacion/contrato/s
 
 /* END paginas */
 
-import { MaquetaComponent } from './test/maqueta/maqueta.component';
+/* Test */
+
+/* import { MaquetaComponent } from './test/maqueta/maqueta.component';
 import { ContactComponent } from './test/angular/contact/contact.component';
 import { TestComponent } from './test/test.component';
 import { Pagina1Component } from './test/angular/localstorage/pagina1/pagina1.component';
@@ -78,7 +81,9 @@ import { PositionComponent } from './test/tailwind/layout/position/position.comp
 import { StickyComponent } from './test/tailwind/layout/sticky/sticky.component';
 import { FlexboxBasicoComponent } from './test/tailwind/flexbox/flexbox-basico/flexbox-basico.component';
 import { ImplementacionDirectivaComponent } from './test/angular/implementacion-directiva/implementacion-directiva.component';
-import { EjemploPermisosComponent } from './test/angular/ejemplo-permisos/ejemplo-permisos.component';
+import { EjemploPermisosComponent } from './test/angular/ejemplo-permisos/ejemplo-permisos.component'; */
+
+/* END Test */
 
 import { PortalComponent } from './paginas/login/portal/portal.component';
 import { LayoutUnoComponent } from './layout/layout-uno/layout-uno.component';
@@ -120,7 +125,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        canActivate: [TrabajadorGuard],
+        canActivate: [AuthGuard],
         component: DashboardComponent,
       },
     ],
@@ -174,7 +179,7 @@ export const routes: Routes = [
       },
     ],
   }, */
-  {
+  /* {
     path: 'test',
 
     component: TestComponent,
@@ -257,10 +262,6 @@ export const routes: Routes = [
             path: 'user-details',
             component: UserDetailsComponent,
           },
-          /* {
-            path:'rutas/page-not-found',
-            
-          }, */
           {
             path: 'formulario2',
             component: Formulario2Component,
@@ -288,19 +289,6 @@ export const routes: Routes = [
           },
         ],
       },
-      /* {
-      path:'carga-perezosa',
-      children:[
-        {
-          path:'welcome',
-          component:WelcomeComponent
-        },
-        {
-          path:'blog',
-          component:BlogComponent,
-        }
-      ]
-    }, */
       {
         path: 'tailwind',
         canActivate: [AdminGuard],
@@ -333,10 +321,6 @@ export const routes: Routes = [
             path: 'layout/position',
             component: PositionComponent,
           },
-          /* {
-            path: 'layout/layout',
-            component: LayoutComponent,
-          }, */
           {
             path: 'sticky',
             component: StickyComponent,
@@ -347,16 +331,8 @@ export const routes: Routes = [
           },
         ],
       },
-      /* {
-      path:'maqueta',
-      children:[
-        {
-          path:'dashboard',
-        }
-      ]
-    } */
     ],
-  },
+  }, */
   {
     path: 'layout',
     component: LayoutComponent,

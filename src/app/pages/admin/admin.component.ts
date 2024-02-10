@@ -38,7 +38,14 @@ import { initFlowbite } from 'flowbite';
   styleUrls: ['./admin.component.css'],
 })
 export class AdminComponent implements OnInit {
+  constructor(private router: Router) {}
+
   ngOnInit(): void {
     initFlowbite();
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['auth/login']);
   }
 }

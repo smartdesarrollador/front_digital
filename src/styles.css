@@ -6,7 +6,8 @@
 @tailwind utilities;
 
 body {
-  background-color: #c6d8e7;
+  /* background-color: #c6d8e7; */
+  background-color: #ecf0f1;
 }
 
 @layer components {

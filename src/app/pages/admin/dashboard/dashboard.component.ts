@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { PermissionDirective } from 'src/app/directives/permission.directive';
 import { Toast1Component } from 'src/app/layout/componentes/toast-1/toast-1.component';
+import { Table1Component } from 'src/app/layout/componentes/table-1/table-1.component';
 
 import { NgApexchartsModule } from 'ng-apexcharts';
 import {
@@ -27,6 +28,7 @@ export type ChartOptions = {
     NgApexchartsModule,
     PermissionDirective,
     Toast1Component,
+    Table1Component,
   ],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
@@ -48,7 +50,7 @@ export class DashboardComponent implements OnInit {
         type: 'bar',
       },
       title: {
-        text: 'My First Angular Chart',
+        text: 'Gráfico',
       },
       xaxis: {
         categories: [

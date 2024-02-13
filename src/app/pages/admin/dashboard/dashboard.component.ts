@@ -65,14 +65,14 @@ export class DashboardComponent implements OnInit {
       },
       xaxis: {
         categories: [
-          'Jan',
+          'Ene',
           'Feb',
           'Mar',
-          'Apr',
+          'Abr',
           'May',
           'Jun',
           'Jul',
-          'Aug',
+          'Ago',
           'Sep',
         ],
       },

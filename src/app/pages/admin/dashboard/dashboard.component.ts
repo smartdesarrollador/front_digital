@@ -11,6 +11,8 @@ import {
   ApexChart,
   ApexXAxis,
   ApexTitleSubtitle,
+  ApexNonAxisChartSeries,
+  ApexResponsive,
 } from 'ng-apexcharts';
 
 export type ChartOptions = {
@@ -18,6 +20,13 @@ export type ChartOptions = {
   chart: ApexChart;
   xaxis: ApexXAxis;
   title: ApexTitleSubtitle;
+};
+
+export type ChartOptionsPie = {
+  series: ApexNonAxisChartSeries;
+  chart: ApexChart;
+  responsive: ApexResponsive[];
+  labels: any;
 };
 
 @Component({
@@ -35,7 +44,9 @@ export type ChartOptions = {
 })
 export class DashboardComponent implements OnInit {
   @ViewChild('chart') chart!: ChartComponent;
+  @ViewChild('chart_pie') chart_pie!: ChartComponent;
   public chartOptions: Partial<ChartOptions>;
+  public chartOptionsPie: Partial<ChartOptionsPie>;
 
   constructor() {
     this.chartOptions = {
@@ -65,6 +76,28 @@ export class DashboardComponent implements OnInit {
           'Sep',
         ],
       },
+    };
+
+    this.chartOptionsPie = {
+      series: [44, 55, 13, 43, 22],
+      chart: {
+        width: 380,
+        type: 'pie',
+      },
+      labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200,
+            },
+            legend: {
+              position: 'bottom',
+            },
+          },
+        },
+      ],
     };
   }
 

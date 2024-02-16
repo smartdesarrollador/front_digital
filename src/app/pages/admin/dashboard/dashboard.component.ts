@@ -52,7 +52,7 @@ export class DashboardComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: 'My-series',
+          name: 'valor',
           data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
         },
       ],
@@ -84,7 +84,7 @@ export class DashboardComponent implements OnInit {
         width: 380,
         type: 'pie',
       },
-      labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+      labels: ['A', 'B', 'C', 'D', 'E'],
       responsive: [
         {
           breakpoint: 480,

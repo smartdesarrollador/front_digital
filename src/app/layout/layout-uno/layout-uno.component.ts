@@ -11,6 +11,7 @@ import { Post1Component } from '../componentes/post-1/post-1.component';
 import { Post2Component } from '../componentes/post-2/post-2.component';
 import { PostGridComponent } from '../componentes/post-grid/post-grid.component';
 import { Galeria1Component } from '../componentes/galeria-1/galeria-1.component';
+import { CarouselOwl1Component } from '../componentes/carousel-owl-1/carousel-owl-1.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -28,6 +29,7 @@ import { Galeria1Component } from '../componentes/galeria-1/galeria-1.component'
     Post2Component,
     PostGridComponent,
     Galeria1Component,
+    CarouselOwl1Component,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

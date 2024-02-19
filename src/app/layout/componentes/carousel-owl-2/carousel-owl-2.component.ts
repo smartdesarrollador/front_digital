@@ -19,13 +19,13 @@ export class CarouselOwl2Component {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    margin: 10,
+    margin: 0,
 
     autoplay: true,
 
-    autoplayTimeout: 3000,
+    autoplayTimeout: 4000,
 
-    navText: ['Prev', 'Next'],
+    navText: ['<', '>'],
 
     responsive: {
       0: {

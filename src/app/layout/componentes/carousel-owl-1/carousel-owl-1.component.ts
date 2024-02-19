@@ -25,7 +25,7 @@ export class CarouselOwl1Component {
 
     autoplayTimeout: 3000,
 
-    navText: ['Prev', 'Next'],
+    navText: ['<', '>'],
 
     responsive: {
       0: {

@@ -3,13 +3,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-carousel-owl-1',
+  selector: 'app-carousel-owl-2',
   standalone: true,
   imports: [CarouselModule],
-  templateUrl: './carousel-owl-1.component.html',
-  styleUrl: './carousel-owl-1.component.css',
+  templateUrl: './carousel-owl-2.component.html',
+  styleUrl: './carousel-owl-2.component.css',
 })
-export class CarouselOwl1Component {
+export class CarouselOwl2Component {
   customOptions: OwlOptions = {
     /* animateIn: 'animate__animated animate__fadeIn',
     animateOut: 'animate__animated animate__zoomOut', */
@@ -19,7 +19,7 @@ export class CarouselOwl1Component {
     pullDrag: false,
     dots: false,
     navSpeed: 700,
-    margin: 0,
+    margin: 10,
 
     autoplay: true,
 
@@ -35,10 +35,10 @@ export class CarouselOwl1Component {
         items: 1,
       },
       740: {
-        items: 1,
+        items: 2,
       },
       940: {
-        items: 1,
+        items: 3,
       },
     },
     nav: true,

@@ -13,6 +13,7 @@ import { PostGridComponent } from '../componentes/post-grid/post-grid.component'
 import { Galeria1Component } from '../componentes/galeria-1/galeria-1.component';
 import { CarouselOwl1Component } from '../componentes/carousel-owl-1/carousel-owl-1.component';
 import { CarouselOwl2Component } from '../componentes/carousel-owl-2/carousel-owl-2.component';
+import { Parallax1Component } from '../componentes/parallax-1/parallax-1.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -32,6 +33,7 @@ import { CarouselOwl2Component } from '../componentes/carousel-owl-2/carousel-ow
     Galeria1Component,
     CarouselOwl1Component,
     CarouselOwl2Component,
+    Parallax1Component,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

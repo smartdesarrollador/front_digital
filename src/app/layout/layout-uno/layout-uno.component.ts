@@ -14,6 +14,7 @@ import { Galeria1Component } from '../componentes/galeria-1/galeria-1.component'
 import { CarouselOwl1Component } from '../componentes/carousel-owl-1/carousel-owl-1.component';
 import { CarouselOwl2Component } from '../componentes/carousel-owl-2/carousel-owl-2.component';
 import { Parallax1Component } from '../componentes/parallax-1/parallax-1.component';
+import { BackgroundAnimatedComponent } from '../componentes/background-animated/background-animated.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -34,6 +35,7 @@ import { Parallax1Component } from '../componentes/parallax-1/parallax-1.compone
     CarouselOwl1Component,
     CarouselOwl2Component,
     Parallax1Component,
+    BackgroundAnimatedComponent,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

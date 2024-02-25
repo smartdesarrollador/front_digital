@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { NavbarBasicoComponent } from '../componentes/navbar-basico/navbar-basico.component';
 import { DropdownBasicoComponent } from '../componentes/dropdown-basico/dropdown-basico.component';
 import { ModalBasicoComponent } from '../componentes/modal-basico/modal-basico.component';

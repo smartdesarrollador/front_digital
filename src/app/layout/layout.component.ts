@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-layout',
@@ -8,4 +9,8 @@ import { RouterOutlet } from '@angular/router';
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css',
 })
-export class LayoutComponent {}
+export class LayoutComponent implements OnInit {
+  ngOnInit(): void {
+    AOS.init();
+  }
+}

@@ -90,6 +90,7 @@ import { LayoutUnoComponent } from './layout/layout-uno/layout-uno.component';
 import { LayoutDosComponent } from './layout/layout-dos/layout-dos.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component';
+import { BannersComponent } from './pages/admin/banners/banners.component';
 
 export const routes: Routes = [
   {
@@ -127,6 +128,11 @@ export const routes: Routes = [
         path: 'dashboard',
         canActivate: [AuthGuard],
         component: DashboardComponent,
+      },
+      {
+        path: 'banners',
+        canActivate: [AuthGuard],
+        component: BannersComponent,
       },
     ],
   },

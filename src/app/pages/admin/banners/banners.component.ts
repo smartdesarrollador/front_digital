@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-banners',
@@ -15,24 +16,34 @@ import Swal from 'sweetalert2';
   styleUrl: './banners.component.css',
 })
 export class BannersComponent {
+  listCategories: any = [];
   files: any;
   submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
+  urlRaiz = environment.urlRaiz + '/';
   post = new Upload();
   constructor(
     private formBuilder: FormBuilder,
     private dataService: UploadService
   ) {}
 
+  ngOnInit(): void {
+    this.createForm();
+    this.loadCategories();
+  }
+
+  loadCategories() {
+    return this.dataService.getCategories().subscribe((data: {}) => {
+      console.log(data);
+      this.listCategories = data;
+    });
+  }
+
   createForm() {
     this.form = this.formBuilder.group({
       image: [null, Validators.required],
     });
-  }
-
-  ngOnInit(): void {
-    this.createForm();
   }
 
   get f() {

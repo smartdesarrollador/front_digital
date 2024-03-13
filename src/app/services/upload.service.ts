@@ -8,7 +8,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UploadService {
+  urlListar = environment.apiListarFiles;
   constructor(private http: HttpClient) {}
+
+  getCategories(): Observable<Upload> {
+    return this.http.get(this.urlListar);
+  }
 
   uploadData(data: any) {
     const headers = new HttpHeaders();

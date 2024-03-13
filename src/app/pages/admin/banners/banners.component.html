@@ -4,7 +4,27 @@
       File Upload In Angular & Laravel
     </h3>
   </header>
-
+  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+    <table class="w-full divide-y divide-gray-200 table-auto">
+      <thead class="bg-indigo-500 text-white">
+        <tr class="text-left text-xs font-bold uppercase">
+          <td scope="col" class="px-6 py-3">Nombre</td>
+          <td scope="col" class="px-6 py-3">Url</td>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-200">
+        <tr
+          *ngFor="let item of listCategories"
+          class="text-sm font-medium text-gray-900"
+        >
+          <td class="px-6 py-4">{{ item.nombre }}</td>
+          <td class="px-6 py-4">
+            <img src="{{ urlRaiz + item.url }}" alt="" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div class="form-group">
       <label for="image">Post Image</label>

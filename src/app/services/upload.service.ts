@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class UploadService {
   urlListar = environment.apiListarFiles;
+  urlDelete = environment.apiDeleteFile;
   constructor(private http: HttpClient) {}
 
   getCategories(): Observable<Upload> {
@@ -27,5 +28,9 @@ export class UploadService {
     // Puedes ajustar la URL según tu API
     const url = `${environment.apiUpdateFile}/${id}`;
     return this.http.put(url, data, { headers: headers });
+  }
+
+  deleteCategory(id: number) {
+    return this.http.delete(this.urlDelete + '/' + id);
   }
 }

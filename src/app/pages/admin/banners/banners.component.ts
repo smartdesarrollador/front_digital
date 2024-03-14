@@ -77,10 +77,24 @@ export class BannersComponent {
     });
   }
 
+  onDelete(id: number) {
+    this.dataService.deleteCategory(id).subscribe((response) => {
+      this.loadCategories();
+      this.alertaDelete();
+    });
+  }
+
   alerta() {
     Swal.fire({
       icon: 'success',
       title: 'Imagen subida',
+    });
+  }
+
+  alertaDelete() {
+    Swal.fire({
+      icon: 'success',
+      title: 'Registro eliminado',
     });
   }
 }

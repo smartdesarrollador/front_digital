@@ -91,7 +91,7 @@ import { LayoutDosComponent } from './layout/layout-dos/layout-dos.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component';
 import { BannersComponent } from './pages/admin/banners/banners.component';
-import { UpdateComponent } from './pages/admin/banners/update/update.component';
+import { UpdateFileComponent } from './pages/admin/banners/update-file/update-file.component';
 
 export const routes: Routes = [
   {
@@ -138,7 +138,7 @@ export const routes: Routes = [
       {
         path: 'update/file',
         canActivate: [AuthGuard],
-        component: UpdateComponent,
+        component: UpdateFileComponent,
       },
     ],
   },

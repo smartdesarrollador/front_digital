@@ -1,9 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Upload } from 'src/app/models/upload.model';
 import { UploadService } from 'src/app/services/upload.service';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpEvent,
+  HttpRequest,
+  HttpResponse,
+  HttpClientModule,
+} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -16,40 +22,20 @@ import { environment } from 'src/environments/environment';
   templateUrl: './update-file.component.html',
   styleUrl: './update-file.component.css',
 })
-export class UpdateFileComponent {
-  listCategories: any = [];
+export class UpdateFileComponent implements OnInit {
+  imagenSeleccionada: File = new File([], '');
+  respuestaImagen = new Upload();
+  idImagen: number = 11;
   files: any;
-  submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
-  urlRaiz = environment.urlRaiz + '/';
-  post = new Upload();
-  constructor(
-    private formBuilder: FormBuilder,
-    private dataService: UploadService,
-    private router: Router
-  ) {}
 
-  ngOnInit(): void {
-    this.createForm();
-    this.loadCategories();
-  }
+  constructor(private dataService: UploadService) {}
 
-  loadCategories() {
-    return this.dataService.getCategories().subscribe((data: {}) => {
-      console.log(data);
-      this.listCategories = data;
-    });
-  }
+  ngOnInit(): void {}
 
-  createForm() {
-    this.form = this.formBuilder.group({
-      image: [null, Validators.required],
-    });
-  }
-
-  get f() {
-    return this.form.controls;
+  seleccionarImagen(event: any): void {
+    this.imagenSeleccionada = event.target.files[0];
   }
 
   uploadImage(event: Event) {
@@ -63,26 +49,25 @@ export class UpdateFileComponent {
     }
   }
 
-  onSubmit() {
-    this.submitted = true;
-    if (this.form.invalid) {
+  editarImagen(): void {
+    /* if (!this.imagenSeleccionada || !this.idImagen) {
       return;
     }
+
+    this.subirImagenService
+      .editarImagen(this.idImagen, this.imagenSeleccionada)
+      .subscribe((event: HttpEvent<any>) => {
+        this.alerta();
+      }); */
 
     const formData = new FormData();
     formData.append('nombre', this.files, this.files.name);
 
-    this.dataService.uploadData(formData).subscribe((res) => {
+    this.dataService.updateData(this.idImagen, formData).subscribe((res) => {
       this.data = res;
       console.log(this.data);
       this.alerta();
     });
-  }
-
-  onEdit(category: Upload) {
-    console.log(category);
-    this.dataService.selectCategory = Object.assign({}, category);
-    this.router.navigate(['/admin/update/file']);
   }
 
   alerta() {

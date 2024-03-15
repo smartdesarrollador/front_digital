@@ -5,6 +5,7 @@ import { UploadService } from 'src/app/services/upload.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 
@@ -25,7 +26,8 @@ export class BannersComponent {
   post = new Upload();
   constructor(
     private formBuilder: FormBuilder,
-    private dataService: UploadService
+    private dataService: UploadService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -75,6 +77,12 @@ export class BannersComponent {
       console.log(this.data);
       this.alerta();
     });
+  }
+
+  onEdit(category: Upload) {
+    console.log(category);
+    this.dataService.selectCategory = Object.assign({}, category);
+    this.router.navigate(['/admin/update/file']);
   }
 
   onDelete(id: number) {

@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UploadService {
+  selectCategory: Upload = new Upload();
   urlListar = environment.apiListarFiles;
   urlDelete = environment.apiDeleteFile;
   constructor(private http: HttpClient) {}

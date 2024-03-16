@@ -31,11 +31,11 @@ export class UploadService {
     });
   }
 
-  updateData(id: number, data: any): Observable<any> {
+  updateData(data: any) {
     const headers = new HttpHeaders();
-
-    const url = environment.apiUpdateFile + '/' + id;
-    return this.http.put(url, data, { headers: headers });
+    return this.http.post(environment.apiUpdateFile, data, {
+      headers: headers,
+    });
   }
 
   /* editarImagen(idImagen: number, archivo: File): Observable<HttpEvent<any>> {

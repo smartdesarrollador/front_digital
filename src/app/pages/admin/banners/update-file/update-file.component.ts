@@ -23,19 +23,40 @@ import { environment } from 'src/environments/environment';
   styleUrl: './update-file.component.css',
 })
 export class UpdateFileComponent implements OnInit {
-  imagenSeleccionada: File = new File([], '');
-  respuestaImagen = new Upload();
-  idImagen: number = 11;
+  listCategories: any = [];
   files: any;
+  submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
+  urlRaiz = environment.urlRaiz + '/';
+  id_medios: any = 19;
+  post = new Upload();
+  constructor(
+    private formBuilder: FormBuilder,
+    private dataService: UploadService,
+    private router: Router
+  ) {}
 
-  constructor(private dataService: UploadService) {}
+  ngOnInit(): void {
+    this.createForm();
+    this.loadCategories();
+  }
 
-  ngOnInit(): void {}
+  loadCategories() {
+    return this.dataService.getCategories().subscribe((data: {}) => {
+      console.log(data);
+      this.listCategories = data;
+    });
+  }
 
-  seleccionarImagen(event: any): void {
-    this.imagenSeleccionada = event.target.files[0];
+  createForm() {
+    this.form = this.formBuilder.group({
+      image: [null, Validators.required],
+    });
+  }
+
+  get f() {
+    return this.form.controls;
   }
 
   uploadImage(event: Event) {
@@ -49,21 +70,18 @@ export class UpdateFileComponent implements OnInit {
     }
   }
 
-  editarImagen(): void {
-    /* if (!this.imagenSeleccionada || !this.idImagen) {
+  onSubmit() {
+    this.submitted = true;
+    if (this.form.invalid) {
       return;
     }
-
-    this.subirImagenService
-      .editarImagen(this.idImagen, this.imagenSeleccionada)
-      .subscribe((event: HttpEvent<any>) => {
-        this.alerta();
-      }); */
 
     const formData = new FormData();
     formData.append('nombre', this.files, this.files.name);
 
-    this.dataService.updateData(this.idImagen, formData).subscribe((res) => {
+    formData.append('id_medios', this.id_medios);
+
+    this.dataService.updateData(formData).subscribe((res) => {
       this.data = res;
       console.log(this.data);
       this.alerta();

@@ -29,7 +29,7 @@ export class UpdateFileComponent implements OnInit {
   data: any;
   form: FormGroup = new FormGroup({});
   urlRaiz = environment.urlRaiz + '/';
-  id_medios: any = 19;
+  id_medios: any = 24;
   post = new Upload();
   constructor(
     private formBuilder: FormBuilder,

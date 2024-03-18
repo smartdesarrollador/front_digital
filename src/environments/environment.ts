@@ -23,7 +23,7 @@ export const environment = {
   urlRaiz: 'https://back.iatecdigital.com',
   apiUrl: 'https://back.iatecdigital.com/api/test_api_crud',
   apiUrl2: 'https://back.iatecdigital.com/api/test_api',
-  apiUrl3: 'https://back.iatecdigital.com/api/file',
+  apiUrl3: 'https://back.iatecdigital.com/api/upload',
   apiUpdateFile: 'https://back.iatecdigital.com/api/update/upload',
   apiListarFiles: 'https://back.iatecdigital.com/api/listar/files',
   apiDeleteFile: 'https://back.iatecdigital.com/api/update/upload',

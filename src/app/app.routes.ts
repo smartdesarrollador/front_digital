@@ -92,6 +92,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component';
 import { BannersComponent } from './pages/admin/banners/banners.component';
 import { UpdateFileComponent } from './pages/admin/banners/update-file/update-file.component';
+import { MisionComponent } from './pages/admin/mision/mision.component';
 
 export const routes: Routes = [
   {
@@ -139,6 +140,11 @@ export const routes: Routes = [
         path: 'update/file',
         canActivate: [AuthGuard],
         component: UpdateFileComponent,
+      },
+      {
+        path: 'mision',
+        canActivate: [AuthGuard],
+        component: MisionComponent,
       },
     ],
   },

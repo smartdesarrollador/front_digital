@@ -17,6 +17,8 @@
   apiUrlActividadUltimoEmpleador:
     'https://apilegajo.amorinomoda.com/api/actividad_ultimo_empleador',
     apiUrlMision: 'https://apilegajo.amorinomoda.com/api/mision',
+    apiUrlMisionActualizar: 'https://apilegajo.amorinomoda.com/api/mision/actualizar',
+    apiUrlMisionUpdate: 'https://apilegajo.amorinomoda.com/api/mision/update/upload',
 }; */
 
 export const environment = {
@@ -37,4 +39,6 @@ export const environment = {
   apiUrlActividadUltimoEmpleador:
     'https://back.iatecdigital.com/api/actividad_ultimo_empleador',
   apiUrlMision: 'https://back.iatecdigital.com/api/mision',
+  apiUrlMisionActualizar: 'https://back.iatecdigital.com/api/mision/actualizar',
+  apiUrlMisionUpdate: 'https://back.iatecdigital.com/api/mision/update/upload',
 };

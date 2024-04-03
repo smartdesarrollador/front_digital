@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MisionService {
   url = environment.apiUrlMision;
+  urlUpdate = environment.apiUrlMisionActualizar;
 
   selectCategory: Mision = new Mision();
 
@@ -21,5 +22,18 @@ export class MisionService {
 
   getCategories(): Observable<Mision> {
     return this.http.get(this.url);
+  }
+
+  updateCategory(id: number, category: Mision) {
+    return this.http.put(this.urlUpdate + '/1', category, {
+      headers: this.reqHeader,
+    });
+  }
+
+  updateData(data: any) {
+    const headers = new HttpHeaders();
+    return this.http.post(environment.apiUrlMisionUpdate, data, {
+      headers: headers,
+    });
   }
 }

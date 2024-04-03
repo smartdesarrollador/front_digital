@@ -1,39 +1,38 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Upload } from 'src/app/models/upload.model';
-import { UploadService } from 'src/app/services/upload.service';
-import { CommonModule } from '@angular/common';
-import {
-  HttpClient,
-  HttpEvent,
-  HttpRequest,
-  HttpResponse,
-  HttpClientModule,
-} from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MisionService } from 'src/app/services/mision.service';
+import { Mision } from 'src/app/models/mision';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import {
+  FormsModule,
+  ReactiveFormsModule,
+  FormGroup,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { environment } from 'src/environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-update-file',
+  selector: 'app-update-file-mision',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-  templateUrl: './update-file.component.html',
-  styleUrl: './update-file.component.css',
+  templateUrl: './update-file-mision.component.html',
+  styleUrl: './update-file-mision.component.css',
 })
-export class UpdateFileComponent implements OnInit {
-  listCategories: any = [];
+export class UpdateFileMisionComponent implements OnInit {
+  datos_mision: any = [];
+  urlRaiz = environment.urlRaiz + '/';
   files: any;
   submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
-  urlRaiz = environment.urlRaiz + '/';
-  id_medios: any = 2;
-  post = new Upload();
+  id_medios: any = 1;
+
   constructor(
     private formBuilder: FormBuilder,
-    private dataService: UploadService,
+    public cs: MisionService,
     private router: Router
   ) {}
 
@@ -43,9 +42,9 @@ export class UpdateFileComponent implements OnInit {
   }
 
   loadCategories() {
-    return this.dataService.getCategories().subscribe((data: {}) => {
+    return this.cs.getCategories().subscribe((data: {}) => {
       console.log(data);
-      this.listCategories = data;
+      this.datos_mision = data;
     });
   }
 
@@ -77,11 +76,11 @@ export class UpdateFileComponent implements OnInit {
     }
 
     const formData = new FormData();
-    formData.append('nombre', this.files, this.files.name);
+    formData.append('imagen_mision', this.files, this.files.name);
 
-    formData.append('id_medios', this.id_medios);
+    formData.append('id_mision', this.id_medios);
 
-    this.dataService.updateData(formData).subscribe((res) => {
+    this.cs.updateData(formData).subscribe((res) => {
       this.data = res;
       console.log(this.data);
       this.alerta();

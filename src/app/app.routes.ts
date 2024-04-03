@@ -93,6 +93,8 @@ import { LayoutTresComponent } from './layout/layout-tres/layout-tres.component'
 import { BannersComponent } from './pages/admin/banners/banners.component';
 import { UpdateFileComponent } from './pages/admin/banners/update-file/update-file.component';
 import { MisionComponent } from './pages/admin/mision/mision.component';
+import { UpdateFileMisionComponent } from './pages/admin/mision/update-file-mision/update-file-mision.component';
+import { UpdateMisionComponent } from './pages/admin/mision/update-mision/update-mision.component';
 
 export const routes: Routes = [
   {
@@ -145,6 +147,16 @@ export const routes: Routes = [
         path: 'mision',
         canActivate: [AuthGuard],
         component: MisionComponent,
+      },
+      {
+        path: 'mision/update/file',
+        canActivate: [AuthGuard],
+        component: UpdateFileMisionComponent,
+      },
+      {
+        path: 'mision/update',
+        canActivate: [AuthGuard],
+        component: UpdateMisionComponent,
       },
     ],
   },

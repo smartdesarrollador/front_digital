@@ -4,6 +4,8 @@ export class Mision {
   url_imagen_mision?: string;
   titulo_mision?: string;
   contenido_mision?: string;
+  contenido_vision?: string;
+  contenido_valores?: string;
   created_at?: string;
   updated_at?: string;
 }

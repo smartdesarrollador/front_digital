@@ -16,4 +16,6 @@ export const environment = {
   apiUrlActividadUltimoEmpleador:
     'http://127.0.0.1:8000/api/actividad_ultimo_empleador',
   apiUrlMision: 'http://127.0.0.1:8000/api/mision',
+  apiUrlMisionActualizar: 'http://127.0.0.1:8000/api/mision/actualizar',
+  apiUrlMisionUpdate: 'http://127.0.0.1:8000/api/mision/update/upload',
 };

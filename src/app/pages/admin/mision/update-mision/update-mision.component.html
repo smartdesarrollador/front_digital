@@ -1,12 +1,12 @@
-<h2 class="text-center text-2xl">Nueva Categoria</h2>
-<div class="w-full max-w-xs m-auto">
+<h2 class="text-center text-2xl">Editar contenido</h2>
+<div class="w-full max-w-3xl m-auto">
   <form
     #categoryForm="ngForm"
     (ngSubmit)="submitForm(categoryForm)"
     class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
   >
-    <input type="text" name="id" [(ngModel)]="id_mision" />
-    <div class="mb-4">
+    <!--  <input type="text" name="id" [(ngModel)]="id_mision" /> -->
+    <!--  <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2"> Imagen </label>
       <input
         [(ngModel)]="categoryService.selectCategory.imagen_mision"
@@ -16,7 +16,7 @@
         type="text"
         placeholder="imagen_mision"
       />
-    </div>
+    </div> -->
     <div class="mb-6">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
         Titulo
@@ -27,8 +27,44 @@
         class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         id="password"
         type="text"
-        placeholder="titulo_mision"
+        placeholder="Titulo"
       />
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+        Misión
+      </label>
+      <textarea
+        [(ngModel)]="categoryService.selectCategory.contenido_mision"
+        name="contenido_mision"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password"
+        placeholder="Contenido"
+      ></textarea>
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+        Visión
+      </label>
+      <textarea
+        [(ngModel)]="categoryService.selectCategory.contenido_vision"
+        name="contenido_vision"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password"
+        placeholder="Contenido"
+      ></textarea>
+    </div>
+    <div class="mb-6">
+      <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
+        Valores
+      </label>
+      <textarea
+        [(ngModel)]="categoryService.selectCategory.contenido_valores"
+        name="contenido_valores"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="password"
+        placeholder="Contenido"
+      ></textarea>
     </div>
     <div class="flex items-center justify-between">
       <button
@@ -45,7 +81,4 @@
       </a>
     </div>
   </form>
-  <p class="text-center text-gray-500 text-xs">
-    &copy;2020 Acme Corp. All rights reserved.
-  </p>
 </div>

@@ -1,18 +1,24 @@
-<form (ngSubmit)="onSubmit()" [formGroup]="form" class="my-10">
-  <div class="form-group">
-    <label for="image">Cargar Imagen</label>
-    <input
-      type="file"
-      formControlName="image"
-      name="image"
-      id="image"
-      class="form-control"
-      (change)="uploadImage($event)"
-    />
+<div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+  <div
+    class="flex justify-center bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4"
+  >
+    <form (ngSubmit)="onSubmit()" [formGroup]="form" class="my-10">
+      <div class="py-5 form-group">
+        <label for="image">Cargar Imagen </label>
+        <input
+          type="file"
+          formControlName="image"
+          name="image"
+          id="image"
+          class="form-control"
+          (change)="uploadImage($event)"
+        />
 
-    <div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
-      <div *ngIf="f['image'].errors['required']">Image is required</div>
-    </div>
+        <div *ngIf="submitted && f['image'].errors" class="invalid-feedback">
+          <div *ngIf="f['image'].errors['required']">Image is required</div>
+        </div>
+      </div>
+      <button type="submit" class="boton-azul">Actualizar</button>
+    </form>
   </div>
-  <button type="submit" class="boton-azul">Subir</button>
-</form>
+</div>

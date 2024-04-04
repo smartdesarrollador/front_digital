@@ -18,7 +18,7 @@ import { environment } from 'src/environments/environment';
 })
 export class CarouselComponent {
   listCategories: any = [];
-  files: any;
+  files_date: any;
   submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
@@ -52,13 +52,44 @@ export class CarouselComponent {
     return this.form.controls;
   }
 
-  uploadImage(event: Event) {
+  /* uploadImage(event: Event) {
     if (event.target instanceof HTMLInputElement) {
       if (event.target.files && event.target.files.length > 0) {
         this.files = event.target.files[0];
         console.log(this.files);
       } else {
         console.log('no se selecciono ningun archivo');
+      }
+    }
+  } */
+
+  uploadImage(event: Event) {
+    if (event.target instanceof HTMLInputElement) {
+      if (event.target.files && event.target.files.length > 0) {
+        const files = event.target.files[0];
+        this.files_date = files;
+        const maxSizeInBytes = 5 * 1024 * 1024; // 5MB
+
+        if (files.size > maxSizeInBytes) {
+          console.log('La imagen excede el tamaño máximo permitido (5MB)');
+          this.alertaMaxFile();
+          // Puedes mostrar un mensaje de error o realizar otra acción
+          event.target.value = ''; // Limpiar el input file
+          return;
+        }
+
+        if (!['image/jpeg', 'image/png'].includes(files.type)) {
+          console.log('Solo se permiten archivos JPG y PNG');
+          this.alertaExtFile();
+          // Puedes mostrar un mensaje de error o realizar otra acción
+          event.target.value = ''; // Limpiar el input file
+          return;
+        }
+
+        // Aquí puedes continuar con el proceso de carga de la imagen
+        console.log('Archivo seleccionado:', files);
+      } else {
+        console.log('No se seleccionó ningún archivo');
       }
     }
   }
@@ -70,7 +101,7 @@ export class CarouselComponent {
     }
 
     const formData = new FormData();
-    formData.append('nombre_carousel', this.files, this.files.name);
+    formData.append('nombre_carousel', this.files_date, this.files_date.name);
 
     this.dataService.uploadData(formData).subscribe((res) => {
       this.data = res;
@@ -98,6 +129,20 @@ export class CarouselComponent {
     Swal.fire({
       icon: 'success',
       title: 'Imagen subida',
+    });
+  }
+
+  alertaMaxFile() {
+    Swal.fire({
+      icon: 'error',
+      title: 'La imagen excede el tamaño máximo permitido (5MB)',
+    });
+  }
+
+  alertaExtFile() {
+    Swal.fire({
+      icon: 'error',
+      title: 'Solo se permiten archivos JPG y PNG',
     });
   }
 

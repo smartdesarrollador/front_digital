@@ -18,4 +18,8 @@ export const environment = {
   apiUrlMision: 'http://127.0.0.1:8000/api/mision',
   apiUrlMisionActualizar: 'http://127.0.0.1:8000/api/mision/actualizar',
   apiUrlMisionUpdate: 'http://127.0.0.1:8000/api/mision/update/upload',
+  apiUrl3Carousel: 'http://127.0.0.1:8000/api/carousel/upload',
+  apiUpdateFileCarousel: 'http://127.0.0.1:8000/api/carousel/update/upload',
+  apiListarFilesCarousel: 'http://127.0.0.1:8000/api/carousel/listar/files',
+  apiDeleteFileCarousel: 'http://127.0.0.1:8000/api/carousel/update/upload',
 };

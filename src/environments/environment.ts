@@ -19,6 +19,10 @@
     apiUrlMision: 'https://apilegajo.amorinomoda.com/api/mision',
     apiUrlMisionActualizar: 'https://apilegajo.amorinomoda.com/api/mision/actualizar',
     apiUrlMisionUpdate: 'https://apilegajo.amorinomoda.com/api/mision/update/upload',
+    apiUrl3Carousel: 'https://apilegajo.amorinomoda.com/api/carousel/upload',
+  apiUpdateFileCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/update/upload',
+  apiListarFilesCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/listar/files',
+  apiDeleteFileCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/update/upload',
 }; */
 
 export const environment = {
@@ -41,4 +45,11 @@ export const environment = {
   apiUrlMision: 'https://back.iatecdigital.com/api/mision',
   apiUrlMisionActualizar: 'https://back.iatecdigital.com/api/mision/actualizar',
   apiUrlMisionUpdate: 'https://back.iatecdigital.com/api/mision/update/upload',
+  apiUrl3Carousel: 'https://back.iatecdigital.com/api/carousel/upload',
+  apiUpdateFileCarousel:
+    'https://back.iatecdigital.com/api/carousel/update/upload',
+  apiListarFilesCarousel:
+    'https://back.iatecdigital.com/api/carousel/listar/files',
+  apiDeleteFileCarousel:
+    'https://back.iatecdigital.com/api/carousel/update/upload',
 };

@@ -95,6 +95,8 @@ import { UpdateFileComponent } from './pages/admin/banners/update-file/update-fi
 import { MisionComponent } from './pages/admin/mision/mision.component';
 import { UpdateFileMisionComponent } from './pages/admin/mision/update-file-mision/update-file-mision.component';
 import { UpdateMisionComponent } from './pages/admin/mision/update-mision/update-mision.component';
+import { CarouselComponent } from './pages/admin/carousel/carousel.component';
+import { UpdateFileCarouselComponent } from './pages/admin/carousel/update-file-carousel/update-file-carousel.component';
 
 export const routes: Routes = [
   {
@@ -157,6 +159,16 @@ export const routes: Routes = [
         path: 'mision/update',
         canActivate: [AuthGuard],
         component: UpdateMisionComponent,
+      },
+      {
+        path: 'carousel',
+        canActivate: [AuthGuard],
+        component: CarouselComponent,
+      },
+      {
+        path: 'carousel/update/file',
+        canActivate: [AuthGuard],
+        component: UpdateFileCarouselComponent,
       },
     ],
   },

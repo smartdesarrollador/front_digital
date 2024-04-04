@@ -11,7 +11,7 @@ import {
   HttpClientModule,
 } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 
@@ -29,17 +29,23 @@ export class UpdateFileComponent implements OnInit {
   data: any;
   form: FormGroup = new FormGroup({});
   urlRaiz = environment.urlRaiz + '/';
-  id_medios: any = 2;
+  valor_id_medios: any;
   post = new Upload();
   constructor(
     private formBuilder: FormBuilder,
     private dataService: UploadService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.createForm();
     this.loadCategories();
+
+    this.route.queryParams.subscribe((params) => {
+      const categoryId = params['categoryId'];
+      this.valor_id_medios = categoryId;
+    });
   }
 
   loadCategories() {
@@ -79,7 +85,7 @@ export class UpdateFileComponent implements OnInit {
     const formData = new FormData();
     formData.append('nombre', this.files, this.files.name);
 
-    formData.append('id_medios', this.id_medios);
+    formData.append('id_medios', this.valor_id_medios);
 
     this.dataService.updateData(formData).subscribe((res) => {
       this.data = res;

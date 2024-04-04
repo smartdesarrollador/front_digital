@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Upload } from 'src/app/models/upload.model';
-import { UploadService } from 'src/app/services/upload.service';
+import { Carousel } from 'src/app/models/carousel.model';
+import { CarouselService } from 'src/app/services/carousel.service';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -10,23 +10,23 @@ import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-banners',
+  selector: 'app-carousel',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
-  templateUrl: './banners.component.html',
-  styleUrl: './banners.component.css',
+  templateUrl: './carousel.component.html',
+  styleUrl: './carousel.component.css',
 })
-export class BannersComponent {
+export class CarouselComponent {
   listCategories: any = [];
   files: any;
   submitted = false;
   data: any;
   form: FormGroup = new FormGroup({});
   urlRaiz = environment.urlRaiz + '/';
-  post = new Upload();
+  post = new Carousel();
   constructor(
     private formBuilder: FormBuilder,
-    private dataService: UploadService,
+    private dataService: CarouselService,
     private router: Router
   ) {}
 
@@ -70,7 +70,7 @@ export class BannersComponent {
     }
 
     const formData = new FormData();
-    formData.append('nombre', this.files, this.files.name);
+    formData.append('nombre_carousel', this.files, this.files.name);
 
     this.dataService.uploadData(formData).subscribe((res) => {
       this.data = res;
@@ -79,11 +79,11 @@ export class BannersComponent {
     });
   }
 
-  onEdit(category: Upload) {
+  onEdit(category: Carousel) {
     console.log(category);
     this.dataService.selectCategory = Object.assign({}, category);
-    this.router.navigate(['/admin/update/file'], {
-      queryParams: { categoryId: category.id_medios },
+    this.router.navigate(['/admin/carousel/update/file'], {
+      queryParams: { categoryId: category.id_carousel },
     });
   }
 

@@ -11,14 +11,20 @@ import {
   HttpClientModule,
 } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-update-file-carousel',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterLink,
+  ],
   templateUrl: './update-file-carousel.component.html',
   styleUrl: './update-file-carousel.component.css',
 })

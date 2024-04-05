@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MisionService } from 'src/app/services/mision.service';
 import { Mision } from 'src/app/models/mision';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import {
@@ -17,7 +17,13 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-update-file-mision',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterLink,
+  ],
   templateUrl: './update-file-mision.component.html',
   styleUrl: './update-file-mision.component.css',
 })

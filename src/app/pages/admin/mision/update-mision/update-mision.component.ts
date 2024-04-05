@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MisionService } from 'src/app/services/mision.service';
 import { Mision } from 'src/app/models/mision';
 import { CommonModule } from '@angular/common';
@@ -10,7 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-update-mision',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    RouterLink,
+  ],
   templateUrl: './update-mision.component.html',
   styleUrl: './update-mision.component.css',
 })

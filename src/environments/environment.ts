@@ -23,9 +23,11 @@
   apiUpdateFileCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/update/upload',
   apiListarFilesCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/listar/files',
   apiDeleteFileCarousel: 'https://apilegajo.amorinomoda.com/api/carousel/update/upload',
+  apiListarFilesProducto: 'https://apilegajo.amorinomoda.com/api/productos',
+  apiListarCursosProducto: 'https://apilegajo.amorinomoda.com/api/productos/cursos',
+  apiListarEspecialidadesProducto: 'https://apilegajo.amorinomoda.com/api/productos/especialidades',
   apiUrl3Producto: 'https://apilegajo.amorinomoda.com/api/productos/subir',
   apiUpdateFileProducto: 'https://apilegajo.amorinomoda.com/api/productos/update',
-  apiListarFilesProducto: 'https://apilegajo.amorinomoda.com/api/productos',
   apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
 }; */
 
@@ -56,8 +58,11 @@ export const environment = {
     'https://back.iatecdigital.com/api/carousel/listar/files',
   apiDeleteFileCarousel:
     'https://back.iatecdigital.com/api/carousel/update/upload',
+  apiListarFilesProducto: 'https://back.iatecdigital.com/api/productos',
+  apiListarCursosProducto: 'https://back.iatecdigital.com/api/productos/cursos',
+  apiListarEspecialidadesProducto:
+    'https://back.iatecdigital.com/api/productos/especialidades',
   apiUrl3Producto: 'https://back.iatecdigital.com/api/productos/subir',
   apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
-  apiListarFilesProducto: 'https://back.iatecdigital.com/api/productos',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
 };

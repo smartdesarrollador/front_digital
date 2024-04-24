@@ -22,7 +22,7 @@ export class CardCursoComponent implements OnInit {
   }
 
   loadBanners() {
-    return this.dataService.getCategories().subscribe((data: {}) => {
+    return this.dataService.getCursos().subscribe((data: {}) => {
       console.log(data);
       this.listBanners = data;
     });

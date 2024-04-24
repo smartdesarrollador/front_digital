@@ -37,19 +37,24 @@ export class VerCursoComponent implements OnInit {
     private dataService: ProductoService,
     private route: ActivatedRoute
   ) {
-    this.listCursos = this.dataService.selectCategory;
+    /* this.listCursos = this.dataService.selectCategory; */
   }
 
   ngOnInit(): void {
     /*  this.loadCategories(); */
 
     this.route.queryParams.subscribe((params) => {
-      const categoryId = params['categoryId'];
-      this.valor_id_producto = categoryId;
+      const categoryId = params['Id'];
+
+      console.log(categoryId);
+      this.loadCategories(categoryId);
     });
   }
 
-  /* loadCategories() {
-    return (this.listCursos = this.dataService.selectCategory);
-  } */
+  loadCategories(categoryId: any) {
+    return this.dataService.getCursoById(categoryId).subscribe((data: {}) => {
+      console.log(data);
+      this.listCursos = data;
+    });
+  }
 }

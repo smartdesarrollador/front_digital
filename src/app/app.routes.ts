@@ -61,7 +61,7 @@ export const routes: Routes = [
         component: CursosComponent,
       },
       {
-        path: 'detalle-curso',
+        path: 'detalle',
         component: DetalleCursoComponent,
       },
     ],

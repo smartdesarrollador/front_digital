@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Producto } from 'src/app/models/producto.model';
 import { ProductoService } from 'src/app/services/producto.service';
 import { environment } from 'src/environments/environment';
@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 export class CardEspecialidadComponent implements OnInit {
   urlRaiz = environment.urlRaiz + '/';
   listBanners: any = [];
-  constructor(private dataService: ProductoService) {}
+  constructor(private dataService: ProductoService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadBanners();
@@ -25,6 +25,14 @@ export class CardEspecialidadComponent implements OnInit {
     return this.dataService.getEspecialidades().subscribe((data: {}) => {
       console.log(data);
       this.listBanners = data;
+    });
+  }
+
+  onDetail(dataProducto: Producto) {
+    console.log(dataProducto);
+    this.dataService.selectCategory = Object.assign({}, dataProducto);
+    this.router.navigate(['/detalle'], {
+      queryParams: { Id: dataProducto.id_producto },
     });
   }
 }

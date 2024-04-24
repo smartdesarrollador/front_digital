@@ -31,8 +31,8 @@ export class CardCursoComponent implements OnInit {
   onDetail(dataProducto: Producto) {
     console.log(dataProducto);
     this.dataService.selectCategory = Object.assign({}, dataProducto);
-    this.router.navigate(['/detalle-curso'], {
-      queryParams: { categoryId: dataProducto.id_producto },
+    this.router.navigate(['/detalle'], {
+      queryParams: { Id: dataProducto.id_producto },
     });
   }
 }

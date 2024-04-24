@@ -28,7 +28,7 @@ import { UpdateFileMisionComponent } from './pages/admin/mision/update-file-misi
 import { UpdateMisionComponent } from './pages/admin/mision/update-mision/update-mision.component';
 import { CarouselComponent } from './pages/admin/carousel/carousel.component';
 import { UpdateFileCarouselComponent } from './pages/admin/carousel/update-file-carousel/update-file-carousel.component';
-import { VerCursoComponent } from './layout/componentes/ver-curso/ver-curso.component';
+import { DetalleCursoComponent } from './pages/vista/detalle-curso/detalle-curso.component';
 
 export const routes: Routes = [
   {
@@ -61,8 +61,8 @@ export const routes: Routes = [
         component: CursosComponent,
       },
       {
-        path: 'ver-curso',
-        component: VerCursoComponent,
+        path: 'detalle-curso',
+        component: DetalleCursoComponent,
       },
     ],
   },

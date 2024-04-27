@@ -29,6 +29,7 @@
   apiUrl3Producto: 'https://apilegajo.amorinomoda.com/api/productos/subir',
   apiUpdateFileProducto: 'https://apilegajo.amorinomoda.com/api/productos/update',
   apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
+  apiUrlEmailContacto: 'https://apilegajo.amorinomoda.com/api/contacto',
 }; */
 
 export const environment = {
@@ -65,4 +66,5 @@ export const environment = {
   apiUrl3Producto: 'https://back.iatecdigital.com/api/productos/subir',
   apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
+  apiUrlEmailContacto: 'https://back.iatecdigital.com/api/contacto',
 };

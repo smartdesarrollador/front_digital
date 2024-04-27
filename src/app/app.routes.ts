@@ -29,6 +29,7 @@ import { UpdateMisionComponent } from './pages/admin/mision/update-mision/update
 import { CarouselComponent } from './pages/admin/carousel/carousel.component';
 import { UpdateFileCarouselComponent } from './pages/admin/carousel/update-file-carousel/update-file-carousel.component';
 import { DetalleCursoComponent } from './pages/vista/detalle-curso/detalle-curso.component';
+import { ContactoComponent } from './pages/vista/contacto/contacto.component';
 
 export const routes: Routes = [
   {
@@ -63,6 +64,10 @@ export const routes: Routes = [
       {
         path: 'detalle',
         component: DetalleCursoComponent,
+      },
+      {
+        path: 'contacto',
+        component: ContactoComponent,
       },
     ],
   },

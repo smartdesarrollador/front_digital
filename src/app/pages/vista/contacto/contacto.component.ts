@@ -24,12 +24,20 @@ export class ContactoComponent {
     private http: HttpClient /* private Toastr: ToastrService */
   ) {
     this.FormContacto = this.fb.group({
-      nombre: [''],
+      nombre: ['', Validators.required],
+      correo: ['', [Validators.required, Validators.email]],
+      telefono: ['', Validators.required],
+      asunto: ['', Validators.required],
+      mensaje: ['', Validators.required],
     });
   }
   EnviarEmail() {
     var formData: any = new FormData();
     formData.append('nombre', this.FormContacto.get('nombre').value);
+    formData.append('correo', this.FormContacto.get('correo').value);
+    formData.append('telefono', this.FormContacto.get('telefono').value);
+    formData.append('asunto', this.FormContacto.get('asunto').value);
+    formData.append('mensaje', this.FormContacto.get('mensaje').value);
     this.http.post(this.UrlEmail, formData).subscribe(
       (response) => {
         console.log(response);

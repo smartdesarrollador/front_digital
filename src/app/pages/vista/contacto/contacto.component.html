@@ -3,7 +3,7 @@
     <h1
       class="mb-4 text-4xl pt-10 font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl"
     >
-      Contactos
+      Contacto
     </h1>
   </div>
 </section>
@@ -12,9 +12,9 @@
   <div class="max-w-5xl mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg px-4 py-4">
       <!--Tabla lista de items   -->
-      <h2 class="text-center text-xl text-blue-500 font-bold">
+      <!-- <h2 class="text-center text-xl text-blue-500 font-bold">
         Formulario contacto
-      </h2>
+      </h2> -->
       <form
         [formGroup]="FormContacto"
         (ngSubmit)="EnviarEmail()"
@@ -33,13 +33,22 @@
             name="nombre"
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+          <small
+            *ngIf="
+              FormContacto.controls.nombre.invalid &&
+              (FormContacto.controls.nombre.dirty ||
+                FormContacto.controls.nombre.touched)
+            "
+            class="text-red-500"
+            >Este campo nombre es requerido</small
+          >
         </div>
 
         <div class="mb-5" form-group>
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Correo Electronico</label
+            >Correo Electrónico</label
           >
           <input
             type="text"
@@ -48,12 +57,21 @@
             name="correo"
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+          <small
+            *ngIf="
+              FormContacto.controls.correo.invalid &&
+              (FormContacto.controls.correo.dirty ||
+                FormContacto.controls.correo.touched)
+            "
+            class="text-red-500"
+            >Este campo correo es requerido</small
+          >
         </div>
         <div class="mb-5" form-group>
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Telefono</label
+            >Teléfono</label
           >
           <input
             type="text"
@@ -62,6 +80,15 @@
             name="telefono"
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+          <small
+            *ngIf="
+              FormContacto.controls.telefono.invalid &&
+              (FormContacto.controls.telefono.dirty ||
+                FormContacto.controls.telefono.touched)
+            "
+            class="text-red-500"
+            >Este campo telefono es requerido</small
+          >
         </div>
         <div class="mb-5" form-group>
           <label
@@ -76,6 +103,15 @@
             name="asunto"
             class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           />
+          <small
+            *ngIf="
+              FormContacto.controls.asunto.invalid &&
+              (FormContacto.controls.asunto.dirty ||
+                FormContacto.controls.asunto.touched)
+            "
+            class="text-red-500"
+            >Este campo asunto es requerido</small
+          >
         </div>
         <div class="mb-5" form-group>
           <label
@@ -87,8 +123,17 @@
             id="mensaje"
             formControlName="mensaje"
             name="mensaje"
-            class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            class="form-control bg-gray-50 border border-gray-300 h-48 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           ></textarea>
+          <small
+            *ngIf="
+              FormContacto.controls.mensaje.invalid &&
+              (FormContacto.controls.mensaje.dirty ||
+                FormContacto.controls.mensaje.touched)
+            "
+            class="text-red-500"
+            >Este campo mensaje es requerido</small
+          >
         </div>
 
         <button

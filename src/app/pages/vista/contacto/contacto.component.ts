@@ -32,23 +32,28 @@ export class ContactoComponent {
     });
   }
   EnviarEmail() {
-    var formData: any = new FormData();
-    formData.append('nombre', this.FormContacto.get('nombre').value);
-    formData.append('correo', this.FormContacto.get('correo').value);
-    formData.append('telefono', this.FormContacto.get('telefono').value);
-    formData.append('asunto', this.FormContacto.get('asunto').value);
-    formData.append('mensaje', this.FormContacto.get('mensaje').value);
-    this.http.post(this.UrlEmail, formData).subscribe(
-      (response) => {
-        console.log(response);
-        /* this.Toastr.success('Email enviado Exitosamente'); */
-        this.alerta();
-      },
-      (error) => {
-        console.log(error);
-        /* this.Toastr.error('No se pudo enviar el email'); */
-      }
-    );
+    if (this.FormContacto.valid) {
+      var formData: any = new FormData();
+      formData.append('nombre', this.FormContacto.get('nombre').value);
+      formData.append('correo', this.FormContacto.get('correo').value);
+      formData.append('telefono', this.FormContacto.get('telefono').value);
+      formData.append('asunto', this.FormContacto.get('asunto').value);
+      formData.append('mensaje', this.FormContacto.get('mensaje').value);
+      this.http.post(this.UrlEmail, formData).subscribe(
+        (response) => {
+          console.log(response);
+          /* this.Toastr.success('Email enviado Exitosamente'); */
+          this.alerta();
+        },
+        (error) => {
+          console.log(error);
+          /* this.Toastr.error('No se pudo enviar el email'); */
+        }
+      );
+    } else {
+      // Aquí puedes mostrar un mensaje de error o realizar alguna acción adicional
+      console.log('El formulario contiene campos inválidos.');
+    }
   }
 
   alerta() {

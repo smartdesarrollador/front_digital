@@ -44,6 +44,8 @@ export class ContactoComponent {
           console.log(response);
           /* this.Toastr.success('Email enviado Exitosamente'); */
           this.alerta();
+          // Resetear el formulario después de enviar el correo electrónico
+          this.FormContacto.reset();
         },
         (error) => {
           console.log(error);

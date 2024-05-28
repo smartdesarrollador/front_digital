@@ -16,6 +16,9 @@ import { CarouselOwl1Component } from '../componentes/carousel-owl-1/carousel-ow
 import { CarouselOwl2Component } from '../componentes/carousel-owl-2/carousel-owl-2.component';
 import { Parallax1Component } from '../componentes/parallax-1/parallax-1.component';
 import { BackgroundAnimatedComponent } from '../componentes/background-animated/background-animated.component';
+import { Jumbotron1Component } from '../componentes/jumbotron-1/jumbotron-1.component';
+import { CardInfoComponent } from '../componentes/card-info/card-info.component';
+import { Services1Component } from '../componentes/services-1/services-1.component';
 
 @Component({
   selector: 'app-layout-uno',
@@ -37,6 +40,9 @@ import { BackgroundAnimatedComponent } from '../componentes/background-animated/
     CarouselOwl2Component,
     Parallax1Component,
     BackgroundAnimatedComponent,
+    Jumbotron1Component,
+    CardInfoComponent,
+    Services1Component,
   ],
   templateUrl: './layout-uno.component.html',
   styleUrl: './layout-uno.component.css',

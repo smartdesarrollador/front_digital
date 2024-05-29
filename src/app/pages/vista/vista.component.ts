@@ -18,6 +18,7 @@ import { Header1Component } from 'src/app/layout/componentes/header-1/header-1.c
 import { Jumbotron1Component } from 'src/app/layout/componentes/jumbotron-1/jumbotron-1.component';
 import { Subscribe1Component } from 'src/app/layout/componentes/subscribe-1/subscribe-1.component';
 import { CarouselOwl1Component } from 'src/app/layout/componentes/carousel-owl-1/carousel-owl-1.component';
+import { BotonWhatsappComponent } from 'src/app/layout/componentes/boton-whatsapp/boton-whatsapp.component';
 
 @Component({
   selector: 'app-vista',
@@ -40,6 +41,7 @@ import { CarouselOwl1Component } from 'src/app/layout/componentes/carousel-owl-1
     Jumbotron1Component,
     Subscribe1Component,
     CarouselOwl1Component,
+    BotonWhatsappComponent,
   ],
   templateUrl: './vista.component.html',
   styleUrl: './vista.component.css',

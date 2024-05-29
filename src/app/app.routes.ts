@@ -30,6 +30,7 @@ import { CarouselComponent } from './pages/admin/carousel/carousel.component';
 import { UpdateFileCarouselComponent } from './pages/admin/carousel/update-file-carousel/update-file-carousel.component';
 import { DetalleCursoComponent } from './pages/vista/detalle-curso/detalle-curso.component';
 import { ContactoComponent } from './pages/vista/contacto/contacto.component';
+import { EspecialidadesComponent } from './pages/vista/especialidades/especialidades.component';
 
 export const routes: Routes = [
   {
@@ -60,6 +61,10 @@ export const routes: Routes = [
       {
         path: 'cursos',
         component: CursosComponent,
+      },
+      {
+        path: 'especialidades',
+        component: EspecialidadesComponent,
       },
       {
         path: 'detalle',

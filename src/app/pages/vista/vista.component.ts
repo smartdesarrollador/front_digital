@@ -19,6 +19,7 @@ import { Jumbotron1Component } from 'src/app/layout/componentes/jumbotron-1/jumb
 import { Subscribe1Component } from 'src/app/layout/componentes/subscribe-1/subscribe-1.component';
 import { CarouselOwl1Component } from 'src/app/layout/componentes/carousel-owl-1/carousel-owl-1.component';
 import { BotonWhatsappComponent } from 'src/app/layout/componentes/boton-whatsapp/boton-whatsapp.component';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-vista',
@@ -47,5 +48,7 @@ import { BotonWhatsappComponent } from 'src/app/layout/componentes/boton-whatsap
   styleUrl: './vista.component.css',
 })
 export class VistaComponent implements OnInit {
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    AOS.init();
+  }
 }

@@ -3,6 +3,7 @@ import { RouterLink } from '@angular/router';
 import { Jumbotron1Component } from '../jumbotron-1/jumbotron-1.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faHand } from '@fortawesome/free-regular-svg-icons';
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer-1',
@@ -13,4 +14,5 @@ import { faHand } from '@fortawesome/free-regular-svg-icons';
 })
 export class Footer1Component {
   faHand = faHand;
+  faCircle = faCircle;
 }

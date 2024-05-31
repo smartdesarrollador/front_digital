@@ -13,18 +13,25 @@
       <div>
         <ul class="text-gray-500 dark:text-gray-400 font-medium">
           <li class="mb-4">
-            <a routerLink="/" class="hover:underline">INICIO</a>
-          </li>
-          <li class="mb-4">
-            <a routerLink="/cursos" class="hover:underline">CURSOS</a>
-          </li>
-          <li class="mb-4">
-            <a routerLink="/especialidades" class="hover:underline"
-              >ESPECIALIDADES</a
+            <a routerLink="/" class="hover:underline"
+              ><fa-icon class="text-xs" [icon]="faCircle"></fa-icon> INICIO</a
             >
           </li>
           <li class="mb-4">
-            <a routerLink="/contacto" class="hover:underline">CONTACTO</a>
+            <a routerLink="/cursos" class="hover:underline"
+              ><fa-icon class="text-xs" [icon]="faCircle"></fa-icon> CURSOS</a
+            >
+          </li>
+          <li class="mb-4">
+            <a routerLink="/especialidades" class="hover:underline"
+              ><fa-icon class="text-xs" [icon]="faCircle"></fa-icon>
+              ESPECIALIDADES</a
+            >
+          </li>
+          <li class="mb-4">
+            <a routerLink="/contacto" class="hover:underline"
+              ><fa-icon class="text-xs" [icon]="faCircle"></fa-icon> CONTACTO</a
+            >
           </li>
         </ul>
       </div>
@@ -53,32 +60,34 @@
             >
           </li>
           <li>
-            <div class="flex justify-center space-x-4 p-4">
-              <img
-                src="assets/iconos/facebook.png"
-                alt="Imagen 1"
+            <div class="flex justify-center space-x-4 p-4 w-72">
+              <a
                 class="w-1/5"
-              />
-              <img
-                src="assets/iconos/linkedin.png"
-                alt="Imagen 2"
+                target="_blank"
+                href="https://www.facebook.com/ONEDIGITAL.Latam/"
+                ><img src="assets/iconos/facebook.png" alt="Imagen 1"
+              /></a>
+              <a
                 class="w-1/5"
-              />
-              <img
-                src="assets/iconos/youtube.png"
-                alt="Imagen 3"
+                target="_blank"
+                href="https://www.linkedin.com/company/77579829/admin/feed/posts/"
+                ><img src="assets/iconos/linkedin.png" alt="Imagen 2"
+              /></a>
+              <a
                 class="w-1/5"
-              />
-              <img
-                src="assets/iconos/instagram.png"
-                alt="Imagen 4"
+                target="_blank"
+                href="https://www.youtube.com/@onedigitall"
+                ><img src="assets/iconos/youtube.png" alt="Imagen 3"
+              /></a>
+              <a
                 class="w-1/5"
-              />
-              <img
-                src="assets/iconos/whatsapp.png"
-                alt="Imagen 5"
-                class="w-1/5"
-              />
+                target="_blank"
+                href="https://www.instagram.com/onedigitall.latam/"
+                ><img src="assets/iconos/instagram.png" alt="Imagen 4"
+              /></a>
+              <a class="w-1/5" target="_blank" href="https://wa.pe/onedigital"
+                ><img src="assets/iconos/whatsapp.png" alt="Imagen 5"
+              /></a>
             </div>
           </li>
         </ul>

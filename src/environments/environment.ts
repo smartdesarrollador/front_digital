@@ -30,6 +30,7 @@
   apiUpdateFileProducto: 'https://apilegajo.amorinomoda.com/api/productos/update',
   apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
   apiUrlEmailContacto: 'https://apilegajo.amorinomoda.com/api/contacto',
+  apiListarFilesTestimonio: 'https://apilegajo.amorinomoda.com/api/testimonios',
 }; */
 
 export const environment = {
@@ -67,4 +68,5 @@ export const environment = {
   apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
   apiUrlEmailContacto: 'https://back.iatecdigital.com/api/contacto',
+  apiListarFilesTestimonio: 'https://back.iatecdigital.com/api/testimonios',
 };

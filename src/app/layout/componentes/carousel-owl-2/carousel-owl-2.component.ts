@@ -32,7 +32,7 @@ export class CarouselOwl2Component implements OnInit {
   customOptions: OwlOptions = {
     /* animateIn: 'animate__animated animate__fadeIn',
     animateOut: 'animate__animated animate__zoomOut', */
-    loop: false,
+    loop: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,

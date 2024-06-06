@@ -18,6 +18,7 @@ export class ProductoService {
   urlListar = environment.apiListarFilesProducto;
   urlListarCursos = environment.apiListarCursosProducto;
   urlListarEspecialidades = environment.apiListarEspecialidadesProducto;
+  urlListarDestacados = environment.apiListarDestacadosProducto;
   urlUpdateFile = environment.apiUpdateFileProducto;
   urlDelete = environment.apiDeleteFileProducto;
   constructor(private http: HttpClient) {}
@@ -36,6 +37,10 @@ export class ProductoService {
 
   getEspecialidades(): Observable<Producto> {
     return this.http.get(this.urlListarEspecialidades);
+  }
+
+  getDestacados(): Observable<Producto> {
+    return this.http.get(this.urlListarDestacados);
   }
 
   uploadData(data: any) {

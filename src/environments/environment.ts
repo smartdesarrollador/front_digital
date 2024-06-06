@@ -26,6 +26,8 @@
   apiListarFilesProducto: 'https://apilegajo.amorinomoda.com/api/productos',
   apiListarCursosProducto: 'https://apilegajo.amorinomoda.com/api/productos/cursos',
   apiListarEspecialidadesProducto: 'https://apilegajo.amorinomoda.com/api/productos/especialidades',
+  apiListarDestacadosProducto:
+    'https://apilegajo.amorinomoda.com/api/productos/destacados',
   apiUrl3Producto: 'https://apilegajo.amorinomoda.com/api/productos/subir',
   apiUpdateFileProducto: 'https://apilegajo.amorinomoda.com/api/productos/update',
   apiDeleteFileProducto: 'https://apilegajo.amorinomoda.com/api/productos',
@@ -64,6 +66,8 @@ export const environment = {
   apiListarCursosProducto: 'https://back.iatecdigital.com/api/productos/cursos',
   apiListarEspecialidadesProducto:
     'https://back.iatecdigital.com/api/productos/especialidades',
+  apiListarDestacadosProducto:
+    'https://back.iatecdigital.com/api/productos/destacados',
   apiUrl3Producto: 'https://back.iatecdigital.com/api/productos/subir',
   apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',

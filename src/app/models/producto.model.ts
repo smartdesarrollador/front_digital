@@ -8,5 +8,6 @@ export class Producto {
   maestro?: string;
   observacion?: string;
   precio?: number;
+  destacado?: string;
   categoria_producto_id?: number;
 }

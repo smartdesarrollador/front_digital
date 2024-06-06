@@ -6,6 +6,7 @@ import { Services1Component } from 'src/app/layout/componentes/services-1/servic
 import { CarouselOwl2Component } from 'src/app/layout/componentes/carousel-owl-2/carousel-owl-2.component';
 import { CarouselOwl1Component } from 'src/app/layout/componentes/carousel-owl-1/carousel-owl-1.component';
 import { SlickCarouselComponent } from 'src/app/layout/componentes/slick-carousel/slick-carousel.component';
+import { Card2Component } from 'src/app/layout/componentes/card-2/card-2.component';
 
 @Component({
   selector: 'app-inicio',
@@ -18,6 +19,7 @@ import { SlickCarouselComponent } from 'src/app/layout/componentes/slick-carouse
     CarouselOwl2Component,
     CarouselOwl1Component,
     SlickCarouselComponent,
+    Card2Component,
   ],
   templateUrl: './inicio.component.html',
   styleUrl: './inicio.component.css',

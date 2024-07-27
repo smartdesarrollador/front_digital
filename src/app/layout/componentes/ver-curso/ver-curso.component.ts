@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { environment } from 'src/environments/environment';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { QuillModule } from 'ngx-quill';
 
 @Component({
   selector: 'app-ver-curso',
@@ -24,18 +26,21 @@ import { environment } from 'src/environments/environment';
     ReactiveFormsModule,
     HttpClientModule,
     RouterLink,
+    QuillModule,
   ],
   templateUrl: './ver-curso.component.html',
   styleUrl: './ver-curso.component.css',
 })
 export class VerCursoComponent implements OnInit {
+  safeHtml: SafeHtml | null = null;
   listCursos: any = [];
   valor_id_producto: any;
   urlRaiz = environment.urlRaiz + '/';
 
   constructor(
     private dataService: ProductoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer
   ) {
     /* this.listCursos = this.dataService.selectCategory; */
   }
@@ -55,6 +60,9 @@ export class VerCursoComponent implements OnInit {
     return this.dataService.getCursoById(categoryId).subscribe((data: {}) => {
       console.log(data);
       this.listCursos = data;
+      this.safeHtml = this.sanitizer.bypassSecurityTrustHtml(
+        this.listCursos.descripcion
+      );
     });
   }
 }

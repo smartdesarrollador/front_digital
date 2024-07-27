@@ -7,7 +7,9 @@
         {{ listCursos.nombre }}
       </h2>
 
-      <div [innerHTML]="listCursos.descripcion" class="mt-5"></div>
+      <div class="ql-container ql-snow" style="border-width: 0">
+        <div class="ql-editor" [innerHTML]="safeHtml"></div>
+      </div>
 
       <div class="flex justify-end mt-4">
         <a href="#" class="bg-blue-500 text-white font-bold py-2 px-4 rounded"

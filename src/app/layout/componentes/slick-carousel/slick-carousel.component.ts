@@ -10,17 +10,20 @@ import { Router, RouterLink } from '@angular/router';
 import { TestimonioService } from 'src/app/services/testimonio.service';
 import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { QuillModule } from 'ngx-quill';
 
 declare var $: any;
 
 @Component({
   selector: 'app-slick-carousel',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, QuillModule],
   templateUrl: './slick-carousel.component.html',
   styleUrls: ['./slick-carousel.component.css'],
 })
 export class SlickCarouselComponent implements OnInit, AfterViewInit {
+  safeHtmlList: SafeHtml[] = [];
   urlRaiz = environment.urlRaiz + '/';
   listTestimonios: any[] = []; // Initialize as empty array
 
@@ -28,7 +31,8 @@ export class SlickCarouselComponent implements OnInit, AfterViewInit {
     private dataService: TestimonioService,
     private router: Router,
     private cdr: ChangeDetectorRef,
-    private el: ElementRef
+    private el: ElementRef,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +43,10 @@ export class SlickCarouselComponent implements OnInit, AfterViewInit {
     this.dataService.getCategories().subscribe((data: any) => {
       console.log(data);
       this.listTestimonios = data;
+      this.safeHtmlList = this.listTestimonios.map((item: any) =>
+        this.sanitizer.bypassSecurityTrustHtml(item.descripcion)
+      );
+
       this.cdr.detectChanges(); // Forcing change detection might not be strictly necessary here
 
       // Initialize Slick only after data is available

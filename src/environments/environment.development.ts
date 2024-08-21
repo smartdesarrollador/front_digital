@@ -30,6 +30,8 @@ export const environment = {
   apiUrl3Producto: 'http://127.0.0.1:8000/api/productos/subir',
   apiUpdateFileProducto: 'http://127.0.0.1:8000/api/productos/update',
   apiDeleteFileProducto: 'http://127.0.0.1:8000/api/productos',
+  /* 2.- ENVIO-CORREO-V1-P2 */
   apiUrlEmailContacto: 'http://127.0.0.1:8000/api/contacto',
+  /* /2.- ENVIO-CORREO-V1-P2 */
   apiListarFilesTestimonio: 'http://127.0.0.1:8000/api/testimonios',
 };

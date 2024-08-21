@@ -71,6 +71,8 @@ export const environment = {
   apiUrl3Producto: 'https://back.iatecdigital.com/api/productos/subir',
   apiUpdateFileProducto: 'https://back.iatecdigital.com/api/productos/update',
   apiDeleteFileProducto: 'https://back.iatecdigital.com/api/productos',
+  /* 3.- ENVIO-CORREO-V1-P2 */
   apiUrlEmailContacto: 'https://back.iatecdigital.com/api/contacto',
+  /* /3.- ENVIO-CORREO-V1-P2 */
   apiListarFilesTestimonio: 'https://back.iatecdigital.com/api/testimonios',
 };

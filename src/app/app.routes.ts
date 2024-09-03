@@ -31,6 +31,7 @@ import { UpdateFileCarouselComponent } from './pages/admin/carousel/update-file-
 import { DetalleCursoComponent } from './pages/vista/detalle-curso/detalle-curso.component';
 import { ContactoComponent } from './pages/vista/contacto/contacto.component';
 import { EspecialidadesComponent } from './pages/vista/especialidades/especialidades.component';
+import { CertificateComponent } from './pages/vista/certificate/certificate.component';
 
 export const routes: Routes = [
   {
@@ -67,7 +68,7 @@ export const routes: Routes = [
         component: EspecialidadesComponent,
       },
       {
-        path: 'detalle',
+        path: 'detalle/:id/:curso_nombre',
         component: DetalleCursoComponent,
       },
       {

@@ -28,11 +28,44 @@ export class CardCursoComponent implements OnInit {
     });
   }
 
-  onDetail(dataProducto: Producto) {
+  /* onDetail(dataProducto: Producto) {
     console.log(dataProducto);
     this.dataService.selectCategory = Object.assign({}, dataProducto);
     this.router.navigate(['/detalle'], {
       queryParams: { Id: dataProducto.id_producto },
     });
+  } */
+
+  /* onDetail(dataProducto: Producto) {
+    console.log(dataProducto);
+    this.dataService.selectCategory = Object.assign({}, dataProducto);
+
+    let nombreConGuiones = '';
+    if (dataProducto.nombre) {
+      // Reemplazamos espacios por guiones
+      nombreConGuiones = dataProducto.nombre.split(' ').join('-');
+    }
+
+    this.router.navigate(['/detalle'], {
+      queryParams: { Id: nombreConGuiones },
+    });
+  } */
+
+  onDetail(dataProducto: Producto) {
+    console.log(dataProducto);
+    this.dataService.selectCategory = Object.assign({}, dataProducto);
+
+    let nombreConGuiones = '';
+    if (dataProducto.nombre) {
+      // Reemplazamos espacios por guiones en el nombre del curso
+      nombreConGuiones = dataProducto.nombre.split(' ').join('-');
+    }
+
+    // Navegamos a la ruta con los parámetros Id y curso_nombre
+    this.router.navigate([
+      '/detalle',
+      dataProducto.id_producto,
+      nombreConGuiones,
+    ]);
   }
 }

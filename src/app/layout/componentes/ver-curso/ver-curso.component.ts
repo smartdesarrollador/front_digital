@@ -36,6 +36,8 @@ export class VerCursoComponent implements OnInit {
   listCursos: any = [];
   valor_id_producto: any;
   urlRaiz = environment.urlRaiz + '/';
+  id: any;
+  cursoNombre: any;
 
   constructor(
     private dataService: ProductoService,
@@ -49,10 +51,15 @@ export class VerCursoComponent implements OnInit {
     /*  this.loadCategories(); */
 
     this.route.queryParams.subscribe((params) => {
-      const categoryId = params['Id'];
+      const categoryId = params['id'];
 
-      console.log(categoryId);
-      this.loadCategories(categoryId);
+      this.route.paramMap.subscribe((params) => {
+        this.id = params.get('id'); // Convertimos a número
+        this.cursoNombre = params.get('curso_nombre');
+      });
+
+      console.log(this.id);
+      this.loadCategories(this.id);
     });
   }
 

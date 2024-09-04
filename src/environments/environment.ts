@@ -75,4 +75,8 @@ export const environment = {
   apiUrlEmailContacto: 'https://back.iatecdigital.com/api/contacto',
   /* /3.- ENVIO-CORREO-V1-P2 */
   apiListarFilesTestimonio: 'https://back.iatecdigital.com/api/testimonios',
+  apiUrl3Evento: 'https://back.iatecdigital.com/api/eventos/subir',
+  apiUpdateFileEvento: 'https://back.iatecdigital.com/api/eventos/update',
+  apiListarFilesEvento: 'https://back.iatecdigital.com/api/eventos',
+  apiDeleteFileEvento: 'https://back.iatecdigital.com/api/eventos',
 };

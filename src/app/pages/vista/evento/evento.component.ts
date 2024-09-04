@@ -5,11 +5,12 @@ import { Evento } from 'src/app/models/evento.model';
 import { EventoService } from 'src/app/services/evento.service';
 import { environment } from 'src/environments/environment';
 import { CommonModule } from '@angular/common';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @Component({
   selector: 'app-evento',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ClipboardModule],
   templateUrl: './evento.component.html',
   styleUrl: './evento.component.css',
 })
@@ -27,5 +28,9 @@ export class EventoComponent implements OnInit {
       console.log(data);
       this.listBanners = data;
     });
+  }
+
+  onCopySuccess() {
+    alert('¡Título copiado al portapapeles!');
   }
 }

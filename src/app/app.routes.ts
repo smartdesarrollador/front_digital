@@ -77,7 +77,7 @@ export const routes: Routes = [
         component: ContactoComponent,
       },
       {
-        path: 'evento',
+        path: 'events',
         component: EventoComponent,
       },
     ],

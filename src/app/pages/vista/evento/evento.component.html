@@ -18,12 +18,21 @@
           <h3 class="text-center text-lg sm:text-3xl">
             {{ item.titulo }}
           </h3>
-          <h3 class="text-center text-lg sm:text-3xl">
-            {{ item.fecha }}
+          <h3 class="text-center text-md text-gray-500 sm:text-lg">
+            <i class="fas fa-clock text-gray-400" aria-hidden="true"></i>
+            {{ item.fecha | date : "MMMM d, y" : "es" }}
           </h3>
-          <h3 class="text-center text-lg sm:text-3xl">
+          <!-- <h3 class="text-center text-lg sm:text-3xl">
             {{ item.codigo }}
-          </h3>
+          </h3> -->
+          <button
+            class="mt-2 block mx-auto px-4 py-2 bg-blue-500 text-white rounded"
+            ngxClipboard
+            [cbContent]="item.codigo"
+            (cbOnSuccess)="onCopySuccess()"
+          >
+            Copiar Evento
+          </button>
         </div>
       </div>
     </div>

@@ -9,11 +9,18 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { BannerContactoComponent } from 'src/app/layout/componentes/banner-contacto/banner-contacto.component';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BannerContactoComponent,
+  ],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css',
 })

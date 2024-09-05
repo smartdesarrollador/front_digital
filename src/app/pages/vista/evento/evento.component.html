@@ -1,3 +1,5 @@
+<app-banner-evento></app-banner-evento>
+
 <h2
   class="text-2xl sm:text-3xl md:text-4xl text-gray-700 font-semibold mb-4 leading-tight font-subtitulo text-center mt-10"
 >
@@ -6,33 +8,33 @@
 
 <div class="container mx-auto my-10">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-    <div *ngFor="let item of listBanners">
+    <div *ngFor="let item of listBanners; let i = index">
       <div
         class="group h-96 md:h-[400px] mb-10 w-full md:w-[300px] [perspective:1000px]"
       >
         <div class="">
           <img
             class="h-full w-full rounded-xl object-cover"
-            src="{{ urlRaiz + item.ruta_imagen }}"
+            [src]="urlRaiz + item.ruta_imagen"
           />
-          <h3 class="text-center text-lg sm:text-3xl">
+          <h3 class="text-center text-gray-500 text-lg sm:text-2xl mt-4">
             {{ item.titulo }}
           </h3>
           <h3 class="text-center text-md text-gray-500 sm:text-lg">
             <i class="fas fa-clock text-gray-400" aria-hidden="true"></i>
             {{ item.fecha | date : "MMMM d, y" : "es" }}
           </h3>
-          <!-- <h3 class="text-center text-lg sm:text-3xl">
-            {{ item.codigo }}
-          </h3> -->
+
+          <!-- Botón para cargar el formulario de HubSpot -->
           <button
-            class="mt-2 block mx-auto px-4 py-2 bg-blue-500 text-white rounded"
-            ngxClipboard
-            [cbContent]="item.codigo"
-            (cbOnSuccess)="onCopySuccess()"
+            (click)="onButtonClick(item, i)"
+            class="mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
           >
-            Copiar Evento
+            Cargar Formulario
           </button>
+
+          <!-- Div donde se cargará el formulario de HubSpot -->
+          <div [id]="'formContainer-' + i"></div>
         </div>
       </div>
     </div>

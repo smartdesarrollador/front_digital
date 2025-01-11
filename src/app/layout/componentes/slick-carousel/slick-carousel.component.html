@@ -13,10 +13,10 @@
       [src]="urlRaiz + item.ruta_imagen"
       alt="Profile Image"
     />
-    <div class="p-4">
+    <div class="p-4 flex-1">
       <h2 class="text-xl font-semibold mb-2 text-center">{{ item.titulo }}</h2>
-      <div class="ql-container ql-snow" style="border-width: 0">
-        <div class="ql-editor" [innerHTML]="safeHtmlList[i]"></div>
+      <div class="ql-container ql-snow">
+        <div class="ql-editor text-sm" [innerHTML]="safeHtmlList[i]"></div>
       </div>
     </div>
   </div>

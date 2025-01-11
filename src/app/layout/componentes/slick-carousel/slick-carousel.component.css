@@ -13,6 +13,23 @@
 .testimonial-card {
   margin: 10px;
   transition: transform 0.3s ease;
+  height: 380px; /* Reducido de 400px a 380px */
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-card > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ql-container.ql-snow {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border: none !important;
+  overflow: hidden; /* Evita que el contenido se desborde */
 }
 
 /* Ajustes para los botones de navegación */
@@ -37,4 +54,18 @@
 /* Ajuste del tamaño de las imágenes dentro de las tarjetas */
 .testimonial-card img {
   object-fit: cover;
+}
+
+/* Estilo para limitar la descripción a 5 líneas */
+:host ::ng-deep .ql-editor {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 100px; /* Reducido de 120px a 110px */
+  line-height: 1.5; /* Asegura un espaciado consistente entre líneas */
+  word-break: break-word; /* Evita que las palabras se corten */
+  padding: 0 !important; /* Elimina el padding por defecto del editor */
+  margin-bottom: 10px; /* Agrega espacio al final */
 }

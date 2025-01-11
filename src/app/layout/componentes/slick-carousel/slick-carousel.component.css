@@ -2,3 +2,39 @@
 .slick-next:before {
   color: black !important;
 }
+
+/* Estilos para el contenedor del carrusel */
+.multiple-items {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* Estilos para las tarjetas de testimonios */
+.testimonial-card {
+  margin: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Ajustes para los botones de navegación */
+:host ::ng-deep .slick-prev,
+:host ::ng-deep .slick-next {
+  z-index: 1;
+}
+
+:host ::ng-deep .slick-prev {
+  left: -5px;
+}
+
+:host ::ng-deep .slick-next {
+  right: -5px;
+}
+
+/* Ajuste del contenedor para dar espacio a las flechas */
+:host ::ng-deep .slick-list {
+  margin: 0 25px;
+}
+
+/* Ajuste del tamaño de las imágenes dentro de las tarjetas */
+.testimonial-card img {
+  object-fit: cover;
+}

@@ -67,10 +67,13 @@ export class SlickCarouselComponent implements OnInit, AfterViewInit {
           dots: true,
           infinite: true,
           speed: 300,
-          slidesToShow: 4,
+          slidesToShow: 5,
           slidesToScroll: 1,
           adaptiveHeight: true,
           arrows: true,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          pauseOnHover: true,
           responsive: [
             {
               breakpoint: 768,
@@ -79,6 +82,8 @@ export class SlickCarouselComponent implements OnInit, AfterViewInit {
                 slidesToScroll: 1,
                 arrows: true,
                 dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
               },
             },
             {
@@ -88,6 +93,8 @@ export class SlickCarouselComponent implements OnInit, AfterViewInit {
                 slidesToScroll: 1,
                 arrows: true,
                 dots: true,
+                autoplay: true,
+                autoplaySpeed: 3000,
               },
             },
           ],

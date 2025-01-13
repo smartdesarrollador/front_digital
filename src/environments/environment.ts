@@ -96,4 +96,12 @@ export const environment = {
     'https://back.iatecdigital.com/api/banner_evento/update',
   apiListarBannerEvento: 'https://back.iatecdigital.com/api/banner_evento',
   apiDeleteBannerEvento: 'https://back.iatecdigital.com/api/banner_evento',
+  apiUpdateBannerSolucion:
+    'https://back.iatecdigital.com/api/banner_solucion/update',
+  apiListarBannerSolucion: 'https://back.iatecdigital.com/api/banner_solucion',
+  apiDeleteBannerSolucion: 'https://back.iatecdigital.com/api/banner_solucion',
+  apiUrl3Solucion: 'https://back.iatecdigital.com/api/soluciones/subir',
+  apiUpdateFileSolucion: 'https://back.iatecdigital.com/api/soluciones/update',
+  apiListarFilesSolucion: 'https://back.iatecdigital.com/api/soluciones',
+  apiDeleteFileSolucion: 'https://back.iatecdigital.com/api/soluciones',
 };

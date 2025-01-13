@@ -33,6 +33,7 @@ import { ContactoComponent } from './pages/vista/contacto/contacto.component';
 import { EspecialidadesComponent } from './pages/vista/especialidades/especialidades.component';
 import { CertificateComponent } from './pages/vista/certificate/certificate.component';
 import { EventoComponent } from './pages/vista/evento/evento.component';
+import { SolucionComponent } from './pages/vista/solucion/solucion.component';
 
 export const routes: Routes = [
   {
@@ -79,6 +80,10 @@ export const routes: Routes = [
       {
         path: 'events',
         component: EventoComponent,
+      },
+      {
+        path: 'solucion',
+        component: SolucionComponent,
       },
     ],
   },

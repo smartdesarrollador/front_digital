@@ -34,6 +34,7 @@ import { EspecialidadesComponent } from './pages/vista/especialidades/especialid
 import { CertificateComponent } from './pages/vista/certificate/certificate.component';
 import { EventoComponent } from './pages/vista/evento/evento.component';
 import { SolucionComponent } from './pages/vista/solucion/solucion.component';
+import { PoliticaPrivacidadComponent } from './pages/vista/politica-privacidad/politica-privacidad.component';
 
 export const routes: Routes = [
   {
@@ -84,6 +85,10 @@ export const routes: Routes = [
       {
         path: 'solucion',
         component: SolucionComponent,
+      },
+      {
+        path: 'politica-privacidad',
+        component: PoliticaPrivacidadComponent,
       },
     ],
   },
